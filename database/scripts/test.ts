@@ -9,6 +9,7 @@ import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 import { get_anchor_ids } from '#shared/content.ts'
 import { get_client } from '#shared/db.ts'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
+import MarkdownIt from 'markdown-it'
 import fs from 'node:fs'
 import path from 'node:path'
 import {
@@ -485,6 +486,15 @@ function get_content_pages() {
 	return content_pages
 }
 
+const md = new MarkdownIt({ html: true })
+
+/**
+ * Returns the opening HTML tags of all links on a content page
+ */
+function get_link_tags(markdown: string): string[] {
+	return md.render(markdown).match(/<a\s[^>]*>/g) ?? []
+}
+
 /**
  * Checks if a link to a content page, optionally with an anchor, has a target.
  * The page is undefined if the linked content page does not exist.
@@ -514,7 +524,15 @@ function check_content_link(
 function check_link_targets_exist() {
 	const content_pages = get_content_pages()
 
+	const content_links = [...content_pages].flatMap(([id, { markdown }]) =>
+		get_link_tags(markdown).map((link) => ({
+			proof: link,
+			error_prefix: `❌ Content page ${id}`
+		}))
+	)
+
 	const proofs: { proof: string; error_prefix: string }[] = [
+		...content_links,
 		...db
 
 			.prepare<never[], { structure: string; property: string; proof: string }>(
@@ -661,17 +679,11 @@ function check_link_targets_exist() {
 		}
 	}
 
-	const markdown_link_regex = /\]\((?:\/content\/([^)#]+))?(?:#([^)]+))?\)/g
+	const anchor_link_regex = /\]\(#([^)]+)\)/g
 
-	for (const [content_id, { markdown }] of content_pages) {
-		for (const match of markdown.matchAll(markdown_link_regex)) {
-			const linked_id = match[1] ?? content_id
-			check_content_link(
-				content_pages.get(linked_id),
-				linked_id,
-				match[2],
-				`Content page ${content_id}`
-			)
+	for (const [content_id, page] of content_pages) {
+		for (const [, anchor] of page.markdown.matchAll(anchor_link_regex)) {
+			check_content_link(page, content_id, anchor, `❌ Content page ${content_id}`)
 		}
 	}
 

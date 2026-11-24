@@ -91,7 +91,7 @@ If $\C$ is a locally small category, then $\widehat{\C}$ is mono-regular. Actual
 :::
 
 ::: Proof
-The first statement is a formal consequence of the fact that every monomorphism in $\Set$ is effective and the already established facts that monomorphisms and pushouts can be understood objectwise. For similar reasons, the second statement is a formal consequence of the corresponding facts for $\Set$.
+We already know that monomorphisms and pushouts can be understood objectwise. Since every monomorphism in $\Set$ is regular (<a href="/category/Set?proof=mono-regular" data-allow-deduced>proof</a>) and hence effective, the first statement follows. Similarly, the second statement follows since monomorphisms in $\Set$ are stable under filtered colimits (<a href="/category/Set?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>) and pushouts (<a href="/category/Set?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).
 :::
 
 ::: Lemma 7
@@ -101,7 +101,7 @@ If $\C$ is a locally small category, then $\widehat{\C}$ is infinitary extensive
 ::: Proof
 We need to prove that for a family of small presheaves $(P_i)_{i \in I}$ the coproduct functor
 $$\textstyle \prod_{i \in I} \widehat{\C} / P_i \to \widehat{\C}/\coprod_{i \in I} P_i$$
-is an equivalence of categories. Since $\Set$ is infinitary extensive, also $[\C^{\op},\Set]$ is infinitary extensive, so that the coproduct functor
+is an equivalence of categories. Since $\Set$ is infinitary extensive (<a href="/category/Set?proof=infinitary_extensive" data-allow-deduced>proof</a>), also $[\C^{\op},\Set]$ is infinitary extensive, so that the coproduct functor
 $$\textstyle \prod_{i \in I} [\C^{\op},\Set] / P_i \to [\C^{\op},\Set]/\coprod_{i \in I} P_i$$
 is an equivalence of categories. Since $\widehat{\C}$ is a full subcategory of $[\C^{\op},\Set]$ that is closed under coproducts, it remains to prove that if a coproduct of presheaves $\coprod_{i \in I} F_i$ is small, then each $F_i$ is small. For this, it suffices to prove, for two presheaves $F,G$ such that $F+G$ is small, that $F$ is small. The category of elements $\int (F+G)$ identifies with $\int F + \int G$. Thus, the claim follows from the next lemma.
 :::
@@ -111,7 +111,7 @@ Let $\C,\D$ be two categories. Assume that the coproduct $\C + \D$ is finally sm
 :::
 
 ::: Proof
-Assume that $\I \to \C + \D$ is a final functor, where $\I$ is small. Since $\Cat$ is extensive, we get a decomposition $\I = \I_\C + \I_\D$ with two functors $\I_\C \to \C$ and $\I_\D \to \D$. For every $X \in \C$ the comma category $X \downarrow \I_\C$ identifies with the comma category $X \downarrow \I$, which is connected. Therefore, $\I_\C \to \C$ is final.
+Assume that $\I \to \C + \D$ is a final functor, where $\I$ is small. Since $\Cat$ is infinitary extensive (<a href="/category/Cat?proof=infinitary_extensive" data-allow-deduced>proof</a>), we get a decomposition $\I = \I_\C + \I_\D$ with two functors $\I_\C \to \C$ and $\I_\D \to \D$. For every $X \in \C$ the comma category $X \downarrow \I_\C$ identifies with the comma category $X \downarrow \I$, which is connected. Therefore, $\I_\C \to \C$ is final.
 :::
 
 ::: Lemma 9
@@ -119,14 +119,14 @@ Let $\C$ be a locally small category. Then $\widehat{\C}$ is co-Malcev.
 :::
 
 ::: Proof
-This follows since $\Set$ is co-Malcev and since finite colimits are objectwise.
+This follows since $\Set$ is co-Malcev (<a href="/category/Set?proof=co-Malcev" data-allow-deduced>proof</a>) and since finite colimits are objectwise.
 :::
 
 ::: Proposition 10
 Let $\C$ be a locally small category. Then $\widehat{\C}$ is epi-regular.
 :::
 
-Notice that this would be easy if $\widehat{\C}$ had pullbacks. In that case, every epimorphism would even be effective since this is the case for $\Set$. But in general, $\widehat{\C}$ may fail to have pullbacks. This is why the proof is more complicated.
+Notice that this would be easy if $\widehat{\C}$ had pullbacks. In that case, every epimorphism would even be effective since every epimorphism in $\Set$ is regular (<a href="/category/Set?proof=epi-regular" data-allow-deduced>proof</a>) and hence effective. But in general, $\widehat{\C}$ may fail to have pullbacks. This is why the proof is more complicated.
 
 ::: Proof
 First, notice that the Yoneda Lemma and the description of epimorphisms (see [Lemma 5](#lemma_5)) imply that representable functors are [projective objects](https://ncatlab.org/nlab/show/projective+object). Therefore, also coproducts of representable functors are projective.
@@ -170,7 +170,7 @@ Let $\C$ be a locally small category. Then $\widehat{\C}$ has effective congruen
 :::
 
 ::: Proof
-Let $q_1,q_2 : R \rightrightarrows G$ be a congruence in $\widehat{\C}$. Let $p : G \twoheadrightarrow Q$ be its quotient (i.e. coequalizer) in $\widehat{\C}$, which is constructed objectwise. Applying the functorial definition of a congruence to representable functors in $\widehat{\C}$, we see that for every object $X \in \C$, $q_1(X),q_2(X) : R(X) \rightrightarrows G(X)$ is a congruence in $\Set$. Since congruences in $\Set$ are effective, $q_1(X),q_2(X)$ is the kernel pair of $p(X)$; we are also using [this result](/content/effective-congruence-quotients). Therefore, $q_1,q_2$ is the kernel pair of $p$ in the category of all presheaves, _a fortiori_ in the category of small presheaves.
+Let $q_1,q_2 : R \rightrightarrows G$ be a congruence in $\widehat{\C}$. Let $p : G \twoheadrightarrow Q$ be its quotient (i.e. coequalizer) in $\widehat{\C}$, which is constructed objectwise. Applying the functorial definition of a congruence to representable functors in $\widehat{\C}$, we see that for every object $X \in \C$, $q_1(X),q_2(X) : R(X) \rightrightarrows G(X)$ is a congruence in $\Set$. Since congruences in $\Set$ are effective (<a href="/category/Set?proof=effective_congruences" data-allow-deduced>proof</a>), $q_1(X),q_2(X)$ is the kernel pair of $p(X)$; we are also using [this result](/content/effective-congruence-quotients). Therefore, $q_1,q_2$ is the kernel pair of $p$ in the category of all presheaves, _a fortiori_ in the category of small presheaves.
 :::
 
 ::: Proposition 12
@@ -178,7 +178,7 @@ Let $\C$ be a locally small category. Then $\widehat{\C}$ has effective cocongru
 :::
 
 ::: Proof
-Let $F \rightrightarrows G$ be a cocongruence in $\widehat{\C}$. Since the inclusion functor $\widehat{\C} \hookrightarrow [\C^{\op},\Set]$ preserves finite colimits by [Lemma 3](#lemma_3), this is the same as a cocongruence of presheaves where $F,G$ happen to be small. Since cocongruences in $\Set$ are effective (by [this result](/category-implication/regular_epi-regular_extensive_consequences)), and in fact cokernel pairs of their equalizer (see [here](/content/effective-congruence-quotients)), the cocongruence is isomorphic to
+Let $F \rightrightarrows G$ be a cocongruence in $\widehat{\C}$. Since the inclusion functor $\widehat{\C} \hookrightarrow [\C^{\op},\Set]$ preserves finite colimits by [Lemma 3](#lemma_3), this is the same as a cocongruence of presheaves where $F,G$ happen to be small. Since cocongruences in $\Set$ are effective (<a href="/category/Set?proof=effective_cocongruences" data-allow-deduced>proof</a>), and in fact cokernel pairs of their equalizer (see [here](/content/effective-congruence-quotients)), the cocongruence is isomorphic to
 $$F \rightrightarrows F \sqcup_E F,$$
 where $E \coloneqq \eq(F \rightrightarrows G)$ is the objectwise defined equalizer in $[\C^{\op},\Set]$. We would be done if $E$ were small, which however is not the case in general. But we can prove that $E$ is a quotient of a small presheaf, or equivalently, a quotient of a coproduct of representable presheaves, which is sufficient, since any epimorphism $E' \to E$ satisfies $F \sqcup_E F = F \sqcup_{E'} F$. (Such presheaves are also called _petty_ in the literature.)
 

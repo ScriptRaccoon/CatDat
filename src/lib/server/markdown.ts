@@ -1,6 +1,7 @@
 import MarkdownIt from 'markdown-it'
 import matter from 'gray-matter'
 import { MATH_REGEX, render_formula } from './formulas'
+import { keep_scroll_on_proof_links } from './text'
 import path from 'node:path'
 import fs from 'node:fs'
 import { THEOREM_ENVIRONMENT_REGEX, to_anchor_id } from '#shared/content.ts'
@@ -186,7 +187,7 @@ function render_content<T = Record<string, unknown>>(
 
 	const { processed_content, formulas } = preprocess_math(content)
 
-	const html = md.render(processed_content)
+	const html = keep_scroll_on_proof_links(md.render(processed_content))
 
 	const html_with_formulas = postprocess_math(html, formulas)
 

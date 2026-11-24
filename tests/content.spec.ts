@@ -120,3 +120,16 @@ test('user can follow a link to a result on a content page', async ({ page }) =>
 		.poll(async () => await get_border_color('#lemma_10'))
 		.not.toBe(await get_border_color('#lemma_9'))
 })
+
+test('user can open a proof that is cited on a content page', async ({ page }) => {
+	await page.goto('/content/uniform-embeddings-pushouts')
+
+	await page.getByRole('link', { name: 'construction', exact: true }).click()
+
+	await expect(page).toHaveURL('/category/Unif?proof=cocomplete')
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+	await expect(popup).toBeVisible()
+	await expect(popup).toContainText('finest uniform structure')
+})
