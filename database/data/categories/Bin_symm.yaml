@@ -44,7 +44,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: infinitary extensive
-    proof: We already know that $\Bin_{\symm} \subseteq \Bin$ is closed under coproducts (<a href="/category/Bin_symm?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Bin_symm?proof=complete">proof</a>). Since $\Bin$ is infinitary extensive (<a href="/category/Bin?proof=infinitary_extensive" data-allow-deduced>proof</a>), the claim therefore follows from Lemma 11 <a href="/content/subcategories">here</a>.
+    proof: We already know that $\Bin_{\symm} \subseteq \Bin$ is closed under coproducts (<a href="/category/Bin_symm?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Bin_symm?proof=complete">proof</a>). Since $\Bin$ is infinitary extensive (<a href="/category/Bin?proof=infinitary_extensive" data-allow-deduced>proof</a>), the claim therefore follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a>.
 
   - property: finitely accessible
     proof: The proof is the same as for the finite accessibility of $\Bin$ (<a href="/category/Bin?proof=finitely_accessible">proof</a>).
@@ -80,7 +80,7 @@ satisfied_properties:
       which is a contradiction.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Bin_{\symm} \to \Set$, which preserves products (<a href="/category/Bin_symm?proof=complete">proof</a>) and epimorphisms (<a href="/category/Bin_symm?proof=epimorphism">proof</a>).
+    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Bin_{\symm} \to \Set$, which preserves products (<a href="/category/Bin_symm?proof=complete">proof</a>) and epimorphisms (<a href="/category/Bin_symm?proof=epimorphism">proof</a>).
 
 unsatisfied_properties:
   - property: skeletal

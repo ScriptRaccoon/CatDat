@@ -32,10 +32,10 @@ satisfied_properties:
     proof: Take the singleton set with the unique order.
 
   - property: extremal generator
-    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: extremal cogenerator
-    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: equalizers
     proof: >-
@@ -131,7 +131,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Assume that $\Ord$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$ consider the set $X_\alpha \coloneqq \{\beta < \kappa : \beta \geq \alpha\}$ of ordinals with the usual order, and the inclusions $(X_{\alpha'},\leq) \hookrightarrow (X_\alpha,\leq)$ for $\alpha \leq \alpha'$. By the <a href="/category/Ord?proof=discretely_cofiltered_limits">proof</a> for discretely cofiltered limits, the limit of this diagram $D : (\kappa,\geq) \to \Ord$, $\alpha \mapsto (X_\alpha,\leq)$ is computed as in <a href="/category/Pos">$\Pos$</a>, hence on the underlying sets as in $\Set$. Thus, its underlying set is $\bigcap_{\alpha < \kappa} X_\alpha = \varnothing$, so it is the initial object. Every map $(X_\alpha,\leq) \to \{\ast\}$ is a split epimorphism, since $X_\alpha$ is non-empty. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, applied to the unique morphism $! : (X_0,\leq) \to \{\ast\}$, the ordered set $\{\ast\}$ is initial, a contradiction.
+      Assume that $\Ord$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$ consider the set $X_\alpha \coloneqq \{\beta < \kappa : \beta \geq \alpha\}$ of ordinals with the usual order, and the inclusions $(X_{\alpha'},\leq) \hookrightarrow (X_\alpha,\leq)$ for $\alpha \leq \alpha'$. By the <a href="/category/Ord?proof=discretely_cofiltered_limits">proof</a> for discretely cofiltered limits, the limit of this diagram $D : (\kappa,\geq) \to \Ord$, $\alpha \mapsto (X_\alpha,\leq)$ is computed as in <a href="/category/Pos">$\Pos$</a>, hence on the underlying sets as in $\Set$. Thus, its underlying set is $\bigcap_{\alpha < \kappa} X_\alpha = \varnothing$, so it is the initial object. Every map $(X_\alpha,\leq) \to \{\ast\}$ is a split epimorphism, since $X_\alpha$ is non-empty. By <a href="/content/decreasing-chains-coaccessible#lemma">this lemma</a>, applied to the unique morphism $! : (X_0,\leq) \to \{\ast\}$, the ordered set $\{\ast\}$ is initial, a contradiction.
 
 special_objects:
   initial object:

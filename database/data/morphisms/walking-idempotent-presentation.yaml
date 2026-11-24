@@ -31,7 +31,7 @@ unsatisfied_properties:
       This proves our claim. If $F$ were a strict epimorphism, this would mean in particular that $E$ factors through $F$, i.e. that the morphism $1$ in $B(\IN)$ is idempotent, which yields the contradiction $1 + 1 = 1$.
 
   - property: constant
-    proof: 'The functor $\Mor : \Cat \to \Set$ is representable (by the walking morphism $I$), so that by Lemma 2 <a href="/content/constant_morphisms">here</a> it maps constant morphisms to constant maps. But the map $\Mor(F) : \Mor(I) \to \Mor(\Idem)$ is not constant since both $\id_0$ and $e$ are contained in its image.'
+    proof: 'The functor $\Mor : \Cat \to \Set$ is representable (by the walking morphism $I$), so that by <a href="/content/constant_morphisms#lemma_2">Lemma 2 on constant morphisms</a> it maps constant morphisms to constant maps. But the map $\Mor(F) : \Mor(I) \to \Mor(\Idem)$ is not constant since both $\id_0$ and $e$ are contained in its image.'
 
   - property: coconstant
     proof: 'Consider any category $\C$ with two different objects $X,Y$. Then we have functors $X,Y : \Idem \rightrightarrows \C$ mapping $e$ to $\id_X$ resp. $\id_Y$. But we have $X \circ F \neq Y \circ F$.'

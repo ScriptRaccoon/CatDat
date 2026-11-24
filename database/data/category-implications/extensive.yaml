@@ -104,7 +104,7 @@
   proof: >-
     Let $\C$ be an infinitary extensive category which is coaccessible, and let $T$ be an object. We claim that $T$ is initial. Since $\C$ has an object, namely $0$, it follows that $\C$ is trivial.
 
-    To prove the claim, consider the functor $F : \Set \to \C$, $X \mapsto \coprod_{x \in X} T$. For a regular cardinal $\kappa$ and $\alpha < \kappa$, the object $F(\{\beta < \kappa : \beta \geq \alpha\})$ is the tail coproduct $\coprod_{\alpha \leq \beta < \kappa} T_\beta$ from <a href="/content/tail-coproducts-extensive">this lemma</a>, which shows that the limit of these objects, if it exists, is initial. By the corollary <a href="/content/decreasing-chains-coaccessible">here</a>, $F(\{\ast\}) \cong T$ is initial.
+    To prove the claim, consider the functor $F : \Set \to \C$, $X \mapsto \coprod_{x \in X} T$. For a regular cardinal $\kappa$ and $\alpha < \kappa$, the object $F(\{\beta < \kappa : \beta \geq \alpha\})$ is the tail coproduct $\coprod_{\alpha \leq \beta < \kappa} T_\beta$ from <a href="/content/tail-coproducts-extensive">this lemma</a>, which shows that the limit of these objects, if it exists, is initial. By <a href="/content/decreasing-chains-coaccessible#corollary">this corollary</a>, $F(\{\ast\}) \cong T$ is initial.
 
 - id: countably_extensive_no_stable_epis
   assumptions:

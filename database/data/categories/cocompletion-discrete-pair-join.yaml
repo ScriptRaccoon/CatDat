@@ -20,7 +20,7 @@ description: >-
   \;\; B
   \end{array}$$
   In other words, $\C$ is the <a href="https://ncatlab.org/nlab/show/join+of+categories">join</a> of a large discrete category and the <a href="/category/walking_pair">walking parallel pair</a>.
-  The category in this entry is the free cocompletion $\widehat{\C}$ consisting of <a href="https://ncatlab.org/nlab/show/small+presheaf">small presheaves</a> $\C^{\op} \to \Set$, i.e. those presheaves that can be written as a small colimit of representable functors. See <a href="/content/free-cocompletion">here</a> for a couple of equivalent characterizations that hold for general $\C$, as well as general results on free cocompletions, and see <a href="/content/nice-and-small-presheaves">here</a> for a concrete description of small presheaves in this specific setting.
+  The category in this entry is the free cocompletion $\widehat{\C}$ consisting of <a href="https://ncatlab.org/nlab/show/small+presheaf">small presheaves</a> $\C^{\op} \to \Set$, i.e. those presheaves that can be written as a small colimit of representable functors. See <a href="/content/free-cocompletion">here</a> for a couple of equivalent characterizations that hold for general $\C$, as well as general results on free cocompletions, and see <a href="/content/nice-and-small-presheaves#lemma_1">Lemma 1 on small presheaves</a> for a concrete description of small presheaves in this specific setting.
 nlab_link: null
 tags:
   - category theory
@@ -36,45 +36,45 @@ comments:
 
 satisfied_properties:
   - property: locally essentially small
-    proof: This holds for the free cocompletion of every locally small category. See Lemma 1 <a href="/content/free-cocompletion">here</a>.
+    proof: This holds for the free cocompletion of every locally small category. See <a href="/content/free-cocompletion#lemma_1">Lemma 1 on the free cocompletion</a>.
 
   - property: cocomplete
     check_redundancy: false
-    proof: Colimits in every free cocompletion can be constructed objectwise by Lemma 3 <a href="/content/free-cocompletion">here</a>. Alternatively, the claim follows easily from the <a href="/content/nice-and-small-presheaves">description of small presheaves</a>.
+    proof: Colimits in every free cocompletion can be constructed objectwise by <a href="/content/free-cocompletion#lemma_3">Lemma 3 on the free cocompletion</a>. Alternatively, the claim follows easily from the <a href="/content/nice-and-small-presheaves#lemma_1">description of small presheaves</a>.
 
   - property: terminal object
     proof: >-
-      It suffices to check that the terminal presheaf is small. This follows immediately from the <a href="/content/nice-and-small-presheaves">description of small presheaves</a>, since in fact, for every set $X$, the diagram
+      It suffices to check that the terminal presheaf is small. This follows immediately from the <a href="/content/nice-and-small-presheaves#lemma_1">description of small presheaves</a>, since in fact, for every set $X$, the diagram
       $$\{\ast\} ~\overset{f^*}{\underset{g^*}{\rightrightarrows}}~ \{\ast\} \xrightarrow{u_X^*} \{\ast\}$$
       is a coequalizer diagram. Alternatively, one can easily check that the terminal presheaf is a coequalizer of $f_*,g_* : \Hom(-,A) \rightrightarrows \Hom(-,B)$, which directly implies that it is small.
 
   - property: epi-regular
-    proof: This holds for the free cocompletion of every locally small category. See Proposition 10 <a href="/content/free-cocompletion">here</a>.
+    proof: This holds for the free cocompletion of every locally small category. See <a href="/content/free-cocompletion#proposition_10">Proposition 10 on the free cocompletion</a>.
 
   - property: filtered-colimit-stable monomorphisms
-    proof: This holds for the free cocompletion of every locally small category. See Lemma 6 <a href="/content/free-cocompletion">here</a>.
+    proof: This holds for the free cocompletion of every locally small category. See <a href="/content/free-cocompletion#lemma_6">Lemma 6 on the free cocompletion</a>.
 
   - property: pushout-stable regular monomorphisms
-    proof: This holds for the free cocompletion of every locally small category. See Lemma 6 <a href="/content/free-cocompletion">here</a>.
+    proof: This holds for the free cocompletion of every locally small category. See <a href="/content/free-cocompletion#lemma_6">Lemma 6 on the free cocompletion</a>.
 
   - property: infinitary extensive
-    proof: This holds for the free cocompletion of every locally small category. See Lemma 7 <a href="/content/free-cocompletion">here</a>.
+    proof: This holds for the free cocompletion of every locally small category. See <a href="/content/free-cocompletion#lemma_7">Lemma 7 on the free cocompletion</a>.
 
   - property: co-Malcev
-    proof: This holds for the free cocompletion of every locally small category. See Lemma 9 <a href="/content/free-cocompletion">here</a>.
+    proof: This holds for the free cocompletion of every locally small category. See <a href="/content/free-cocompletion#lemma_9">Lemma 9 on the free cocompletion</a>.
 
   - property: effective congruences
-    proof: This holds for the free cocompletion of every locally small category. See Lemma 11 <a href="/content/free-cocompletion">here</a>.
+    proof: This holds for the free cocompletion of every locally small category. See <a href="/content/free-cocompletion#lemma_11">Lemma 11 on the free cocompletion</a>.
 
   - property: effective cocongruences
-    proof: This holds for the free cocompletion of every locally small category. See Proposition 12 <a href="/content/free-cocompletion">here</a>.
+    proof: This holds for the free cocompletion of every locally small category. See <a href="/content/free-cocompletion#proposition_12">Proposition 12 on the free cocompletion</a>.
 
 unsatisfied_properties:
   - property: skeletal
     proof: We already know that the terminal presheaf is small (<a href="/category/cocompletion-discrete-pair-join?proof=terminal_object">proof</a>). Thus, the constant presheaves with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: locally small
-    proof: Since $\C$ is not small, this follows from Lemma 2 <a href="/content/free-cocompletion">here</a>; however, this result is not really relevant for category theory, and all that matters is that $\widehat{\C}$ is locally essentially small.
+    proof: Since $\C$ is not small, this follows from <a href="/content/free-cocompletion#lemma_2">Lemma 2 on the free cocompletion</a>; however, this result is not really relevant for category theory, and all that matters is that $\widehat{\C}$ is locally essentially small.
 
   - property: semi-strongly connected
     proof: Pick two different sets $X$ and $Y$. There is no morphism $\Hom(-,X) \to \Hom(-,Y)$, since the image of $\id_X$ would be a morphism $X \to Y$, which does not exist. Likewise, there is no morphism in the other direction.
@@ -90,12 +90,12 @@ unsatisfied_properties:
 
   - property: equalizers
     proof: >-
-      By Lemma 4 <a href="/content/free-cocompletion">here</a>, it suffices to find parallel morphisms of small presheaves whose equalizer in the category of all presheaves is not small. For example, consider the morphisms $f_*,g_* : \Hom(-,A) \rightrightarrows \Hom(-,B)$. Their equalizer $E$ satisfies $E(X) = \{u_X\}$ for every set $X$, $E(A) = \varnothing$, and $E(B) = \varnothing$. In particular, $u_X^* : E(A) \to E(X)$ is never surjective. Therefore, the <a href="/content/nice-and-small-presheaves">description of small presheaves</a> shows that $E$ is not small.
+      By <a href="/content/free-cocompletion#lemma_4">Lemma 4 on the free cocompletion</a>, it suffices to find parallel morphisms of small presheaves whose equalizer in the category of all presheaves is not small. For example, consider the morphisms $f_*,g_* : \Hom(-,A) \rightrightarrows \Hom(-,B)$. Their equalizer $E$ satisfies $E(X) = \{u_X\}$ for every set $X$, $E(A) = \varnothing$, and $E(B) = \varnothing$. In particular, $u_X^* : E(A) \to E(X)$ is never surjective. Therefore, the <a href="/content/nice-and-small-presheaves#lemma_1">description of small presheaves</a> shows that $E$ is not small.
     check_redundancy: false # because the counterexample for equalizers of cokernel pairs below is more complicated
 
   - property: binary powers
     proof: >-
-      By Lemma 4 <a href="/content/free-cocompletion">here</a>, it suffices to find a small presheaf $F$ whose square $F^2$ in the category of all presheaves is not small. Specifically, we will show that the square $\Hom(-,B)^2$ is not small. By the <a href="/content/nice-and-small-presheaves">description of small presheaves</a>, it is sufficient to show that for every set $X$ the diagram
+      By <a href="/content/free-cocompletion#lemma_4">Lemma 4 on the free cocompletion</a>, it suffices to find a small presheaf $F$ whose square $F^2$ in the category of all presheaves is not small. Specifically, we will show that the square $\Hom(-,B)^2$ is not small. By the <a href="/content/nice-and-small-presheaves#lemma_1">description of small presheaves</a>, it is sufficient to show that for every set $X$ the diagram
       $$\Hom(B,B)^2 ~\overset{f^*}{\underset{g^*}{\rightrightarrows}}~ \Hom(A,B)^2 \xrightarrow{u_X^*} \Hom(X,B)^2$$
       is not a coequalizer diagram. It identifies with
       $$\{(\id_B,\id_B)\} ~\overset{f^*}{\underset{g^*}{\rightrightarrows}}~ \{f,g\}^2 \xrightarrow{u_X^*} \{(v_X,v_X)\}.$$
@@ -103,19 +103,19 @@ unsatisfied_properties:
 
   - property: sequential limits
     proof: >-
-      By Lemma 4 <a href="/content/free-cocompletion">here</a>, it suffices to find a sequence of small presheaves on $\C$ whose limit in the category of all presheaves is not small.
+      By <a href="/content/free-cocompletion#lemma_4">Lemma 4 on the free cocompletion</a>, it suffices to find a sequence of small presheaves on $\C$ whose limit in the category of all presheaves is not small.
 
       For $n \in \IN$ define the presheaf $F_n$ on objects by
       $$F_n(A) = F_n(B) = \IN_{\geq n}, \quad F_n(X)=\{\ast\}$$
-      for every set $X$. The maps $u_X^* : F_n(A) \to F_n(X)$ and $v_X^* : F_n(B) \to F_n(X)$ are uniquely determined. The map $f^* : F_n(B) \to F_n(A)$ is the identity map, while the map $g^* : F_n(B) \to F_n(A)$ is defined by $k \mapsto k + 1$. This is indeed a presheaf since $F_n(X)$ is a singleton. That $F_n$ is small follows from the <a href="/content/nice-and-small-presheaves">description of small presheaves</a>, since for every set $X$
+      for every set $X$. The maps $u_X^* : F_n(A) \to F_n(X)$ and $v_X^* : F_n(B) \to F_n(X)$ are uniquely determined. The map $f^* : F_n(B) \to F_n(A)$ is the identity map, while the map $g^* : F_n(B) \to F_n(A)$ is defined by $k \mapsto k + 1$. This is indeed a presheaf since $F_n(X)$ is a singleton. That $F_n$ is small follows from the <a href="/content/nice-and-small-presheaves#lemma_1">description of small presheaves</a>, since for every set $X$
       $$\IN_{\geq n} ~\overset{k \mapsto k}{\underset{k \mapsto k+1}{\rightrightarrows}}~ \IN_{\geq n} \xrightarrow{!} \{\ast\}$$
       is a coequalizer diagram; there is exactly one equivalence class under $k \sim k+1$ on $\IN_{\geq n}$.
 
-      Define the morphism $F_{n+1} \to F_n$ as the inclusion at $A$ and $B$ and as the identity at $X$. Naturality is easy to check. Let $F_\infty$ denote the limit presheaf of this sequence. We compute $F_\infty(A) = \bigcap_{n \in \IN} \IN_{\geq n} = \varnothing$. Likewise, we have $F_\infty(B) = \varnothing$. But we have $F_\infty(X) = \{\ast\}$. Thus, for every set $X$, the map $u_X^* : F_\infty(A) \to F_\infty(X)$ is not surjective, so the <a href="/content/nice-and-small-presheaves">description of small presheaves</a> shows that $F_\infty$ is not small.
+      Define the morphism $F_{n+1} \to F_n$ as the inclusion at $A$ and $B$ and as the identity at $X$. Naturality is easy to check. Let $F_\infty$ denote the limit presheaf of this sequence. We compute $F_\infty(A) = \bigcap_{n \in \IN} \IN_{\geq n} = \varnothing$. Likewise, we have $F_\infty(B) = \varnothing$. But we have $F_\infty(X) = \{\ast\}$. Thus, for every set $X$, the map $u_X^* : F_\infty(A) \to F_\infty(X)$ is not surjective, so the <a href="/content/nice-and-small-presheaves#lemma_1">description of small presheaves</a> shows that $F_\infty$ is not small.
 
   - property: ℵ₁-cofiltered limits
     proof: >-
-      More generally, for every regular cardinal $\kappa$, $\kappa$-sequential and hence also $\kappa$-cofiltered limits do not exist. By Lemma 4 <a href="/content/free-cocompletion">here</a>, it suffices to find a $\kappa$-sequence in $\widehat{\C}$ whose presheaf limit is not small.
+      More generally, for every regular cardinal $\kappa$, $\kappa$-sequential and hence also $\kappa$-cofiltered limits do not exist. By <a href="/content/free-cocompletion#lemma_4">Lemma 4 on the free cocompletion</a>, it suffices to find a $\kappa$-sequence in $\widehat{\C}$ whose presheaf limit is not small.
 
       For an ordinal $\alpha < \kappa$, let $T_\alpha \coloneqq [\alpha,\kappa)$ be the set of ordinals greater than or equal to $\alpha$ and less than $\kappa$. For $\beta \leq \alpha$, there is an inclusion map $T_\alpha \to T_\beta$. Notice that
       $$\textstyle \lim_\alpha T_\alpha = \bigcap_{\alpha < \kappa} T_\alpha = \varnothing,$$
@@ -125,7 +125,7 @@ unsatisfied_properties:
       $$F_\alpha(A) \coloneqq T_\alpha, \quad F_\alpha(B) \coloneqq T_\alpha \times T_\alpha, \quad F_\alpha(X) \coloneqq \{\ast\}.$$
       The maps $u_X^* : F_\alpha(A) \to F_\alpha(X)$ and $v_X^* : F_\alpha(B) \to F_\alpha(X)$ are uniquely determined. The map $f^* : F_\alpha(B) \to F_\alpha(A)$ is the projection $(x,y) \mapsto x$ onto the first coordinate, while the map $g^* : F_\alpha(B) \to F_\alpha(A)$ is the projection $(x,y) \mapsto y$ onto the second coordinate. Since $F_\alpha(X)$ is a singleton, $F_\alpha$ is clearly a presheaf.
 
-      In fact, it is a small presheaf: By the <a href="/content/nice-and-small-presheaves">description of small presheaves</a>, it suffices to prove that the diagram
+      In fact, it is a small presheaf: By the <a href="/content/nice-and-small-presheaves#lemma_1">description of small presheaves</a>, it suffices to prove that the diagram
       $$T_\alpha \times T_\alpha ~\overset{(x,y) \mapsto x}{\underset{(x,y) \mapsto y}{\rightrightarrows}}~ T_\alpha \xrightarrow{!} \{\ast\}$$
       is a coequalizer diagram. This is clear since $T_\alpha$ is non-empty.
 
@@ -137,11 +137,11 @@ unsatisfied_properties:
     proof: >-
       Consider the morphism of small presheaves
       $$(f_*;g_*) : \Hom(-,A) \sqcup \Hom(-,A) \to \Hom(-,B).$$
-      We claim that its cokernel pair has no equalizer. By Lemma 4 <a href="/content/free-cocompletion">here</a>, this equalizer must be the objectwise defined equalizer $E$ in the category of presheaves. Since the equalizer of the cokernel pair of a map of sets is equal to its image, we see that, for every object $O \in \C$, the set $E(O)$ is the image of the map
+      We claim that its cokernel pair has no equalizer. By <a href="/content/free-cocompletion#lemma_4">Lemma 4 on the free cocompletion</a>, this equalizer must be the objectwise defined equalizer $E$ in the category of presheaves. Since the equalizer of the cokernel pair of a map of sets is equal to its image, we see that, for every object $O \in \C$, the set $E(O)$ is the image of the map
       $$(f_*;g_*) : \Hom(O,A) \sqcup \Hom(O,A) \to \Hom(O,B).$$
       Therefore, $E(B) = \varnothing$, $E(A) = \{f,g\}$, and $E(X) = \{v_X\}$ for every set $X$.
 
-      We now use the <a href="/content/nice-and-small-presheaves">description of small presheaves</a> to prove that $E$ is not small. It suffices to prove that for every set $X$ the diagram
+      We now use the <a href="/content/nice-and-small-presheaves#lemma_1">description of small presheaves</a> to prove that $E$ is not small. It suffices to prove that for every set $X$ the diagram
       $$\varnothing ~\overset{f^*}{\underset{g^*}{\rightrightarrows}}~ \{f,g\} \xrightarrow{u_X^*} \{v_X\}$$
       is not a coequalizer diagram. This is clear since $f^*=g^*$, so the coequalizer of $f^*,g^*$ is just $\{f,g\}$.
 
@@ -175,7 +175,7 @@ special_morphisms:
     proof: This is trivial.
   monomorphism:
     description: natural transformations that are injective at every object
-    proof: See Lemma 5 <a href="/content/free-cocompletion">here</a>.
+    proof: See <a href="/content/free-cocompletion#lemma_5">Lemma 5 on the free cocompletion</a>.
   epimorphism:
     description: natural transformations that are surjective at every object
-    proof: See Lemma 5 <a href="/content/free-cocompletion">here</a>.
+    proof: See <a href="/content/free-cocompletion#lemma_5">Lemma 5 on the free cocompletion</a>.

@@ -40,7 +40,7 @@ unsatisfied_properties:
     proof: There is no morphism between $b$ and $c$ (resp., between $(0,1)$ and $(1,0)$).
 
   - property: extremal generator
-    proof: The corresponding poset has three distinct non-minimal elements $b,c,d$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+    proof: The corresponding poset has three distinct non-minimal elements $b,c,d$. Therefore, by <a href="/content/thin_extremal_generator#corollary">this corollary</a>, an extremal generator cannot exist.
 
 special_objects:
   initial object:

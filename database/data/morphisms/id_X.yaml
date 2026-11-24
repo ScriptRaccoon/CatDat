@@ -20,7 +20,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: constant
-    proof: The map is not constant since $X$ has at least two elements, and by Lemma 1 <a href="/content/constant_morphisms">here</a> this means that the morphism in $\Set$ is not constant.
+    proof: The map is not constant since $X$ has at least two elements, and by <a href="/content/constant_morphisms#lemma_1">Lemma 1 on constant morphisms</a> this means that the morphism in $\Set$ is not constant.
 
   - property: coconstant
-    proof: This is clear since there are two different maps $X \rightrightarrows X$. Conceptually, we can say that $X$ is not co-subterminal and apply the dual of Lemma 5 <a href="/content/constant_morphisms">here</a>.
+    proof: This is clear since there are two different maps $X \rightrightarrows X$. Conceptually, we can say that $X$ is not co-subterminal and apply the dual of <a href="/content/constant_morphisms#lemma_5">Lemma 5 on constant morphisms</a>.

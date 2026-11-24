@@ -18,11 +18,11 @@ satisfied_properties:
     proof: 'Take any element $x \in X$. The corresponding map $x : \{\ast\} \to X$ is a section of $! : X \to \{\ast\}$.'
 
   - property: constant
-    proof: This is clear because $\{\ast\}$ is terminal; see also Lemma 4 <a href="/content/constant_morphisms">here</a>.
+    proof: This is clear because $\{\ast\}$ is terminal; see also <a href="/content/constant_morphisms#lemma_4">Lemma 4 on constant morphisms</a>.
 
 unsatisfied_properties:
   - property: monomorphism
     proof: Since $X$ has two different elements by assumption, which trivially have the same image, the map is not injective.
 
   - property: coconstant
-    proof: 'A direct proof is possible, but we can also argue as follows: Since the map is an epimorphism, if it were coconstant, by the dual of Lemma 5 <a href="/content/constant_morphisms">here</a>, $\{\ast\}$ would be co-subterminal, which is absurd.'
+    proof: 'A direct proof is possible, but we can also argue as follows: Since the map is an epimorphism, if it were coconstant, by the dual of <a href="/content/constant_morphisms#lemma_5">Lemma 5 on constant morphisms</a>, $\{\ast\}$ would be co-subterminal, which is absurd.'

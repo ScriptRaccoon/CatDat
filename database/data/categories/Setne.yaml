@@ -20,14 +20,14 @@ satisfied_properties:
     proof: There is a forgetful functor $\Setne \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: extremal generator
-    proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now use Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now use <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
     check_redundancy: false
 
   - property: extremal cogenerator
-    proof: The two-point set is an extremal cogenerator even in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>). Now use Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The two-point set is an extremal cogenerator even in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>). Now use <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Setne \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\Setne$ (<a href="/category/Setne?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: Apply <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\Setne \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\Setne$ (<a href="/category/Setne?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: all monomorphisms split
     proof: 'Let $i : X \to Y$ be a monomorphism, i.e. an injective map (<a href="/category/Setne?proof=monomorphism">proof</a>). Since $X$ is non-empty, we may choose an element $x_0 \in X$. Then the map $r : Y \to X$ with $r(i(x)) = x$ for $x \in X$ and $r(y) = x_0$ for $y \notin i(X)$ satisfies $r \circ i = \id_X$.'

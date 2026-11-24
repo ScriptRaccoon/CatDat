@@ -77,7 +77,7 @@
     - co-Malcev
     - effective cocongruences
   proof: >-
-    This is a consequence of Lemma 4 <a href="/content/cocongruences_in_extensive_categories">here</a>, since every coreflexive corelation is regular and has an equalizer by the assumptions.
+    This is a consequence of <a href="/content/cocongruences_in_extensive_categories#lemma_4">Lemma 4 on cocongruences in extensive categories</a>, since every coreflexive corelation is regular and has an equalizer by the assumptions.
 
     Remark: The assumptions are satisfied in particular for every elementary topos. Therefore, every elementary topos has effective cocongruences and is co-Malcev. This special case is treated in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.18. An alternative proof of this special case is given later in A.5.17.
 
@@ -89,7 +89,7 @@
   conclusions:
     - effective cocongruences
   proof: >-
-    This is proved as Corollary 5 <a href="/content/cocongruences_in_extensive_categories">here</a>.
+    This is proved as <a href="/content/cocongruences_in_extensive_categories#corollary_5">Corollary 5 on cocongruences in extensive categories</a>.
 
 - id: pretopos_balanced
   assumptions:

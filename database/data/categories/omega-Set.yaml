@@ -251,7 +251,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $\nabla : \Set \to \omegaSet$. It preserves limits since it is a right adjoint, and $\nabla(\varnothing) = (\varnothing,\varnothing)$ is initial. Moreover, $\nabla \{\ast\}$ is not initial.
+      Apply <a href="/content/decreasing-chains-coaccessible#corollary">this corollary</a> to the functor $\nabla : \Set \to \omegaSet$. It preserves limits since it is a right adjoint, and $\nabla(\varnothing) = (\varnothing,\varnothing)$ is initial. Moreover, $\nabla \{\ast\}$ is not initial.
 
   - property: extremal generator
     proof: >-

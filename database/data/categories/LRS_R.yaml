@@ -44,7 +44,7 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      Let $\RS_R$ be the category of ringed spaces over $R$, which is defined like $\LRS_R$, but without the conditions on stalks and stalk maps. By <a href="https://arxiv.org/abs/1103.2139">Gillam</a>, Cor. 6 (stated there for $R = \IZ$, but the proof works verbatim for every $R$), the inclusion functor $\LRS_R \to \RS_R$ has a right adjoint $L : \RS_R \to \LRS_R$. The inclusion functor is faithful, and it is conservative since the inverse of an isomorphism of ringed spaces has bijective, hence local, stalk maps. By the dual of Lemma 9 <a href="/content/subcategories">here</a>, $L$ maps extremal cogenerators of $\RS_R$ to extremal cogenerators of $\LRS_R$. So it suffices to find an extremal cogenerator of $\RS_R$.
+      Let $\RS_R$ be the category of ringed spaces over $R$, which is defined like $\LRS_R$, but without the conditions on stalks and stalk maps. By <a href="https://arxiv.org/abs/1103.2139">Gillam</a>, Cor. 6 (stated there for $R = \IZ$, but the proof works verbatim for every $R$), the inclusion functor $\LRS_R \to \RS_R$ has a right adjoint $L : \RS_R \to \LRS_R$. The inclusion functor is faithful, and it is conservative since the inverse of an isomorphism of ringed spaces has bijective, hence local, stalk maps. By the dual of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a>, $L$ maps extremal cogenerators of $\RS_R$ to extremal cogenerators of $\LRS_R$. So it suffices to find an extremal cogenerator of $\RS_R$.
 
       Let $Q$ be the ringed space over $R$ whose underlying space is $\{0,1\}^2$ with the open subsets
       $$\varnothing,\quad W \coloneqq \{0,1\} \times \{1\},\quad \{0,1\}^2,$$
@@ -88,7 +88,7 @@ unsatisfied_properties:
     proof: This is because already the full subcategory $\Sch_R$ of $R$-schemes is not semi-strongly connected (<a href="/category/Sch_R?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: Malcev
-    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion $\Sch_R \to \LRS_R$, which preserves finite limits, as shown in the <a href="/category/Sch_R?proof=pullbacks">proof</a> that $\Sch_R$ has pullbacks. Here, we use that $\Sch_R$ is not Malcev (<a href="/category/Sch_R?proof=Malcev" data-allow-deduced>proof</a>).'
+    proof: 'Apply the contrapositive of <a href="/content/subcategories#lemma_13">Lemma 13 on subcategories</a> to the inclusion $\Sch_R \to \LRS_R$, which preserves finite limits, as shown in the <a href="/category/Sch_R?proof=pullbacks">proof</a> that $\Sch_R$ has pullbacks. Here, we use that $\Sch_R$ is not Malcev (<a href="/category/Sch_R?proof=Malcev" data-allow-deduced>proof</a>).'
 
   - property: co-Malcev
     proof: 'We can adjust the <a href="/category/Top?proof=co-Malcev">proof</a> for $\Top$ (see <a href="https://mathoverflow.net/questions/509548">MO/509548</a>) as follows: Let $K$ be a residue field of $R$, let $X$ be the locally ringed space whose underlying space $|X|$ is a singleton, and let $C$ be the locally ringed space whose underlying space $|C| = \{u,v\}$ is the Sierpiński space where $\{u\}$ is open, but $\{v\}$ is not. Both have the sheaf of locally constant functions to $K$ as structure sheaf. Thus, $\O_X(|X|) = K$, $\O_C(|C|) = \O_C(\{u\}) = K$. Let $j_1, j_2 : X \rightrightarrows C$ be the two canonical morphisms such that $|j_1|$ and $|j_2|$ have the images $\{u\}$ and $\{v\}$, respectively. They form a coreflexive corelation that is not cosymmetric.'
@@ -118,7 +118,7 @@ unsatisfied_properties:
       $$\textstyle \underline{K}_T(V) \to \O(V) = \lim_{i \in I} \underline{K}_{T_i}(u_i^*(V)), \quad s \mapsto (s \circ u_i)_{i \in I}$$
       is bijective. These maps form an isomorphism of sheaves $\underline{K}_T \to \O$ under which the limit projections become the sheaf maps of the morphisms $\Delta(u_i)$. Hence, the morphisms $\Delta(u_i)$ form a colimit cocone in $\LRS_R$.
 
-      In particular, $\Delta$ is fully faithful and preserves binary products and filtered colimits. Since $\Top$ does not have cartesian filtered colimits (<a href="/category/Top?proof=cartesian_filtered_colimits" data-allow-deduced>proof</a>), the contrapositive of Lemma 4 <a href="/content/subcategories">here</a> applied to $\Delta$ shows that $\LRS_R$ does not have cartesian filtered colimits either.
+      In particular, $\Delta$ is fully faithful and preserves binary products and filtered colimits. Since $\Top$ does not have cartesian filtered colimits (<a href="/category/Top?proof=cartesian_filtered_colimits" data-allow-deduced>proof</a>), the contrapositive of <a href="/content/subcategories#lemma_4">Lemma 4 on subcategories</a> applied to $\Delta$ shows that $\LRS_R$ does not have cartesian filtered colimits either.
 
       Explicitly, if $S$ is a topological space and $(T_i)_{i \in I}$ is a filtered diagram in $\Top$ such that the canonical continuous map
       $$\alpha : \colim_{i \in I} (S \times T_i) \to S \times \colim_{i \in I} T_i$$
@@ -128,13 +128,13 @@ unsatisfied_properties:
 
   - property: effective cocongruences
     proof: >-
-      Consider the functor $\Delta : \Top \to \LRS_R$ from the <a href="/category/LRS_R?proof=cartesian_filtered_colimits">proof</a> above. It is fully faithful and preserves non-empty limits and all colimits, in particular equalizers, pushouts, and binary coproducts. Since $\Top$ does not have effective cocongruences (<a href="/category/Top?proof=effective_cocongruences" data-allow-deduced>proof</a>), the contrapositive of the dual of Lemma 8 <a href="/content/subcategories">here</a> applied to $\Delta$ shows that $\LRS_R$ does not have effective cocongruences either.
+      Consider the functor $\Delta : \Top \to \LRS_R$ from the <a href="/category/LRS_R?proof=cartesian_filtered_colimits">proof</a> above. It is fully faithful and preserves non-empty limits and all colimits, in particular equalizers, pushouts, and binary coproducts. Since $\Top$ does not have effective cocongruences (<a href="/category/Top?proof=effective_cocongruences" data-allow-deduced>proof</a>), the contrapositive of the dual of <a href="/content/subcategories#lemma_8">Lemma 8 on subcategories</a> applied to $\Delta$ shows that $\LRS_R$ does not have effective cocongruences either.
 
       Concretely, this argument transports the counterexample from the <a href="/category/Top?proof=effective_cocongruences">proof</a> for $\Top$ along $\Delta$: if $I$ denotes the indiscrete topological space with two points, then the two morphisms $\Spec(K) \rightrightarrows \Delta(I)$ corresponding to the two points of $I$ form a cocongruence in $\LRS_R$ that is not effective. Here, $\Delta(I)$ is the locally ringed space with underlying space $I$ and $\O_{\Delta(I)}(I) = K$.
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      Choose a maximal ideal $\m$ of $R$ and let $K \coloneqq R/\m$. We first reduce the claim to $\LRS_K$, which is the full subcategory of $\LRS_R$ consisting of those $X$ that are defined over $K$, i.e. for which the unique morphism $X \to \Spec(R)$ factors through $\Spec(K)$, i.e. $\m \, \O_X = 0$. In this case, the morphism $X \to \Spec(K)$ is unique. It follows that $\LRS_K$ is closed under pushouts in $\LRS_R$, and that every $T$ with a morphism $T \to X \in \LRS_K$ lies in $\LRS_K$. Hence, pushouts and equalizers in $\LRS_K$ are the same as in $\LRS_R$, and therefore also regular monomorphisms, since these are the equalizers of their cokernel pairs (by the dual of <a href="/content/regular-epis-kernel-pairs">this lemma</a>). By Lemma 14 <a href="/content/subcategories">here</a>, applied to the inclusion $\LRS_K \to \LRS_R$, if $\LRS_R$ had pushout-stable regular monomorphisms, then so would $\LRS_K$.
+      Choose a maximal ideal $\m$ of $R$ and let $K \coloneqq R/\m$. We first reduce the claim to $\LRS_K$, which is the full subcategory of $\LRS_R$ consisting of those $X$ that are defined over $K$, i.e. for which the unique morphism $X \to \Spec(R)$ factors through $\Spec(K)$, i.e. $\m \, \O_X = 0$. In this case, the morphism $X \to \Spec(K)$ is unique. It follows that $\LRS_K$ is closed under pushouts in $\LRS_R$, and that every $T$ with a morphism $T \to X \in \LRS_K$ lies in $\LRS_K$. Hence, pushouts and equalizers in $\LRS_K$ are the same as in $\LRS_R$, and therefore also regular monomorphisms, since these are the equalizers of their cokernel pairs (by the dual of <a href="/content/regular-epis-kernel-pairs">this lemma</a>). By <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a>, applied to the inclusion $\LRS_K \to \LRS_R$, if $\LRS_R$ had pushout-stable regular monomorphisms, then so would $\LRS_K$.
 
       So it suffices to construct, for every field $K$, a counterexample in $\LRS_K$. In fact, we will find a regular monomorphism $i : X \to Y$ which is the identity on underlying spaces, and a morphism $f : X \to Z$ to a locally ringed space $Z$ with a single point such that $Z \to Y \sqcup_X Z$ is not a regular monomorphism. The idea is that $\O_Y$ has an infinitesimal direction over two open subsets which cannot be glued to a global section, whereas $\O_X$ has a global section in this direction. Collapsing the space to a point only keeps the global sections, so this direction gets lost.
 
@@ -192,10 +192,10 @@ unsatisfied_properties:
 
 undecidable_properties:
   - property: finite-product-stable epimorphisms
-    proof: This depends on $R$. It fails for $R = \IZ$, and for a field $R$ it holds if and only if $R$ is separably closed. The proofs can be found <a href="/content/LRS-product-stable-epis">here</a>.
+    proof: This depends on $R$. It fails for $R = \IZ$ by <a href="/content/LRS-product-stable-epis#proposition_1">Proposition 1 on locally ringed spaces</a>. For a field $R$, it holds if and only if $R$ is separably closed by <a href="/content/LRS-product-stable-epis#theorem_2">Theorem 2</a> and <a href="/content/LRS-product-stable-epis#theorem_8">Theorem 8</a> on locally ringed spaces.
 
   - property: product-stable epimorphisms
-    proof: This depends on $R$. It fails for $R = \IZ$, and for a field $R$ it holds if and only if $R$ is separably closed. The proofs can be found <a href="/content/LRS-product-stable-epis">here</a>.
+    proof: This depends on $R$. It fails for $R = \IZ$ by <a href="/content/LRS-product-stable-epis#proposition_1">Proposition 1 on locally ringed spaces</a>. For a field $R$, it holds if and only if $R$ is separably closed by <a href="/content/LRS-product-stable-epis#theorem_2">Theorem 2</a> and <a href="/content/LRS-product-stable-epis#theorem_9">Theorem 9</a> on locally ringed spaces.
 
 special_objects:
   initial object:

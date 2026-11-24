@@ -33,16 +33,16 @@ satisfied_properties:
     proof: Every non-empty poset is weakly terminal (by using constant maps).
 
   - property: infinitary extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since $\PreOrd$ is infinitary extensive (<a href="/category/PreOrd?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Pos$ is closed under pullbacks and coproducts in $\PreOrd$.
+    proof: This follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a> since $\PreOrd$ is infinitary extensive (<a href="/category/PreOrd?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Pos$ is closed under pullbacks and coproducts in $\PreOrd$.
 
   - property: pushout-stable regular monomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Pos \to \Set$, which preserves products, being representable by $\{\ast\}$, and epimorphisms (<a href="/category/Pos?proof=epimorphism">proof</a>).
+    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Pos \to \Set$, which preserves products, being representable by $\{\ast\}$, and epimorphisms (<a href="/category/Pos?proof=epimorphism">proof</a>).
 
   - property: extremal generator
-    proof: We have that $\{0<1\}$ is an extremal generator even in $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: We have that $\{0<1\}$ is an extremal generator even in $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: extremal cogenerator
     proof: >-

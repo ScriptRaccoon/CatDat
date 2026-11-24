@@ -27,7 +27,7 @@ satisfied_properties:
     proof: It is represented by the singleton set.
 
   - property: cocontinuous
-    proof: This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since $\Set$ has an extremal cogenerator $\{0,1\}$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), which is contained in $\FinSet$.
+    proof: This follows from <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a> since $\Set$ has an extremal cogenerator $\{0,1\}$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), which is contained in $\FinSet$.
 
 unsatisfied_properties:
   - property: left-invertible

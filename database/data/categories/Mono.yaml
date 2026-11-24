@@ -50,7 +50,7 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      Consider the forgetful functor $U : \Mono \to \Set$, $(X, X') \mapsto X$. This has right adjoint $R : \Set \to \Mono$, $X \mapsto (X, X)$. Therefore, by the dual of Lemma 9 <a href="/content/subcategories">here</a>, $R$ preserves cogenerators. Since $\{0,1\}$ is a cogenerator of $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), it follows that $R(\{0,1\}) = (\{0,1\},\{0,1\})$ is a cogenerator of $\Mono$.
+      Consider the forgetful functor $U : \Mono \to \Set$, $(X, X') \mapsto X$. This has right adjoint $R : \Set \to \Mono$, $X \mapsto (X, X)$. Therefore, by the dual of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a>, $R$ preserves cogenerators. Since $\{0,1\}$ is a cogenerator of $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), it follows that $R(\{0,1\}) = (\{0,1\},\{0,1\})$ is a cogenerator of $\Mono$.
 
       We now claim that adding $(\{0,1\}, \{1\})$ gives an extremal cogenerating collection. To see this, suppose we have $f : (X, X') \to (Y, Y')$ such that ${-} \circ f$ induces bijections of morphisms both to $(\{0,1\}, \{0,1\})$ and to $(\{0,1\}, \{1\})$. Then since the first object represents the functor taking $(X, X')$ to $\Hom_{\Set}(X, \{0,1\})$, and $\{0,1\}$ is an extremal cogenerator of $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), the bijection of morphisms for the first object implies that $f$ is a bijection $X \to Y$. On the other hand, the second object represents the functor taking $(X, X')$ to the collection of subsets of $X$ which contain $X'$; and under the Yoneda embedding, the monomorphism $(\{0,1\}, \{1\}) \hookrightarrow (\{0,1\}, \{0,1\})$ corresponds to the natural inclusion $\{ S\in P(X) : X' \subseteq S \} \hookrightarrow P(X)$. Therefore, if $f$ also induces a bijection of morphisms to the second object, then in particular there is a set $S$ with $Y' \subseteq S \subseteq Y$ with $f^*(S) = X'$. However, since $f$ is bijective, we also have $f^*(f_*(X')) = X'$ and $f^* : P(Y) \to P(X)$ is bijective, so $S = f_*(X')$. In other words,
       $$Y' \subseteq S = f_*(X') \subseteq Y',$$
@@ -95,7 +95,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Mono \to \Set$, $(X,X') \mapsto X$, which preserves products (<a href="/category/Mono?proof=complete">proof</a>) and epimorphisms (<a href="/category/Mono?proof=epimorphism">proof</a>).
+    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Mono \to \Set$, $(X,X') \mapsto X$, which preserves products (<a href="/category/Mono?proof=complete">proof</a>) and epimorphisms (<a href="/category/Mono?proof=epimorphism">proof</a>).
 
 unsatisfied_properties:
   - property: skeletal

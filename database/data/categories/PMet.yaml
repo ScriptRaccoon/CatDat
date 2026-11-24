@@ -156,7 +156,7 @@ satisfied_properties:
     proof: This follows since epimorphisms are surjective (<a href="/category/PMet?proof=epimorphism">proof</a>).
 
   - property: finite-product-stable epimorphisms
-    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\PMet \to \Set$, which preserves finite products (proofs for <a href="/category/PMet?proof=binary_products">binary products</a> and the <a href="/category/PMet?proof=terminal_object">terminal object</a>) and epimorphisms (<a href="/category/PMet?proof=epimorphism">proof</a>).
+    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\PMet \to \Set$, which preserves finite products (proofs for <a href="/category/PMet?proof=binary_products">binary products</a> and the <a href="/category/PMet?proof=terminal_object">terminal object</a>) and epimorphisms (<a href="/category/PMet?proof=epimorphism">proof</a>).
 
 unsatisfied_properties:
   - property: skeletal
@@ -175,7 +175,7 @@ unsatisfied_properties:
     proof: The coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the binary copower of $(\IR,d)$, where $d$ is the usual metric, does not exist. We only get coproducts when allowing $\infty$ as a distance.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
+    proof: By <a href="/content/natural_numbers_objects#lemma_2">Lemma 2 on natural numbers objects</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
 
   - property: effective congruences
     proof: >-
@@ -198,7 +198,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $F : \Set \to \PMet$ that equips a set $X$ with the discrete metric $d_X$ given by $d_X(x,y) \coloneqq 1$ for $x \neq y$. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. The limit of the pseudo-metric spaces $F(\kappa_{\geq \alpha})$ is the empty space, which is initial: for every cone with vertex $(Y,d_Y)$, the underlying maps form a cone in $\Set$ over the sets $\kappa_{\geq \alpha}$, whose limit is $\bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \varnothing$, so that $Y = \varnothing$.
+      Apply <a href="/content/decreasing-chains-coaccessible#corollary">this corollary</a> to the functor $F : \Set \to \PMet$ that equips a set $X$ with the discrete metric $d_X$ given by $d_X(x,y) \coloneqq 1$ for $x \neq y$. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. The limit of the pseudo-metric spaces $F(\kappa_{\geq \alpha})$ is the empty space, which is initial: for every cone with vertex $(Y,d_Y)$, the underlying maps form a cone in $\Set$ over the sets $\kappa_{\geq \alpha}$, whose limit is $\bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \varnothing$, so that $Y = \varnothing$.
 
   - property: finitely accessible
     proof: >-

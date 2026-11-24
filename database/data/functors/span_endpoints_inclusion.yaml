@@ -20,10 +20,10 @@ satisfied_properties:
     proof: This is trivial.
 
   - property: continuous
-    proof: This follows from Lemma 2 <a href="/content/functors_on_discrete_categories">here</a>.
+    proof: This follows from <a href="/content/functors_on_discrete_categories#lemma_2">Lemma 2 on functors on discrete categories</a>.
 
   - property: cocontinuous
-    proof: This follows from the dual of Lemma 2 <a href="/content/functors_on_discrete_categories">here</a>.
+    proof: This follows from the dual of <a href="/content/functors_on_discrete_categories#lemma_2">Lemma 2 on functors on discrete categories</a>.
 
 unsatisfied_properties:
   - property: left-invertible

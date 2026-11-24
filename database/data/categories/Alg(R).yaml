@@ -57,7 +57,7 @@ unsatisfied_properties:
 
   - property: coparametrized conatural numbers object
     proof: >-
-      By the dual of Lemma 4 <a href="/content/natural_numbers_objects">here</a>, it suffices to show that for some $R$-algebra $A$ the canonical homomorphism $A \sqcup R^{\IN} \to A^{\IN}$ is not an isomorphism. We take $A \coloneqq R[X]$. Since $A^{\IN}$ is commutative, it suffices to show that $R[X] \sqcup R^{\IN}$ is not commutative. The surjective homomorphism $R^{\IN} \to R^2$, $(r_n)_n \mapsto (r_0,r_1)$ induces a surjective homomorphism $R[X] \sqcup R^{\IN} \to R[X] \sqcup R^2$. Since $R[X] \sqcup R^2$ is not commutative, as shown in the <a href="/category/Alg(R)?proof=codistributive">proof</a> that $\Alg(R)$ is not codistributive, neither is $R[X] \sqcup R^{\IN}$.
+      By the dual of <a href="/content/natural_numbers_objects#lemma_4">Lemma 4 on natural numbers objects</a>, it suffices to show that for some $R$-algebra $A$ the canonical homomorphism $A \sqcup R^{\IN} \to A^{\IN}$ is not an isomorphism. We take $A \coloneqq R[X]$. Since $A^{\IN}$ is commutative, it suffices to show that $R[X] \sqcup R^{\IN}$ is not commutative. The surjective homomorphism $R^{\IN} \to R^2$, $(r_n)_n \mapsto (r_0,r_1)$ induces a surjective homomorphism $R[X] \sqcup R^{\IN} \to R[X] \sqcup R^2$. Since $R[X] \sqcup R^2$ is not commutative, as shown in the <a href="/category/Alg(R)?proof=codistributive">proof</a> that $\Alg(R)$ is not codistributive, neither is $R[X] \sqcup R^{\IN}$.
 
   - property: co-Malcev
     proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Alg(R) \to \Set$ and the relation $E \subseteq U^2$ defined by $E(A) \coloneqq \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $R[X]$ and $E$ by $R \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $E$ is reflexive, but not symmetric.'
@@ -66,7 +66,7 @@ unsatisfied_properties:
     proof: 'Since $R \neq 0$, there is an infinite field $K$ with a homomorphism $R \to K$. Since $K$ is infinite, we may choose some $\lambda \in K \setminus \{0,1\}$. Let $B \coloneqq M_2(K)$ and $A \coloneqq K \times K$. Then $A \to B$, $(x,y) \mapsto \diag(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M \coloneqq \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & \lambda \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629">proof</a>) or via a direct calculation with elementary matrices.'
 
   - property: regular quotient object classifier
-    proof: We may copy the <a href="/category/CAlg(R)?proof=regular_quotient_object_classifier">proof</a> for $\CAlg(R)$ (since it did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Alg(R)$ would produce one in the reflective subcategory $\CAlg(R)$ by Lemma 1 <a href="/content/subcategories">here</a> (dualized).
+    proof: We may copy the <a href="/category/CAlg(R)?proof=regular_quotient_object_classifier">proof</a> for $\CAlg(R)$ (since it did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Alg(R)$ would produce one in the reflective subcategory $\CAlg(R)$ by <a href="/content/subcategories#lemma_1">Lemma 1 on subcategories</a> (dualized).
 
   - property: cocartesian cofiltered limits
     proof: >-
@@ -76,7 +76,7 @@ unsatisfied_properties:
 
   - property: product-stable epimorphisms
     proof: >-
-      We already know that $\CAlg(R)$ does not have this property (<a href="/category/CAlg(R)?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>). Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\CAlg(R) \to \Alg(R)$. It preserves products, and it preserves epimorphisms by <a href="https://math.stackexchange.com/a/5133596">MSE/5133488</a>.
+      We already know that $\CAlg(R)$ does not have this property (<a href="/category/CAlg(R)?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>). Now apply the contrapositive of the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\CAlg(R) \to \Alg(R)$. It preserves products, and it preserves epimorphisms by <a href="https://math.stackexchange.com/a/5133596">MSE/5133488</a>.
 
       For $R = \IZ$, an alternative counterexample is given in the remarks after Cor. 2.3 in <a href="https://eudml.org/doc/139538">Storrer</a>.
 

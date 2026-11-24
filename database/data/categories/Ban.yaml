@@ -58,7 +58,7 @@ satisfied_properties:
 
   - property: cocartesian cofiltered limits
     proof: >-
-      Limits (<a href="/category/Ban?proof=complete">proof</a>) and finite coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) exist in $\Ban$ and are constructed as in $\NormVect$. We already know that $\NormVect$ has cocartesian cofiltered limits (<a href="/category/NormVect?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>). We apply the dual of Lemma 4 <a href="/content/subcategories">here</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$, which preserves limits and finite coproducts.
+      Limits (<a href="/category/Ban?proof=complete">proof</a>) and finite coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) exist in $\Ban$ and are constructed as in $\NormVect$. We already know that $\NormVect$ has cocartesian cofiltered limits (<a href="/category/NormVect?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>). We apply the dual of <a href="/content/subcategories#lemma_4">Lemma 4 on subcategories</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$, which preserves limits and finite coproducts.
 
   - property: extremal cogenerator
     proof: >-
@@ -72,11 +72,11 @@ satisfied_properties:
 
   - property: pullback-stable regular epimorphisms
     proof: >-
-      Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the fully faithful inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves pullbacks. It preserves regular epimorphisms, since coequalizers in $\Ban$ are constructed as in $\NormVect$ (<a href="/category/Ban?proof=coequalizers">proof</a>). Finally, $\NormVect$ has pullback-stable regular epimorphisms (<a href="/category/NormVect?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).
+      Apply the dual of <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the fully faithful inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves pullbacks. It preserves regular epimorphisms, since coequalizers in $\Ban$ are constructed as in $\NormVect$ (<a href="/category/Ban?proof=coequalizers">proof</a>). Finally, $\NormVect$ has pullback-stable regular epimorphisms (<a href="/category/NormVect?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      We already know that $\NormVect$ has pushout-stable regular monomorphisms (<a href="/category/NormVect?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>). We apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves regular monomorphisms. It preserves pushouts, since binary coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) and coequalizers (<a href="/category/Ban?proof=coequalizers">proof</a>) in $\Ban$ are constructed as in $\NormVect$.
+      We already know that $\NormVect$ has pushout-stable regular monomorphisms (<a href="/category/NormVect?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>). We apply <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves regular monomorphisms. It preserves pushouts, since binary coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) and coequalizers (<a href="/category/Ban?proof=coequalizers">proof</a>) in $\Ban$ are constructed as in $\NormVect$.
 
   - property: ℵ₁-accessible
     proof: >-

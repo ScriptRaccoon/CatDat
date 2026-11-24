@@ -40,7 +40,7 @@ satisfied_properties:
     proof: The slice category $B\IN / *$ is isomorphic to the poset $(\IN,\geq)$ (not to $(\IN,\leq)$). This category is thin and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
   - property: ℵ₁-accessible
-    proof: We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $B\IN$ is left cancellative (<a href="/category/BN?proof=left_cancellative" data-allow-deduced>proof</a>) and Cauchy complete (<a href="/category/BN?proof=Cauchy_complete" data-allow-deduced>proof</a>). The principal right ideals of $\IN$ are the sets $n + \IN$ for $n \in \IN$. If $n + \IN \subseteq n' + \IN$, then $n \in n' + \IN$, i.e. $n \geq n'$. Hence, every ascending chain $n_0 + \IN \subseteq n_1 + \IN \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and therefore becomes stationary.
+    proof: We apply <a href="/content/deloopings-aleph1-accessible#theorem_4">Theorem 4 on deloopings of monoids</a>. We already know that $B\IN$ is left cancellative (<a href="/category/BN?proof=left_cancellative" data-allow-deduced>proof</a>) and Cauchy complete (<a href="/category/BN?proof=Cauchy_complete" data-allow-deduced>proof</a>). The principal right ideals of $\IN$ are the sets $n + \IN$ for $n \in \IN$. If $n + \IN \subseteq n' + \IN$, then $n \in n' + \IN$, i.e. $n \geq n'$. Hence, every ascending chain $n_0 + \IN \subseteq n_1 + \IN \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and therefore becomes stationary.
 
 unsatisfied_properties:
   - property: sequential limits

@@ -38,7 +38,7 @@ unsatisfied_properties:
     proof: If $T$ denotes the terminal species, there are infinitely many morphisms $T \to T \sqcup T$ since they correspond to functions $\IN \to \{1,2\}$.
 
   - property: locally small
-    proof: Since $\FinSet$ is not small (<a href="/category/FinSet?proof=small" data-allow-deduced>proof</a>), this follows exactly like Lemma 2 <a href="/content/free-cocompletion">here</a>; but this result is not really relevant; all that matters is that $\Sp$ is locally essentially small.
+    proof: Since $\FinSet$ is not small (<a href="/category/FinSet?proof=small" data-allow-deduced>proof</a>), this follows exactly like <a href="/content/free-cocompletion#lemma_2">Lemma 2 on the free cocompletion</a>; but this result is not really relevant; all that matters is that $\Sp$ is locally essentially small.
 
   - property: essentially countable
     proof: 'Any function $f : \IN \to \IN$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.'
@@ -56,7 +56,7 @@ unsatisfied_properties:
       Alternatively, the claim follows from <a href="/content/topos-with-generator">this result</a>.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong T \sqcup N$, where $T$ denotes the terminal species. But there is no combinatorial species $N$ with this property, since evaluating this isomorphism at, say, $\varnothing$, would yield a finite set $N$ with this property.
+    proof: By <a href="/content/natural_numbers_objects#lemma_2">Lemma 2 on natural numbers objects</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong T \sqcup N$, where $T$ denotes the terminal species. But there is no combinatorial species $N$ with this property, since evaluating this isomorphism at, say, $\varnothing$, would yield a finite set $N$ with this property.
 
 special_objects:
   initial object:

@@ -40,7 +40,7 @@ satisfied_properties:
     proof: $\Set$ has exact filtered colimits (<a href="/category/Set?proof=exact_filtered_colimits" data-allow-deduced>proof</a>), and this property is inherited since the forgetful functor to $\Set$ is continuous, cocontinuous, and conservative.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $F(I){-}\Set \to \Set$, which preserves products (<a href="/category/F(I)-Set?proof=complete">proof</a>) and epimorphisms (<a href="/category/F(I)-Set?proof=epimorphism">proof</a>).
+    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $F(I){-}\Set \to \Set$, which preserves products (<a href="/category/F(I)-Set?proof=complete">proof</a>) and epimorphisms (<a href="/category/F(I)-Set?proof=epimorphism">proof</a>).
 
   - property: subobject classifier
     proof: If $G$ is any group, then $\{0,1\}$ equipped with the trivial $G$-action is a subobject classifier of $G{-}\Set$, because a map of sets $X \to \{0,1\}$ lifts to a morphism of $G$-sets if and only if the fiber at $1$ is $G$-stable. The same proof works when $G$ is a large group.
@@ -49,7 +49,7 @@ satisfied_properties:
     proof: If $G$ is a group and $(X,\sigma),(Y,\tau)$ are two $G$-sets, their exponential is $\Hom(X,Y)$ equipped with the $G$-action $(g f)(x) = g f(g^{-1} x)$. The same proof works when $G$ is a large group.
 
   - property: cototal
-    proof: This follows from Proposition 3 <a href="/content/cototal-algebraic-categories">here</a>.
+    proof: This follows from <a href="/content/cototal-algebraic-categories#proposition_3">Proposition 3 on cototal algebraic categories</a>.
 
 unsatisfied_properties:
   - property: skeletal

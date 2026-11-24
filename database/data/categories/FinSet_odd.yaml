@@ -25,10 +25,10 @@ satisfied_properties:
     proof: This property is inherited from $\FinSet$, which is essentially countable (<a href="/category/FinSet?proof=essentially_countable" data-allow-deduced>proof</a>).
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet_{\odd}$ (<a href="/category/FinSet_odd?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: Apply <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet_{\odd}$ (<a href="/category/FinSet_odd?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: all monomorphisms split
-    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in $\FinSet_{\odd}$ (<a href="/category/FinSet_odd?proof=monomorphism">proof</a>) and in $\Setne$ (<a href="/category/Setne?proof=monomorphism">proof</a>), and use that $\Setne$ has all monomorphisms split (<a href="/category/Setne?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
+    proof: Apply the dual of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in $\FinSet_{\odd}$ (<a href="/category/FinSet_odd?proof=monomorphism">proof</a>) and in $\Setne$ (<a href="/category/Setne?proof=monomorphism">proof</a>), and use that $\Setne$ has all monomorphisms split (<a href="/category/Setne?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
 
   - property: strongly connected
     proof: Use constant maps.
@@ -41,10 +41,10 @@ satisfied_properties:
       If $f : X \to Y$ is a map of finite sets with odd cardinality, then we claim that its kernel pair in $\FinSet$, the set $\{(x,x') \in X \times X : f(x) = f(x')\}$, also has odd cardinality. It decomposes into the diagonal $\{(x,x): x \in X\} \cong X$, which has odd cardinality, and the set of pairs $(x,x')$ with $x \neq x'$ and $f(x) = f(x')$. The latter has even cardinality since $C_2$ acts on it via $(x,x') \mapsto (x',x)$ without fixed points. Now use that "odd + even = odd".
 
   - property: extremal generator
-    proof: The set $\{0\}$ is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The set $\{0\}$ is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: extremal cogenerator
-    proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: effective congruences
     proof: Let $R \rightrightarrows X$ be a congruence in $\FinSet_{\odd}$. By applying the (functorial) definition to the test object $T = \{\ast\}$, we see that it is a congruence in $\Set$, i.e. an equivalence relation, such that $R$ and $X$ are finite sets of odd cardinality. The finite set $X/R$ embeds into a finite set $Q$ of odd cardinality (either $X/R$ or $X/R + \{\ast\}$). Then $R \rightrightarrows X$ is the kernel pair of $X \twoheadrightarrow X/R \hookrightarrow Q$ in $\FinSet_{\odd}$.
@@ -75,10 +75,10 @@ unsatisfied_properties:
     proof: 'The maps $0,1 : \{\ast\} \rightrightarrows \{0,1,2\}$ are not equalized by any morphism, since this would amount to a set $X$ in $\FinSet_{\odd}$ such that $! : X \to \{\ast\}$ factors through $\varnothing$, i.e. $X = \varnothing$, which is not a valid object of $\FinSet_{\odd}$.'
 
   - property: binary copowers
-    proof: A direct proof is possible, but it is best to first establish that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous. This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. Therefore, binary copowers exist only if $\FinSet_{\odd}$ is closed under binary copowers in $\Set$. But $\{0\} \sqcup \{0\}$ does not have odd cardinality.
+    proof: A direct proof is possible, but it is best to first establish that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous. This follows from <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. Therefore, binary copowers exist only if $\FinSet_{\odd}$ is closed under binary copowers in $\Set$. But $\{0\} \sqcup \{0\}$ does not have odd cardinality.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. But there is no finite set with this property.
+    proof: By <a href="/content/natural_numbers_objects#lemma_2">Lemma 2 on natural numbers objects</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. But there is no finite set with this property.
 
 special_objects:
   terminal object:
@@ -95,4 +95,4 @@ special_morphisms:
     proof: 'The non-trivial direction follows since the inclusion functor to $\Set$ is representable (by the singleton set), and hence preserves monomorphisms.'
   epimorphism:
     description: surjective maps
-    proof: For the non-trivial direction, the inclusion functor to $\Set$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. In particular, it preserves epimorphisms.
+    proof: For the non-trivial direction, the inclusion functor to $\Set$ is cocontinuous by <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. In particular, it preserves epimorphisms.
