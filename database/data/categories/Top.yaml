@@ -38,7 +38,7 @@ satisfied_properties:
     proof: This is clear since the epimorphisms are the surjective continuous maps (<a href="/category/Top?proof=epimorphism">proof</a>).
 
   - property: filtered-colimit-stable monomorphisms
-    proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
+    proof: This follows from <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> applied to the forgetful functor to $\Set$.
 
   - property: semi-strongly connected
     proof: Every non-empty space is weakly terminal (by using constant maps).
@@ -48,7 +48,7 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      Using the dual of Lemma 9 <a href="/content/subcategories">here</a> with $U : \Top \to \Set$ the forgetful functor whose right adjoint is the indiscrete topology functor, and the fact that the two-element set is a cogenerator of $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), we see that the indiscrete two-point space is a cogenerator of $\Top$. We claim that adding the Sierpiński space $S$ makes an extremal cogenerating collection. To see this, let $f : X \to Y$ be a continuous function. First, $f$ inducing a bijection of maps to the indiscrete two-point space implies that $f$ is bijective on the underlying sets. Then, $f$ inducing a bijection of maps to the Sierpiński space implies that $f^* : \Open(Y) \to \Open(X)$ is also a bijection. We can then conclude that $f$ is open and therefore a homeomorphism: if $U \subseteq X$ is open, then there is an open subset $V \subseteq Y$ such that $f^*(V) = U$. Therefore, $f_*(U) = f_*(f^*(V)) = V$ is open, where in the last equality we use the fact that $f$ is surjective.
+      Using the dual of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a> with $U : \Top \to \Set$ the forgetful functor whose right adjoint is the indiscrete topology functor, and the fact that the two-element set is a cogenerator of $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), we see that the indiscrete two-point space is a cogenerator of $\Top$. We claim that adding the Sierpiński space $S$ makes an extremal cogenerating collection. To see this, let $f : X \to Y$ be a continuous function. First, $f$ inducing a bijection of maps to the indiscrete two-point space implies that $f$ is bijective on the underlying sets. Then, $f$ inducing a bijection of maps to the Sierpiński space implies that $f^* : \Open(Y) \to \Open(X)$ is also a bijection. We can then conclude that $f$ is open and therefore a homeomorphism: if $U \subseteq X$ is open, then there is an open subset $V \subseteq Y$ such that $f^*(V) = U$. Therefore, $f_*(U) = f_*(f^*(V)) = V$ is open, where in the last equality we use the fact that $f$ is surjective.
 
       Now, by <a href="/content/generator_construction">this result</a>, we conclude that the product of the indiscrete two-point space and the Sierpiński space is an extremal cogenerator of $\Top$.
 
@@ -62,7 +62,7 @@ satisfied_properties:
     proof: We need to show that embeddings are stable under pushouts. For a proof see e.g. Lemma 3.6 at the <a href="https://ncatlab.org/nlab/show/subspace+topology#pushout">nLab</a>. Another proof can be found in <a href="https://math.stackexchange.com/a/2044509">MSE/2016945</a>.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Top \to \Set$, which preserves products (<a href="/category/Top?proof=complete">proof</a>) and epimorphisms (<a href="/category/Top?proof=epimorphism">proof</a>).
+    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Top \to \Set$, which preserves products (<a href="/category/Top?proof=complete">proof</a>) and epimorphisms (<a href="/category/Top?proof=epimorphism">proof</a>).
 
 unsatisfied_properties:
   - property: skeletal

@@ -23,16 +23,16 @@ satisfied_properties:
     proof: Let $P,Q$ be two posets without isolated points. Then $P \times Q$ has no isolated points, because if a point $(p,q) \in P \times Q$ is isolated, it is easy to check that $p$ is isolated as well.
 
   - property: infinitary extensive
-    proof: 'It is easy to check that $\Pos_{\noiso} \hookrightarrow \Pos$ is closed under coproducts. If $f : X \to P + Q$ is an order-preserving map, where $X,P,Q$ have no isolated points, then the preimage $f^*(P)$ also has no isolated points. In fact, if $x \in f^*(P)$, then there is some $y \neq x$ in $X$ that is comparable to $x$, since $X$ has no isolated points. Then $f(x) \in P$ and $f(y)$ is comparable to $f(x)$. It follows that $f(y) \in P$, and hence $y \in f^*(P)$. We conclude the proof with Lemma 11 <a href="/content/subcategories">here</a>.'
+    proof: 'It is easy to check that $\Pos_{\noiso} \hookrightarrow \Pos$ is closed under coproducts. If $f : X \to P + Q$ is an order-preserving map, where $X,P,Q$ have no isolated points, then the preimage $f^*(P)$ also has no isolated points. In fact, if $x \in f^*(P)$, then there is some $y \neq x$ in $X$ that is comparable to $x$, since $X$ has no isolated points. Then $f(x) \in P$ and $f(y)$ is comparable to $f(x)$. It follows that $f(y) \in P$, and hence $y \in f^*(P)$. We conclude the proof with <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a>.'
 
   - property: semi-strongly connected
     proof: This property is inherited from $\Pos$, which is semi-strongly connected (<a href="/category/Pos?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: extremal generator
-    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: extremal cogenerator
-    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: well-powered
     proof: This follows since the monomorphisms are the injective order-preserving maps (<a href="/category/Pos_noiso?proof=monomorphism">proof</a>).
@@ -67,13 +67,13 @@ unsatisfied_properties:
 
   - property: kernel pairs
     proof: >-
-      First, we observe that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous. This follows from the dual of Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal generator $\{0 < 1\}$ of $\Pos$ (<a href="/category/Pos?proof=extremal_generator">proof</a>). Therefore, it suffices to find a morphism in $\Pos_{\noiso}$ whose kernel pair in $\Pos$ has an isolated point.
+      First, we observe that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous. This follows from the dual of <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a>, since $\Pos_{\noiso}$ contains the extremal generator $\{0 < 1\}$ of $\Pos$ (<a href="/category/Pos?proof=extremal_generator">proof</a>). Therefore, it suffices to find a morphism in $\Pos_{\noiso}$ whose kernel pair in $\Pos$ has an isolated point.
       Consider the epimorphism $f : \{0 < 1\} \sqcup \{1' < 2\} \to \{0 < 1 < 2\}$ that identifies $1$ and $1'$. The kernel pair has the elements
       $$(0,0),(1,1),(1',1'),(2,2),(1,1'),(1',1).$$
       It is easy to check that the element $(1,1')$ is isolated.
 
   - property: quotients of congruences
-    proof: The inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal cogenerator $\{0 < 1\}$ of $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Therefore, it suffices to find a congruence whose quotient in $\Pos$ has an isolated point. Take any non-empty poset $X$ without isolated points, such as $\{0 < 1\}$, and consider the maximal congruence $X \times X \rightrightarrows X$. Its quotient in $\Pos$ is just $\{\ast\}$, which therefore has an isolated point.
+    proof: The inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is cocontinuous by <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a>, since $\Pos_{\noiso}$ contains the extremal cogenerator $\{0 < 1\}$ of $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Therefore, it suffices to find a congruence whose quotient in $\Pos$ has an isolated point. Take any non-empty poset $X$ without isolated points, such as $\{0 < 1\}$, and consider the maximal congruence $X \times X \rightrightarrows X$. Its quotient in $\Pos$ is just $\{\ast\}$, which therefore has an isolated point.
 
   - property: effective cocongruences
     proof: We can reuse the <a href="/category/Pos?proof=effective_cocongruences">proof</a> from $\Pos$, since the posets considered there have no isolated points.

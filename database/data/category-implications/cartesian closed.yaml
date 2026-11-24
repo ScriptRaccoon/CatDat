@@ -96,7 +96,7 @@
     - thin
   conclusions:
     - locally cartesian closed
-  proof: In a thin category, every object is subterminal. Thus, the result follows from Corollary 6 <a href="/content/subcategories">here</a>.
+  proof: In a thin category, every object is subterminal. Thus, the result follows from <a href="/content/subcategories#corollary_6">Corollary 6 on subcategories</a>.
 
 - id: lcc_stable_reg_epis
   assumptions:

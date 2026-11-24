@@ -40,7 +40,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: infinitary extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since $\Top$ is infinitary extensive (<a href="/category/Top?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Met_\c$ of metrizable topological spaces is closed under pullbacks and coproducts in $\Top$.
+    proof: This follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a> since $\Top$ is infinitary extensive (<a href="/category/Top?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Met_\c$ of metrizable topological spaces is closed under pullbacks and coproducts in $\Top$.
 
   - property: cokernel pairs
     proof: >-
@@ -84,7 +84,7 @@ satisfied_properties:
       Finally, since we have shown $f$ is bijective, to show $f$ is a homeomorphism, it suffices to show that $f$ is closed. Thus, let $F \subseteq X$ be closed. Then $d_X({-}, F) : X \to \IR$ is a continuous function, so there exists $\varphi : Y \to \IR$ such that $\varphi(f(x)) = d_X(x, F)$ for each $x\in X$. That implies that $f_*(F) = \{ y \in Y : \varphi(y) = 0 \}$ is closed.
 
   - property: finite-product-stable epimorphisms
-    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the inclusion functor $\Met_\c \to \Haus$, which preserves finite products (<a href="/category/Met_c?proof=countable_products">proof</a>) and epimorphisms (<a href="/category/Met_c?proof=epimorphism" data-allow-deduced>proof</a>), since $\Haus$ has product-stable epimorphisms (<a href="/category/Haus?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>).
+    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the inclusion functor $\Met_\c \to \Haus$, which preserves finite products (<a href="/category/Met_c?proof=countable_products">proof</a>) and epimorphisms (<a href="/category/Met_c?proof=epimorphism" data-allow-deduced>proof</a>), since $\Haus$ has product-stable epimorphisms (<a href="/category/Haus?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>).
 
 unsatisfied_properties:
   - property: skeletal
@@ -109,7 +109,7 @@ unsatisfied_properties:
     proof: See <a href="https://mathoverflow.net/questions/511433">MO/511433</a> for a proof that the diagram $\omega_1 \to \Met_\c$, $\alpha \mapsto \IR^\alpha$ does not have a colimit.
 
   - property: coequalizers of kernel pairs
-    proof: The sequence of embeddings $\IR^1 \hookrightarrow \IR^2 \hookrightarrow \IR^3 \hookrightarrow \cdots$, where each map appends a zero coordinate, has no colimit by <a href="https://mathoverflow.net/questions/510316">MO/510316</a>. It has a cocone consisting of the embeddings $\IR^n \hookrightarrow \ell^2$, $x \mapsto (x,0,0,\dotsc)$, where $\ell^2$ is the Hilbert space of square-summable sequences. Since $\Met_\c$ is infinitary extensive (<a href="/category/Met_c?proof=infinitary_extensive" data-allow-deduced>proof</a>), it follows from Lemma 2 <a href="/content/monic_sequential_colimits">here</a> that $\Met_\c$ does not have coequalizers of kernel pairs.
+    proof: The sequence of embeddings $\IR^1 \hookrightarrow \IR^2 \hookrightarrow \IR^3 \hookrightarrow \cdots$, where each map appends a zero coordinate, has no colimit by <a href="https://mathoverflow.net/questions/510316">MO/510316</a>. It has a cocone consisting of the embeddings $\IR^n \hookrightarrow \ell^2$, $x \mapsto (x,0,0,\dotsc)$, where $\ell^2$ is the Hilbert space of square-summable sequences. Since $\Met_\c$ is infinitary extensive (<a href="/category/Met_c?proof=infinitary_extensive" data-allow-deduced>proof</a>), it follows from <a href="/content/monic_sequential_colimits#lemma_2">Lemma 2 on sequential colimits of monomorphisms</a> that $\Met_\c$ does not have coequalizers of kernel pairs.
 
   - property: pullback-stable regular epimorphisms
     proof: >-

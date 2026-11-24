@@ -33,10 +33,10 @@ satisfied_properties:
     proof: Every finite set is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet$ (<a href="/category/FinSet?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: Apply <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinSet \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet$ (<a href="/category/FinSet?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: extremal generator
-    proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: semi-strongly connected
     proof: Every non-empty finite set is weakly terminal (by using constant maps).
@@ -59,7 +59,7 @@ unsatisfied_properties:
     proof: The sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. But there is no finite set with this property.
+    proof: By <a href="/content/natural_numbers_objects#lemma_2">Lemma 2 on natural numbers objects</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. But there is no finite set with this property.
 
 special_objects:
   initial object:

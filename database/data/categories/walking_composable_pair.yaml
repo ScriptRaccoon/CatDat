@@ -36,7 +36,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: extremal generator
-    proof: The corresponding poset contains two distinct non-minimal elements $1,2$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+    proof: The corresponding poset contains two distinct non-minimal elements $1,2$. Therefore, by <a href="/content/thin_extremal_generator#corollary">this corollary</a>, an extremal generator cannot exist.
 
 special_objects:
   initial object:

@@ -23,10 +23,10 @@ satisfied_properties:
     proof: It is even bijective on objects.
 
   - property: continuous
-    proof: This follows from Lemma 2 <a href="/content/functors_on_discrete_categories">here</a>.
+    proof: This follows from <a href="/content/functors_on_discrete_categories#lemma_2">Lemma 2 on functors on discrete categories</a>.
 
   - property: cocontinuous
-    proof: This follows from the dual of Lemma 2 <a href="/content/functors_on_discrete_categories">here</a>.
+    proof: This follows from the dual of <a href="/content/functors_on_discrete_categories#lemma_2">Lemma 2 on functors on discrete categories</a>.
 
 unsatisfied_properties:
   - property: left-invertible
@@ -36,7 +36,7 @@ unsatisfied_properties:
     proof: There are exactly two functors $\{0 \to 1\} \to \{0,1\}$, namely, the two constant functors $0,1$. Neither of them provides a right inverse.
 
   - property: right adjoint
-    proof: This follows from Corollary 4 <a href="/content/functors_on_discrete_categories">here</a>.
+    proof: This follows from <a href="/content/functors_on_discrete_categories#corollary_4">Corollary 4 on functors on discrete categories</a>.
 
   - property: left adjoint
-    proof: This follows from the dual of Corollary 4 <a href="/content/functors_on_discrete_categories">here</a>.
+    proof: This follows from the dual of <a href="/content/functors_on_discrete_categories#corollary_4">Corollary 4 on functors on discrete categories</a>.

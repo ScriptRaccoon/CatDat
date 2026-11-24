@@ -41,7 +41,7 @@ unsatisfied_properties:
       $$\cdots \xrightarrow{S} \IN \xrightarrow{S} \IN$$
       is empty. Hence, $\beta$ of that limit is also empty. However, the limit of the sequence
       $$\cdots \xrightarrow{\beta(S)} \beta(\IN) \xrightarrow{\beta(S)} \beta(\IN)$$
-      in $\CompHaus$ is not empty by Lemma 1 <a href="/content/comphaus_copresentable">here</a>.
+      in $\CompHaus$ is not empty by <a href="/content/comphaus_copresentable#lemma_1">Lemma 1 on compact Hausdorff spaces</a>.
 
   - property: preserves binary products
     proof: The canonical map $\beta(\IN \times \IN) \to \beta(\IN) \times \beta(\IN)$, where $\IN$ carries the discrete topology, is not a homeomorphism. See <a href="https://doi.org/10.1090/S0002-9947-1959-0105667-4">Glicksberg</a>, where it is shown for infinite completely regular spaces $X,Y$ that $\beta(X \times Y) \to \beta(X) \times \beta(Y)$ is a homeomorphism if and only if $X \times Y$ is <a href="https://en.wikipedia.org/wiki/Pseudocompact_space">pseudo-compact</a>.

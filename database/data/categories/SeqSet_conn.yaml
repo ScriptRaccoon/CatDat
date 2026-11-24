@@ -38,17 +38,17 @@ satisfied_properties:
     proof: Since the subcategory of connected sequences is closed under filtered colimits and finite limits, this follows from the corresponding property of the category $[(\IN,\leq),\Set]$ of sequences of sets (<a href="/category/SeqSet?proof=exact_filtered_colimits" data-allow-deduced>proof</a>).
 
   - property: pushout-stable regular monomorphisms
-    proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $[(\IN,\leq),\Set]_{\conn} \to [(\IN,\leq),\Set]$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that $[(\IN,\leq),\Set]$ has pushout-stable regular monomorphisms (<a href="/category/SeqSet?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).'
+    proof: 'Apply <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the inclusion $[(\IN,\leq),\Set]_{\conn} \to [(\IN,\leq),\Set]$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that $[(\IN,\leq),\Set]$ has pushout-stable regular monomorphisms (<a href="/category/SeqSet?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).'
 
   - property: regular
-    proof: We already know that the category has finite limits (<a href="/category/SeqSet_conn?proof=finitely_complete">proof</a>) and coequalizers (<a href="/category/SeqSet_conn?proof=connected_colimits">proof</a>), and that the inclusion functor into the category $[(\IN,\leq),\Set]$ of sequences of sets, which is regular (<a href="/category/SeqSet?proof=regular" data-allow-deduced>proof</a>), is fully faithful and preserves finite limits and coequalizers. Thus, the claim follows from Lemma 7 <a href="/content/subcategories">here</a>.
+    proof: We already know that the category has finite limits (<a href="/category/SeqSet_conn?proof=finitely_complete">proof</a>) and coequalizers (<a href="/category/SeqSet_conn?proof=connected_colimits">proof</a>), and that the inclusion functor into the category $[(\IN,\leq),\Set]$ of sequences of sets, which is regular (<a href="/category/SeqSet?proof=regular" data-allow-deduced>proof</a>), is fully faithful and preserves finite limits and coequalizers. Thus, the claim follows from <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a>.
 
   - property: effective congruences
-    proof: Since the category $[(\IN,\leq),\Set]$ of sequences of sets has effective congruences (<a href="/category/SeqSet?proof=effective_congruences" data-allow-deduced>proof</a>), finite limits, and coequalizers, and the full subcategory of connected sequences is closed under finite limits and coequalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a>.
+    proof: Since the category $[(\IN,\leq),\Set]$ of sequences of sets has effective congruences (<a href="/category/SeqSet?proof=effective_congruences" data-allow-deduced>proof</a>), finite limits, and coequalizers, and the full subcategory of connected sequences is closed under finite limits and coequalizers, this follows from <a href="/content/subcategories#lemma_8">Lemma 8 on subcategories</a>.
 
   - property: effective cocongruences
     proof: >-
-      Since the category $[(\IN,\leq),\Set]$ of sequences of sets has effective cocongruences (<a href="/category/SeqSet?proof=effective_cocongruences" data-allow-deduced>proof</a>), pushouts, and equalizers, and the full subcategory $[(\IN,\leq),\Set]_{\conn}$ is closed under pushouts and equalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a> as long as we can prove that the inclusion functor
+      Since the category $[(\IN,\leq),\Set]$ of sequences of sets has effective cocongruences (<a href="/category/SeqSet?proof=effective_cocongruences" data-allow-deduced>proof</a>), pushouts, and equalizers, and the full subcategory $[(\IN,\leq),\Set]_{\conn}$ is closed under pushouts and equalizers, this follows from <a href="/content/subcategories#lemma_8">Lemma 8 on subcategories</a> as long as we can prove that the inclusion functor
       $$[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$$
       preserves jointly epimorphic parallel pairs. This is not immediate because connected sequences are not closed under binary coproducts. In fact, we can prove the stronger statement that the inclusion preserves jointly epimorphic pairs, not necessarily parallel ones.
 
@@ -140,7 +140,7 @@ unsatisfied_properties:
     proof: >-
       The morphism $(\varnothing \to \{\ast\} \to \{\ast\} \to \cdots) \to (\{\ast\} \to \{\ast\} \to \{\ast\} \to \cdots)$ between connected sequences is a monomorphism, since every component is injective. It has no retraction, since there is no map $\{\ast\} \to \varnothing$.
 
-      Alternatively, the functor $\Set \to [(\IN,\leq),\Set]_{\conn}$, $X \mapsto (X \to \{\ast\} \to \{\ast\} \to \cdots)$ is fully faithful and preserves monomorphisms, which are the morphisms that are injective in every degree (<a href="/category/SeqSet_conn?proof=monomorphism">proof</a>). Hence, the claim follows from the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a>, since $\Set$ does not have all monomorphisms split (<a href="/category/Set?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
+      Alternatively, the functor $\Set \to [(\IN,\leq),\Set]_{\conn}$, $X \mapsto (X \to \{\ast\} \to \{\ast\} \to \cdots)$ is fully faithful and preserves monomorphisms, which are the morphisms that are injective in every degree (<a href="/category/SeqSet_conn?proof=monomorphism">proof</a>). Hence, the claim follows from the contrapositive of the dual of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a>, since $\Set$ does not have all monomorphisms split (<a href="/category/Set?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
 
   - property: disjoint finite products
     proof: >-
@@ -181,7 +181,7 @@ unsatisfied_properties:
     proof: >-
       First, we prove that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ is continuous. By the Yoneda lemma, the Hom-functors $\Hom(n,-)$ for $n \geq 0$ form an extremal generating collection of the functor category $[(\IN,\leq),\Set]$. The corresponding sequence is
       $$\varnothing \to \cdots \to \varnothing \to \{\ast\} \to \{\ast\} \to \cdots,$$
-      where $\{\ast\}$ starts at index $n$, and this sequence is clearly connected. The claim now follows from the dual of Lemma 1 <a href="/content/inclusion-functors">here</a>. Alternatively, each projection functor $[(\IN,\leq),\Set]_{\conn} \to \Set$, $X \mapsto X_n$, is representable by the sequence just described and hence continuous.
+      where $\{\ast\}$ starts at index $n$, and this sequence is clearly connected. The claim now follows from the dual of <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a>. Alternatively, each projection functor $[(\IN,\leq),\Set]_{\conn} \to \Set$, $X \mapsto X_n$, is representable by the sequence just described and hence continuous.
 
       Thus, it suffices to prove that connected sequences are not closed under countable powers, which are defined pointwise. Consider the subobject classifier (<a href="/category/SeqSet_conn?proof=subobject_classifier">proof</a>)
       $$\Omega = \bigl(\IN \xrightarrow{s} \IN \xrightarrow{s} \IN \xrightarrow{s} \cdots\bigr)$$
@@ -196,7 +196,7 @@ unsatisfied_properties:
       $$[(\IN,\leq),\Set]_{\conn} \to \Set, \quad X \mapsto X_0$$
       has a right adjoint mapping a set $S$ to the connected sequence
       $$S \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$
-      and it preserves terminal objects. Thus, by Lemma 5 <a href="/content/natural_numbers_objects">here</a>, the triple $(N_0,z,s_0)$ is a natural numbers object of $\Set$, and therefore isomorphic to the standard natural numbers object $(\IN, 0, x \mapsto x+1)$. In particular, $N_0$ is infinite.
+      and it preserves terminal objects. Thus, by <a href="/content/natural_numbers_objects#lemma_5">Lemma 5 on natural numbers objects</a>, the triple $(N_0,z,s_0)$ is a natural numbers object of $\Set$, and therefore isomorphic to the standard natural numbers object $(\IN, 0, x \mapsto x+1)$. In particular, $N_0$ is infinite.
 
       For every $k \geq 0$ consider the connected sequence $X$ defined by
       $$N_0 \xrightarrow{\id} \cdots \xrightarrow{\id} N_0 \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$

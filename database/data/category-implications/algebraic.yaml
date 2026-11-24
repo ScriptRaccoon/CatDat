@@ -39,7 +39,7 @@
   conclusions:
     - generalized variety
     - finitely accessible
-  proof: This follows from Lemma 5 and Corollaries 3 and 4 <a href="/content/sifted-colimits-in-groupoids">here</a>.
+  proof: This follows from <a href="/content/sifted-colimits-in-groupoids#lemma_5">Lemma 5</a>, <a href="/content/sifted-colimits-in-groupoids#corollary_3">Corollary 3</a>, and <a href="/content/sifted-colimits-in-groupoids#corollary_4">Corollary 4</a> on sifted colimits in groupoids.
 
 - id: generalized_variety_left_cancellative
   assumptions:
@@ -106,7 +106,7 @@
     - cototal
   conclusions:
     - cogenerating collection
-  proof: This is the implication (1) $\implies$ (4) of Proposition 1 <a href="/content/cototal-algebraic-categories">here</a>, which is based on <a href="https://mathoverflow.net/questions/515539">MO/515539</a>.
+  proof: This is the implication (1) $\implies$ (4) of <a href="/content/cototal-algebraic-categories#proposition_1">Proposition 1 on cototal algebraic categories</a>, which is based on <a href="https://mathoverflow.net/questions/515539">MO/515539</a>.
 
 - id: algebraic_product-stable_epis
   assumptions:

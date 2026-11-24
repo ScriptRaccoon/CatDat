@@ -35,7 +35,7 @@ satisfied_properties:
       is a pullback square in $\Quiv$, i.e. a pullback square in $\Quiv_{\fc}$.
 
   - property: infinitary extensive
-    proof: Since $\Quiv$ is infinitary extensive (<a href="/category/Quiv?proof=infinitary_extensive" data-allow-deduced>proof</a>) and $\Quiv_{\fc} \subseteq \Quiv$ is closed under coproducts and pullbacks, this follows from Lemma 11 <a href="/content/subcategories">here</a>.
+    proof: Since $\Quiv$ is infinitary extensive (<a href="/category/Quiv?proof=infinitary_extensive" data-allow-deduced>proof</a>) and $\Quiv_{\fc} \subseteq \Quiv$ is closed under coproducts and pullbacks, this follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a>.
 
   - property: cokernel pairs
     proof: 'We will show that $\Quiv_{\fc} \subseteq \Quiv$ is closed under cokernel pairs. More generally, let $f : G \to H$ be a morphism of quivers with $H \in \Quiv_{\fc}$. Write $H = \coprod_i H_i$ as a coproduct of finite quivers. Since $\Quiv$ is infinitary extensive (<a href="/category/Quiv?proof=infinitary_extensive" data-allow-deduced>proof</a>), we have $G = \coprod_i f^*(H_i)$, and $f$ decomposes as a coproduct of morphisms $f_i : f^*(H_i) \to H_i$. Then $H \sqcup_G H = \coprod_i (H_i \sqcup_{f^*(H_i)} H_i)$. Each quiver $H_i \sqcup_{f^*(H_i)} H_i$ is finite because it is a quotient of the finite quiver $H_i \sqcup H_i$. Thus, $H \sqcup_G H$ belongs to $\Quiv_{\fc}$.'
@@ -54,7 +54,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: pullback-stable regular epimorphisms
-    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Quiv_{\fc} \to \Quiv$. It preserves pullbacks (see the proofs for <a href="/category/Quiv_fc?proof=finite_products">finite products</a> and <a href="/category/Quiv_fc?proof=equalizers">equalizers</a>), and it preserves regular epimorphisms since these are the morphisms with surjective components in $\Quiv_{\fc}$ (<a href="/category/Quiv_fc?proof=regular_epimorphism" data-allow-deduced>proof</a>) and in $\Quiv$ (<a href="/category/Quiv?proof=regular_epimorphism" data-allow-deduced>proof</a>). Here, we use that $\Quiv$ has pullback-stable regular epimorphisms (<a href="/category/Quiv?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).'
+    proof: 'Apply the dual of <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the inclusion $\Quiv_{\fc} \to \Quiv$. It preserves pullbacks (see the proofs for <a href="/category/Quiv_fc?proof=finite_products">finite products</a> and <a href="/category/Quiv_fc?proof=equalizers">equalizers</a>), and it preserves regular epimorphisms since these are the morphisms with surjective components in $\Quiv_{\fc}$ (<a href="/category/Quiv_fc?proof=regular_epimorphism" data-allow-deduced>proof</a>) and in $\Quiv$ (<a href="/category/Quiv?proof=regular_epimorphism" data-allow-deduced>proof</a>). Here, we use that $\Quiv$ has pullback-stable regular epimorphisms (<a href="/category/Quiv?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).'
 
   - property: ℵ₁-accessible
     proof: >-
@@ -86,18 +86,18 @@ unsatisfied_properties:
 
   - property: countable powers
     proof: >-
-      First, note that the forgetful functor $\Quiv_{\fc} \to \Set$, $(V,E) \mapsto V$, is represented by the quiver $\bullet$ (one vertex, no edges), and hence preserves limits. Similarly, the forgetful functor $(V,E) \mapsto E$ is represented by the quiver $\bullet \to \bullet$ (two vertices, one edge), and hence also preserves limits. We conclude that the forgetful functor $\Quiv_{\fc} \to \Quiv$ preserves limits. Alternatively, this follows from Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Quiv_{\fc}$ contains an extremal generating set of $\Quiv$, namely the two quivers mentioned above.
+      First, note that the forgetful functor $\Quiv_{\fc} \to \Set$, $(V,E) \mapsto V$, is represented by the quiver $\bullet$ (one vertex, no edges), and hence preserves limits. Similarly, the forgetful functor $(V,E) \mapsto E$ is represented by the quiver $\bullet \to \bullet$ (two vertices, one edge), and hence also preserves limits. We conclude that the forgetful functor $\Quiv_{\fc} \to \Quiv$ preserves limits. Alternatively, this follows from <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a>, since $\Quiv_{\fc}$ contains an extremal generating set of $\Quiv$, namely the two quivers mentioned above.
 
       Now let $G$ be the quiver with vertices $a,b$, one loop $a \to a$, and one edge $a \to b$. If the power $G^{\IN}$ exists in $\Quiv_{\fc}$, it must be the power in $\Quiv$. It has the vertex $(a,a,\dotsc)$, which admits an edge to every sequence of vertices consisting of $a$ and $b$. Thus, its connected component is infinite, which is a contradiction.
 
   - property: sequential colimits
     proof: >-
-      First, note that the inclusion functor $\Quiv_{\fc} \to \Quiv$ preserves colimits. This is because $\Quiv$ is cocomplete (<a href="/category/Quiv?proof=cocomplete" data-allow-deduced>proof</a>), $\Quiv_{\fc}$ contains an extremal cogenerating collection of $\Quiv$ (by our <a href="/category/Quiv_fc?proof=extremal_cogenerating_collection">proof</a> that $\Quiv_{\fc}$ has one), and Lemma 1 <a href="/content/inclusion-functors">here</a>. Thus, it suffices to show that $\Quiv_{\fc}$ is not closed under sequential colimits in $\Quiv$.
+      First, note that the inclusion functor $\Quiv_{\fc} \to \Quiv$ preserves colimits. This is because $\Quiv$ is cocomplete (<a href="/category/Quiv?proof=cocomplete" data-allow-deduced>proof</a>), $\Quiv_{\fc}$ contains an extremal cogenerating collection of $\Quiv$ (by our <a href="/category/Quiv_fc?proof=extremal_cogenerating_collection">proof</a> that $\Quiv_{\fc}$ has one), and <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a>. Thus, it suffices to show that $\Quiv_{\fc}$ is not closed under sequential colimits in $\Quiv$.
 
       Consider the path quiver $P_n$ with $n$ vertices and $n-1$ edges. It is finite, hence belongs to $\Quiv_{\fc}$, and there is a canonical embedding $P_n \hookrightarrow P_{n+1}$. The colimit of this sequence in $\Quiv$ is the path quiver $P_\infty$ with infinitely many vertices. It is connected but not finite, hence does not belong to $\Quiv_{\fc}$.
 
   - property: quotients of congruences
-    proof: Since the category is infinitary extensive (<a href="/category/Quiv_fc?proof=infinitary_extensive" data-allow-deduced>proof</a>) and we have just identified a sequence of monomorphisms without a colimit (<a href="/category/Quiv_fc?proof=sequential_colimits">proof</a>), there is a congruence without a quotient by Lemma 1 <a href="/content/monic_sequential_colimits">here</a>.
+    proof: Since the category is infinitary extensive (<a href="/category/Quiv_fc?proof=infinitary_extensive" data-allow-deduced>proof</a>) and we have just identified a sequence of monomorphisms without a colimit (<a href="/category/Quiv_fc?proof=sequential_colimits">proof</a>), there is a congruence without a quotient by <a href="/content/monic_sequential_colimits#lemma_1">Lemma 1 on sequential colimits of monomorphisms</a>.
 
 special_objects:
   initial object:

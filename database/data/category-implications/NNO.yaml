@@ -59,14 +59,14 @@
     - strict terminal object
   conclusions:
     - natural numbers object
-  proof: 'Let $1$ be a strict terminal object. For every endomorphism $g : X \to X$ and every morphism $a : 1 \to X$, we have $g \circ a = a$, because $a$ is an isomorphism and hence $X$ is terminal, which forces $g = \id_X$. Therefore, $(1,\id_1,\id_1)$ is a natural numbers object by Lemma 3 <a href="/content/natural_numbers_objects">here</a>.'
+  proof: 'Let $1$ be a strict terminal object. For every endomorphism $g : X \to X$ and every morphism $a : 1 \to X$, we have $g \circ a = a$, because $a$ is an isomorphism and hence $X$ is terminal, which forces $g = \id_X$. Therefore, $(1,\id_1,\id_1)$ is a natural numbers object by <a href="/content/natural_numbers_objects#lemma_3">Lemma 3 on natural numbers objects</a>.'
 
 - id: co_quasi_pointed_nno
   assumptions:
     - co-quasi-pointed
   conclusions:
     - natural numbers object
-  proof: 'For every endomorphism $g : X \to X$ and every morphism $a : 1 \to X$, we have $g \circ a = a$, because there is at most one morphism $1 \to X$. Therefore, $(1,\id_1,\id_1)$ is a natural numbers object by Lemma 3 <a href="/content/natural_numbers_objects">here</a>.'
+  proof: 'For every endomorphism $g : X \to X$ and every morphism $a : 1 \to X$, we have $g \circ a = a$, because there is at most one morphism $1 \to X$. Therefore, $(1,\id_1,\id_1)$ is a natural numbers object by <a href="/content/natural_numbers_objects#lemma_3">Lemma 3 on natural numbers objects</a>.'
 
 - id: one_way_implies_parametrized_nno
   assumptions:
@@ -74,7 +74,7 @@
     - one-way
   conclusions:
     - parametrized natural numbers object
-  proof: This follows from Lemma 3 <a href="/content/natural_numbers_objects">here</a>.
+  proof: This follows from <a href="/content/natural_numbers_objects#lemma_3">Lemma 3 on natural numbers objects</a>.
 
 - id: parametrized_nno_criterion
   assumptions:
@@ -107,4 +107,4 @@
     - strict terminal object
   conclusions:
     - one-way
-  proof: 'Let $(N,z,s)$ be a parametrized natural numbers object. By assumption, $z : 1 \to N$ is an isomorphism. Hence, $(1,\id_1,\id_1)$ is a parametrized natural numbers object. The claim now follows from Lemma 3 <a href="/content/natural_numbers_objects">here</a>.'
+  proof: 'Let $(N,z,s)$ be a parametrized natural numbers object. By assumption, $z : 1 \to N$ is an isomorphism. Hence, $(1,\id_1,\id_1)$ is a parametrized natural numbers object. The claim now follows from <a href="/content/natural_numbers_objects#lemma_3">Lemma 3 on natural numbers objects</a>.'

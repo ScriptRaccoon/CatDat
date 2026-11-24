@@ -45,7 +45,7 @@ satisfied_properties:
       Alternatively, here is a direct proof: let $q_1, q_2 : R \rightrightarrows G$ be a reflexive relation. Since the induced homomorphism $(q_1,q_2) : R \to G^2$ is a monomorphism, hence injective, we may assume that $R \subseteq G^2$ is a subgroup and that $q_1,q_2$ are the two projections. By reflexivity, $R$ contains the diagonal. Then $N \coloneqq \{g \in G : (g,1) \in R\}$ is clearly a subgroup of $G$. It is a normal subgroup because, if $g \in N$ and $h \in G$, then $R$ contains $(h,h) (g,1) (h,h)^{-1} = (h g h^{-1},1)$, i.e. $h g h^{-1} \in N$. Moreover, $R$ contains $(g,g')$ if and only if it contains $(g,g') (g',g')^{-1} = (g g'^{-1},1)$, i.e. $g g'^{-1} \in N$. This means that $R$ is the congruence induced by the normal subgroup $N \subseteq G$ and is therefore transitive and symmetric.
 
   - property: effective cocongruences
-    proof: A proof can be found <a href="/content/cocongruences_of_groups">here</a>.
+    proof: This is <a href="/content/cocongruences_of_groups#corollary_3">Corollary 3 on cocongruences of groups</a>.
 
   - property: total
     proof: This follows formally from the fact that $\Grp$ is finitary algebraic (<a href="/category/Grp?proof=finitary_algebraic" data-allow-deduced>proof</a>) and therefore locally presentable. For a more explicit proof, see <a href="/content/Grp_total_explicit_proof">here</a>.
@@ -60,7 +60,7 @@ unsatisfied_properties:
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Ab \hookrightarrow \Grp$, which preserves epimorphisms since these are surjective in $\Ab$ (<a href="/category/Ab?proof=epimorphism">proof</a>) and in $\Grp$ (<a href="/category/Grp?proof=epimorphism">proof</a>), and use that $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: Apply the contrapositive of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\Ab \hookrightarrow \Grp$, which preserves epimorphisms since these are surjective in $\Ab$ (<a href="/category/Ab?proof=epimorphism">proof</a>) and in $\Grp$ (<a href="/category/Grp?proof=epimorphism">proof</a>), and use that $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: normal
     proof: Every non-normal subgroup (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
@@ -78,7 +78,7 @@ unsatisfied_properties:
     proof: 'Assume that $\Grp$ has a (regular) quotient object classifier, i.e. a group $P$ such that every surjective homomorphism $G \to H$ is the cokernel of a unique homomorphism $\varphi : P \to G$. Equivalently, every normal subgroup $N \subseteq G$ is $\langle \langle \varphi(P) \rangle \rangle$ for a unique homomorphism $\varphi : P \to G$, where $\langle \langle - \rangle \rangle$ denotes the normal closure. If $c_g : G \to G$ denotes the conjugation with $g \in G$, then the images of $\varphi$ and $c_g \circ \varphi$ have the same normal closures, so the homomorphisms must be equal. In other words, $\varphi$ factors through the center $Z(G)$. But then every normal subgroup of $G$, in particular $G$ itself, would be contained in $Z(G)$, which is wrong for every non-abelian group $G$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that $\Ab$ does not have this property (<a href="/category/Ab?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Ab \to \Grp$, which preserves epimorphisms since these are surjective in $\Ab$ (<a href="/category/Ab?proof=epimorphism">proof</a>) and in $\Grp$ (<a href="/category/Grp?proof=epimorphism">proof</a>).
+    proof: We already know that $\Ab$ does not have this property (<a href="/category/Ab?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). Now apply the contrapositive of the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Ab \to \Grp$, which preserves epimorphisms since these are surjective in $\Ab$ (<a href="/category/Ab?proof=epimorphism">proof</a>) and in $\Grp$ (<a href="/category/Grp?proof=epimorphism">proof</a>).
 
   - property: cocartesian cofiltered limits
     proof: >-

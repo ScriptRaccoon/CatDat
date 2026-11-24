@@ -41,10 +41,10 @@ unsatisfied_properties:
     proof: The family of all objects of $\omega_1$ has $\aleph_1$ members, but its coproduct would be a largest element of $\omega_1$.
 
   - property: extremal generator
-    proof: The poset $(\omega_1,\leq)$ has infinitely many non-minimal elements. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+    proof: The poset $(\omega_1,\leq)$ has infinitely many non-minimal elements. Therefore, by <a href="/content/thin_extremal_generator#corollary">this corollary</a>, an extremal generator cannot exist.
 
   - property: extremal cogenerator
-    proof: The poset $(\omega_1,\leq)$ has infinitely many non-maximal elements. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal cogenerator cannot exist.
+    proof: The poset $(\omega_1,\leq)$ has infinitely many non-maximal elements. Therefore, by <a href="/content/thin_extremal_generator#corollary">this corollary</a>, an extremal cogenerator cannot exist.
 
 special_objects:
   initial object:

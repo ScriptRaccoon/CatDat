@@ -43,7 +43,7 @@
     - generalized inverse
   conclusions:
     - sifted colimits
-  proof: This follows from Lemmas 1 and 5 <a href="/content/sifted-colimits-in-groupoids">here</a>.
+  proof: This follows from <a href="/content/sifted-colimits-in-groupoids#lemma_1">Lemma 1</a> and <a href="/content/sifted-colimits-in-groupoids#lemma_5">Lemma 5</a> on sifted colimits in groupoids.
 
 - id: aleph1-filtered-colimits-include-filtered-colimits
   assumptions:

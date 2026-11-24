@@ -28,7 +28,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: extremal generator
-    proof: The countable group $\IZ$ is an extremal generator even in $\Grp$ (<a href="/category/Grp?proof=extremal_generator">proof</a>). Now use Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The countable group $\IZ$ is an extremal generator even in $\Grp$ (<a href="/category/Grp?proof=extremal_generator">proof</a>). Now use <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
 
   - property: finite products
     proof: This is because $\Grp$ has finite (in fact, all) products (<a href="/category/Grp?proof=products" data-allow-deduced>proof</a>), and $\Grp_\c \hookrightarrow \Grp$ is closed under finite products. This is because a finite product of countable sets is again countable.
@@ -45,7 +45,7 @@ satisfied_properties:
     proof: This is because $\Grp$ has countable (in fact, all) coproducts (<a href="/category/Grp?proof=coproducts" data-allow-deduced>proof</a>), and $\Grp_\c \hookrightarrow \Grp$ is closed under countable coproducts. This is because a countable union of countable sets is again countable.
 
   - property: finite-coproduct-stable monomorphisms
-    proof: Apply Lemma 2 <a href="/content/subcategories">here</a> to the inclusion functor $\Grp_\c \to \Grp$, which preserves finite coproducts (<a href="/category/Grp_c?proof=countable_coproducts">proof</a>) and monomorphisms (<a href="/category/Grp_c?proof=monomorphism">proof</a>), since $\Grp$ has coproduct-stable monomorphisms (<a href="/category/Grp?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>).
+    proof: Apply <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the inclusion functor $\Grp_\c \to \Grp$, which preserves finite coproducts (<a href="/category/Grp_c?proof=countable_coproducts">proof</a>) and monomorphisms (<a href="/category/Grp_c?proof=monomorphism">proof</a>), since $\Grp$ has coproduct-stable monomorphisms (<a href="/category/Grp?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>).
 
   - property: mono-regular
     proof: >-
@@ -58,7 +58,7 @@ satisfied_properties:
     proof: We can use the same <a href="/category/Grp?proof=Malcev">proof</a> as for $\Grp$.
 
   - property: regular
-    proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\Grp_\c \hookrightarrow \Grp$ into the regular category $\Grp$ and the fact that the regular epimorphisms in $\Grp_\c$ are the epimorphisms (<a href="/category/Grp_c?proof=regular_epimorphism" data-allow-deduced>proof</a>), i.e. the surjective homomorphisms (<a href="/category/Grp_c?proof=epimorphism">proof</a>).
+    proof: This follows from <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a> applied to the inclusion functor $\Grp_\c \hookrightarrow \Grp$ into the regular category $\Grp$ and the fact that the regular epimorphisms in $\Grp_\c$ are the epimorphisms (<a href="/category/Grp_c?proof=regular_epimorphism" data-allow-deduced>proof</a>), i.e. the surjective homomorphisms (<a href="/category/Grp_c?proof=epimorphism">proof</a>).
 
   - property: effective congruences
     proof: 'Let $q_1,q_2 : R \rightrightarrows G$ be a congruence in $\Grp_\c$. Since the induced homomorphism $(q_1,q_2) : R \to G \times G$ is a monomorphism, hence injective (<a href="/category/Grp_c?proof=monomorphism">proof</a>). Thus, we may assume that $R \subseteq G \times G$ is a subgroup and that $q_1,q_2$ are the two projections. By reflexivity, $R$ contains the diagonal of $G$. We know from the <a href="/category/Grp?proof=Malcev">proof</a> that $\Grp$ is Malcev that $R = \{(g,h) \in G^2 : g^{-1} h \in N \}$ for some normal subgroup $N \subseteq G$. It is the kernel pair of the projection $p : G \twoheadrightarrow G/N$ in $\Grp$, but also in $\Grp_\c$ since $G/N$ is countable.'
@@ -75,7 +75,7 @@ unsatisfied_properties:
     proof: Even the collection of all trivial groups is not a set, since every set $X$ yields a trivial group with underlying set $\{X\}$.
 
   - property: all epimorphisms split
-    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Ab_\fg \hookrightarrow \Grp_\c$, which preserves epimorphisms since these are surjective in $\Ab_{\fg}$ (<a href="/category/Ab_fg?proof=epimorphism">proof</a>) and in $\Grp_\c$ (<a href="/category/Grp_c?proof=epimorphism">proof</a>), and use that $\Ab_\fg$ does not have all epimorphisms split (<a href="/category/Ab_fg?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: Apply the contrapositive of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\Ab_\fg \hookrightarrow \Grp_\c$, which preserves epimorphisms since these are surjective in $\Ab_{\fg}$ (<a href="/category/Ab_fg?proof=epimorphism">proof</a>) and in $\Grp_\c$ (<a href="/category/Grp_c?proof=epimorphism">proof</a>), and use that $\Ab_\fg$ does not have all epimorphisms split (<a href="/category/Ab_fg?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: normal
     proof: Every non-normal subgroup of a countable group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.

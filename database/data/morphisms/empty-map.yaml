@@ -18,10 +18,10 @@ satisfied_properties:
     proof: It is vacuously injective.
 
   - property: constant
-    proof: The map is vacuously constant, and by Lemma 1 <a href="/content/constant_morphisms">here</a> this means that the morphism in $\Set$ is constant.
+    proof: The map is vacuously constant, and by <a href="/content/constant_morphisms#lemma_1">Lemma 1 on constant morphisms</a> this means that the morphism in $\Set$ is constant.
 
   - property: coconstant
-    proof: This is because $\varnothing$ is initial; see also the dual of Lemma 4 <a href="/content/constant_morphisms">here</a>.
+    proof: This is because $\varnothing$ is initial; see also the dual of <a href="/content/constant_morphisms#lemma_4">Lemma 4 on constant morphisms</a>.
 
 unsatisfied_properties:
   - property: split monomorphism

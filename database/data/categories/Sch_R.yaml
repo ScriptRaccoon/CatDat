@@ -36,7 +36,7 @@ satisfied_properties:
     proof: See <a href="https://mathoverflow.net/questions/160681">MO/160681</a>.
 
   - property: infinitary extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since $\LRS_R$ is infinitary extensive (<a href="/category/LRS_R?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Sch_R$ is closed under pullbacks and coproducts in $\LRS_R$.
+    proof: This follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a> since $\LRS_R$ is infinitary extensive (<a href="/category/LRS_R?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Sch_R$ is closed under pullbacks and coproducts in $\LRS_R$.
 
 unsatisfied_properties:
   - property: skeletal
@@ -71,7 +71,7 @@ unsatisfied_properties:
       \downarrow & \swarrow & & \\[1ex]
       \IA^\infty_R, &&&
       \end{array}$$
-      where $\IA^n_R = \Spec(R[X_1,\dotsc,X_n])$ and $\IA^\infty_R = \Spec(R[X_1,X_2,\dotsc])$. By <a href="https://mathoverflow.net/questions/511944">MO/511944</a>, the sequence $\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \cdots$ has no colimit. Moreover, we already know that $\Sch_R$ is infinitary extensive (<a href="/category/Sch_R?proof=infinitary_extensive" data-allow-deduced>proof</a>). Hence, Lemma 2 <a href="/content/monic_sequential_colimits">here</a> implies that $\Sch_R$ does not have coequalizers of kernel pairs. Specifically, the kernel pair of $\coprod_{n \geq 0} \IA^n_R \to \IA^\infty_R$ has no coequalizer.
+      where $\IA^n_R = \Spec(R[X_1,\dotsc,X_n])$ and $\IA^\infty_R = \Spec(R[X_1,X_2,\dotsc])$. By <a href="https://mathoverflow.net/questions/511944">MO/511944</a>, the sequence $\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \cdots$ has no colimit. Moreover, we already know that $\Sch_R$ is infinitary extensive (<a href="/category/Sch_R?proof=infinitary_extensive" data-allow-deduced>proof</a>). Hence, <a href="/content/monic_sequential_colimits#lemma_2">Lemma 2 on sequential colimits of monomorphisms</a> implies that $\Sch_R$ does not have coequalizers of kernel pairs. Specifically, the kernel pair of $\coprod_{n \geq 0} \IA^n_R \to \IA^\infty_R$ has no coequalizer.
 
   - property: pullback-stable regular epimorphisms
     proof: >-
@@ -115,7 +115,7 @@ unsatisfied_properties:
 
       Since $\varphi$ factors through the open immersion $j : U \to Y$, also $j$ is an epimorphism. But $j$ is also a regular monomorphism: let $Y \sqcup_U Y$ be the scheme obtained by gluing two copies of $Y$ along $U$, and let $u_1,u_2 : Y \rightrightarrows Y \sqcup_U Y$ be the two inclusions. We claim that $j$ is the equalizer of $u_1,u_2$. By construction of the gluing, $u_1 \circ j = u_2 \circ j$. If $\psi : V \to Y$ is a morphism with $u_1 \circ \psi = u_2 \circ \psi$, then the image of $|\psi|$ is contained in $|U|$, since $u_1$ and $u_2$ map every point of $|Y| \setminus |U|$ to different points. Hence, $\psi$ factors uniquely through $j$. Being an epimorphism and a regular monomorphism, $j$ is an isomorphism, i.e. $U = Y$.
 
-      <strong>Remark.</strong> For $R = \IZ$, Proposition 1 <a href="/content/LRS-product-stable-epis">here</a> gives a simpler counterexample. The epimorphism $f : \Spec(\IQ) \sqcup \Spec(\IF_2) \to \Spec(\IZ_{(2)})$ of $\LRS$ used there is a morphism of schemes, hence an epimorphism of the full subcategory $\Sch$. Since the inclusion $\Sch \to \LRS$ preserves products, the product of $f$ with $\Spec(\IZ/4)$ in $\Sch$ is the morphism $\Spec(\IF_2) \to \Spec(\IZ/4)$ computed there. It is no epimorphism of $\Sch$, since its map on global sections $\IZ/4 \to \IF_2$ is not injective, whereas the global sections functor $\Sch \to \CRing^\op$ preserves epimorphisms, being left adjoint to $\Spec$.
+      <strong>Remark.</strong> For $R = \IZ$, <a href="/content/LRS-product-stable-epis#proposition_1">Proposition 1 on locally ringed spaces</a> gives a simpler counterexample. The epimorphism $f : \Spec(\IQ) \sqcup \Spec(\IF_2) \to \Spec(\IZ_{(2)})$ of $\LRS$ used there is a morphism of schemes, hence an epimorphism of the full subcategory $\Sch$. Since the inclusion $\Sch \to \LRS$ preserves products, the product of $f$ with $\Spec(\IZ/4)$ in $\Sch$ is the morphism $\Spec(\IF_2) \to \Spec(\IZ/4)$ computed there. It is no epimorphism of $\Sch$, since its map on global sections $\IZ/4 \to \IF_2$ is not injective, whereas the global sections functor $\Sch \to \CRing^\op$ preserves epimorphisms, being left adjoint to $\Spec$.
 
   - property: regular subobject classifier
     proof: The <a href="/category/LRS_R?proof=regular_subobject_classifier">proof</a> for $\LRS_R$ translates verbatim to $\Sch_R$.

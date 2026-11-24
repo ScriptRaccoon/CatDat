@@ -57,10 +57,10 @@ satisfied_properties:
       A measurable subset of $\coprod_{i \in I} T_i$ has the form $A = \coprod_{i \in I} (B_i \cap T_i)$, where each $B_i$ is a measurable subset of $T$. The image of $A$ in $T$ is $\bigcup_{i \in I} (B_i \cap T_i)$. Since this is a countable union, it suffices to show that each $B_i \cap T_i$ is measurable in $T$. This holds because $T_i$ is measurable in $T$ (since $X_i$ is measurable in the coproduct and $f$ is measurable) and $B_i$ is measurable in $T$ by assumption.
 
   - property: filtered-colimit-stable monomorphisms
-    proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
+    proof: This follows from <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> applied to the forgetful functor to $\Set$.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Meas \to \Set$, which preserves products (<a href="/category/Meas?proof=complete">proof</a>) and epimorphisms (<a href="/category/Meas?proof=epimorphism">proof</a>).
+    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Meas \to \Set$, which preserves products (<a href="/category/Meas?proof=complete">proof</a>) and epimorphisms (<a href="/category/Meas?proof=epimorphism">proof</a>).
 
   - property: regular subobject classifier
     proof: The set $\{0,1\}$ with the trivial $\sigma$-algebra is a regular subobject classifier since measurable maps $X \to \{0,1\}$ correspond to subsets of $X$.
@@ -144,7 +144,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $F : \Set \to \Meas$ that equips a set with the discrete $\sigma$-algebra. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. Since $\Meas$ is complete (<a href="/category/Meas?proof=complete" data-allow-deduced>proof</a>) and the forgetful functor $\Meas \to \Set$ preserves limits, the limit of the measurable spaces $F(\kappa_{\geq \alpha})$ has the underlying set $\bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \varnothing$. Hence, it is the empty measurable space, which is initial.
+      Apply <a href="/content/decreasing-chains-coaccessible#corollary">this corollary</a> to the functor $F : \Set \to \Meas$ that equips a set with the discrete $\sigma$-algebra. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. Since $\Meas$ is complete (<a href="/category/Meas?proof=complete" data-allow-deduced>proof</a>) and the forgetful functor $\Meas \to \Set$ preserves limits, the limit of the measurable spaces $F(\kappa_{\geq \alpha})$ has the underlying set $\bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \varnothing$. Hence, it is the empty measurable space, which is initial.
 
 special_objects:
   initial object:

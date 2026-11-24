@@ -76,7 +76,7 @@ unsatisfied_properties:
     proof: The constant sequences of the trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: The diagonal functor $\Ab \hookrightarrow [\On,\Ab]$ is fully faithful and exact. Hence, the claim follows from the contrapositive of Lemma 15 <a href="/content/subcategories">here</a>, since $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: The diagonal functor $\Ab \hookrightarrow [\On,\Ab]$ is fully faithful and exact. Hence, the claim follows from the contrapositive of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a>, since $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: well-powered
     proof: >-

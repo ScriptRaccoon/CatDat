@@ -47,10 +47,10 @@ unsatisfied_properties:
     proof: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
 
   - property: extremal generator
-    proof: The poset $\IN \cup \{\infty\}$ has infinitely many non-minimal elements $1, 2, \dotsc, \infty$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+    proof: The poset $\IN \cup \{\infty\}$ has infinitely many non-minimal elements $1, 2, \dotsc, \infty$. Therefore, by <a href="/content/thin_extremal_generator#corollary">this corollary</a>, an extremal generator cannot exist.
 
   - property: extremal cogenerator
-    proof: The poset $\IN \cup \{\infty\}$ has infinitely many non-maximal elements $0, 1, 2, \dotsc$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal cogenerator cannot exist.
+    proof: The poset $\IN \cup \{\infty\}$ has infinitely many non-maximal elements $0, 1, 2, \dotsc$. Therefore, by <a href="/content/thin_extremal_generator#corollary">this corollary</a>, an extremal cogenerator cannot exist.
 
 special_objects:
   initial object:

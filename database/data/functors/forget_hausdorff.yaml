@@ -40,4 +40,4 @@ unsatisfied_properties:
     proof: A subspace of a Hausdorff space is again Hausdorff, and not every space is Hausdorff.
 
   - property: finitary
-    proof: The inclusion functor certainly preserves monomorphisms, and in fact all limits. We know that monomorphisms in $\Haus$ are not stable under filtered colimits (<a href="/category/Haus?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>), whereas they are in $\Top$ (<a href="/category/Top?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>). Thus, the claim follows from Lemma 2 <a href="/content/subcategories">here</a>.
+    proof: The inclusion functor certainly preserves monomorphisms, and in fact all limits. We know that monomorphisms in $\Haus$ are not stable under filtered colimits (<a href="/category/Haus?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>), whereas they are in $\Top$ (<a href="/category/Top?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>). Thus, the claim follows from <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a>.
