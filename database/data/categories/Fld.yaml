@@ -59,7 +59,7 @@ unsatisfied_properties:
 
   - property: locally cartesian closed
     proof: >-
-      Assume that $K$ is a field such that $\Fld / K$ is cartesian closed. This slice category is equivalent to the poset of subfields of $K$. This poset is a lattice, and our assumption implies that it is distributive (see <a href="/category-implication/distributive_criterion">here</a>). But this is quite rare: Consider $K = \IQ(\sqrt{2}, \sqrt{3})$. By Galois theory, the lattice of subfields is isomorphic to the diamond lattice $M_3$, which is not distributive. Specifically,
+      Assume that $K$ is a field such that $\Fld / K$ is cartesian closed. This slice category is equivalent to the poset of subfields of $K$. This poset is a lattice, and by <a href="/category-implication/distributive_criterion">this result</a>, our assumption implies that it is distributive. But this is quite rare: Consider $K = \IQ(\sqrt{2}, \sqrt{3})$. By Galois theory, the lattice of subfields is isomorphic to the diamond lattice $M_3$, which is not distributive. Specifically,
       $$(\IQ(\sqrt{2}) \wedge \IQ(\sqrt{6})) \vee (\IQ(\sqrt{3}) \wedge \IQ(\sqrt{6})) = \IQ \vee \IQ = \IQ,$$
       while
       $$(\IQ(\sqrt{2}) \vee \IQ(\sqrt{3})) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{2},\sqrt{3}) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{6}).$$

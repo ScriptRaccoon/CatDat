@@ -74,7 +74,7 @@
   proof: >-
     See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves">Kashiwara–Schapira</a>, Thm. 9.6.3.
 
-    Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\On,\Ab]$ shows (see <a href="/category/TransSeqAb">here</a>).
+    Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\On,\Ab]$ shows: it is Grothendieck abelian (<a href="/category/TransSeqAb?proof=Grothendieck_abelian" data-allow-deduced>proof</a>), but does not have a cogenerator (<a href="/category/TransSeqAb?proof=cogenerator" data-allow-deduced>proof</a>).
 
 - id: additive_CIP_CSP
   assumptions:

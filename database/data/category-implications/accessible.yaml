@@ -100,7 +100,7 @@
   proof: >-
     See <a href="https://arxiv.org/abs/1409.7051">Krause</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087">Beke</a>, Prop. 3.10.
 
-    Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $\Ab^I$ for large $I$ shows (see <a href="/category/Ab_family">here</a>).
+    Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $\Ab^I$ for large $I$ shows: it is Grothendieck abelian (<a href="/category/Ab_family?proof=Grothendieck_abelian" data-allow-deduced>proof</a>), but not locally presentable (<a href="/category/Ab_family?proof=locally_presentable" data-allow-deduced>proof</a>).
 
 - id: algebraic_implies_lfp
   assumptions:

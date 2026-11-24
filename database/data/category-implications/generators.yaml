@@ -29,7 +29,7 @@
     - balanced
   conclusions:
     - extremal generator
-  proof: This is immediate from the fact that any faithful functor out of a balanced category is also conservative (see <a href="/functor-implication/faithful_with_balanced_domain">here</a>).
+  proof: This is immediate from the <a href="/functor-implication/faithful_with_balanced_domain">fact</a> that any faithful functor out of a balanced category is also conservative.
 
 - id: generating_collection_balanced_consequence
   assumptions:
@@ -37,7 +37,7 @@
     - balanced
   conclusions:
     - extremal generating collection
-  proof: This is immediate from the fact that any faithful functor out of a balanced category is also conservative (see <a href="/functor-implication/faithful_with_balanced_domain">here</a>).
+  proof: This is immediate from the <a href="/functor-implication/faithful_with_balanced_domain">fact</a> that any faithful functor out of a balanced category is also conservative.
 
 - id: generator_via_coproduct
   assumptions:
