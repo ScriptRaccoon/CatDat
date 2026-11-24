@@ -25,7 +25,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: finite-product-stable epimorphisms
-    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Man \to \Haus$, which preserves finite products (<a href="/category/Man?proof=finite_products">proof</a>) and epimorphisms (<a href="/category/Man?proof=epimorphism">proof</a>), since $\Haus$ has product-stable epimorphisms (<a href="/category/Haus?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>).
+    proof: The forgetful functor $\Man \to \Haus$ is faithful and preserves finite products (<a href="/category/Man?proof=finite_products">proof</a>) and epimorphisms (<a href="/category/Man?proof=epimorphism">proof</a>). Since $\Haus$ has product-stable epimorphisms (<a href="/category/Haus?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), it follows that $\Man$ has finite-product-stable epimorphisms.
 
   - property: semi-strongly connected
     proof: Every non-empty manifold is weakly terminal (by using constant maps).

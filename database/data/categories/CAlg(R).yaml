@@ -46,7 +46,7 @@ satisfied_properties:
       $$A \to A/\langle e \rangle \times A/\langle 1-e \rangle$$
       is an isomorphism. One can also deduce this from the Chinese Remainder Theorem.
 
-      An alternative proof, which we only sketch, uses the category of locally ringed spaces $\LRS_R$ over $R$, which is infinitary extensive (<a href="/category/LRS_R?proof=infinitary_extensive" data-allow-deduced>proof</a>). It follows that the category of affine $R$-schemes is extensive by <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a>, and this category is anti-equivalent to $\CAlg(R)$. This argument is not circular since our proof of extensivity of $\LRS_R$ does not use coextensivity of $\CAlg(R)$.
+      An alternative proof, which we only sketch, uses the category of locally ringed spaces $\LRS_R$ over $R$, which is infinitary extensive (<a href="/category/LRS_R?proof=infinitary_extensive" data-allow-deduced>proof</a>). Its full subcategory of affine $R$-schemes is closed under finite coproducts and pullbacks, hence extensive as well, and it is anti-equivalent to $\CAlg(R)$. This argument is not circular since our proof of extensivity of $\LRS_R$ does not use coextensivity of $\CAlg(R)$.
 
 unsatisfied_properties:
   - property: skeletal

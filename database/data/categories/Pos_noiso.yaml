@@ -23,16 +23,16 @@ satisfied_properties:
     proof: Let $P,Q$ be two posets without isolated points. Then $P \times Q$ has no isolated points, because if a point $(p,q) \in P \times Q$ is isolated, it is easy to check that $p$ is isolated as well.
 
   - property: infinitary extensive
-    proof: 'It is easy to check that $\Pos_{\noiso} \hookrightarrow \Pos$ is closed under coproducts. If $f : X \to P + Q$ is an order-preserving map, where $X,P,Q$ have no isolated points, then the preimage $f^*(P)$ also has no isolated points. In fact, if $x \in f^*(P)$, then there is some $y \neq x$ in $X$ that is comparable to $x$, since $X$ has no isolated points. Then $f(x) \in P$ and $f(y)$ is comparable to $f(x)$. It follows that $f(y) \in P$, and hence $y \in f^*(P)$. We conclude the proof with <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a>.'
+    proof: 'It is easy to check that $\Pos_{\noiso} \hookrightarrow \Pos$ is closed under coproducts. If $f : X \to P + Q$ is an order-preserving map, where $X,P,Q$ have no isolated points, then the preimage $f^*(P)$ also has no isolated points. In fact, if $x \in f^*(P)$, then there is some $y \neq x$ in $X$ that is comparable to $x$, since $X$ has no isolated points. Then $f(x) \in P$ and $f(y)$ is comparable to $f(x)$. It follows that $f(y) \in P$, and hence $y \in f^*(P)$. Therefore, $\Pos_{\noiso} \subseteq \Pos$ is also closed under pullbacks along coproduct inclusions. Since $\Pos$ is infinitary extensive (<a href="/category/Pos?proof=infinitary_extensive" data-allow-deduced>proof</a>), so is its full subcategory $\Pos_{\noiso}$.'
 
   - property: semi-strongly connected
     proof: This property is inherited from $\Pos$, which is semi-strongly connected (<a href="/category/Pos?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: extremal generator
-    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal generator even in $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>), hence also in the full subcategory $\Pos_{\noiso}$.
 
   - property: extremal cogenerator
-    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator even in $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>), hence also in the full subcategory $\Pos_{\noiso}$.
 
   - property: well-powered
     proof: This follows since the monomorphisms are the injective order-preserving maps (<a href="/category/Pos_noiso?proof=monomorphism">proof</a>).

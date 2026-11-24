@@ -49,7 +49,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: all epimorphisms split
-    proof: The inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is fully faithful and preserves epimorphisms, which are surjective linear maps in $\Vect^s_K$ (<a href="/category/Vect_large?proof=epimorphism">proof</a>) and in $\Vect_K$ (<a href="/category/Vect?proof=epimorphism" data-allow-deduced>proof</a>). Hence, the claim follows from <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> and the fact that $\Vect_K$ has all epimorphisms split (which we know in the small case (<a href="/category/Vect?proof=all_epimorphisms_split" data-allow-deduced>proof</a>) and therefore also holds in the large case).
+    proof: The inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is fully faithful and preserves epimorphisms, which are surjective linear maps in $\Vect^s_K$ (<a href="/category/Vect_large?proof=epimorphism">proof</a>) and in $\Vect_K$ (<a href="/category/Vect?proof=epimorphism" data-allow-deduced>proof</a>). All epimorphisms in $\Vect_K$ split; we know this in the small case (<a href="/category/Vect?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), and therefore it also holds in the large case. Hence, the same is true in $\Vect^s_K$.
 
   - property: generator
     proof: Since $K$ is a generator of $\Vect_K$ that is contained in $\Vect^s_K$, it is a generator of $\Vect^s_K$.

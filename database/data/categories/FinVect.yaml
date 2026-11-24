@@ -22,7 +22,7 @@ satisfied_properties:
     proof: Every object is isomorphic to $K^n$ for some $n \in \IN$, and $\Hom(K^n,K^m) \cong M_{m \times n}(K)$ is a set.
 
   - property: extremal generator
-    proof: The one-dimensional vector space $K$ is an extremal generator even in $\Vect_K$ (<a href="/category/Vect?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The one-dimensional vector space $K$ is an extremal generator even in $\Vect_K$ (<a href="/category/Vect?proof=extremal_generator">proof</a>), hence also in the full subcategory $\FinVect_K$.
 
   - property: split abelian
     proof: The category is a full subcategory of <a href="/category/Vect">$\Vect_K$</a> that is closed under finite direct sums, kernels, and cokernels. Hence, it is abelian since $\Vect_K$ is abelian (<a href="/category/Vect?proof=abelian" data-allow-deduced>proof</a>). Every epimorphism is a surjective linear map (<a href="/category/FinVect?proof=epimorphism">proof</a>), which splits since $\Vect_K$ has all epimorphisms split (<a href="/category/Vect?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).

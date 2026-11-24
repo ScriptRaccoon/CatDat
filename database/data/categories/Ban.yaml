@@ -58,7 +58,7 @@ satisfied_properties:
 
   - property: cocartesian cofiltered limits
     proof: >-
-      Limits (<a href="/category/Ban?proof=complete">proof</a>) and finite coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) exist in $\Ban$ and are constructed as in $\NormVect$. We already know that $\NormVect$ has cocartesian cofiltered limits (<a href="/category/NormVect?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>). We apply the dual of <a href="/content/subcategories#lemma_4">Lemma 4 on subcategories</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$, which preserves limits and finite coproducts.
+      Limits (<a href="/category/Ban?proof=complete">proof</a>) and finite coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) exist in $\Ban$ and are constructed as in $\NormVect$. We already know that $\NormVect$ has cocartesian cofiltered limits (<a href="/category/NormVect?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>). This property is inherited by $\Ban$, since the inclusion $J : \Ban \hookrightarrow \NormVect$ is fully faithful and preserves limits and finite coproducts.
 
   - property: extremal cogenerator
     proof: >-

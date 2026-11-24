@@ -38,7 +38,7 @@ satisfied_properties:
     proof: This is clear since the epimorphisms are the surjective continuous maps (<a href="/category/Top?proof=epimorphism">proof</a>).
 
   - property: filtered-colimit-stable monomorphisms
-    proof: This follows from <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> applied to the forgetful functor to $\Set$.
+    proof: The forgetful functor $\Top \to \Set$ is faithful, and it preserves monomorphisms and filtered colimits since it has a left and a right adjoint, which equip a set with the discrete and the indiscrete topology, respectively. Since $\Set$ has filtered-colimit-stable monomorphisms (<a href="/category/Set?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>), so does $\Top$.
 
   - property: semi-strongly connected
     proof: Every non-empty space is weakly terminal (by using constant maps).
@@ -62,7 +62,7 @@ satisfied_properties:
     proof: We need to show that embeddings are stable under pushouts. For a proof see e.g. Lemma 3.6 at the <a href="https://ncatlab.org/nlab/show/subspace+topology#pushout">nLab</a>. Another proof can be found in <a href="https://math.stackexchange.com/a/2044509">MSE/2016945</a>.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Top \to \Set$, which preserves products (<a href="/category/Top?proof=complete">proof</a>) and epimorphisms (<a href="/category/Top?proof=epimorphism">proof</a>).
+    proof: The forgetful functor $\Top \to \Set$ is faithful and preserves products (<a href="/category/Top?proof=complete">proof</a>) and epimorphisms (<a href="/category/Top?proof=epimorphism">proof</a>). Since $\Set$ has product-stable epimorphisms (<a href="/category/Set?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), so does $\Top$.
 
 unsatisfied_properties:
   - property: skeletal

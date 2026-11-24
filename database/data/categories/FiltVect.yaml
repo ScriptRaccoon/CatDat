@@ -90,7 +90,7 @@ satisfied_properties:
       Since, by the construction of colimits in $\FiltVect$, the subspace $F^n(V \oplus_U W)$ is the sum of the images of $F^n(V)$ and $F^n(W)$, there exist $v \in F^n(V)$ and $w' \in F^n(W)$ such that $[0,w] = [v,w']$. This means that there exists some $u \in U$ with $v = i(u)$ and $w = f(u) + w'$. Then $u \in F^n(U)$ because $i(u) \in F^n(V)$. Hence $f(u) \in F^n(W)$, and therefore $w = f(u) + w' \in F^n(W)$.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\FiltVect_K \to \Set$, which preserves products (<a href="/category/FiltVect?proof=products">proof</a>) and epimorphisms (<a href="/category/FiltVect?proof=epimorphism">proof</a>).
+    proof: The forgetful functor $\FiltVect_K \to \Set$ is faithful and preserves products (<a href="/category/FiltVect?proof=products">proof</a>) and epimorphisms (<a href="/category/FiltVect?proof=epimorphism">proof</a>). Since $\Set$ has product-stable epimorphisms (<a href="/category/Set?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), so does $\FiltVect_K$.
 
 unsatisfied_properties:
   - property: skeletal

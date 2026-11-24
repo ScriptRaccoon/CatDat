@@ -61,10 +61,10 @@ unsatisfied_properties:
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: Apply the contrapositive of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves epimorphisms since these are surjective in $\FinAb$ (<a href="/category/FinAb?proof=epimorphism">proof</a>) and in $\FinGrp$ (<a href="/category/FinGrp?proof=epimorphism">proof</a>), and use that $\FinAb$ does not have all epimorphisms split (<a href="/category/FinAb?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: The inclusion $\FinAb \hookrightarrow \FinGrp$ is fully faithful and preserves epimorphisms, since these are surjective in $\FinAb$ (<a href="/category/FinAb?proof=epimorphism">proof</a>) and in $\FinGrp$ (<a href="/category/FinGrp?proof=epimorphism">proof</a>). Since $\FinAb$ does not have all epimorphisms split (<a href="/category/FinAb?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), neither does $\FinGrp$.
 
   - property: all monomorphisms split
-    proof: Apply the contrapositive of the dual of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves monomorphisms since these are injective in $\FinAb$ (<a href="/category/FinAb?proof=monomorphism">proof</a>) and in $\FinGrp$ (<a href="/category/FinGrp?proof=monomorphism">proof</a>), and use that $\FinAb$ does not have all monomorphisms split (<a href="/category/FinAb?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
+    proof: The inclusion $\FinAb \hookrightarrow \FinGrp$ is fully faithful and preserves monomorphisms, since these are injective in $\FinAb$ (<a href="/category/FinAb?proof=monomorphism">proof</a>) and in $\FinGrp$ (<a href="/category/FinGrp?proof=monomorphism">proof</a>). Since $\FinAb$ does not have all monomorphisms split (<a href="/category/FinAb?proof=all_monomorphisms_split" data-allow-deduced>proof</a>), neither does $\FinGrp$.
 
   - property: normal
     proof: Every non-normal subgroup of a finite group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.

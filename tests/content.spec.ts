@@ -118,5 +118,5 @@ test('user can follow a link to a result on a content page', async ({ page }) =>
 
 	await expect
 		.poll(async () => await get_border_color('#lemma_16'))
-		.not.toBe(await get_border_color('#lemma_15'))
+		.not.toBe(await get_border_color('#lemma_14'))
 })

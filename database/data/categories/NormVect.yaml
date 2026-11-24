@@ -47,12 +47,11 @@ satisfied_properties:
       Filtered colimits exist in $\NormVect$, since it has coproducts (<a href="/category/NormVect?proof=coproducts" data-allow-deduced>proof</a>) and coequalizers (<a href="/category/NormVect?proof=coequalizers" data-allow-deduced>proof</a>), and it has finite products since it is complete (<a href="/category/NormVect?proof=complete" data-allow-deduced>proof</a>). We already know that $\SemiNormVect$ has cartesian filtered colimits (<a href="/category/SemiNormVect?proof=cartesian_filtered_colimits" data-allow-deduced>proof</a>). We apply <a href="/content/subcategories#lemma_16">Lemma 16 on subcategories</a> to the inclusion $I : \NormVect \hookrightarrow \SemiNormVect$ and its left adjoint $R : \SemiNormVect \to \NormVect$. The functor $R$ preserves binary products: since $V \times W$ carries the semi-norm $|(v,w)| = \max(|v|,|w|)$, its null vectors are the pairs of null vectors, so that $R(V \times W) = R(V) \times R(W)$.
 
   - property: cocartesian cofiltered limits
-    proof: >-
-      Cofiltered limits exist in $\NormVect$ since it is complete (<a href="/category/NormVect?proof=complete" data-allow-deduced>proof</a>), and it has finite coproducts (<a href="/category/NormVect?proof=coproducts" data-allow-deduced>proof</a>). We already know that $\SemiNormVect$ has cocartesian cofiltered limits (<a href="/category/SemiNormVect?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>). We apply the dual of <a href="/content/subcategories#lemma_4">Lemma 4 on subcategories</a> to the inclusion $I : \NormVect \hookrightarrow \SemiNormVect$. As a right adjoint, it preserves limits, and it preserves binary coproducts (<a href="/category/NormVect?proof=coproducts">proof</a>).
+    proof: $\SemiNormVect$ has cocartesian cofiltered limits (<a href="/category/SemiNormVect?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>), and this property is inherited by its full subcategory $\NormVect$, since it is closed under limits (<a href="/category/NormVect?proof=complete">proof</a>) and binary coproducts (<a href="/category/NormVect?proof=coproducts">proof</a>).
 
   - property: extremal generator
     proof: >-
-      Apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a> to the inclusion $I : \NormVect \hookrightarrow \SemiNormVect$, using that $\IC$ with its usual norm is an extremal generator of $\SemiNormVect$ (<a href="/category/SemiNormVect?proof=extremal_generator">proof</a>).
+      The vector space $\IC$ with its usual norm is an extremal generator even in $\SemiNormVect$ (<a href="/category/SemiNormVect?proof=extremal_generator">proof</a>), hence also in the full subcategory $\NormVect$.
     check_redundancy: false
     # We keep this for reasons similar to SemiNormVect
 

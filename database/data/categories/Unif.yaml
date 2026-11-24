@@ -26,7 +26,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: filtered-colimit-stable monomorphisms
-    proof: This follows from <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a>, applied to the forgetful functor to $\Set$.
+    proof: The forgetful functor $\Unif \to \Set$ is faithful, and it preserves monomorphisms and filtered colimits since it has a left and a right adjoint, which equip a set with the discrete and the indiscrete uniform structure, respectively. Since $\Set$ has filtered-colimit-stable monomorphisms (<a href="/category/Set?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>), so does $\Unif$.
 
   - property: well-powered
     proof: This is clear since the monomorphisms are the injective uniform maps (<a href="/category/Unif?proof=monomorphism">proof</a>).
@@ -108,7 +108,7 @@ satisfied_properties:
     proof: Since the regular monomorphisms are the uniform embeddings (<a href="/category/Unif?proof=regular_monomorphism">proof</a>), we need to show that uniform embeddings are stable under pushouts. Since the uniform structure of a pushout is not given by a simple formula, the proof requires some work with chains of entourages. See <a href="/content/uniform-embeddings-pushouts#proposition_2">Proposition 2 on uniform embeddings</a>.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Unif \to \Set$, which preserves products (<a href="/category/Unif?proof=complete">proof</a>) and epimorphisms (<a href="/category/Unif?proof=epimorphism">proof</a>).
+    proof: The forgetful functor $\Unif \to \Set$ is faithful and preserves products (<a href="/category/Unif?proof=complete">proof</a>) and epimorphisms (<a href="/category/Unif?proof=epimorphism">proof</a>). Since $\Set$ has product-stable epimorphisms (<a href="/category/Set?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), so does $\Unif$.
 
 unsatisfied_properties:
   - property: skeletal
@@ -119,7 +119,7 @@ unsatisfied_properties:
     check_redundancy: false
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that $\Set$ does not have this property (<a href="/category/Set?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). Now apply the contrapositive of the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the functor $\Set \to \Unif$ which equips a set $X$ with the indiscrete uniform structure having $X \times X$ as its only entourage. This functor is right adjoint to the forgetful functor and therefore preserves cofiltered limits.
+    proof: We already know that $\Set$ does not have this property (<a href="/category/Set?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). The functor $\Set \to \Unif$ which equips a set $X$ with the indiscrete uniform structure having $X \times X$ as its only entourage is faithful and preserves epimorphisms, since these are surjective in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>). It is right adjoint to the forgetful functor and therefore preserves cofiltered limits. Hence, $\Unif$ does not have the property either.
 
   - property: effective cocongruences
     proof: 'The argument is very similar to the <a href="/category/Top?proof=effective_cocongruences">proof</a> for $\Top$. Consider the indiscrete uniform space $I$ on two points whose only entourage is $I \times I$. This represents the functor which maps a uniform space $X$ to the set of pairs of points $(x,y) \in X$ that are indistinguishable, i.e. every entourage of $X$ contains $(x,y)$. This is an equivalence relation on $X$. Therefore, we get a cocongruence $\{\ast\} \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: If a uniform map $h : Z \to \{\ast\}$ equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete uniform space on two points.'

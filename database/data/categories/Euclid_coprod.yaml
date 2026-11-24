@@ -25,7 +25,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: finite-product-stable epimorphisms
-    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the inclusion functor $\Euclidsqcup \to \Haus$, which preserves finite products (<a href="/category/Euclid_coprod?proof=finite_products">proof</a>) and epimorphisms (<a href="/category/Euclid_coprod?proof=epimorphism">proof</a>), since $\Haus$ has product-stable epimorphisms (<a href="/category/Haus?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>).
+    proof: The inclusion functor $\Euclidsqcup \to \Haus$ is faithful and preserves finite products (<a href="/category/Euclid_coprod?proof=finite_products">proof</a>) and epimorphisms (<a href="/category/Euclid_coprod?proof=epimorphism">proof</a>). Since $\Haus$ has product-stable epimorphisms (<a href="/category/Haus?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), it follows that $\Euclidsqcup$ has finite-product-stable epimorphisms.
 
   - property: infinitary extensive
     proof: The <a href="https://ncatlab.org/nlab/show/free+coproduct+completion">free coproduct completion</a> of any category is infinitary extensive; for the finite case see <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Proposition 2.4.
@@ -49,7 +49,7 @@ satisfied_properties:
       mapping $0 \mapsto y$ and $1/k \mapsto y_k$. Using linear interpolation, it extends to a continuous map $[0,1] \to \IR^n$. We further extend this to a continuous map $\IR \to \IR^n$ by mapping every number $<0$ to $y$ and every number $>1$ to $y_1$. Thus, we obtain a continuous map $h : \IR \to Y$ with $h(0)=y$ and $h(1/k) = y_k$. By assumption, the map $f^{-1} \circ h : \IR \to X$ is also continuous. In particular, its restriction to $\{0\} \cup \{1/k : k \geq 1\}$ is continuous. This means that $(f^{-1}(y_k))_{k \geq 1} \to f^{-1}(y)$.
 
   - property: extremal cogenerator
-    proof: The category $\Euclidsqcup$ is a full subcategory of $\Met_\c$ (<a href="/category/Met_c?proof=extremal_cogenerator">proof</a>), in which $\IR$ is an extremal cogenerator. Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The space $\IR$ is an extremal cogenerator even in $\Met_\c$ (<a href="/category/Met_c?proof=extremal_cogenerator">proof</a>), hence also in the full subcategory $\Euclidsqcup$.
 
   - property: effective cocongruences
     proof: >-

@@ -17,20 +17,6 @@ $$\Hom(X,R(\Omega)) \cong \Hom(U(X),\Omega) \cong \Sub(U(X)) \cong \Sub(X).$$
 The same proof works for regular subobjects.
 :::
 
-::: Lemma 2
-Let $\C$ be a category with filtered colimits (resp. coproducts, finite coproducts). Assume that $U : \C \to \D$ is a faithful functor that preserves monomorphisms and filtered colimits (resp. coproducts, finite coproducts). If monomorphisms in $\D$ are stable under filtered colimits (resp. coproducts, finite coproducts), then the same is true in $\C$.
-:::
-
-For the record, here is the dual statement: let $\C$ be a category with cofiltered limits (resp. products, finite products). Assume that $U : \C \to \D$ is a faithful functor that preserves epimorphisms and cofiltered limits (resp. products, finite products). If epimorphisms in $\D$ are stable under cofiltered limits (resp. products, finite products), then the same is true in $\C$. In particular, if $\C$ has products and $U : \C \to \Set$ is a faithful functor that preserves products and maps epimorphisms to surjective maps, then $\C$ has [product-stable epimorphisms](/category-property/product-stable_epimorphisms), since [$\Set$](/category/Set) has this property.
-
-::: Proof
-If $(f_i : X_i \to Y_i)$ is a filtered diagram (resp. a family, a finite family) of monomorphisms in $\C$, it induces a filtered diagram (resp. a family, a finite family) $(U(f_i) : U(X_i) \to U(Y_i))$ of monomorphisms in $\D$. Hence, its colimit
-$\colim_i U(f_i) : \colim_i U(X_i) \to \colim_i U(Y_i)$
-is a monomorphism in $\D$. This morphism is isomorphic to
-$U(\colim_i f_i) : U(\colim_i X_i) \to U(\colim_i Y_i)$.
-Since $U(\colim_i f_i)$ is a monomorphism in $\D$ and $U$ is faithful, it follows that $\colim_i f_i$ is a monomorphism in $\C$.
-:::
-
 ::: Lemma 3
 Let $U : \C \to \D$ be a fully faithful functor with a left adjoint $L : \D \to \C$ (i.e. $\C$ is equivalent to a reflective subcategory of $\D$). Assume that $\D$ has exact filtered colimits, that $\C$ has finite limits, and that $L$ preserves finite limits. Then $\C$ also has exact filtered colimits.
 :::
@@ -49,14 +35,6 @@ $$
 $$
 
 It is routine to check that the composite is the natural morphism.
-:::
-
-::: Lemma 4
-Let $U : \C \to \D$ be a fully faithful functor. Assume that $\C$ has finite products and filtered colimits, and that $U$ preserves binary products and filtered colimits. If $\D$ has cartesian filtered colimits, then so does $\C$.
-:::
-
-::: Proof
-Let $X$ be an object of $\C$ and $Y : \I \to \C$ a filtered diagram. Then we have the canonical comparison map $c : \colim_{i\in\I} (X \times Y_i) \to X \times \colim_{i\in\I} Y_i$. By the assumptions, $Uc$ is equivalent to the comparison map $\colim_{i\in\I} (UX \times UY_i) \to UX \times \colim_{i\in\I} UY_i$, which is an isomorphism. Since $U$ is fully faithful and therefore conservative, we conclude that $c$ is an isomorphism.
 :::
 
 ::: Lemma 5
@@ -129,22 +107,6 @@ $$(\Hom(G,-))_{G \in S} : \D \to (\Set^+)^S.$$
 If $S$ is a generating collection, this is a composition of faithful functors, hence faithful. If $S$ is an extremal generating collection and $U$ is conservative, this is a composition of faithful conservative functors, hence faithful and conservative.
 :::
 
-::: Lemma 10
-Any fully faithful functor reflects extremal generating collections (and therefore, by duality, it also reflects extremal cogenerating collections). In other words, if $U : \C \to \D$ is a fully faithful functor, and $S$ is an essentially small collection of objects such that $U(S)$ is an extremal generating collection of $\D$, then $S$ is an extremal generating collection of $\C$.
-:::
-
-::: Proof
-Under the given assumptions, we can factor $\C \to (\Set^+)^S$, $X \mapsto (\Hom_\C(G, X))_{G\in S}$, as being isomorphic to the composition of $U : \C \to \D$ followed by $Y \mapsto (\Hom_\D(UG, Y))_{G\in S}$, using the assumption on $U$ to identify $\Hom_\D(UG, UX)$ with $\Hom_\C(G, X)$ naturally in $X$. In this composition, the first is fully faithful and therefore also conservative; and the second is assumed to be faithful and conservative. Therefore, the composition is also faithful and conservative.
-:::
-
-::: Lemma 11
-Let $U : \C \to \D$ be a faithful conservative functor (for example, a fully faithful functor). Assume that $\D$ is extensive, that $\C$ has finite coproducts and pullbacks along coproduct inclusions, and that $U$ preserves both. Then $\C$ is extensive. A similar statement holds for infinitary extensive (and countably extensive) categories, in which case we assume that $\C$ has all coproducts (resp. all countable coproducts) and that $U$ preserves these.
-:::
-
-::: Proof
-This is straightforward. We need to prove that finite coproducts are disjoint and stable under pullbacks in $\C$. If $A,B \in \C$, the coproduct inclusion $A \to A + B$ is a monomorphism: Since $U$ is faithful, it suffices to prove that its image under $U$ is a monomorphism. Since $U$ preserves finite coproducts, the image identifies with the coproduct inclusion $U(A) \to U(A) + U(B)$, which is a monomorphism since $\D$ is extensive. Moreover, the unique morphism $0 \to A \times_{A + B} B$ is an isomorphism: Since $U$ is conservative, it suffices to prove that its image under $U$ is an isomorphism. Since $U$ preserves finite coproducts and pullbacks along coproduct inclusions, the image identifies with the unique morphism $0 \to U(A) \times_{U(A) + U(B)} U(B)$, which is an isomorphism since $\D$ is extensive. This proves that finite coproducts are disjoint in $\C$. To prove that they are stable under pullbacks, let $T \to A + B$ be any morphism in $\C$, and consider the pullbacks $T_A \coloneqq T \times_{A + B} A$ and $T_B \coloneqq T \times_{A + B} B$. We need to show that the canonical morphism $T_A + T_B \to T$ is an isomorphism. Since $U$ is conservative, it suffices to prove that its image under $U$ is an isomorphism. Since $U$ preserves finite coproducts and pullbacks along coproduct inclusions, the image identifies with the canonical morphism $U(T)_{U(A)} + U(T)_{U(B)} \to U(T)$ induced by the morphism $U(T) \to U(A) + U(B)$ in $\D$, which is an isomorphism since $\D$ is extensive.
-:::
-
 ::: Lemma 12
 Let $U : \C \to \D$ be a fully faithful functor that preserves kernel pairs. Let $f : X \to Y$ be a morphism in $\C$ that has a kernel pair in $\C$. If $U(f)$ is a regular epimorphism in $\D$, then $f$ is a regular epimorphism in $\C$. In particular, if $U$ maps epimorphisms to regular epimorphisms and $\C$ is not epi-regular, then $\C$ does not have kernel pairs.
 :::
@@ -155,32 +117,12 @@ Let $p_1,p_2 : E \rightrightarrows X$ be the kernel pair of $f$ in $\C$. Then $U
 For the second statement, assume that $\C$ has kernel pairs and that $U$ maps epimorphisms to regular epimorphisms. By the first statement, every epimorphism of $\C$ is regular, i.e. $\C$ is epi-regular.
 :::
 
-::: Lemma 13
-Let $U : \C \to \D$ be a fully faithful functor between categories with finite limits, and assume that $U$ preserves finite limits. If $\D$ is Malcev, then so is $\C$.
-:::
-
-::: Proof
-Let $q_1,q_2 : R \rightrightarrows X$ be a reflexive relation in $\C$. Since $U$ preserves binary products and monomorphisms, the pair $U(q_1),U(q_2) : U(R) \rightrightarrows U(X)$ is jointly monomorphic, and it is reflexive since $U$ maps a common section of $q_1,q_2$ to a common section of $U(q_1),U(q_2)$. Since $\D$ is Malcev, it is a congruence. Now let $T$ be an object of $\C$. Since $U$ is fully faithful, the map
-$$\Hom(T,R) \to \Hom(T,X)^2, \quad h \mapsto (q_1 \circ h, q_2 \circ h)$$
-identifies with the map
-$$\Hom(U(T),U(R)) \to \Hom(U(T),U(X))^2, \quad h \mapsto (U(q_1) \circ h, U(q_2) \circ h),$$
-whose image is an equivalence relation. Hence, $q_1,q_2$ is a congruence.
-:::
-
 ::: Lemma 14
 Let $U : \C \to \D$ be a fully faithful functor between categories with pushouts. Assume that $U$ preserves pushouts and regular monomorphisms. If $\D$ has pushout-stable regular monomorphisms, then so does $\C$.
 :::
 
 ::: Proof
 Let $m : X \to Y$ be a regular monomorphism and $X \to Z$ a morphism in $\C$, and let $m' : Z \to Z \sqcup_X Y$ be the induced morphism. Since $U$ preserves pushouts, $U(m')$ is the pushout of the regular monomorphism $U(m)$ along $U(X) \to U(Z)$, hence a regular monomorphism. Since $U$ preserves pushouts, it preserves cokernel pairs. By the dual of [Lemma 12](#lemma_12), $m'$ is a regular monomorphism.
-:::
-
-::: Lemma 15
-Let $U : \C \to \D$ be a fully faithful functor that preserves epimorphisms. If every epimorphism in $\D$ is split, then the same holds in $\C$.
-:::
-
-::: Proof
-If $p$ is an epimorphism in $\C$, then $U(p)$ is an epimorphism in $\D$ and therefore has a section. Since $U$ is fully faithful, this section is the image of a section of $p$.
 :::
 
 ::: Lemma 16

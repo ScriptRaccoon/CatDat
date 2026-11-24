@@ -47,7 +47,7 @@ satisfied_properties:
     proof: 'Let $(X,R)$ and $(Y,S)$ be two objects of $\Bin_{\refl}$. If $Y$ is empty, there is a unique morphism from $(Y,S)$ to $(X,R)$. If $Y$ is non-empty, choose $y \in Y$. The constant map $X \to Y$, $x \mapsto y$ is a morphism $(X,R) \to (Y,S)$ since $(y,y) \in S$.'
 
   - property: infinitary extensive
-    proof: We already know that $\Bin_{\refl} \subseteq \Bin$ is closed under coproducts (<a href="/category/Bin_refl?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Bin_refl?proof=complete">proof</a>). Since $\Bin$ is infinitary extensive (<a href="/category/Bin?proof=infinitary_extensive" data-allow-deduced>proof</a>), the claim therefore follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a>.
+    proof: We already know that $\Bin_{\refl} \subseteq \Bin$ is closed under coproducts (<a href="/category/Bin_refl?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Bin_refl?proof=complete">proof</a>). Since $\Bin$ is infinitary extensive (<a href="/category/Bin?proof=infinitary_extensive" data-allow-deduced>proof</a>), so is its full subcategory $\Bin_{\refl}$.
 
   - property: finitely accessible
     proof: The proof is the same as for the finite accessibility of $\Bin$ (<a href="/category/Bin?proof=finitely_accessible">proof</a>).
@@ -90,7 +90,7 @@ satisfied_properties:
       which is a contradiction.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Bin_{\refl} \to \Set$, which preserves products (<a href="/category/Bin_refl?proof=complete">proof</a>) and epimorphisms (<a href="/category/Bin_refl?proof=epimorphism">proof</a>).
+    proof: The forgetful functor $\Bin_{\refl} \to \Set$ is faithful and preserves products (<a href="/category/Bin_refl?proof=complete">proof</a>) and epimorphisms (<a href="/category/Bin_refl?proof=epimorphism">proof</a>). Since $\Set$ has product-stable epimorphisms (<a href="/category/Set?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), so does $\Bin_{\refl}$.
 
 unsatisfied_properties:
   - property: skeletal

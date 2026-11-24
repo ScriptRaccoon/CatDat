@@ -40,4 +40,4 @@ unsatisfied_properties:
     proof: A subspace of a Hausdorff space is again Hausdorff, and not every space is Hausdorff.
 
   - property: finitary
-    proof: The inclusion functor certainly preserves monomorphisms, and in fact all limits. We know that monomorphisms in $\Haus$ are not stable under filtered colimits (<a href="/category/Haus?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>), whereas they are in $\Top$ (<a href="/category/Top?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>). Thus, the claim follows from <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a>.
+    proof: For $n \geq 1$, let $X_n$ be the Hausdorff space obtained from two copies of $\IR$ by identifying their points $x$ with $|x| \geq 1/n$. The colimit of the sequence $X_1 \to X_2 \to \cdots$ of quotient maps in $\Top$ is the line with the double origin, which is not Hausdorff. The colimit in $\Haus$ is its Hausdorff reflection $\IR$ instead. See also the <a href="/category/Haus?proof=filtered-colimit-stable_monomorphisms">proof</a> that $\Haus$ does not have filtered-colimit-stable monomorphisms.

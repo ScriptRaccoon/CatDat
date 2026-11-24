@@ -29,14 +29,14 @@ satisfied_properties:
     check_redundancy: false
 
   - property: coproduct-stable monomorphisms
-    proof: Apply <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the inclusion functor $\FreeAb \to \Ab$, which preserves coproducts (<a href="/category/FreeAb?proof=coproducts">proof</a>) and monomorphisms, since monomorphisms are injective (<a href="/category/FreeAb?proof=monomorphism">proof</a>), and use that $\Ab$ has coproduct-stable monomorphisms (<a href="/category/Ab?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>).
+    proof: The inclusion functor $\FreeAb \to \Ab$ is faithful and preserves coproducts (<a href="/category/FreeAb?proof=coproducts">proof</a>) and monomorphisms, since monomorphisms are injective (<a href="/category/FreeAb?proof=monomorphism">proof</a>). Since $\Ab$ has coproduct-stable monomorphisms (<a href="/category/Ab?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>), so does $\FreeAb$.
 
   - property: equalizers
     proof: This follows from the fact that a subgroup of a free abelian group is again free abelian.
     check_redundancy: false
 
   - property: extremal generator
-    proof: The group $\IZ$ is an extremal generator even in $\Grp$ (<a href="/category/Grp?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The group $\IZ$ is an extremal generator even in $\Grp$ (<a href="/category/Grp?proof=extremal_generator">proof</a>), hence also in the full subcategory $\FreeAb$.
 
   - property: well-powered
     proof: This is clear since the monomorphisms are injective.

@@ -86,7 +86,7 @@ satisfied_properties:
       which is a contradiction.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Bin \to \Set$, which preserves products (<a href="/category/Bin?proof=complete">proof</a>) and epimorphisms (<a href="/category/Bin?proof=epimorphism">proof</a>).
+    proof: The forgetful functor $\Bin \to \Set$ is faithful and preserves products (<a href="/category/Bin?proof=complete">proof</a>) and epimorphisms (<a href="/category/Bin?proof=epimorphism">proof</a>). Since $\Set$ has product-stable epimorphisms (<a href="/category/Set?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), so does $\Bin$.
 
 unsatisfied_properties:
   - property: skeletal

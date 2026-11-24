@@ -39,10 +39,10 @@ satisfied_properties:
     proof: The only non-identity monomorphisms are $i$ and $j$ (<a href="/category/walking_coreflexive_pair?proof=monomorphism">proof</a>), and $p i = p j = \id_{[0]}$.
 
   - property: extremal generator
-    proof: The object $[1]$ is an extremal generator even in $\Delta$ (<a href="/category/Delta?proof=extremal_generator">proof</a>); now use <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>. A direct proof is also possible.
+    proof: The object $[1]$ is an extremal generator even in $\Delta$ (<a href="/category/Delta?proof=extremal_generator">proof</a>), hence also in its full subcategory of objects $[0]$ and $[1]$. A direct proof is also possible.
 
   - property: extremal cogenerator
-    proof: The object $[1]$ is an extremal cogenerator even in $\Delta$ (<a href="/category/Delta?proof=extremal_cogenerator">proof</a>); now use <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>. A direct proof is also possible.
+    proof: The object $[1]$ is an extremal cogenerator even in $\Delta$ (<a href="/category/Delta?proof=extremal_cogenerator">proof</a>), hence also in its full subcategory of objects $[0]$ and $[1]$. A direct proof is also possible.
 
   - property: cosifted
     proof: Our <a href="/category/Delta?proof=cosifted">proof</a> that the simplex category is cosifted has only used $[0],[1]$ as auxiliary objects and therefore also shows that $\Delta^{\leq 1}$ is cosifted.

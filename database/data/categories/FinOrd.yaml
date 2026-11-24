@@ -40,10 +40,10 @@ satisfied_properties:
     proof: Every non-empty totally ordered set is weakly terminal (by using constant maps).
 
   - property: extremal generator
-    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal generator even in $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>), hence also in the full subcategory $\FinOrd$.
 
   - property: extremal cogenerator
-    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator even in $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>), hence also in the full subcategory $\FinOrd$.
 
   - property: equalizers
     proof: Take the equalizer in <a href="/category/FinSet">$\FinSet$</a> and restrict the order.
@@ -64,7 +64,7 @@ satisfied_properties:
 
   - property: all epimorphisms split
     proof: >-
-      Apply <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinOrd \hookrightarrow \Ord$. It is fully faithful, and it preserves epimorphisms, since these are the surjective order-preserving maps in $\FinOrd$ (<a href="/category/FinOrd?proof=epimorphism">proof</a>) and in $\Ord$ (<a href="/category/Ord?proof=epimorphism">proof</a>). Here, we use that all epimorphisms in $\Ord$ split (<a href="/category/Ord?proof=all_epimorphisms_split">proof</a>).
+      The inclusion $\FinOrd \hookrightarrow \Ord$ is fully faithful and preserves epimorphisms, since these are the surjective order-preserving maps in $\FinOrd$ (<a href="/category/FinOrd?proof=epimorphism">proof</a>) and in $\Ord$ (<a href="/category/Ord?proof=epimorphism">proof</a>). Since all epimorphisms in $\Ord$ split (<a href="/category/Ord?proof=all_epimorphisms_split">proof</a>), the same holds in $\FinOrd$.
 
       The proof for $\Ord$ uses the axiom of choice, which is not needed here: for an epimorphism $p : (X,\leq) \to (Y,\leq)$ in $\FinOrd$, the map $s : Y \to X$, $s(y) \coloneqq \min p^*(\{y\})$ is a section of $p$, and it is order-preserving by the same argument as for $\Ord$.
 
