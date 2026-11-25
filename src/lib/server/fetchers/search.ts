@@ -3,17 +3,14 @@ import { db } from '#lib/server/db.ts'
 import { error } from '@sveltejs/kit'
 import { SEARCH_SEPARATOR } from '#lib/commons/search.config.ts'
 import type {
-	ContradictionStep,
+	ImplicationShort,
 	SearchResults,
 	StructureShort,
 	StructureType
 } from '#lib/commons/types.ts'
 import { to_placeholders } from '#shared/utils.ts'
 import { find_deduction } from '#shared/deduction.utils.ts'
-import {
-	get_normalized_implications,
-	stringify_implication
-} from '#shared/implications.ts'
+import { get_normalized_implications } from '#shared/implications.ts'
 
 export function fetch_search_results(
 	satisfied_query: string | null,
@@ -157,18 +154,19 @@ export function fetch_search_results(
 /**
  * Returns a deduction of a property that is required to be unsatisfied
  * from the properties that are required to be satisfied, as a list of
- * implications, or null if the requirements are consistent.
+ * implications, or null if the requirements are consistent. The list is
+ * empty when a property is required to be both satisfied and unsatisfied.
  */
 function get_contradiction(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	type: StructureType
-): ContradictionStep[] | null {
-	for (const p of satisfied_properties) {
-		if (unsatisfied_properties.has(p)) {
-			return [{ implication_id: null, statement: `${p} ⟹ ${p}` }]
-		}
-	}
+): ImplicationShort[] | null {
+	const is_conflicting = [...satisfied_properties].some((p) =>
+		unsatisfied_properties.has(p)
+	)
+
+	if (is_conflicting) return []
 
 	const implications = get_normalized_implications(db, type).filter(
 		(impl) => !impl.associated_assumptions
@@ -180,8 +178,11 @@ function get_contradiction(
 
 	return deduction
 		? deduction.map((implication) => ({
-				implication_id: implication.id,
-				statement: stringify_implication(implication)
+				id: implication.id,
+				assumptions: [...implication.assumptions],
+				conclusions: [implication.conclusion],
+				is_equivalence: false,
+				associated_assumptions: {}
 			}))
 		: null
 }

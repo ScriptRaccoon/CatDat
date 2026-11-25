@@ -124,7 +124,34 @@ test('contradictions are detected', async ({ page }) => {
 	const body = page.locator('body')
 	await expect(body).toContainText('the requirements are inconsistent')
 
-	await expect(
-		page.getByRole('link', { name: 'equalizers ∧ products ⟹ complete' })
-	).toHaveAttribute('href', '/category-implication/complete_characterization')
+	await expect(page.locator('a[href^="/category/"]')).toHaveCount(0)
+
+	const steps = page
+		.getByRole('list', { name: 'Inconsistency proof' })
+		.getByRole('listitem')
+
+	const step = steps.filter({
+		hasText: /^\s*equalizers\s+∧\s+products\s+⟹\s+complete\s*$/
+	})
+
+	await expect(step).toBeVisible()
+
+	await expect(step.getByRole('link', { name: 'details' })).toHaveAttribute(
+		'href',
+		'/category-implication/complete_characterization'
+	)
+})
+
+test('user is told that a property cannot be both satisfied and unsatisfied', async ({
+	page
+}) => {
+	await page.goto('/category-search/results?satisfied=pullbacks&unsatisfied=pullbacks')
+
+	await expect(page.locator('body')).toContainText(
+		'No categories found because the property pullbacks cannot be both satisfied and unsatisfied.'
+	)
+
+	await expect(page.getByRole('list', { name: 'Inconsistency proof' })).toHaveCount(0)
+
+	await expect(page.locator('a[href^="/category/"]')).toHaveCount(0)
 })

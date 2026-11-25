@@ -111,20 +111,20 @@ test('contradictions are detected', async ({ page }) => {
 
 	await expect(body).toContainText('the requirements are inconsistent')
 
-	await expect(
-		page.getByRole('link', { name: 'continuous ⟹ preserves products' })
-	).toHaveAttribute('href', '/functor-implication/continuous_consequences')
+	await expect(page.locator('a[href^="/functor/"]')).toHaveCount(0)
 
-	await expect(
-		page.getByRole('link', { name: 'preserves products ⟹ preserves finite products' })
-	).toHaveAttribute('href', '/functor-implication/products_consequences')
+	const steps = page
+		.getByRole('list', { name: 'Inconsistency proof' })
+		.getByRole('listitem')
 
-	await expect(
-		page.getByRole('link', {
-			name: 'preserves finite products ⟹ preserves terminal objects'
-		})
-	).toHaveAttribute(
+	const step = steps.filter({
+		hasText: /^\s*continuous\s+⟹\s+preserves products\s*$/
+	})
+
+	await expect(step).toBeVisible()
+
+	await expect(step.getByRole('link', { name: 'details' })).toHaveAttribute(
 		'href',
-		'/functor-implication/preserve_finite_products_consequences'
+		'/functor-implication/continuous_consequences'
 	)
 })

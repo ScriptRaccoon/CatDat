@@ -2,10 +2,9 @@ import type { Database } from 'better-sqlite3'
 import { STRUCTURE_TYPES, type StructureType } from '#shared/config.ts'
 import {
 	get_associated_implications,
-	get_normalized_implications,
-	has_associated_assumptions,
-	stringify_with_asterisk
+	get_normalized_implications
 } from '#shared/implications.ts'
+import { has_associated_assumptions, stringify_with_asterisk } from './implications'
 import { close_associated_assumptions, find_deduction } from '#shared/deduction.utils.ts'
 import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 
