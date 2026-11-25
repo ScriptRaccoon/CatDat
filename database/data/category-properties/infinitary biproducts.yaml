@@ -1,0 +1,29 @@
+id: infinitary biproducts
+relation: has
+description: >-
+  A category has <i>infinitary biproducts</i> when it has zero morphisms, products, coproducts, and for every family of objects $(X_i)_{i \in I}$ the canonical morphism
+  $$\textstyle \alpha : \coprod_{i \in I} X_i \to \prod_{i \in I} X_i$$
+  defined by $p_j \circ \alpha \circ \iota_i = \delta_{i,j}$ is an isomorphism.
+  In such a category, every family of morphisms $(f_i : A \to B)_{i \in I}$ has a sum, defined as the composite
+  $$\textstyle A \xrightarrow{(f_i)_{i \in I}} \prod_{i \in I} B \xrightarrow{\alpha^{-1}} \coprod_{i \in I} B \xrightarrow{\nabla} B.$$
+nlab_link: https://ncatlab.org/nlab/show/biproduct
+dual: infinitary biproducts
+invariant_under_equivalences: true
+
+keywords:
+  - infinite biproducts
+  - small biproducts
+  - infinite direct sums
+
+related:
+  - biproducts
+  - CIP
+  - CSP
+  - coproducts
+  - products
+  - zero morphisms
+
+tags:
+  - limits
+  - colimits
+  - limit–colimit interaction

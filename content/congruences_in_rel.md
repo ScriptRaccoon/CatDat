@@ -18,7 +18,7 @@ In particular, $\Rel$ has quotients of congruences, and congruences in $\Rel$ ar
 :::
 
 ::: Proof
-Let $q_1, q_2 : E \rightrightarrows X$ be a congruence in $\Rel$, and let $i \coloneqq (q_1,q_2) : E \hookrightarrow X \times X$ be the induced monomorphism. Recall that products in $\Rel$ are actually given by disjoint unions at the level of underlying sets (<a href="/category/Rel?proof=biproducts">proof</a>). Also, recall that a morphism $R : X \to Y$ in $\Rel$ is a monomorphism if and only if
+Let $q_1, q_2 : E \rightrightarrows X$ be a congruence in $\Rel$, and let $i \coloneqq (q_1,q_2) : E \hookrightarrow X \times X$ be the induced monomorphism. Recall that products in $\Rel$ are actually given by disjoint unions at the level of underlying sets (<a href="/category/Rel?proof=infinitary_biproducts">proof</a>). Also, recall that a morphism $R : X \to Y$ in $\Rel$ is a monomorphism if and only if
 $$R_* : P(X) \to P(Y),\, S \mapsto \bigl\{ y\in Y \mid \exists x\in S, (x, y) \in R \bigr\}$$
 is injective (<a href="/category/Rel?proof=monomorphism" data-allow-deduced>proof</a>), and it is an isomorphism if and only if $R$ is the graph of a bijection $X \to Y$ in $\Set$ (<a href="/category/Rel?proof=isomorphism" data-allow-deduced>proof</a>).
 In particular, we get

@@ -31,8 +31,8 @@ satisfied_properties:
     proof: It is an easy exercise to deduce this from the corresponding fact for sets and that sets form a distributive category.
     check_redundancy: false
 
-  - property: biproducts
-    proof: 'This is a consequence of the description of coproducts and products: both are disjoint unions (even for infinite families).'
+  - property: infinitary biproducts
+    proof: 'This is a consequence of the description of coproducts and products: both are disjoint unions, even for infinite families, and the canonical morphism from the coproduct to the product is the identity.'
     check_redundancy: false
 
   - property: kernels
@@ -45,9 +45,6 @@ satisfied_properties:
       Let $a \in A$. The injectivity of $R_*$ implies $R_*(A \setminus \{a\}) \subsetneq R_*(A)$, so there is some $b \in R_*(A) \setminus R_*(A \setminus \{a\})$. This means that $b$ is related to some element of $A$, but not to any element of $A \setminus \{a\}$. Hence, $a$ is the only element of $A$ related to $b$, i.e. $(b,a) \in S$. Since also $(a,b) \in R$, we get $(a,a) \in S \circ R$.
 
       Conversely, if $(a,a') \in S \circ R$, there is some $b \in B$ with $(a,b) \in R$ and $(b,a') \in S$. Since $a'$ is the only element of $A$ related to $b$, we get $a = a'$.
-
-  - property: CIP
-    proof: The canonical morphism from the coproduct to the product is the identity.
 
   - property: quotients of congruences
     proof: This follows from <a href="/content/congruences_in_rel#proposition_1">Proposition 1 on congruences in $\Rel$</a>.
