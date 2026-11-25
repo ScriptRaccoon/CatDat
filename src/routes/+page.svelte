@@ -1,7 +1,7 @@
 <script lang="ts">
 	import MetaData from '#components/MetaData.svelte'
 	import StatsCard from '#components/StatsCard.svelte'
-	import { get_operator_html } from '#lib/commons/implication.utils.ts'
+	import { get_operator_html } from '#lib/commons/operator.utils.ts'
 	import RecentlyAdded from '#components/RecentlyAdded.svelte'
 
 	let { data } = $props()

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { get_operator_html } from '#lib/commons/implication.utils.ts'
+	import { get_operator_html } from '#lib/commons/operator.utils.ts'
 	import type { StructureType, UndecidableImplication } from '#lib/commons/types.ts'
 	import ImplicationFormula from './ImplicationFormula.svelte'
 	import TextWithProof from './TextWithProof.svelte'

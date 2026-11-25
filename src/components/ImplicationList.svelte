@@ -27,18 +27,16 @@
 						<Fa icon={faInfoCircle} color="var(--secondary-text-color)" />
 					</a>
 
-					<div>
-						<ImplicationFormula
-							{type}
-							assumptions={implication.assumptions}
-							conclusions={implication.conclusions}
-							is_equivalence={implication.is_equivalence}
-							has_associated_assumptions={has_associated_assumptions(
-								implication
-							)}
-							{highlighted_property}
-						/>
-					</div>
+					<ImplicationFormula
+						{type}
+						assumptions={implication.assumptions}
+						conclusions={implication.conclusions}
+						is_equivalence={implication.is_equivalence}
+						has_associated_assumptions={has_associated_assumptions(
+							implication
+						)}
+						{highlighted_property}
+					/>
 				</div>
 			</li>
 		{/each}
