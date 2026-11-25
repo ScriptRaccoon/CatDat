@@ -20,7 +20,10 @@ import { test_no_redundant_assignments } from './utils/redundant-assignments'
 import { test_no_redundant_implications } from './utils/redundant-implications'
 import test_config from '../test-data/config.json'
 import { get_expected_data_folder } from './utils/folders'
-import { get_normalized_implications } from '#shared/implications.ts'
+import {
+	get_normalized_implications,
+	get_undecidable_implications
+} from '#shared/implications.ts'
 import { deduce_properties } from '#shared/deduction.utils.ts'
 
 const db = get_client({ readonly: true })
@@ -102,13 +105,7 @@ function test_structure_type(type: StructureType) {
  * satisfies P but not Q).
  */
 function test_undecidable_implications(type: StructureType) {
-	const undecidable_implications = db
-		.prepare<[StructureType], { id: string; assumption: string; conclusion: string }>(
-			`SELECT id, assumption_id AS assumption, conclusion_id AS conclusion
-			FROM undecidable_implications
-			WHERE type = ?`
-		)
-		.all(type)
+	const undecidable_implications = get_undecidable_implications(db, type)
 
 	if (undecidable_implications.length === 0) return
 
@@ -126,9 +123,9 @@ function test_undecidable_implications(type: StructureType) {
 		)
 		.pluck()
 
-	for (const { id, assumption, conclusion } of undecidable_implications) {
+	for (const { id, assumptions, conclusion } of undecidable_implications) {
 		const { deduced_satisfied_properties } = deduce_properties(
-			new Set([assumption]),
+			assumptions,
 			implications,
 			() => ({ proof: null, stop: false })
 		)
@@ -139,6 +136,8 @@ function test_undecidable_implications(type: StructureType) {
 			)
 		}
 
+		// undecidable implications have exactly one assumption
+		const [assumption] = assumptions
 		const counterexamples = counterexample_query.all(assumption, conclusion, type)
 
 		if (counterexamples.length > 0) {
@@ -557,15 +556,6 @@ function check_link_targets_exist() {
 				error_prefix: `❌ The proof of the implication (${x.id})`
 			})),
 		...db
-			.prepare<never[], { id: string; proof: string }>(
-				`SELECT id, proof FROM undecidable_implications`
-			)
-			.all()
-			.map((x) => ({
-				proof: x.proof,
-				error_prefix: `❌ The proof of the undecidable implication (${x.id})`
-			})),
-		...db
 			.prepare<never[], { category: string; kind: string; proof: string }>(
 				`SELECT
 					category_id AS category,
@@ -631,39 +621,6 @@ function check_link_targets_exist() {
 				error_prefix,
 				allow_deduced
 			)
-		}
-
-		// The only proofs on the implications list page are those of the undecidable
-		// implications (shown in popups), so "?proof=" on this page targets one of them.
-		const undecidable_link_regex = new RegExp(
-			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})-implications\\?([^"]*)"`,
-			'g'
-		)
-
-		for (const match of proof.matchAll(undecidable_link_regex)) {
-			const type = match[1] as StructureType
-			const params = new URLSearchParams(match[2])
-			const keys = [...params.keys()]
-
-			if (keys.length !== 1 || keys[0] !== 'proof') {
-				throw new Error(
-					`${error_prefix} has a link to the undecidable implications with an invalid query "${params}":\n"${proof}"`
-				)
-			}
-
-			const id = params.get('proof')!
-
-			const exists = db
-				.prepare<[string, string], string>(
-					`SELECT id FROM undecidable_implications WHERE id = ? AND type = ?`
-				)
-				.get(id, type)
-
-			if (!exists) {
-				throw new Error(
-					`${error_prefix} has a link to the undecidable implication "${id}" which does not exist:\n"${proof}"`
-				)
-			}
 		}
 
 		const content_link_regex = /<a\s+href="\/content\/([^"#]+)(?:#([^"]+))?"/g

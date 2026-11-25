@@ -37,6 +37,7 @@ export function display_implication(implication: ImplicationDB): ImplicationDisp
 		id: implication.id,
 		is_equivalence: Boolean(implication.is_equivalence),
 		is_deduced: Boolean(implication.is_deduced),
+		is_undecidable: Boolean(implication.is_undecidable),
 		proof: implication.proof,
 		dual_implication_id: implication.dual_implication_id,
 		assumptions: JSON.parse(implication.assumptions),

@@ -42,6 +42,9 @@
 
 <p>
 	<strong>Claim.</strong>
+	{#if implication.is_undecidable}
+		The following implication is undecidable in ZFC:
+	{/if}
 	{#if has_associated_assumptions}
 		Given a {remove_underscores(type)}
 		{#each Object.entries(implication.associated_assumptions) as [label, set], ind}

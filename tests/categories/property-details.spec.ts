@@ -126,18 +126,11 @@ test('user can view undecidable implications of a category property', async ({
 		item.getByRole('link', { name: 'accessible', exact: true })
 	).toBeVisible()
 
-	await item.getByRole('button', { name: 'Show proof' }).click()
+	await item.getByRole('link', { name: 'details' }).click()
 
 	await expect(page).toHaveURL(
-		'/category-property/accessible?proof=accessible_well-copowered_undecidable'
+		'/category-implication/accessible_well-copowered_undecidable'
 	)
-
-	const popup = page.locator('.popup')
-
-	await expect(popup).toHaveAccessibleName(
-		'The implication "accessible implies well-copowered" is undecidable in ZFC'
-	)
-	await expect(popup).toContainText('Vopěnka')
 })
 
 test('user can see which subcategories inherit a category property', async ({ page }) => {

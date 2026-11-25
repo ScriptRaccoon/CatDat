@@ -10,16 +10,11 @@ import {
 	property_yaml_schema,
 	special_morphism_rule_yaml_schema,
 	structure_yaml_schema,
-	subcategory_closed_properties_yaml_schema,
-	undecidable_implications_yaml_schema
+	subcategory_closed_properties_yaml_schema
 } from './utils/seed.schemas'
 import * as v from 'valibot'
 import { check_schema } from './utils/schema'
-import {
-	DATA_FOLDER,
-	get_data_folders,
-	UNDECIDABLE_IMPLICATIONS_FILE
-} from './utils/folders'
+import { DATA_FOLDER, get_data_folders } from './utils/folders'
 import { record_addition, save_history } from '#shared/history.ts'
 
 const db = get_client({ readonly: false })
@@ -41,8 +36,6 @@ function seed() {
 		seed_implications(type)
 		seed_structures(type)
 	}
-
-	seed_undecidable_implications()
 
 	// special morphisms are morphism properties, so they are seeded afterwards
 	seed_special_morphisms()
@@ -73,7 +66,6 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM assumptions`).run()
 		db.prepare(`DELETE FROM conclusions`).run()
 		db.prepare(`DELETE FROM implications`).run()
-		db.prepare(`DELETE FROM undecidable_implications`).run()
 
 		db.prepare(`DELETE FROM property_assignments`).run()
 		db.prepare(`DELETE FROM related_properties`).run()
@@ -435,8 +427,8 @@ function seed_implications(type: StructureType) {
 
 	const implication_insert = db.prepare(
 		`INSERT INTO implications (
-	        id, type, proof, is_equivalence, check_redundancy
-		) VALUES (?, ?, ?, ?, ?)`
+	        id, type, proof, is_equivalence, check_redundancy, is_undecidable
+		) VALUES (?, ?, ?, ?, ?, ?)`
 	)
 
 	const assumption_insert = db.prepare(
@@ -466,7 +458,8 @@ function seed_implications(type: StructureType) {
 				type,
 				impl.proof,
 				impl.is_equivalence ? 1 : 0,
-				impl.check_redundancy === false ? 0 : 1
+				impl.check_redundancy === false ? 0 : 1,
+				impl.is_undecidable ? 1 : 0
 			)
 
 			for (const assumption of impl.assumptions) {
@@ -498,45 +491,6 @@ function seed_implications(type: StructureType) {
 		`${type} implications`,
 		get_data_folders(type).implications,
 		implications_yaml_schema,
-		insert_implications
-	)
-}
-
-// TODO: dualize undecidable implications automatically (as in create_dualized_implications)
-// once there are enough of them to make it worthwhile. Until then, duals are listed by hand.
-
-/**
- * Seeds the undecidable implications of all structure types from a YAML file.
- * They have one assumption and one conclusion and are not used for deductions.
- */
-function seed_undecidable_implications() {
-	const implication_insert = db.prepare(
-		`INSERT INTO undecidable_implications (
-			id, type, assumption_id, conclusion_id, proof
-		) VALUES (?, ?, ?, ?, ?)`
-	)
-
-	function insert_implications(
-		data: v.InferOutput<typeof undecidable_implications_yaml_schema>
-	) {
-		for (const type of STRUCTURE_TYPES) {
-			for (const impl of data[type] ?? []) {
-				implication_insert.run(
-					impl.id,
-					type,
-					impl.assumption,
-					impl.conclusion,
-					impl.proof
-				)
-			}
-		}
-	}
-
-	seed_file(
-		db,
-		'undecidable implications',
-		UNDECIDABLE_IMPLICATIONS_FILE,
-		undecidable_implications_yaml_schema,
 		insert_implications
 	)
 }

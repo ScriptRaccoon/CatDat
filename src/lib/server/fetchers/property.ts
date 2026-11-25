@@ -1,13 +1,8 @@
-import type {
-	ImplicationDB,
-	StructureShort,
-	PropertyDB,
-	StructureType
-} from '#lib/commons/types.ts'
+import type { StructureShort, PropertyDB, StructureType } from '#lib/commons/types.ts'
 import { db } from '#lib/server/db.ts'
-import { display_implication, display_property } from '#lib/server/transforms.ts'
+import { display_property } from '#lib/server/transforms.ts'
 import { fetch_structure_keywords } from '#lib/server/fetchers/structures.ts'
-import { fetch_undecidable_implications } from '#lib/server/fetchers/undecidable_implications.ts'
+import { fetch_implication_list } from '#lib/server/fetchers/implications.ts'
 import { error } from '@sveltejs/kit'
 
 export function fetch_property(type: StructureType, id: string) {
@@ -55,38 +50,15 @@ export function fetch_property(type: StructureType, id: string) {
 
 	const subcategory_inheritance = fetch_subcategory_inheritance(type, id)
 
-	const relevant_implications_db = db
-		.prepare<string[], ImplicationDB>(
-			`SELECT
-                id,
-                is_equivalence,
-                is_deduced,
-                proof,
-                assumptions,
-                conclusions,
-                associated_assumptions
-            FROM implications_view
-            WHERE type = ?
-            AND (
-                EXISTS (
-                    SELECT 1
-                    FROM json_each(conclusions)
-                    WHERE value = ?
-                )
-                OR
-                EXISTS (
-                    SELECT 1
-                    FROM json_each(assumptions)
-                    WHERE value = ?
-                )
-            )
-            ORDER BY lower(assumptions) || ' ' || lower(conclusions)`
-		)
-		.all(type, id, id)
+	const relevant_implications = fetch_implication_list(type, {
+		is_undecidable: false,
+		property_id: id
+	})
 
-	const relevant_implications = relevant_implications_db.map(display_implication)
-
-	const undecidable_implications = fetch_undecidable_implications(type, id)
+	const undecidable_implications = fetch_implication_list(type, {
+		is_undecidable: true,
+		property_id: id
+	})
 
 	const known_structures = db
 		.prepare<

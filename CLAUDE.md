@@ -27,7 +27,7 @@ TypeScript, SvelteKit (Svelte 5), SQLite via `better-sqlite3`, KaTeX for math re
 
 ## Repository layout
 
-- [database/data/](database/data/): **the source of truth.** YAML files for all structures, properties, and implications, one folder per kind and type (e.g. `categories/`, `category-properties/`, `category-implications/`, `functors/`, ...), plus `config.yaml` (tags, relations, special object and morphism kinds), `macros.yaml` (KaTeX macros), `special-morphism-rules.yaml`, and `undecidable-implications.yaml`.
+- [database/data/](database/data/): **the source of truth.** YAML files for all structures, properties, and implications, one folder per kind and type (e.g. `categories/`, `category-properties/`, `category-implications/`, `functors/`, ...), plus `config.yaml` (tags, relations, special object and morphism kinds), `macros.yaml` (KaTeX macros), and `special-morphism-rules.yaml`.
 - [database/schema/](database/schema/): SQL schema files, applied in order of their `NNN_` prefix.
 - [database/scripts/](database/scripts/): the `db:*` scripts (seeding, deduction, tests).
 - [database/test-data/](database/test-data/): data for `db:test`: `config.json` (per structure type, e.g. the structures with all properties decided) and `expected/` (the expected properties of selected structures, one JSON file per structure in a folder per type).

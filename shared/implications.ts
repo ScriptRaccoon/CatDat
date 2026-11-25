@@ -17,14 +17,31 @@ export type NormalizedImplication = {
  * This function decomposes them into normalized implications,
  * which have the form
  * P_1 + ... + P_n ===> Q.
+ * Undecidable implications are not included.
  */
-export function get_normalized_implications(
+export function get_normalized_implications(db: Database, type: StructureType) {
+	return normalize_implications(db, type, { is_undecidable: false })
+}
+
+/**
+ * Returns the undecidable implications, which have the form P ===> Q.
+ */
+export function get_undecidable_implications(db: Database, type: StructureType) {
+	return normalize_implications(db, type, { is_undecidable: true })
+}
+
+/**
+ * Decomposes the implications that hold or, depending on the flag,
+ * the undecidable ones into normalized implications.
+ */
+function normalize_implications(
 	db: Database,
-	type: StructureType
+	type: StructureType,
+	options: { is_undecidable: boolean }
 ): NormalizedImplication[] {
 	const implications_db = db
 		.prepare<
-			[StructureType],
+			[StructureType, number],
 			{
 				id: string
 				is_equivalence: 0 | 1
@@ -40,9 +57,9 @@ export function get_normalized_implications(
 				conclusions,
 				associated_assumptions
 			FROM implications_view
-			WHERE type = ?`
+			WHERE type = ? AND is_undecidable = ?`
 		)
-		.all(type)
+		.all(type, Number(options.is_undecidable))
 
 	const implications: NormalizedImplication[] = []
 

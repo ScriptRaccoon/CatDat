@@ -2,7 +2,6 @@
 	import StructureList from '#components/StructureList.svelte'
 	import HelpMessage from '#components/HelpMessage.svelte'
 	import ImplicationList from '#components/ImplicationList.svelte'
-	import UndecidableImplicationList from '#components/UndecidableImplicationList.svelte'
 	import MetaData from '#components/MetaData.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
 	import { pluralize, remove_underscores } from '#shared/utils.ts'
@@ -13,8 +12,7 @@
 		ImplicationDisplay,
 		PropertyDisplay,
 		StructureShort,
-		StructureType,
-		UndecidableImplication
+		StructureType
 	} from '#lib/commons/types.ts'
 	import { PLURALS } from '#shared/config.ts'
 	import TagList from '#components/TagList.svelte'
@@ -34,7 +32,7 @@
 		undecidable_structures: StructureShort[]
 		structure_keywords: Record<string, string[]>
 		relevant_implications: ImplicationDisplay[]
-		undecidable_implications: UndecidableImplication[]
+		undecidable_implications: ImplicationDisplay[]
 	}
 
 	let {
@@ -134,10 +132,11 @@
 
 	<p class="hint">It is undecidable in ZFC whether these implications hold.</p>
 
-	<UndecidableImplicationList
+	<ImplicationList
 		implications={undecidable_implications}
 		highlighted_property={property.id}
 		{type}
+		label="Undecidable implications"
 	/>
 {/if}
 

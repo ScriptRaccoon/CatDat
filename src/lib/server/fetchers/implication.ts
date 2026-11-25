@@ -18,6 +18,7 @@ export function fetch_implication(type: StructureType, id: string) {
                 id,
                 is_equivalence,
                 is_deduced,
+                is_undecidable,
                 proof,
 				dual_implication_id,
                 assumptions,
