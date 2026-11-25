@@ -1,6 +1,7 @@
 <script lang="ts">
 	import MetaData from '#components/MetaData.svelte'
 	import StatsCard from '#components/StatsCard.svelte'
+	import { get_operator_html } from '#lib/commons/implication.utils.ts'
 	import RecentlyAdded from '#components/RecentlyAdded.svelte'
 
 	let { data } = $props()
@@ -55,9 +56,13 @@
 
 	<StatsCard number={data.stats.implication_number} title="Implications">
 		e.g. <a href="/category-implication/pullbacks_criterion"
-			>binary products ∧ equalizers ⟹ pullbacks</a
+			>binary products {@html get_operator_html('and')} equalizers {@html get_operator_html(
+				'implies'
+			)} pullbacks</a
 		>,
-		<a href="/category-implication/algebraic_implies_lfp">finitary algebraic ⟹ lfp</a> ...
+		<a href="/category-implication/algebraic_implies_lfp"
+			>finitary algebraic {@html get_operator_html('implies')} lfp</a
+		> ...
 	</StatsCard>
 </section>
 

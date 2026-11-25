@@ -3,10 +3,10 @@ import { get_property_assignments_by_deduction } from './properties'
 import { STRUCTURE_TYPES, type StructureType } from '#shared/config.ts'
 import {
 	get_normalized_implications,
-	stringify_implication,
 	type NormalizedImplication
 } from '#shared/implications.ts'
 import { deduce_properties, refute_properties } from '#shared/deduction.utils.ts'
+import { stringify_implication } from './implications'
 import { get_structure_parent_map, get_structures } from './structures'
 import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 

@@ -114,20 +114,3 @@ export function get_associated_implications(db: Database, type: StructureType) {
 
 	return result
 }
-
-export function stringify_implication(implication: NormalizedImplication) {
-	return `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
-}
-
-export function has_associated_assumptions(implication: NormalizedImplication) {
-	return implication.associated_assumptions !== undefined
-}
-
-/**
- * Stringifies the implication and marks it with an asterisk
- * if it has assumptions about associated structures.
- */
-export function stringify_with_asterisk(implication: NormalizedImplication) {
-	const asterisk = has_associated_assumptions(implication) ? ' *' : ''
-	return stringify_implication(implication) + asterisk
-}

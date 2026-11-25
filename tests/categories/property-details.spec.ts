@@ -119,7 +119,7 @@ test('user can view undecidable implications of a category property', async ({
 	const implications = page.getByRole('list', { name: 'Undecidable implications' })
 
 	const item = implications.getByRole('listitem').filter({
-		hasText: /^\s*accessible\s+implies\s+well-copowered\s*$/
+		hasText: /^\s*accessible\s+⟹\s+well-copowered\s*$/
 	})
 
 	await expect(
@@ -135,7 +135,7 @@ test('user can view undecidable implications of a category property', async ({
 	const popup = page.locator('.popup')
 
 	await expect(popup).toHaveAccessibleName(
-		'The implication "accessible ⟹ well-copowered" is undecidable in ZFC'
+		'The implication "accessible implies well-copowered" is undecidable in ZFC'
 	)
 	await expect(popup).toContainText('Vopěnka')
 })

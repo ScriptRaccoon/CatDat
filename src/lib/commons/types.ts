@@ -123,6 +123,11 @@ export type ImplicationDisplay = Replace<
 	}
 >
 
+export type ImplicationShort = Pick<
+	ImplicationDisplay,
+	'id' | 'assumptions' | 'conclusions' | 'is_equivalence' | 'associated_assumptions'
+>
+
 export type UndecidableImplication = {
 	id: string
 	assumption: string
@@ -130,13 +135,8 @@ export type UndecidableImplication = {
 	proof: string
 }
 
-export type ContradictionStep = {
-	implication_id: string | null
-	statement: string
-}
-
 export type SearchResults = {
-	contradiction: ContradictionStep[] | null
+	contradiction: ImplicationShort[] | null
 	satisfied_properties: string[]
 	unsatisfied_properties: string[]
 	dual_satisfied_properties: (string | null)[]

@@ -327,20 +327,14 @@ label {
 	white-space: nowrap;
 }
 
-/* implications (ImplicationItem and UndecidableImplicationList) */
-
-.implication-property:not(.highlighted) {
-	text-decoration: none;
-}
-
-.implication-property.highlighted {
-	text-decoration-style: dashed;
-	text-underline-offset: 4px;
-}
+/*
+ * Operators in implications (see implication.utils.ts). The font KaTeX_Main is
+ * defined in the KaTeX stylesheet, which +layout.svelte loads from a CDN.
+ */
 
 .implication-operator {
+	font-family: KaTeX_Main, serif;
 	margin-inline: 0.25rem;
-	color: var(--secondary-text-color);
 }
 
 /* cf. https://katex.org/docs/issues */

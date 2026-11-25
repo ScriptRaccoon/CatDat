@@ -116,10 +116,10 @@ test('user can see undecidable category implications', async ({ page }) => {
 		.getByRole('listitem')
 
 	await expect(
-		items.filter({ hasText: /^\s*accessible\s+implies\s+well-copowered\s*$/ })
+		items.filter({ hasText: /^\s*accessible\s+⟹\s+well-copowered\s*$/ })
 	).toBeVisible()
 
 	await expect(
-		items.filter({ hasText: /^\s*coaccessible\s+implies\s+well-powered\s*$/ })
+		items.filter({ hasText: /^\s*coaccessible\s+⟹\s+well-powered\s*$/ })
 	).toBeVisible()
 })

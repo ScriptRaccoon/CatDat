@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/env'
+	import ImplicationList from '#components/ImplicationList.svelte'
 	import StructureList from '#components/StructureList.svelte'
 	import { encode_property_ID, get_property_url } from '#shared/property.utils.ts'
 	import MetaData from '#components/MetaData.svelte'
@@ -22,6 +23,10 @@
 		found_structures,
 		contradiction
 	}: Props = $props()
+
+	let conflicting_property = $derived(
+		satisfied_properties.find((p) => unsatisfied_properties.includes(p))
+	)
 
 	function get_dual_search_results_link() {
 		if (!dual_search_available || !browser) return '/'
@@ -97,34 +102,28 @@
 	</p>
 
 	<StructureList structures={found_structures} {type} />
+{:else if conflicting_property}
+	<p class="hint">
+		<Fa icon={faWarning} />
+		No {PLURALS[type]} found because the property
+		<a href={get_property_url(conflicting_property, type)}>{conflicting_property}</a>
+		cannot be both satisfied and unsatisfied.
+	</p>
 {:else}
 	<p class="hint">
 		<Fa icon={faWarning} />
-		No {PLURALS[type]} found because the requirements are inconsistent:
+		No {PLURALS[type]} found because the requirements are inconsistent.
 	</p>
 
-	<ol class="hint">
-		{#each contradiction as step}
-			<li>
-				{#if step.implication_id}
-					<a
-						href="/{type}-implication/{step.implication_id}"
-						class="no-underline"
-					>
-						{step.statement}
-					</a>
-				{:else}
-					{step.statement}
-				{/if}
-			</li>
-		{/each}
-	</ol>
+	<h2>Inconsistency proof</h2>
+
+	<ImplicationList implications={contradiction} {type} label="Inconsistency proof" />
 {/if}
 
 <menu>
 	<a class="button" href="/{type}-search">Adjust search</a>
 
-	{#if dual_search_available}
+	{#if dual_search_available && !conflicting_property}
 		<a class="button" href={get_dual_search_results_link()}>Dualize search</a>
 	{/if}
 </menu>
