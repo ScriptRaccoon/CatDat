@@ -99,7 +99,7 @@
 	{@html implication.proof}
 </div>
 
-{#if implication.dual_implication_id}
+{#if implication.dual_implication_id && !implication.is_deduced}
 	<p>
 		<Fa icon={faInfoCircle} />
 		This implication has a
