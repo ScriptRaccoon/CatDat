@@ -59,12 +59,14 @@
 		margin-inline: 0.25rem;
 	}
 
-	a:not(.highlighted) {
+	a {
 		text-decoration: none;
-	}
 
-	a.highlighted {
-		text-decoration-style: dashed;
-		text-underline-offset: 4px;
+		&.highlighted {
+			background-color: var(--secondary-bg-color);
+			padding-inline: 0.25rem;
+			margin-inline: -0.25rem;
+			border-radius: 0.25rem;
+		}
 	}
 </style>
