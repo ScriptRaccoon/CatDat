@@ -14,6 +14,8 @@ is an isomorphism. Then $A = 0$.
 :::
 
 ::: Proof
+The idea is an Eilenberg swindle: using $\alpha$, we can define infinite sums of morphisms, and the infinite sum $x \coloneqq \id_A + \id_A + \cdots$ satisfies $x = \id_A + x$, hence $\id_A = 0$. See also [MO/428546](https://mathoverflow.net/a/428553).
+
 Define the diagonal morphism
 $$\textstyle \Delta : A \to \prod_{n \geq 1} A$$
 by $p_n \circ \Delta = \id_A$, and the codiagonal morphism

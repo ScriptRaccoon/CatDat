@@ -76,22 +76,18 @@
 
     Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\On,\Ab]$ shows: it is Grothendieck abelian (<a href="/category/TransSeqAb?proof=Grothendieck_abelian" data-allow-deduced>proof</a>), but does not have a cogenerator (<a href="/category/TransSeqAb?proof=cogenerator" data-allow-deduced>proof</a>).
 
-- id: additive_CIP_CSP
+- id: preadditive_infinitary_biproducts_trivial
   assumptions:
-    - additive
-    - balanced
-    - CIP
-    - CSP
+    - preadditive
+    - infinitary biproducts
   conclusions:
     - trivial
   proof: >-
-    We work in a balanced additive category with products and coproducts such that, for every family of objects $(X_i)$, the canonical morphism
-    $$\textstyle \alpha : \coprod_i X_i \to \prod_{i \in I} X_i$$
-    is a monomorphism and an epimorphism, and therefore an isomorphism. In particular, for every object $A$ the canonical morphism
+    The category has zero morphisms, products, and coproducts. In particular, it has finite products, so that it is additive. For every object $A$ the canonical morphism
     $$\textstyle \alpha : \coprod_{n \geq 1} A \to \prod_{n \geq 1} A$$
     is an isomorphism. By <a href="/content/infinite-products-coproducts-additive-categories">this proposition</a>, this implies that $A = 0$.
 
-    Remark: This result strengthens the well-known theorem (and is inspired by it) stating that the dual of a Grothendieck abelian category can only be Grothendieck abelian when it is trivial, which appears as exercise B on p. 116 in Freyd's book <i>Abelian categories</i>. This follows from the result we have just proved since a Grothendieck abelian category with products is additive, balanced, and satisfies CIP (by <a href="/category-implication/CIP_criterion">this result</a>).
+    Remark: This result strengthens the well-known theorem (and is inspired by it) stating that the dual of a Grothendieck abelian category can only be Grothendieck abelian when it is trivial, which appears as exercise B on p. 116 in Freyd's book <i>Abelian categories</i>. Indeed, a Grothendieck abelian category is additive, balanced, and satisfies CIP (by <a href="/category-implication/CIP_criterion">this result</a>). If its dual is also Grothendieck abelian, it satisfies CSP as well, and hence has infinitary biproducts (by <a href="/category-implication/CIP_CSP_infinitary_biproducts">this result</a>).
 
 - id: split_abelian_characterization
   assumptions:
@@ -129,3 +125,20 @@
     - biproducts
   proof: >-
     By the remark in the description of <a href="/category-property/biproducts">biproducts</a>, it suffices that for all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is an isomorphism. It is a monomorphism and an epimorphism, hence an isomorphism since the category is balanced.
+
+- id: infinitary_biproducts_consequences
+  assumptions:
+    - infinitary biproducts
+  conclusions:
+    - biproducts
+    - CIP
+  proof: This is trivial.
+
+- id: CIP_CSP_infinitary_biproducts
+  assumptions:
+    - balanced
+    - CIP
+    - CSP
+  conclusions:
+    - infinitary biproducts
+  proof: By assumption, for every family of objects $(X_i)_{i \in I}$ the canonical morphism $\coprod_{i \in I} X_i \to \prod_{i \in I} X_i$ is a monomorphism and an epimorphism, hence an isomorphism since the category is balanced.

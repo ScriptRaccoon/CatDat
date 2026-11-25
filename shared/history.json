@@ -2181,6 +2181,10 @@
 		{
 			"type": "category",
 			"id": "right collapsible"
+		},
+		{
+			"type": "category",
+			"id": "infinitary biproducts"
 		}
 	]
 }
