@@ -47,7 +47,7 @@ function get_redundant_implication_errors(db: Database, type: StructureType): st
 		>(
 			`SELECT id, dual_implication_id, check_redundancy
 			FROM implications
-			WHERE type = ? AND is_deduced = FALSE`
+			WHERE type = ? AND is_deduced = FALSE AND is_undecidable = FALSE`
 		)
 		.all(type)
 

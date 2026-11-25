@@ -129,7 +129,8 @@ export const implications_yaml_schema = v.array(
 			),
 			proof: v.string(),
 			is_equivalence: v.optional(v.literal(true)),
-			check_redundancy: v.optional(v.literal(false))
+			check_redundancy: v.optional(v.literal(false)),
+			is_undecidable: v.optional(v.literal(true))
 		}),
 		v.check(
 			(impl) =>
@@ -137,22 +138,16 @@ export const implications_yaml_schema = v.array(
 				(impl.associated_assumptions !== undefined &&
 					Object.keys(impl.associated_assumptions).length > 0),
 			`Implication must have at least one assumption or associated assumptions.`
+		),
+		v.check(
+			(impl) =>
+				!impl.is_undecidable ||
+				(impl.assumptions.length === 1 &&
+					impl.conclusions.length === 1 &&
+					!impl.is_equivalence &&
+					impl.check_redundancy === undefined &&
+					impl.associated_assumptions === undefined),
+			`Undecidable implication must have exactly one assumption and one conclusion, and no further fields.`
 		)
 	)
 )
-
-const undecidable_implications_list_schema = v.array(
-	v.strictObject({
-		id: v.string(),
-		assumption: v.string(),
-		conclusion: v.string(),
-		proof: v.string()
-	})
-)
-
-export const undecidable_implications_yaml_schema = v.strictObject({
-	category: v.optional(undecidable_implications_list_schema),
-	functor: v.optional(undecidable_implications_list_schema),
-	morphism: v.optional(undecidable_implications_list_schema),
-	symmetric_monoidal_category: v.optional(undecidable_implications_list_schema)
-})

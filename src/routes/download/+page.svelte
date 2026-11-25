@@ -197,7 +197,7 @@ ORDER BY p.type;`}
 	title="Number of non-deduced implications per type"
 	code={`SELECT type, COUNT(*) AS count
 FROM implications
-WHERE is_deduced = FALSE
+WHERE is_deduced = FALSE AND is_undecidable = FALSE
 GROUP BY type;`}
 />
 

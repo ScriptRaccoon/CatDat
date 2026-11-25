@@ -69,6 +69,16 @@ test('user can see the details of an implication', async ({ page }) => {
 	await expect(page.locator('body')).toContainText('Proof. This holds by definition')
 })
 
+test('user can view an undecidable category implication', async ({ page }) => {
+	await page.goto('/category-implication/accessible_well-copowered_undecidable')
+
+	await expect(page.locator('body')).toContainText(
+		'Claim. The following implication is undecidable in ZFC: If a category is accessible, then it is well-copowered.'
+	)
+
+	await expect(page.locator('body')).toContainText('Proof. If Vopěnka')
+})
+
 test('user can navigate to the dual implication', async ({ page }) => {
 	await page.goto('/category-implication/abelian_implies_regular')
 
@@ -122,4 +132,26 @@ test('user can see undecidable category implications', async ({ page }) => {
 	await expect(
 		items.filter({ hasText: /^\s*coaccessible\s+⟹\s+well-powered\s*$/ })
 	).toBeVisible()
+})
+
+test('user can search undecidable category implications', async ({ page }) => {
+	await page.goto('/category-implications', { waitUntil: 'networkidle' })
+
+	await page.getByRole('searchbox').fill('finitely accessible')
+
+	const items = page
+		.getByRole('list', { name: 'Undecidable implications' })
+		.getByRole('listitem')
+
+	await expect(items).toHaveCount(1)
+
+	await expect(
+		items.filter({ hasText: /^\s*finitely accessible\s+⟹\s+well-copowered\s*$/ })
+	).toBeVisible()
+
+	await page.getByRole('searchbox').fill('cartesian closed')
+
+	await expect(
+		page.getByRole('heading', { name: 'Undecidable implications', exact: true })
+	).toHaveCount(0)
 })

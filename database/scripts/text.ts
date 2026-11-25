@@ -2,15 +2,14 @@ import chokidar from 'chokidar'
 import * as v from 'valibot'
 import { get_client, mark_database_update } from '#shared/db.ts'
 import { STRUCTURE_TYPES, type StructureType } from '#shared/config.ts'
-import { get_property_assignments, parse_file, parse_folder } from './utils/seed.helpers'
+import { get_property_assignments, parse_folder } from './utils/seed.helpers'
 import {
 	category_yaml_schema,
 	implications_yaml_schema,
 	property_yaml_schema,
-	structure_yaml_schema,
-	undecidable_implications_yaml_schema
+	structure_yaml_schema
 } from './utils/seed.schemas'
-import { get_data_folders, UNDECIDABLE_IMPLICATIONS_FILE } from './utils/folders'
+import { get_data_folders } from './utils/folders'
 import { are_equal_lists } from '#shared/utils.ts'
 
 const db = get_client({ readonly: false })
@@ -32,8 +31,7 @@ const UPDATE_LABELS = [
 	'property descriptions',
 	'property nLab links',
 	'property keywords',
-	'implication proofs',
-	'undecidable implication proofs'
+	'implication proofs'
 ] as const
 
 type UpdateLabel = (typeof UPDATE_LABELS)[number]
@@ -69,13 +67,6 @@ function run_text_update() {
 			}
 		})
 
-		const undecidable_implications = Object.values(
-			parse_file(
-				UNDECIDABLE_IMPLICATIONS_FILE,
-				undecidable_implications_yaml_schema
-			)
-		).flatMap((list) => list ?? [])
-
 		const counts = new Map<UpdateLabel, number>(
 			UPDATE_LABELS.map((label) => [label, 0])
 		)
@@ -107,10 +98,6 @@ function run_text_update() {
 				for (const implication of implications) {
 					update_implication(implication, record)
 				}
-			}
-
-			for (const implication of undecidable_implications) {
-				update_undecidable_implication(implication, record)
 			}
 		})()
 
@@ -382,39 +369,10 @@ function update_implication(
 	}
 }
 
-/**
- * Updates the proof of an undecidable implication
- */
-function update_undecidable_implication(
-	implication: { id: string; proof: string },
-	record: (label: UpdateLabel) => void
-) {
-	const existing = db
-		.prepare<[string], string>(
-			`SELECT proof FROM undecidable_implications WHERE id = ?`
-		)
-		.pluck()
-		.get(implication.id)
-
-	if (existing === undefined)
-		throw new Error(
-			`Undecidable implication ${implication.id} is missing; run pnpm db:update first.`
-		)
-
-	if (existing !== implication.proof) {
-		db.prepare(`UPDATE undecidable_implications SET proof = ? WHERE id = ?`).run(
-			implication.proof,
-			implication.id
-		)
-		record('undecidable implication proofs')
-	}
-}
-
 function watch() {
-	const watched_folders = [
-		...STRUCTURE_TYPES.flatMap((type) => Object.values(get_data_folders(type))),
-		UNDECIDABLE_IMPLICATIONS_FILE
-	]
+	const watched_folders = STRUCTURE_TYPES.flatMap((type) =>
+		Object.values(get_data_folders(type))
+	)
 	let update_timer: NodeJS.Timeout | undefined
 
 	function on_change(file: string) {

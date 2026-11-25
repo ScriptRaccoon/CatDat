@@ -1,7 +1,6 @@
 <script lang="ts">
 	import HelpMessage from '#components/HelpMessage.svelte'
 	import ImplicationList from '#components/ImplicationList.svelte'
-	import UndecidableImplicationList from '#components/UndecidableImplicationList.svelte'
 	import MetaData from '#components/MetaData.svelte'
 	import SearchFilter from '#components/SearchFilter.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
@@ -11,18 +10,14 @@
 		pluralize,
 		remove_underscores
 	} from '#shared/utils.ts'
-	import type {
-		ImplicationDisplay,
-		StructureType,
-		UndecidableImplication
-	} from '#lib/commons/types.ts'
+	import type { ImplicationDisplay, StructureType } from '#lib/commons/types.ts'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'
 	import Fa from 'svelte-fa'
 
 	type Props = {
 		implications: ImplicationDisplay[]
-		undecidable_implications: UndecidableImplication[]
+		undecidable_implications: ImplicationDisplay[]
 		type: StructureType
 		hints: Snippet
 	}
@@ -43,14 +38,20 @@
 
 	let search = $state('')
 
+	function matches_search(implication: ImplicationDisplay) {
+		return [...implication.assumptions, ...implication.conclusions].some((prop) =>
+			normalize_text(prop).includes(normalize_text(search))
+		)
+	}
+
 	let filtered_implications = $derived(
+		search ? displayed_implications.filter(matches_search) : displayed_implications
+	)
+
+	let filtered_undecidable_implications = $derived(
 		search
-			? displayed_implications.filter((implication) =>
-					[...implication.assumptions, ...implication.conclusions].some(
-						(prop) => normalize_text(prop).includes(normalize_text(search))
-					)
-				)
-			: displayed_implications
+			? undecidable_implications.filter(matches_search)
+			: undecidable_implications
 	)
 
 	let deduced_implications_count = $derived(
@@ -101,7 +102,7 @@
 
 <ImplicationList implications={filtered_implications} {type} />
 
-{#if undecidable_implications.length}
+{#if filtered_undecidable_implications.length}
 	<h2>Undecidable implications</h2>
 
 	<p class="hint">
@@ -109,7 +110,11 @@
 		deductions.
 	</p>
 
-	<UndecidableImplicationList implications={undecidable_implications} {type} />
+	<ImplicationList
+		implications={filtered_undecidable_implications}
+		{type}
+		label="Undecidable implications"
+	/>
 {/if}
 
 <SuggestionForm />

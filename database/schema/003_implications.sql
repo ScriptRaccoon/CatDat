@@ -7,6 +7,9 @@ CREATE TABLE implications (
     is_deduced INTEGER NOT NULL DEFAULT FALSE,
     check_redundancy INTEGER NOT NULL DEFAULT TRUE
         CHECK (check_redundancy in (TRUE, FALSE)),
+    -- undecidable in ZFC; such implications are not used for deductions
+    is_undecidable INTEGER NOT NULL DEFAULT FALSE
+        CHECK (is_undecidable IN (TRUE, FALSE)),
     dual_implication_id TEXT,
     UNIQUE (id, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,
@@ -67,6 +70,7 @@ CREATE VIEW implications_view AS
         i.type,
         i.is_equivalence,
         i.is_deduced,
+        i.is_undecidable,
         i.proof,
         i.dual_implication_id,
         (
@@ -92,18 +96,3 @@ CREATE VIEW implications_view AS
         ) AS associated_assumptions
     FROM implications i
 ;
-
-CREATE TABLE undecidable_implications (
-    id TEXT PRIMARY KEY,
-    type TEXT NOT NULL,
-    assumption_id TEXT NOT NULL,
-    conclusion_id TEXT NOT NULL,
-    proof TEXT NOT NULL CHECK (length(proof) > 0),
-    CHECK (assumption_id != conclusion_id),
-    UNIQUE (type, assumption_id, conclusion_id),
-    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,
-    FOREIGN KEY (assumption_id, type)
-        REFERENCES properties (id, type) ON DELETE CASCADE,
-    FOREIGN KEY (conclusion_id, type)
-        REFERENCES properties (id, type) ON DELETE CASCADE
-);

@@ -21,7 +21,8 @@ export function clear_deduced_implications(type: StructureType) {
 /**
  * Dualizes all implications by dualizing the involved properties
  * (in case they have a dual). For example, if P ===> Q holds,
- * then P^op ===> Q^op holds as well.
+ * then P^op ===> Q^op holds as well. Likewise, the dual of an
+ * undecidable implication is undecidable.
  */
 export function create_dualized_implications(type: StructureType) {
 	const structure_associations = db
@@ -36,6 +37,7 @@ export function create_dualized_implications(type: StructureType) {
 		{
 			id: string
 			is_equivalence: 0 | 1
+			is_undecidable: 0 | 1
 			assumptions: string
 			conclusions: string
 			dual_assumptions: string
@@ -46,6 +48,7 @@ export function create_dualized_implications(type: StructureType) {
 		`SELECT
 			i.id,
 			i.is_equivalence,
+			i.is_undecidable,
 			i.assumptions,
 			i.conclusions,
 			(
@@ -83,8 +86,8 @@ export function create_dualized_implications(type: StructureType) {
 
 	const implication_insert = db.prepare(`
 		INSERT INTO implications
-			(id, type, is_equivalence, proof, is_deduced, dual_implication_id)
-		VALUES (?, ?, ?, ?, TRUE, ?)	
+			(id, type, is_equivalence, is_undecidable, proof, is_deduced, dual_implication_id)
+		VALUES (?, ?, ?, ?, ?, TRUE, ?)	
 	`)
 
 	const dual_update = db.prepare(`
@@ -139,11 +142,16 @@ export function create_dualized_implications(type: StructureType) {
 
 			count++
 
+			const dual_link = `<a href="/${type}-implication/${impl.id}">dual implication</a>`
+
 			implication_insert.run(
 				dual_id,
 				type,
 				impl.is_equivalence,
-				`This follows from the <a href="/${type}-implication/${impl.id}">dual implication</a>.`,
+				impl.is_undecidable,
+				impl.is_undecidable
+					? `This follows from the undecidability of the ${dual_link}.`
+					: `This follows from the ${dual_link}.`,
 				impl.id
 			)
 

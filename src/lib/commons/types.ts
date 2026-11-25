@@ -105,6 +105,7 @@ export type ImplicationDB = {
 	id: string
 	is_equivalence: 0 | 1
 	is_deduced: 0 | 1
+	is_undecidable?: 0 | 1
 	proof: string
 	dual_implication_id?: string | null
 	assumptions: string
@@ -117,6 +118,7 @@ export type ImplicationDisplay = Replace<
 	{
 		is_equivalence: boolean
 		is_deduced: boolean
+		is_undecidable: boolean
 		assumptions: string[]
 		conclusions: string[]
 		associated_assumptions: Partial<Record<string, Set<string>>>
@@ -127,13 +129,6 @@ export type ImplicationShort = Pick<
 	ImplicationDisplay,
 	'id' | 'assumptions' | 'conclusions' | 'is_equivalence' | 'associated_assumptions'
 >
-
-export type UndecidableImplication = {
-	id: string
-	assumption: string
-	conclusion: string
-	proof: string
-}
 
 export type SearchResults = {
 	contradiction: ImplicationShort[] | null
