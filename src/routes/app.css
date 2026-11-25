@@ -327,6 +327,13 @@ label {
 	white-space: nowrap;
 }
 
+/* extends the box of an element (its background, target, or outline) to the left
+and right without changing the layout */
+.outset-inline {
+	padding-inline: 0.25rem;
+	margin-inline: -0.25rem;
+}
+
 /*
  * Operators such as ⟹ (see operator.utils.ts). The font KaTeX_Main is
  * defined in the KaTeX stylesheet, which +layout.svelte loads from a CDN.

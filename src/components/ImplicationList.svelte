@@ -23,7 +23,11 @@
 		{#each implications as implication}
 			<li>
 				<div class="implication-container">
-					<a href="/{type}-implication/{implication.id}" aria-label="details">
+					<a
+						href="/{type}-implication/{implication.id}"
+						class="outset-inline"
+						aria-label="details"
+					>
 						<Fa icon={faInfoCircle} color="var(--secondary-text-color)" />
 					</a>
 

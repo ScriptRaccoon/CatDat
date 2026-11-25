@@ -29,6 +29,7 @@
 		<a
 			href={get_property_url(assumption, type)}
 			class:highlighted={assumption === highlighted_property}
+			class:outset-inline={assumption === highlighted_property}
 		>
 			{assumption}
 		</a>
@@ -44,6 +45,7 @@
 		<a
 			href={get_property_url(conclusion, type)}
 			class:highlighted={conclusion === highlighted_property}
+			class:outset-inline={conclusion === highlighted_property}
 		>
 			{conclusion}
 		</a>
@@ -64,8 +66,6 @@
 
 		&.highlighted {
 			background-color: var(--secondary-bg-color);
-			padding-inline: 0.25rem;
-			margin-inline: -0.25rem;
 			border-radius: 0.25rem;
 		}
 	}

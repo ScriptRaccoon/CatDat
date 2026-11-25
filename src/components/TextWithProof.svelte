@@ -37,7 +37,7 @@
 </script>
 
 <span class="wrapper" class:expanded={popup_state?.id === id} bind:this={wrapper}>
-	<button onclick={show_proof} aria-label="Show proof">
+	<button class="outset-inline" onclick={show_proof} aria-label="Show proof">
 		<Fa icon={faInfoCircle} />
 	</button>
 
@@ -57,8 +57,6 @@
 	}
 
 	button {
-		padding-inline: 0.25rem;
-		margin-inline: -0.25rem;
 		color: var(--secondary-text-color);
 		transition: color 150ms;
 	}
