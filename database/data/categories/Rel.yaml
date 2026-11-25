@@ -12,7 +12,12 @@ tags:
 related:
   - Set
   - Bin
+  - SupLat
 
+# TODO: use the fully faithful functor Rel ---> SupLat, A |--> P(A), R |--> R_* to simplify the proofs of:
+# generator, coproducts, infinitary biproducts, kernels, Cauchy complete (the idempotent relation <= on {0,1}
+# splits through a chain with three elements, which is not a power set), normal, isomorphisms (restrict to atoms),
+# monomorphisms, epimorphisms. State the functor here.
 satisfied_properties:
   - property: locally small
     proof: The set of morphisms $X \to Y$ is the set $P(X \times Y)$.

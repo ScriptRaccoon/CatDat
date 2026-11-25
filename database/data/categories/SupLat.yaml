@@ -1,0 +1,136 @@
+id: SupLat
+name: category of suplattices
+notation: $\SupLat$
+objects: suplattices, i.e. partially ordered sets $(X,\leq)$ such that every subset $S \subseteq X$ has a supremum $\bigvee S$
+morphisms: >-
+  A morphism $f : (X,\leq) \to (Y,\leq)$ is a supremum-preserving map, i.e. a map $f : X \to Y$ such that $f(\bigvee S) = \bigvee f_*(S)$ for every subset $S \subseteq X$, where $f_*(S) \coloneqq \{f(x) : x \in S\}$. In particular, $f$ is order-preserving and maps the least element $\bot$ to $\bot$.
+description: Every suplattice $(X,\leq)$ has a least element $\bot \coloneqq \bigvee \varnothing$ and a greatest element $\top \coloneqq \bigvee X$. It also has infima, since the infimum of a subset $S \subseteq X$ is the supremum of the lower bounds of $S$. Thus, the suplattices are precisely the complete lattices, but the morphisms of $\SupLat$ do not have to preserve infima.
+nlab_link: https://ncatlab.org/nlab/show/SupLat
+keywords:
+  - complete lattices
+  - sup-lattices
+  - complete semilattices
+
+tags:
+  - order theory
+
+related:
+  - Pos
+  - Ord
+  - Rel
+
+satisfied_properties:
+  - property: locally small
+    proof: There is a forgetful functor $\SupLat \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
+
+  - property: self-dual
+    proof: >-
+      Every morphism $f : (X,\leq) \to (Y,\leq)$ in $\SupLat$ has a right adjoint, namely the map
+      $$\textstyle f^\dagger : Y \to X,\, y \mapsto \bigvee \{x \in X : f(x) \leq y\},$$
+      which preserves infima. Conversely, every infimum-preserving map $Y \to X$ has a left adjoint, which preserves suprema. Since adjoints are unique and the right adjoint of a composite is the composite of the right adjoints in the reverse order, we get an isomorphism $\SupLat \to \SupLat^{\op}$ that maps $(X,\leq)$ to $(X,\geq)$ and $f$ to $f^\dagger : (Y,\geq) \to (X,\geq)$.
+
+  - property: infinitary biproducts
+    proof: >-
+      Let $(X_i,\leq)_{i \in I}$ be a family of suplattices. Consider the direct product $X \coloneqq \prod_{i \in I} X_i$ with the pointwise order and the projections $\pi_i : X \to X_i$. For a subset $S \subseteq X$, an element $y \in X$ is an upper bound of $S$ if and only if $y_i$ is an upper bound of $\{x_i : x \in S\}$ for every $i \in I$. Therefore, $S$ has the supremum
+      $$\textstyle \bigvee S = \bigl(\bigvee_{x \in S} x_i\bigr)_{i \in I}.$$
+      Hence, $(X,\leq)$ is a suplattice, the projections preserve suprema, and a map into $X$ preserves suprema if and only if all its components do. This shows that $(X,\leq)$ is the product of the $(X_i,\leq)$.
+
+      Let $\iota_j : X_j \to X$ be the map with $\iota_j(x)_j = x$ and $\iota_j(x)_i = \bot$ for $i \neq j$. It preserves suprema, since its components are the identity and constant maps with value $\bot$. We claim that $X$ is a coproduct with inclusions $\iota_j$. Let $(f_i : (X_i,\leq) \to (Y,\leq))_{i \in I}$ be a family of morphisms. Since every $x = (x_i)_{i \in I} \in X$ satisfies $x = \bigvee_{i \in I} \iota_i(x_i)$, the only possible morphism $f : (X,\leq) \to (Y,\leq)$ with $f \circ \iota_i = f_i$ for all $i \in I$ is given by $f(x) = \bigvee_{i \in I} f_i(x_i)$. This map preserves suprema since for every subset $S \subseteq X$ we have
+      $$\begin{align*}
+      f(\textstyle\bigvee S) & = \textstyle\bigvee_{i \in I} f_i\bigl(\bigvee_{x \in S} x_i\bigr) \\
+      & = \textstyle\bigvee_{i \in I} \bigvee_{x \in S} f_i(x_i) \\
+      & = \textstyle\bigvee_{x \in S} \bigvee_{i \in I} f_i(x_i) \\
+      & = \textstyle\bigvee_{x \in S} f(x) \\
+      & = \textstyle\bigvee f_*(S),
+      \end{align*}$$
+      and it satisfies
+      $$\textstyle f(\iota_j(x)) = f_j(x) \vee \bigvee_{i \neq j} f_i(\bot) = f_j(x).$$
+      The zero morphisms are the constant maps with value $\bot$. Hence, the canonical morphism from the coproduct to the product is the identity.
+
+  - property: generator
+    proof: The suplattice $\{0 < 1\}$ represents the forgetful functor $\SupLat \to \Set$, since a morphism $\{0 < 1\} \to (X,\leq)$ must map $0$ to $\bot$ and may map $1$ to any element of $X$. The forgetful functor is faithful.
+
+  - property: well-powered
+    proof: This follows since monomorphisms are injective (<a href="/category/SupLat?proof=monomorphism" data-allow-deduced>proof</a>).
+
+  - property: Barr-exact
+    proof: The forgetful functor $\SupLat \to \Set$ is monadic, with the power set monad as the associated monad, see <a href="https://tac.mta.ca/tac/reprints/articles/17/tr17abs.html">Adámek–Herrlich–Strecker</a>, Example 20.5(3). Therefore, by <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">this result</a>, $\SupLat$ is Barr-exact.
+
+  - property: epi-regular
+    proof: >-
+      Let $f : (X,\leq) \to (Y,\leq)$ be an epimorphism. It is surjective (<a href="/category/SupLat?proof=epimorphism" data-allow-deduced>proof</a>). We claim that $f$ is the coequalizer of its kernel pair. Let $g : (X,\leq) \to (Z,\leq)$ be a morphism such that $f(x) = f(x')$ implies $g(x) = g(x')$ for all $x,x' \in X$. Since $f$ is surjective, there is a unique map $h : Y \to Z$ with $h \circ f = g$. It remains to prove that $h$ preserves suprema. Every subset of $Y$ is of the form $f_*(S)$ for some subset $S \subseteq X$, and we have
+      $$\textstyle h(\bigvee f_*(S)) = h(f(\bigvee S)) = g(\bigvee S) = \bigvee g_*(S) = \bigvee h_*(f_*(S)).$$
+
+      Conceptually, this is an instance of the fundamental theorem on homomorphisms, which holds in all infinitary algebraic categories.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: Two distinct sets with one element, equipped with their unique order, are isomorphic, but not equal.
+
+  - property: Malcev
+    proof: 'If $(X,\leq)$ is a suplattice, then $\{(x,y) \in X^2 : x \leq y\} \subseteq X^2$ is closed under suprema. Hence, it is a reflexive relation on $(X,\leq)$ in $\SupLat$. It is not symmetric when $X$ has more than one element. For example, for $\{0 < 1\}$ it contains $(0,1)$, but not $(1,0)$.'
+
+  - property: all epimorphisms split
+    proof: >-
+      Let $(X,\leq)$ be the suplattice with the following Hasse diagram:
+      $$\begin{array}{ccccc}
+      & & \top & & \\
+      & \diagup & \vert & \diagdown & \\
+      a \!\!\! & & b & & \!\!\! c \\
+      & \diagdown & \vert & \diagup & \\
+      & & \bot & &
+      \end{array}$$
+      The morphism
+      $$\textstyle p : (P(X),\subseteq) \to (X,\leq),\, S \mapsto \bigvee S$$
+      is surjective, hence an epimorphism. Assume that it has a section $s : (X,\leq) \to (P(X),\subseteq)$. The equation $p \circ s = \id_X$ means that $\bigvee s(y) = y$ for all $y \in X$. In particular, every $x \in s(y)$ satisfies $x \leq y$. Since $s$ preserves suprema and $c \leq a \vee b$, we have $s(c) \subseteq s(a \vee b) = s(a) \cup s(b)$. Let $x \in s(c)$. Then $x \leq c$. Since also $x \in s(a)$ or $x \in s(b)$, we have $x \leq a$ or $x \leq b$. It follows that $x = \bot$. This shows $s(c) \subseteq \{\bot\}$. Hence, $c = \bigvee s(c) = \bot$, a contradiction.
+
+      <strong>Remark.</strong> For every suplattice $(X,\leq)$, the morphism $p$ is the canonical epimorphism from the free suplattice on the set $X$, i.e. the structure map of $X$ as an algebra of the power set monad. It splits if and only if $(X,\leq)$ is projective. Thus, the proof shows that the suplattice above is not projective.
+
+  - property: normal
+    proof: 'The kernel of a morphism $f : (X,\leq) \to (Y,\leq)$ is the inclusion of the subset $\{x \in X : f(x) = \bot\}$, which is downward closed. But the image of the diagonal monomorphism $\{0 < 1\} \to \{0 < 1\}^2$ is $\{(0,0),(1,1)\}$, which is not downward closed. Hence, it is not a kernel.'
+
+  - property: filtered-colimit-stable monomorphisms
+    proof: >-
+      For $n \in \IN$ let $X_n \coloneqq P(\IN_{\geq n})$, ordered by inclusion. Consider the sequence
+      $$(X_0,\subseteq) \to (X_1,\subseteq) \to (X_2,\subseteq) \to \cdots$$
+      with the morphisms $X_n \to X_{n+1}$, $S \mapsto S \cap \IN_{\geq n+1}$, which preserve suprema (i.e. unions).
+
+      We claim that the colimit of this sequence is the zero object. The functor
+      $$\SupLat \to \Set_*,\, (X,\leq) \mapsto (X,\bot)$$
+      has a left adjoint $F : \Set_* \to \SupLat$ with $F(A,a_0) = (P(A \setminus \{a_0\}),\subseteq)$, since a morphism from the free suplattice on the set $A \setminus \{a_0\}$ to $(X,\leq)$ corresponds to a map $A \setminus \{a_0\} \to X$, i.e. to a pointed map $(A,a_0) \to (X,\bot)$. The sequence above is the image under $F$ of the sequence of pointed sets
+      $$\IN_{\geq 0} \cup \{\ast\} \to \IN_{\geq 1} \cup \{\ast\} \to \IN_{\geq 2} \cup \{\ast\} \to \cdots,$$
+      where $\IN_{\geq n} \cup \{\ast\} \to \IN_{\geq n+1} \cup \{\ast\}$ maps $n$ to $\ast$ and fixes all other elements. Its colimit in $\Set_*$ is $\{\ast\}$, since every element is eventually mapped to $\ast$. As a left adjoint, $F$ preserves colimits. Hence, the colimit of the sequence above is $F(\{\ast\}) = (P(\varnothing),\subseteq)$, i.e. the zero object. This proves the claim.
+
+      The morphisms $i_n : \{0 < 1\} \to (X_n,\subseteq)$ with $i_n(0) = \varnothing$ and $i_n(1) = \IN_{\geq n}$ are injective, hence monomorphisms, and they are compatible with the morphisms of the sequence. But their colimit is the morphism from $\{0 < 1\}$ to the zero object, which is not a monomorphism.
+
+  - property: coaccessible
+    proof: >-
+      Assume that $\SupLat$ is coaccessible. We apply <a href="/content/decreasing-chains-coaccessible#corollary">this corollary</a> to the functor $F : \Set \to \SupLat$ that maps a set $A$ to $(P(A),\subseteq)$ and a map $h : A \to B$ to $h_* : P(A) \to P(B)$.
+      To verify its assumption, let $\kappa$ be a regular cardinal such that the diagram $(\kappa,\geq) \to \SupLat$, $\alpha \mapsto F(\kappa_{\geq \alpha})$ has a limit. Since the forgetful functor $\SupLat \to \Set$ is representable (<a href="/category/SupLat?proof=generator">proof</a>), it preserves limits. Hence, the underlying set of the limit is $\bigcap_{\alpha < \kappa} P(\kappa_{\geq \alpha}) = \{\varnothing\}$, so that the limit is initial.
+      The corollary now implies that $F(\{\ast\}) \cong \{0 < 1\}$ is initial, which is a contradiction.
+
+special_objects:
+  initial object:
+    description: singleton suplattice
+  terminal object:
+    description: singleton suplattice
+  coproducts:
+    description: direct products (!)
+  products:
+    description: direct products with the pointwise order
+
+special_morphisms:
+  isomorphism:
+    description: bijective supremum-preserving maps
+    proof: >-
+      For the non-trivial direction, let $f : (X,\leq) \to (Y,\leq)$ be a bijective morphism. We need to show that the inverse map $f^{-1} : Y \to X$ preserves suprema. For every subset $T \subseteq Y$ we have
+      $$\textstyle f\bigl(\bigvee (f^{-1})_*(T)\bigr) = \bigvee f_*\bigl((f^{-1})_*(T)\bigr) = \bigvee T,$$
+      and hence $\bigvee (f^{-1})_*(T) = f^{-1}(\bigvee T)$.
+
+      Conceptually, this is an instance of the usual classification of isomorphisms in infinitary algebraic categories: $\SupLat$ is infinitary algebraic, with the suprema of $I$-indexed families as $I$-ary operations for every set $I$.
+  monomorphism:
+    description: injective supremum-preserving maps
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (<a href="/category/SupLat?proof=generator">proof</a>) and therefore preserves monomorphisms.
+  epimorphism:
+    description: surjective supremum-preserving maps
+    proof: 'For the non-trivial direction, let $f : (X,\leq) \to (Y,\leq)$ be an epimorphism. Since the isomorphism $\SupLat \cong \SupLat^{\op}$ maps $f$ to its right adjoint $f^\dagger : Y \to X$ (<a href="/category/SupLat?proof=self-dual">proof</a>), this map is a monomorphism, hence injective (<a href="/category/SupLat?proof=monomorphism" data-allow-deduced>proof</a>). Since $f^\dagger \circ f \circ f^\dagger = f^\dagger$ holds for every adjunction between partially ordered sets, we conclude $f \circ f^\dagger = \id_Y$. Hence, $f$ is surjective.'

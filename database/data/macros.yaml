@@ -152,6 +152,7 @@
 \Sch: \mathbf{Sch}
 \Pos: \mathbf{Pos}
 \PreOrd: \mathbf{PreOrd}
+\SupLat: \mathbf{SupLat}
 \FinOrd: \mathbf{FinOrd}
 \Ord: \mathbf{Ord}
 \FinSet: \mathbf{FinSet}

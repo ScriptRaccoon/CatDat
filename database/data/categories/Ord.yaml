@@ -17,6 +17,7 @@ related:
   - PreOrd
   - Pos
   - FinOrd
+  - SupLat
 
 satisfied_properties:
   - property: locally small

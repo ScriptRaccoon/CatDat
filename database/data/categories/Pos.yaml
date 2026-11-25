@@ -17,6 +17,7 @@ related:
   - PreOrd
   - Ord
   - Pos_noiso
+  - SupLat
   - Bin
 
 satisfied_properties:
