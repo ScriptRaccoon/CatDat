@@ -328,13 +328,12 @@ label {
 }
 
 /*
- * Operators in implications (see implication.utils.ts). The font KaTeX_Main is
+ * Operators such as ⟹ (see operator.utils.ts). The font KaTeX_Main is
  * defined in the KaTeX stylesheet, which +layout.svelte loads from a CDN.
  */
 
-.implication-operator {
+.operator {
 	font-family: KaTeX_Main, serif;
-	margin-inline: 0.25rem;
 }
 
 /* cf. https://katex.org/docs/issues */

@@ -3,6 +3,7 @@
 	import MetaData from '#components/MetaData.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
 	import { get_property_url } from '#shared/property.utils.ts'
+	import { get_operator_html } from '#lib/commons/operator.utils.ts'
 	import { PLURALS } from '#shared/config.ts'
 	import { STRUCTURE_TYPES } from '#shared/config.ts'
 	import { capitalize, pluralize, remove_underscores } from '#shared/utils.ts'
@@ -82,7 +83,7 @@
 						<a href="/{type}/{pair.id1}">
 							{pair.name1}
 						</a>
-						&approx;
+						{@html get_operator_html('indistinguishable')}
 						<a href="/{type}/{pair.id2}">
 							{pair.name2}
 						</a>
@@ -102,9 +103,10 @@
 		{#if combinations.length}
 			<p class="hint">
 				Among the consistent {remove_underscores(type)} property combinations of the
-				form p &and; &not;q, the following are not yet witnessed by a {remove_underscores(
-					type
-				)} in the database or its dual. If some of these combinations <i>are</i>
+				form p {@html get_operator_html('and')}
+				{@html get_operator_html('not')}q, the following are not yet witnessed by
+				a {remove_underscores(type)} in the database or its dual. If some of these combinations
+				<i>are</i>
 				inconsistent, this indicates that some
 				<a href="/{type}-implications">implication</a> is missing. Combinations whose
 				existence is undecidable in ZFC are not listed.
@@ -121,7 +123,8 @@
 							<a href={get_property_url(p, type)} class="no-underline">
 								{p}
 							</a>
-							&and; &not;<a
+							{@html get_operator_html('and')}
+							{@html get_operator_html('not')}<a
 								href={get_property_url(q, type)}
 								class="no-underline"
 							>
@@ -134,8 +137,10 @@
 		{:else}
 			<p class="hint">
 				Every consistent {remove_underscores(type)} property combination of the form
-				p &and; &not;q is witnessed by a {remove_underscores(type)} in the database
-				or its dual. 🎉
+				p {@html get_operator_html('and')}
+				{@html get_operator_html('not')}q is witnessed by a {remove_underscores(
+					type
+				)} in the database or its dual. 🎉
 			</p>
 
 			<p>&mdash;</p>

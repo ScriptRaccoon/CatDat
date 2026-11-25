@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { get_operator_html } from '#lib/commons/implication.utils.ts'
+	import { get_operator_html } from '#lib/commons/operator.utils.ts'
 	import type { StructureType } from '#lib/commons/types.ts'
 	import { get_property_url } from '#shared/property.utils.ts'
 
@@ -24,35 +24,41 @@
 	let arrow = $derived(get_operator_html(is_equivalence ? 'equivalent' : 'implies'))
 </script>
 
-{#each assumptions as assumption, i}
-	<a
-		href={get_property_url(assumption, type)}
-		class:highlighted={assumption === highlighted_property}
-	>
-		{assumption}
-	</a>
+<span class="formula">
+	{#each assumptions as assumption, i}
+		<a
+			href={get_property_url(assumption, type)}
+			class:highlighted={assumption === highlighted_property}
+		>
+			{assumption}
+		</a>
 
-	{#if i < assumptions.length - 1}
-		{@html get_operator_html('and') + ' '}
-	{/if}
-{/each}
+		{#if i < assumptions.length - 1}
+			{@html get_operator_html('and') + ' '}
+		{/if}
+	{/each}
 
-{@html has_associated_assumptions ? `(${arrow})` : arrow}
+	{@html has_associated_assumptions ? `(${arrow})` : arrow}
 
-{#each conclusions as conclusion, i}
-	<a
-		href={get_property_url(conclusion, type)}
-		class:highlighted={conclusion === highlighted_property}
-	>
-		{conclusion}
-	</a>
+	{#each conclusions as conclusion, i}
+		<a
+			href={get_property_url(conclusion, type)}
+			class:highlighted={conclusion === highlighted_property}
+		>
+			{conclusion}
+		</a>
 
-	{#if i < conclusions.length - 1}
-		{@html get_operator_html('and') + ' '}
-	{/if}
-{/each}
+		{#if i < conclusions.length - 1}
+			{@html get_operator_html('and') + ' '}
+		{/if}
+	{/each}
+</span>
 
 <style>
+	.formula :global(.operator) {
+		margin-inline: 0.25rem;
+	}
+
 	a:not(.highlighted) {
 		text-decoration: none;
 	}
