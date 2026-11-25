@@ -3,7 +3,12 @@ name: category of sets and relations
 notation: $\Rel$
 objects: sets
 morphisms: A morphism from $A$ to $B$ is a relation, i.e. a subset of $A \times B$.
-description: 'This category is self-dual as it can be: There is an isomorphism $\Rel \cong \Rel^{\op}$ that is the identity on objects and maps a relation to its opposite relation. It is the prototype of a dagger-category.'
+description: >-
+  Mapping a relation $R \subseteq A \times B$ to its opposite relation $R^{\op} \subseteq B \times A$ defines an isomorphism $\Rel \cong \Rel^{\op}$ that is the identity on objects, which makes $\Rel$ the prototype of a <a href="https://ncatlab.org/nlab/show/dagger+category">dagger category</a>. Moreover, every relation $R \subseteq A \times B$ induces a map
+  $$R_* : P(A) \to P(B),\, T \mapsto \{b \in B : \exists \, a \in T : (a,b) \in R\},$$
+  and this yields a fully faithful functor
+  $$\Rel \to \SupLat,\, A \mapsto (P(A),\subseteq),\, R \mapsto R_*$$
+  to the <a href="/category/SupLat">category of suplattices</a>. Its essential image consists of the free suplattices, so that $\Rel$ is equivalent to the <a href="https://ncatlab.org/nlab/show/Kleisli+category">Kleisli category</a> of the power set monad.
 nlab_link: https://ncatlab.org/nlab/show/Rel
 
 tags:
@@ -14,10 +19,6 @@ related:
   - Bin
   - SupLat
 
-# TODO: use the fully faithful functor Rel ---> SupLat, A |--> P(A), R |--> R_* to simplify the proofs of:
-# generator, coproducts, infinitary biproducts, kernels, Cauchy complete (the idempotent relation <= on {0,1}
-# splits through a chain with three elements, which is not a power set), normal, isomorphisms (restrict to atoms),
-# monomorphisms, epimorphisms. State the functor here.
 satisfied_properties:
   - property: locally small
     proof: The set of morphisms $X \to Y$ is the set $P(X \times Y)$.
@@ -30,18 +31,22 @@ satisfied_properties:
     check_redundancy: false
 
   - property: generator
-    proof: One checks that the one-point set is a generator.
+    proof: >-
+      We claim that $\{\ast\}$ is a generator. Let $R,S : A \rightrightarrows B$ be two relations such that $R \circ T = S \circ T$ for all relations $T : \{\ast\} \to A$. For $a \in A$ and $T \coloneqq \{(\ast,a)\}$ this means that for all $b \in B$ we have $(a,b) \in R$ if and only if $(a,b) \in S$. Hence, $R = S$.
 
-  - property: coproducts
-    proof: It is an easy exercise to deduce this from the corresponding fact for sets and that sets form a distributive category.
-    check_redundancy: false
+      Alternatively, the functor $\Rel \to \SupLat$, $A \mapsto (P(A),\subseteq)$ is fully faithful and hence reflects generators, and it maps $\{\ast\}$ to $(P(\{\ast\}),\subseteq) \cong \{0 < 1\}$, which is a generator of $\SupLat$ (<a href="/category/SupLat?proof=generator">proof</a>).
 
   - property: infinitary biproducts
-    proof: 'This is a consequence of the description of coproducts and products: both are disjoint unions, even for infinite families, and the canonical morphism from the coproduct to the product is the identity.'
-    check_redundancy: false
+    proof: >-
+      Let $(A_i)_{i \in I}$ be a family of sets, and let $A \coloneqq \coprod_{i \in I} A_i$ be their disjoint union. As usual, we identify each $A_i$ with a subset of $A$. Let $\iota_i : A_i \to A$ be the relation given by the graph of the inclusion map, and let $\pi_i \coloneqq \iota_i^{\op} : A \to A_i$. Thus, for all $S \subseteq A_i$ and $T \subseteq A$ we have
+      $$(\iota_i)_*(S) = S, \quad (\pi_i)_*(T) = T \cap A_i.$$
+      The map
+      $$\textstyle (P(A),\subseteq) \to \prod_{i \in I} (P(A_i),\subseteq),\, T \mapsto (T \cap A_i)_{i \in I}$$
+      is an isomorphism of suplattices. Its components are the maps $(\pi_i)_*$, and its composite with $(\iota_j)_*$ maps $S \subseteq A_j$ to the family with $S$ at the index $j$ and $\varnothing$ elsewhere. Hence, $(P(A),\subseteq)$ is a product of the suplattices $(P(A_i),\subseteq)$ with projections $(\pi_i)_*$ and a coproduct with inclusions $(\iota_i)_*$ (<a href="/category/SupLat?proof=infinitary_biproducts">proof</a>). Since the functor $\Rel \to \SupLat$, $A \mapsto (P(A),\subseteq)$ is fully faithful and hence reflects limits and colimits, $A$ is a product of the $A_i$ in $\Rel$ with projections $\pi_i$ and a coproduct with inclusions $\iota_i$. Since $\pi_i \circ \iota_i = \id_{A_i}$ and $\pi_j \circ \iota_i = 0$ for $i \neq j$, the canonical morphism from the coproduct to the product is the identity.
 
   - property: kernels
-    proof: 'Let $R : A \to B$ be a relation. Define $K = \bigl\{a \in A : \neg \exists b \in B ((a,b) \in R) \bigr\}$. We have an inclusion map $I : K \to A$, which can also be regarded as a relation, and $R \circ I = \varnothing$ is the empty relation, i.e. the zero morphism. It is easy to check the universal property.'
+    proof: >-
+      Let $R : A \to B$ be a relation, and let $K \subseteq A$ be the subset of those $a \in A$ that are not related to any $b \in B$. Let $I : K \to A$ be the relation given by the graph of the inclusion map. We claim that $I$ is a kernel of $R$. Let $S : T \to A$ be a relation. We have $R \circ S = \varnothing$ if and only if there are no $t \in T$, $a \in A$, $b \in B$ with $(t,a) \in S$ and $(a,b) \in R$. This means that $a \in K$ for all $(t,a) \in S$, i.e. $S \subseteq T \times K$. This holds if and only if $S = I \circ S'$ for some relation $S' : T \to K$, which is then uniquely determined since $I \circ S' = S'$ as subsets of $T \times A$.
 
   - property: all monomorphisms split
     proof: >-
@@ -62,10 +67,10 @@ unsatisfied_properties:
     proof: The category contains $\Set$ as a subcategory, by identifying maps with their graphs, and $\Set$ is not skeletal (<a href="/category/Set?proof=skeletal" data-allow-deduced>proof</a>).
 
   - property: Cauchy complete
-    proof: See <a href="https://math.stackexchange.com/a/5030380">MSE/1931577</a>.
+    proof: 'Consider the relation $R : \{0,1\} \to \{0,1\}$ with $(a,b) \in R$ if and only if $a \leq b$. Since $\leq$ is reflexive and transitive, $R$ is idempotent. If $R$ splits through a set $A$, then the idempotent map $R_*$ on $P(\{0,1\})$ splits through $P(A)$ in $\Set$, so that $P(A)$ is isomorphic to the image of $R_*$. But this image consists of $R_*(\varnothing) = \varnothing$, $R_*(\{1\}) = \{1\}$, and $R_*(\{0\}) = R_*(\{0,1\}) = \{0,1\}$. Hence, $P(A)$ has exactly three elements, which is impossible.'
 
   - property: normal
-    proof: The construction of equalizers in $\Rel$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716">MSE/350716</a> shows that monomorphisms in $\Rel$ do not have to be functions.
+    proof: 'Every kernel is isomorphic to the graph of the inclusion map of a subset (<a href="/category/Rel?proof=kernels">proof</a>). Since isomorphisms are bijective functions (<a href="/category/Rel?proof=isomorphism" data-allow-deduced>proof</a>), it follows that every kernel is an injective function. The relation $R \coloneqq \{(\ast,0),(\ast,1)\} : \{\ast\} \to \{0,1\}$ is not a function, hence not a kernel. But it is a monomorphism, since the map $R_*$ with $R_*(\varnothing) = \varnothing$ and $R_*(\{\ast\}) = \{0,1\}$ is injective, and this is sufficient (<a href="/category/Rel?proof=monomorphism" data-allow-deduced>proof</a>).'
 
 special_objects:
   initial object:
@@ -75,15 +80,15 @@ special_objects:
   coproducts:
     description: disjoint union
   products:
-    description: disjoint unions (!)
+    description: disjoint union (!)
 
 special_morphisms:
   isomorphism:
     description: bijective functions
-    proof: 'For the non-trivial direction, assume that $R : A \to B$ is a relation which has an inverse relation $S : B \to A$. For every $a \in A$ we have $(a,a) \in \id_A = S \circ R$, so there is some $b \in B$ with $(a,b) \in R$ (and $(b,a) \in S$). This shows that $R$ is left-total, and for right-total the argument is similar. By symmetry, this also holds for $S$. To show that $R$ is a function, assume $(a,b_1), (a,b_2) \in R$. Choose some $b_3 \in B$ with $(b_3,a) \in S$. It follows that $(b_3,b_1) \in R \circ S = \id_B$, so $b_3 = b_1$. Similarly, $(b_3,b_2) \in R \circ S = \id_B$, so $b_3 = b_2$. This shows that $R$ is a function, i.e. left-unique. That $R$ is injective, i.e. right-unique, follows by symmetry. Finally, $R$ is surjective since it is right-total.'
+    proof: 'For the non-trivial direction, let $R : A \to B$ be an isomorphism. Using the functor $\Rel \to \SupLat$, $A \mapsto (P(A),\subseteq)$, we see that $R_* : (P(A),\subseteq) \to (P(B),\subseteq)$ is an isomorphism of suplattices, i.e. an isomorphism of partially ordered sets. Therefore, it restricts to a bijection between the minimal elements of $P(A) \setminus \{\varnothing\}$ and $P(B) \setminus \{\varnothing\}$, which are the sets with one element. This means that there is a bijection $f : A \to B$ with $R_*(\{a\}) = \{f(a)\}$ for all $a \in A$. Hence, $R$ is the graph of $f$.'
   monomorphism:
-    description: 'A relation $R : A \to B$ is a monomorphism iff the map $R_* : P(A) \to P(B)$ defined by $T \mapsto \{b \in B : \exists \, a \in T: (a,b) \in R \}$ is injective.'
-    proof: See <a href="https://math.stackexchange.com/questions/350716/">MSE/350716</a>.
+    description: 'A relation $R : A \to B$ is a monomorphism iff the map $R_* : P(A) \to P(B)$ is injective.'
+    proof: The functor $\Rel \to \Set$, $A \mapsto P(A)$, $R \mapsto R_*$ is represented by $\{\ast\}$, hence preserves monomorphisms. It is faithful, hence reflects monomorphisms.
   epimorphism:
     description: 'A relation $R : A \to B$ is an epimorphism iff the map $R^* : P(B) \to P(A)$ defined by $S \mapsto \{a \in A : \exists \, b \in S: (a,b) \in R \}$ is injective.'
-    proof: See <a href="https://math.stackexchange.com/questions/350716/">MSE/350716</a>.
+    proof: 'By self-duality (<a href="/category/Rel?proof=self-dual">proof</a>), $R : A \to B$ is an epimorphism if and only if the opposite relation $R^{\op} : B \to A$ is a monomorphism. Since $(R^{\op})_* = R^*$, the claim follows from the classification of monomorphisms (<a href="/category/Rel?proof=monomorphism" data-allow-deduced>proof</a>).'
