@@ -1,6 +1,7 @@
 <script lang="ts">
 	import {
 		encode_property_ID,
+		get_claim,
 		get_property_label,
 		get_property_url
 	} from '#shared/property.utils.ts'
@@ -11,16 +12,22 @@
 		properties: (PropertyShort & { proof: string })[]
 		type: StructureType
 		label: string
+		notation: string
+		undecidable?: boolean
 	}
 
-	let { properties, type, label }: Props = $props()
+	let { properties, type, label, notation, undecidable = false }: Props = $props()
 </script>
 
 {#if properties.length}
 	<ul class="no-bullets with-margins" aria-label={label}>
 		{#each properties as { id, relation, proof }}
 			<li>
-				<TextWithProof {proof} proof_key={encode_property_ID(id)}>
+				<TextWithProof
+					claim={get_claim(notation, relation, id, undecidable)}
+					{proof}
+					proof_key={encode_property_ID(id)}
+				>
 					{relation}
 					<a href={get_property_url(id, type)}>{get_property_label(id)}</a>
 				</TextWithProof>

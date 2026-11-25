@@ -126,6 +126,7 @@
 
 <PropertyAssignmentList
 	{type}
+	notation={structure.notation}
 	parent_id={structure.parent_structure_id}
 	{satisfied_properties}
 	{unsatisfied_properties}

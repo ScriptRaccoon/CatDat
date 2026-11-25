@@ -4,7 +4,7 @@
 	type PopupState = {
 		id: string
 		open: boolean
-		heading: string
+		claim: string
 		text: string
 		expanded: boolean
 	}
@@ -12,7 +12,7 @@
 	export const popup_state = $state<PopupState>({
 		id: '',
 		open: false,
-		heading: '',
+		claim: '',
 		text: '',
 		expanded: false
 	})
@@ -20,7 +20,7 @@
 	export function show_popup(data: Omit<PopupState, 'open'>) {
 		popup_state.open = true
 		popup_state.id = data.id
-		popup_state.heading = data.heading
+		popup_state.claim = data.claim
 		popup_state.text = data.text
 		popup_state.expanded = data.expanded
 	}
@@ -54,6 +54,7 @@
 	 */
 	type RegisteredProof = {
 		id: string
+		claim: string
 		proof: string
 		element: HTMLElement
 	}
@@ -81,7 +82,7 @@
 		back_stack.length = 0
 		show_popup({
 			id: registered_proof.id,
-			heading: 'Proof',
+			claim: registered_proof.claim,
 			text: registered_proof.proof,
 			expanded: false
 		})
@@ -167,7 +168,7 @@
 
 		show_popup({
 			id: registered_proof.id,
-			heading: 'Proof',
+			claim: registered_proof.claim,
 			text: registered_proof.proof,
 			expanded
 		})
@@ -230,6 +231,8 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 	class="popup"
 	class:open={popup_state.open}
 	class:expanded={popup_state.expanded}
+	role="region"
+	aria-labelledby="popup-claim"
 	bind:this={popup}
 >
 	<div class="content underline-formula-links">
@@ -244,7 +247,7 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 				</button>
 			{/if}
 
-			<h2>{popup_state.heading}</h2>
+			<strong class="claim" id="popup-claim">{@html popup_state.claim}</strong>
 
 			<button
 				onclick={toggle_expanded}
@@ -257,6 +260,8 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 				<Fa icon={faXmark} />
 			</button>
 		</header>
+
+		<strong>Proof.</strong>
 		{@html popup_state.text}
 	</div>
 </div>
@@ -311,18 +316,19 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 	}
 
 	.popup header {
-		margin-block: 0rem 1rem;
+		margin-block: 0rem 0.75rem;
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: start;
 
-		h2 {
-			margin: 0;
-			margin-right: auto;
+		.claim {
+			flex: 1;
+			font-size: 1.125rem;
+			color: var(--heading-color);
 		}
 
 		button {
-			padding: 0.2rem 1rem;
+			padding: 0 1rem;
 		}
 
 		button.back {

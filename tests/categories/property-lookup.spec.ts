@@ -106,7 +106,7 @@ test('user can open a proof from the property lookup', async ({ page }) => {
 
 	const lookup = page.getByRole('searchbox', { name: 'look up a property' })
 	const results = page.getByRole('list', { name: 'Property lookup results' })
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await lookup.fill('Malcev')
 	await results

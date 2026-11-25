@@ -19,7 +19,11 @@
 <ul class="no-bullets with-margins" aria-label="Undecidable implications">
 	{#each implications as { id, assumption, conclusion, proof }}
 		<li>
-			<TextWithProof {proof} proof_key={id}>
+			<TextWithProof
+				claim={`The implication "${assumption} ⟹ ${conclusion}" is undecidable in ZFC`}
+				{proof}
+				proof_key={id}
+			>
 				<a
 					class="implication-property"
 					href={get_property_url(assumption, type)}

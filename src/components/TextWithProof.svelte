@@ -11,12 +11,13 @@
 
 	type Props = {
 		children: Snippet
+		claim: string
 		proof: string
 		proof_key: string
 		is_duplicate?: boolean
 	}
 
-	let { children, proof, proof_key, is_duplicate = false }: Props = $props()
+	let { children, claim, proof, proof_key, is_duplicate = false }: Props = $props()
 
 	const id = $props.id()
 
@@ -25,7 +26,7 @@
 	$effect(() => {
 		if (is_duplicate || !wrapper) return
 		const key = proof_key
-		register_proof(key, { id, proof, element: wrapper })
+		register_proof(key, { id, claim, proof, element: wrapper })
 		return () => unregister_proof(key, id)
 	})
 

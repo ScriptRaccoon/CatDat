@@ -12,29 +12,15 @@ test('user can open and close a proof for a property of a functor', async ({ pag
 
 	await claim.locator('button').click()
 
-	await expect(
-		page.getByRole('heading', {
-			name: 'Proof',
-			exact: true
-		})
-	).toBeVisible()
+	const popup = page.locator('.popup')
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
-
-	const text = (await popup.textContent())?.trim() ?? ''
-
-	const proof_text = text.replace(/^Proof/, '').trim()
-
-	expect(proof_text.length).toBeGreaterThan(0)
+	await expect(popup).toBeVisible()
+	await expect(popup).toHaveAccessibleName(/is monadic/)
+	await expect(popup).toContainText('For every algebraic category')
 
 	await popup.getByRole('button', { name: 'close' }).click()
 
-	await expect(
-		page.getByRole('heading', {
-			name: 'Proof',
-			exact: true
-		})
-	).not.toBeVisible()
+	await expect(popup).toBeHidden()
 })
 
 test('user can open a proof for a deduced satisfied property of a functor and follow the link to the proof of an assumption', async ({
@@ -50,7 +36,7 @@ test('user can open a proof for a deduced satisfied property of a functor and fo
 
 	await claim.locator('button').click()
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toContainText(
 		'Since it is a left adjoint (proof), it is cocontinuous'
@@ -78,7 +64,7 @@ test('user can open a proof for a deduced unsatisfied property of a functor', as
 
 	await claim.locator('button').click()
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toContainText('Assume for contradiction that it is continuous.')
 })
