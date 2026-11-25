@@ -931,6 +931,10 @@
 		{
 			"type": "functor",
 			"id": "normed_completion"
+		},
+		{
+			"type": "category",
+			"id": "SupLat"
 		}
 	],
 	"properties": [
