@@ -128,7 +128,7 @@ test('user can open a proof that is cited on a content page', async ({ page }) =
 
 	await expect(page).toHaveURL('/category/Unif?proof=cocomplete')
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toBeVisible()
 	await expect(popup).toContainText('finest uniform structure')

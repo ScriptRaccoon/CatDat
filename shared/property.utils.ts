@@ -47,6 +47,21 @@ export function get_property_label(id: string) {
 	return id.replace(/^preserves\s/, '')
 }
 
+/**
+ * Returns the claim that a structure with the given notation satisfies
+ * (or does not satisfy, depending on the relation) a property, or that
+ * this cannot be decided.
+ */
+export function get_claim(
+	notation: string,
+	relation: string,
+	property_id: string,
+	is_undecidable = false
+) {
+	const claim = `${notation} ${relation} ${get_property_label(property_id)}`
+	return is_undecidable ? `It cannot be decided whether ${claim}` : claim
+}
+
 export function get_special_morphism_plural(kind: string) {
 	return `${kind}s`
 }

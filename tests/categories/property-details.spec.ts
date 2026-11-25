@@ -132,8 +132,11 @@ test('user can view undecidable implications of a category property', async ({
 		'/category-property/accessible?proof=accessible_well-copowered_undecidable'
 	)
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
+	await expect(popup).toHaveAccessibleName(
+		'The implication "accessible ⟹ well-copowered" is undecidable in ZFC'
+	)
 	await expect(popup).toContainText('Vopěnka')
 })
 

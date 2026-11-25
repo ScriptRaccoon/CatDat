@@ -16,7 +16,7 @@ test('opening and closing a proof updates the URL', async ({ page }) => {
 
 	await expect(page).toHaveURL('/category/Grp?proof=mono-regular')
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await popup.getByRole('button', { name: 'close' }).click()
 
@@ -26,16 +26,17 @@ test('opening and closing a proof updates the URL', async ({ page }) => {
 test('user can open a proof via the URL', async ({ page }) => {
 	await page.goto('/category/Grp?proof=mono-regular', { waitUntil: 'networkidle' })
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toBeVisible()
+	await expect(popup).toHaveAccessibleName(/is mono-regular/)
 	await expect(popup).toContainText('nLab')
 })
 
 test('user can open a deduced proof via the URL', async ({ page }) => {
 	await page.goto('/category/Set?proof=balanced', { waitUntil: 'networkidle' })
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toBeVisible()
 	await expect(popup).toContainText('it is balanced')
@@ -44,16 +45,17 @@ test('user can open a deduced proof via the URL', async ({ page }) => {
 test('user can open a proof of special morphisms via the URL', async ({ page }) => {
 	await page.goto('/category/Grp?proof=epimorphism', { waitUntil: 'networkidle' })
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toBeVisible()
+	await expect(popup).toHaveAccessibleName(/Epimorphisms in/)
 })
 
 test('user can follow a link to a proof on another page', async ({ page }) => {
 	// both pages have a proof with the same key, which must not interfere
 	await page.goto('/category/Alg(R)?proof=Malcev', { waitUntil: 'networkidle' })
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 	await expect(popup).toContainText('in the same way')
 
 	await popup.locator('a[href="/category/Grp?proof=Malcev"]').click()
@@ -68,7 +70,7 @@ test('user can follow a link to a proof on the same page', async ({ page }) => {
 		waitUntil: 'networkidle'
 	})
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 	await expect(popup).toContainText('cofiltered')
 
 	await popup.locator('a[href="/category/Grp_fg?proof=kernels"]').click()
@@ -88,7 +90,9 @@ for (const via of ['back button', 'browser']) {
 			.locator('button')
 			.click()
 
-		const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+		const popup = page.locator('.popup')
+		await expect(popup).toHaveAccessibleName(/has effective cocongruences/)
+
 		const back_button = popup.getByRole('button', { name: 'back to previous proof' })
 
 		await expect(back_button).toHaveCount(0)
@@ -104,6 +108,7 @@ for (const via of ['back button', 'browser']) {
 
 		await expect(page).toHaveURL('/category/GrpAct?proof=mono-regular')
 		await expect(back_button).toBeVisible()
+		await expect(popup).toHaveAccessibleName(/is mono-regular/)
 		await expect
 			.poll(() => page.evaluate(() => window.scrollY))
 			.not.toBe(page_scroll_y)
@@ -116,6 +121,7 @@ for (const via of ['back button', 'browser']) {
 
 		await expect(page).toHaveURL('/category/GrpAct?proof=effective_cocongruences')
 		await expect(back_button).toHaveCount(0)
+		await expect(popup).toHaveAccessibleName(/has effective cocongruences/)
 		await expect(popup).toContainText('good pushouts of monomorphisms')
 		await expect.poll(() => popup.evaluate((el) => el.scrollTop)).toBe(scroll_top)
 		await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(page_scroll_y)
@@ -129,7 +135,7 @@ test('following a link to a nearby proof does not scroll to the top', async ({
 		waitUntil: 'networkidle'
 	})
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 	await expect(popup).toContainText('precisely the monomorphisms')
 
 	const scroll_y = await page.evaluate(() => window.scrollY)
@@ -173,7 +179,7 @@ test('following a link to a nearby proof does not scroll to the top', async ({
 test('expanding and collapsing a proof updates the URL', async ({ page }) => {
 	await page.goto('/category/Grp?proof=mono-regular', { waitUntil: 'networkidle' })
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await popup.getByRole('button', { name: 'expand' }).click()
 
@@ -191,7 +197,7 @@ test('user can open an expanded proof via the URL', async ({ page }) => {
 		waitUntil: 'networkidle'
 	})
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toBeVisible()
 	await expect.poll(() => is_full_height(popup)).toBe(true)
@@ -202,7 +208,7 @@ test('closing an expanded proof removes it from the URL', async ({ page }) => {
 		waitUntil: 'networkidle'
 	})
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await popup.getByRole('button', { name: 'close' }).click()
 
@@ -214,7 +220,7 @@ test('following a link from an expanded proof keeps it expanded', async ({ page 
 		waitUntil: 'networkidle'
 	})
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await popup.locator('a[href="/category/Grp_fg?proof=kernels"]').click()
 

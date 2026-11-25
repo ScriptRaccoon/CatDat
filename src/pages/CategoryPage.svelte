@@ -7,6 +7,7 @@
 		get_property_url,
 		get_special_morphism_plural
 	} from '#shared/property.utils.ts'
+	import { capitalize } from '#shared/utils.ts'
 	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
@@ -47,6 +48,9 @@
 					<li>
 						{#if morphism.proof}
 							<TextWithProof
+								claim="{capitalize(
+									get_special_morphism_plural(morphism.kind)
+								)} in {data.structure.notation}"
 								proof={morphism.proof}
 								proof_key={encode_property_ID(morphism.kind)}
 							>

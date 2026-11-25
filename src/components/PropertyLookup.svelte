@@ -8,6 +8,7 @@
 	} from '#lib/commons/types.ts'
 	import {
 		encode_property_ID,
+		get_claim,
 		get_property_label,
 		get_property_url
 	} from '#shared/property.utils.ts'
@@ -20,6 +21,7 @@
 
 	type Props = {
 		type: StructureType
+		notation: string
 		satisfied_properties: PropertyAssignmentDisplay[]
 		unsatisfied_properties: PropertyAssignmentDisplay[]
 		undecidable_properties: PropertyAssignmentDisplay[]
@@ -29,6 +31,7 @@
 
 	let {
 		type,
+		notation,
 		satisfied_properties,
 		unsatisfied_properties,
 		undecidable_properties,
@@ -94,6 +97,12 @@
 					<li>
 						{#if proof}
 							<TextWithProof
+								claim={get_claim(
+									notation,
+									relation,
+									id,
+									status === 'undecidable'
+								)}
 								{proof}
 								proof_key={encode_property_ID(id)}
 								is_duplicate={true}

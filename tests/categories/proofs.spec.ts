@@ -12,29 +12,15 @@ test('user can open and close a proof for a property of a category', async ({ pa
 
 	await claim.locator('button').click()
 
-	await expect(
-		page.getByRole('heading', {
-			name: 'Proof',
-			exact: true
-		})
-	).toBeVisible()
+	const popup = page.locator('.popup')
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
-
-	const text = (await popup.textContent())?.trim() ?? ''
-
-	const proof_text = text.replace(/^Proof/, '').trim()
-
-	expect(proof_text.length).toBeGreaterThan(0)
+	await expect(popup).toBeVisible()
+	await expect(popup).toHaveAccessibleName(/is mono-regular/)
+	await expect(popup).toContainText('nLab')
 
 	await popup.getByRole('button', { name: 'close' }).click()
 
-	await expect(
-		page.getByRole('heading', {
-			name: 'Proof',
-			exact: true
-		})
-	).not.toBeVisible()
+	await expect(popup).toBeHidden()
 })
 
 test('user can open a proof for a deduced satisfied property of a category and follow the proof links to an assigned proof', async ({
@@ -50,7 +36,7 @@ test('user can open a proof for a deduced satisfied property of a category and f
 
 	await claim.locator('button').click()
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toContainText(
 		'Since it is one-sorted finitary algebraic (proof), it has an extremal generator'
@@ -86,7 +72,7 @@ test('user can follow the proof links of a deduced property through several dedu
 
 	await claim.locator('button').click()
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toContainText(
 		'Since it is complete (proof), it has connected limits'
@@ -134,8 +120,9 @@ test('user can open a proof for a deduced unsatisfied property of a category', a
 
 	await claim.locator('button').click()
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
+	await expect(popup).toHaveAccessibleName(/is not cartesian closed/)
 	await expect(popup).toContainText(
 		'Assume for contradiction that it is cartesian closed.'
 	)
@@ -158,7 +145,7 @@ test('user can open a proof for an inherited satisfied property of a category', 
 
 	await claim.locator('button').click()
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toContainText(
 		'Its parent category satisfies this property (proof).'
@@ -182,9 +169,31 @@ test('user can open a proof for an inherited unsatisfied property of a category'
 
 	await claim.locator('button').click()
 
-	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	const popup = page.locator('.popup')
 
 	await expect(popup).toContainText(
 		'Its parent category does not satisfy this property (proof).'
 	)
+})
+
+test('user can open a proof for an undecidable property of a category', async ({
+	page
+}) => {
+	await page.goto('/category/CAlg(R)', { waitUntil: 'networkidle' })
+
+	const claim = page
+		.getByRole('list', { name: 'Undecidable properties', exact: true })
+		.getByRole('listitem')
+		.filter({ hasText: 'has coproduct-stable monomorphisms' })
+
+	await expect(claim).toBeVisible()
+
+	await claim.locator('button').click()
+
+	const popup = page.locator('.popup')
+
+	await expect(popup).toHaveAccessibleName(
+		/It cannot be decided whether .* has coproduct-stable monomorphisms/
+	)
+	await expect(popup).toContainText('This depends on')
 })

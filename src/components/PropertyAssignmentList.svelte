@@ -14,6 +14,7 @@
 
 	type Props = {
 		type: StructureType
+		notation: string
 		parent_id: string | null
 		satisfied_properties: PropertyAssignmentDisplay[]
 		unsatisfied_properties: PropertyAssignmentDisplay[]
@@ -24,6 +25,7 @@
 
 	let {
 		type,
+		notation,
 		parent_id,
 		satisfied_properties,
 		unsatisfied_properties,
@@ -69,6 +71,7 @@
 
 <PropertyLookup
 	{type}
+	{notation}
 	{satisfied_properties}
 	{unsatisfied_properties}
 	{undecidable_properties}
@@ -84,6 +87,7 @@
 		<PropertyListWithProofs
 			properties={satisfied_assigned}
 			{type}
+			{notation}
 			label="Assigned properties"
 		/>
 
@@ -92,6 +96,7 @@
 			<PropertyListWithProofs
 				properties={satisfied_inherited}
 				{type}
+				{notation}
 				label="Properties from parent"
 			/>
 		{/if}
@@ -100,6 +105,7 @@
 		<PropertyListWithProofs
 			properties={satisfied_deduced}
 			{type}
+			{notation}
 			label="Deduced properties"
 		/>
 	</section>
@@ -111,6 +117,7 @@
 		<PropertyListWithProofs
 			properties={unsatisfied_assigned}
 			{type}
+			{notation}
 			label="Assigned properties"
 		/>
 
@@ -119,6 +126,7 @@
 			<PropertyListWithProofs
 				properties={unsatisfied_inherited}
 				{type}
+				{notation}
 				label="Properties from parent"
 			/>
 		{/if}
@@ -127,6 +135,7 @@
 		<PropertyListWithProofs
 			properties={unsatisfied_deduced}
 			{type}
+			{notation}
 			label="Deduced properties"
 		/>
 
@@ -176,7 +185,9 @@
 		<PropertyListWithProofs
 			properties={undecidable_properties}
 			{type}
+			{notation}
 			label="Undecidable properties"
+			undecidable={true}
 		/>
 	</section>
 {/if}
