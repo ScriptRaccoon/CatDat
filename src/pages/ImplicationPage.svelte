@@ -41,7 +41,7 @@
 </header>
 
 <p>
-	<strong>Claim:</strong>
+	<strong>Claim.</strong>
 	{#if has_associated_assumptions}
 		Given a {remove_underscores(type)}
 		{#each Object.entries(implication.associated_assumptions) as [label, set], ind}
@@ -92,7 +92,7 @@
 </p>
 
 <div class="proof underline-formula-links">
-	<strong>Proof:</strong>
+	<strong>Proof.</strong>
 	{@html implication.proof}
 </div>
 

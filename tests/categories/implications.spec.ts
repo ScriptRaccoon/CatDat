@@ -66,7 +66,7 @@ test('user can see the details of an implication', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.locator('body')).toContainText('Proof: This holds by definition')
+	await expect(page.locator('body')).toContainText('Proof. This holds by definition')
 })
 
 test('user can navigate to the dual implication', async ({ page }) => {
