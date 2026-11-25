@@ -93,6 +93,9 @@ test('user can navigate to the dual implication', async ({ page }) => {
 	await expect(page.locator('body')).toContainText(
 		'If a category is abelian, then it has pushout-stable regular monomorphisms.'
 	)
+
+	// the proof already links to the original implication
+	await expect(page.locator('body')).not.toContainText('This implication has a dual')
 })
 
 test('user can open the list of deduced implications', async ({ page }) => {
