@@ -1,10 +1,13 @@
-import type { Database } from 'better-sqlite3'
+import { db } from './db'
 import { STRUCTURE_TYPES, type StructureType } from '#shared/config.ts'
 import {
 	get_associated_implications,
 	get_normalized_implications
 } from '#shared/implications.ts'
-import { has_associated_assumptions, stringify_with_asterisk } from './implications'
+import {
+	has_associated_assumptions,
+	stringify_with_asterisk
+} from '../utils/implications'
 import { close_associated_assumptions, find_deduction } from '#shared/deduction.utils.ts'
 import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 
@@ -13,11 +16,11 @@ import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
  * except for those marked with check_redundancy: false.
  * All redundancies are collected before an error is thrown.
  */
-export function test_no_redundant_implications(db: Database) {
+export function test_no_redundant_implications() {
 	const errors: string[] = []
 
 	for (const type of STRUCTURE_TYPES) {
-		errors.push(...get_redundant_implication_errors(db, type))
+		errors.push(...get_redundant_implication_errors(type))
 	}
 
 	if (errors.length > 0) {
@@ -37,7 +40,7 @@ export function test_no_redundant_implications(db: Database) {
  * P_1 + ... + P_n ===> Q can be deduced from all other normalized implications,
  * except the dual one. Implications marked with check_redundancy: false are skipped.
  */
-function get_redundant_implication_errors(db: Database, type: StructureType): string[] {
+function get_redundant_implication_errors(type: StructureType): string[] {
 	const implications = get_normalized_implications(db, type)
 
 	const original_implications = db
