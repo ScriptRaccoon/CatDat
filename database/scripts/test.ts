@@ -5,27 +5,18 @@
  */
 
 import { history } from '#shared/history.ts'
-import {
-	capitalize,
-	devlog,
-	get_nested_strings,
-	remove_underscores
-} from '#shared/utils.ts'
+import { capitalize, devlog, format_row, remove_underscores } from '#shared/utils.ts'
 import { get_anchor_ids } from '#shared/content.ts'
 import { get_client } from '#shared/db.ts'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
 import MarkdownIt from 'markdown-it'
 import fs from 'node:fs'
 import path from 'node:path'
-import {
-	decode_property_ID,
-	get_special_morphism_plural
-} from '#shared/property.utils.ts'
+import { decode_property_ID } from '#shared/property.utils.ts'
 import { test_no_redundant_assignments } from './utils/redundant-assignments'
 import { test_no_redundant_implications } from './utils/redundant-implications'
 import test_config from '../test-data/config.json'
-import { DATA_FOLDER, get_expected_data_folder } from './utils/folders'
-import { read_yaml_file } from './utils/seed.helpers'
+import { get_expected_data_folder } from './utils/folders'
 import {
 	get_normalized_implications,
 	get_undecidable_implications
@@ -524,7 +515,46 @@ function check_content_link(
 }
 
 /**
- * Checks if all links in proofs and content pages refer to existing entries.
+ * Returns the texts with links in all text columns of all tables, i.e. the texts
+ * from the YAML files as well as those created by the deduction. Each text comes
+ * with the other values of its row, so that the row can be identified.
+ * The texts are read from the database instead of the YAML files, since the
+ * texts created by the deduction exist only in the database.
+ */
+function get_database_texts() {
+	const tables = db
+		.prepare<never[], string>(
+			`SELECT name FROM sqlite_schema
+			WHERE type = 'table' AND name NOT LIKE 'sqlite_%'`
+		)
+		.pluck()
+		.all()
+
+	return tables.flatMap((table) => {
+		const text_columns = db
+			.prepare<[string], string>(
+				`SELECT name FROM pragma_table_info(?) WHERE type = 'TEXT'`
+			)
+			.pluck()
+			.all(table)
+
+		// only the rows whose text in this column contains a link
+		return text_columns.flatMap((column) =>
+			db
+				.prepare<never[], Record<string, unknown>>(
+					`SELECT * FROM "${table}" WHERE "${column}" LIKE '%<a %'`
+				)
+				.all()
+				.map((row) => ({
+					text: String(row[column]),
+					error_prefix: `❌ ${table}.${column} ${format_row(row, column)}`
+				}))
+		)
+	})
+}
+
+/**
+ * Checks if all links in the database and in the content pages refer to existing entries.
  */
 function check_link_targets_exist() {
 	const content_pages = get_content_pages()
@@ -536,55 +566,7 @@ function check_link_targets_exist() {
 		}))
 	)
 
-	const yaml_texts = fs
-		.readdirSync(DATA_FOLDER, { recursive: true, encoding: 'utf8' })
-		.filter((file) => file.endsWith('.yaml'))
-		.flatMap((file) =>
-			get_nested_strings(read_yaml_file(DATA_FOLDER, file)).map((text) => ({
-				text,
-				error_prefix: `❌ The file ${file}`
-			}))
-		)
-
-	// the proofs created by the deduction are not contained in the YAML files
-	const deduced_texts = [
-		...db
-			.prepare<never[], { structure: string; property: string; proof: string }>(
-				`SELECT
-					structure_id AS structure,
-					property_id AS property,
-					proof
-				FROM property_assignments
-				WHERE is_deduced = TRUE`
-			)
-			.all()
-			.map((x) => ({
-				text: x.proof,
-				error_prefix: `❌ The deduced proof of (${x.structure}, ${x.property})`
-			})),
-		...db
-			.prepare<never[], { id: string; proof: string }>(
-				`SELECT id, proof FROM implications WHERE is_deduced = TRUE`
-			)
-			.all()
-			.map((x) => ({
-				text: x.proof,
-				error_prefix: `❌ The proof of the deduced implication (${x.id})`
-			})),
-		...db
-			.prepare<never[], { category: string; kind: string; proof: string }>(
-				`SELECT category_id AS category, kind, proof
-				FROM special_morphism_assignments
-				WHERE is_deduced = TRUE`
-			)
-			.all()
-			.map((x) => ({
-				text: x.proof,
-				error_prefix: `❌ The deduced proof describing the ${get_special_morphism_plural(x.kind)} in ${x.category}`
-			}))
-	]
-
-	const texts = [...content_links, ...yaml_texts, ...deduced_texts]
+	const texts = [...content_links, ...get_database_texts()]
 
 	for (const { text, error_prefix } of texts) {
 		const link_regex = new RegExp(

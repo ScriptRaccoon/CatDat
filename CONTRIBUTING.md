@@ -86,7 +86,7 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 4. For a selection of structures of each type, all properties have been decided (see `decided_structures` in [config.json](/database/test-data/config.json)).
 5. For a selection of structures, every property matches precisely the expected properties defined in the [/database/test-data/expected](/database/test-data/expected/) folder.
 6. Adjoint functors are recorded on both sides (left and right adjoint), and their domains and codomains match.
-7. All links in the YAML files, the deduced proofs, and the content pages point to existing structures, properties, implications, and content pages.
+7. All links in the data (including the deduced proofs) and in the content pages point to existing structures, properties, implications, and content pages.
 8. No undecidable implication can be deduced from the implications or is refuted by a structure.
 9. Every entry of the history file [history.json](/shared/history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).
 10. There are no redundant property assignments (see [below](#redundant-assignments)) and no redundant implications (see [below](#redundant-implications)).
