@@ -5,7 +5,12 @@
  */
 
 import { history } from '#shared/history.ts'
-import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
+import {
+	capitalize,
+	devlog,
+	get_nested_strings,
+	remove_underscores
+} from '#shared/utils.ts'
 import { get_anchor_ids } from '#shared/content.ts'
 import { get_client } from '#shared/db.ts'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
@@ -19,7 +24,8 @@ import {
 import { test_no_redundant_assignments } from './utils/redundant-assignments'
 import { test_no_redundant_implications } from './utils/redundant-implications'
 import test_config from '../test-data/config.json'
-import { get_expected_data_folder } from './utils/folders'
+import { DATA_FOLDER, get_expected_data_folder } from './utils/folders'
+import { read_yaml_file } from './utils/seed.helpers'
 import {
 	get_normalized_implications,
 	get_undecidable_implications
@@ -525,59 +531,68 @@ function check_link_targets_exist() {
 
 	const content_links = [...content_pages].flatMap(([id, { markdown }]) =>
 		get_link_tags(markdown).map((link) => ({
-			proof: link,
+			text: link,
 			error_prefix: `❌ Content page ${id}`
 		}))
 	)
 
-	const proofs: { proof: string; error_prefix: string }[] = [
-		...content_links,
-		...db
+	const yaml_texts = fs
+		.readdirSync(DATA_FOLDER, { recursive: true, encoding: 'utf8' })
+		.filter((file) => file.endsWith('.yaml'))
+		.flatMap((file) =>
+			get_nested_strings(read_yaml_file(DATA_FOLDER, file)).map((text) => ({
+				text,
+				error_prefix: `❌ The file ${file}`
+			}))
+		)
 
+	// the proofs created by the deduction are not contained in the YAML files
+	const deduced_texts = [
+		...db
 			.prepare<never[], { structure: string; property: string; proof: string }>(
 				`SELECT
 					structure_id AS structure,
 					property_id AS property,
 					proof
-				FROM property_assignments`
+				FROM property_assignments
+				WHERE is_deduced = TRUE`
 			)
 			.all()
 			.map((x) => ({
-				proof: x.proof,
-				error_prefix: `❌ The proof of (${x.structure}, ${x.property})`
+				text: x.proof,
+				error_prefix: `❌ The deduced proof of (${x.structure}, ${x.property})`
 			})),
 		...db
 			.prepare<never[], { id: string; proof: string }>(
-				`SELECT id, proof FROM implications`
+				`SELECT id, proof FROM implications WHERE is_deduced = TRUE`
 			)
 			.all()
 			.map((x) => ({
-				proof: x.proof,
-				error_prefix: `❌ The proof of the implication (${x.id})`
+				text: x.proof,
+				error_prefix: `❌ The proof of the deduced implication (${x.id})`
 			})),
 		...db
 			.prepare<never[], { category: string; kind: string; proof: string }>(
-				`SELECT
-					category_id AS category,
-					kind,
-					proof
+				`SELECT category_id AS category, kind, proof
 				FROM special_morphism_assignments
-				WHERE is_deduced = FALSE`
+				WHERE is_deduced = TRUE`
 			)
 			.all()
 			.map((x) => ({
-				proof: x.proof,
-				error_prefix: `❌ The proof describing the ${get_special_morphism_plural(x.kind)} in ${x.category}`
+				text: x.proof,
+				error_prefix: `❌ The deduced proof describing the ${get_special_morphism_plural(x.kind)} in ${x.category}`
 			}))
 	]
 
-	for (const { proof, error_prefix } of proofs) {
+	const texts = [...content_links, ...yaml_texts, ...deduced_texts]
+
+	for (const { text, error_prefix } of texts) {
 		const link_regex = new RegExp(
 			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})(?:-(implication|property))?\\/([^"?]+)(?:\\?([^"]*))?"([^>]*)>`,
 			'g'
 		)
 
-		for (const match of proof.matchAll(link_regex)) {
+		for (const match of text.matchAll(link_regex)) {
 			const type = match[1] as StructureType
 			const id = match[3]
 			const query = match[4]
@@ -595,14 +610,14 @@ function check_link_targets_exist() {
 
 			if (!exists) {
 				throw new Error(
-					`${error_prefix} has a link to "${id}" which does not exist:\n"${proof}"`
+					`${error_prefix} has a link to "${id}" which does not exist:\n"${text}"`
 				)
 			}
 
 			if (query === undefined) {
 				if (allow_deduced) {
 					throw new Error(
-						`${error_prefix} has a link to "${id}" with data-allow-deduced, but without "?proof=":\n"${proof}"`
+						`${error_prefix} has a link to "${id}" with data-allow-deduced, but without "?proof=":\n"${text}"`
 					)
 				}
 				continue
@@ -610,7 +625,7 @@ function check_link_targets_exist() {
 
 			if (sort !== 'structures') {
 				throw new Error(
-					`${error_prefix} has a link to "${id}" with a query, which is only supported for structures:\n"${proof}"`
+					`${error_prefix} has a link to "${id}" with a query, which is only supported for structures:\n"${text}"`
 				)
 			}
 
@@ -625,7 +640,7 @@ function check_link_targets_exist() {
 
 		const content_link_regex = /<a\s+href="\/content\/([^"#]+)(?:#([^"]+))?"/g
 
-		for (const match of proof.matchAll(content_link_regex)) {
+		for (const match of text.matchAll(content_link_regex)) {
 			const [, content_id, anchor] = match
 			check_content_link(
 				content_pages.get(content_id),

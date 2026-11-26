@@ -6,7 +6,7 @@ import { devlog } from '#shared/utils.ts'
 import * as v from 'valibot'
 import { structure_yaml_schema } from './seed.schemas'
 
-function read_yaml_file(...parts: string[]) {
+export function read_yaml_file(...parts: string[]) {
 	const content = fs.readFileSync(path.join(...parts), 'utf8')
 	return YAML.parse(content) as unknown
 }

@@ -7,6 +7,16 @@ export function is_object(obj: unknown): obj is Record<string, unknown> {
 }
 
 /**
+ * Returns all strings contained in nested arrays and objects.
+ */
+export function get_nested_strings(data: unknown): string[] {
+	if (typeof data === 'string') return [data]
+	if (Array.isArray(data)) return data.flatMap(get_nested_strings)
+	if (is_object(data)) return Object.values(data).flatMap(get_nested_strings)
+	return []
+}
+
+/**
  * Recursively sorts arrays of strings and the keys of objects alphabetically.
  */
 export function deep_sort(data: unknown): unknown {
