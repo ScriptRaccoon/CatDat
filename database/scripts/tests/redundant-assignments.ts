@@ -1,13 +1,13 @@
-import type { Database } from 'better-sqlite3'
-import { get_property_assignments_by_deduction } from './properties'
+import { db } from './db'
+import { get_property_assignments_by_deduction } from '../utils/properties'
 import { STRUCTURE_TYPES, type StructureType } from '#shared/config.ts'
 import {
 	get_normalized_implications,
 	type NormalizedImplication
 } from '#shared/implications.ts'
 import { deduce_properties, refute_properties } from '#shared/deduction.utils.ts'
-import { stringify_implication } from './implications'
-import { get_structure_parent_map, get_structures } from './structures'
+import { stringify_implication } from '../utils/implications'
+import { get_structure_parent_map, get_structures } from '../utils/structures'
 import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 
 /**
@@ -15,11 +15,11 @@ import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
  * except for those marked with check_redundancy: false.
  * All redundancies are collected before an error is thrown.
  */
-export function test_no_redundant_assignments(db: Database) {
+export function test_no_redundant_assignments() {
 	const errors: string[] = []
 
 	for (const type of STRUCTURE_TYPES) {
-		errors.push(...get_redundant_assignment_errors(db, type))
+		errors.push(...get_redundant_assignment_errors(type))
 	}
 
 	if (errors.length > 0) {
@@ -37,14 +37,14 @@ export function test_no_redundant_assignments(db: Database) {
  * Checks for redundant (structure, property)-assignments and returns
  * one error message per structure and kind (satisfied or unsatisfied).
  */
-function get_redundant_assignment_errors(db: Database, type: StructureType): string[] {
+function get_redundant_assignment_errors(type: StructureType): string[] {
 	const implications = get_normalized_implications(db, type)
 
 	const structures = get_structures(db, type)
 
 	const assignments = get_property_assignments_by_deduction(db, structures, type)
-	const ignore_dict = get_ignored_redundant_assignments(db, type)
-	const inherited_dict = get_inherited_assignments(db, type)
+	const ignore_dict = get_ignored_redundant_assignments(type)
+	const inherited_dict = get_inherited_assignments(type)
 
 	const ignore_count = Object.keys(ignore_dict).reduce(
 		(count, id) => count + ignore_dict[id].size,
@@ -181,7 +181,7 @@ function get_redundant_unsatisfied_property(
  * properties (satisfied or unsatisfied) that should not be checked
  * by the redundancy check script.
  */
-function get_ignored_redundant_assignments(db: Database, type: StructureType) {
+function get_ignored_redundant_assignments(type: StructureType) {
 	const rows = db
 		.prepare<[StructureType], { structure_id: string; property_id: string }>(
 			`SELECT structure_id, property_id
@@ -204,7 +204,7 @@ function get_ignored_redundant_assignments(db: Database, type: StructureType) {
  * Returns a dictionary mapping a structure to the satisfied and unsatisfied
  * properties assigned (not deduced) to any of its ancestors.
  */
-function get_inherited_assignments(db: Database, type: StructureType) {
+function get_inherited_assignments(type: StructureType) {
 	const parent_map = get_structure_parent_map(db, type)
 
 	const get_assignments = db.prepare<
