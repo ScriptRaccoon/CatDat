@@ -24,3 +24,5 @@ Create an [issue](https://github.com/ScriptRaccoon/CatDat/issues/new) on GitHub.
 ## Option 3: Create a pull request
 
 Create a [pull request](https://github.com/ScriptRaccoon/CatDat/pulls) on GitHub. You will need a GitHub account and some coding knowledge. Make sure to follow the [contribution guidelines](https://github.com/ScriptRaccoon/CatDat/blob/main/CONTRIBUTING.md).
+
+For how proofs in _CatDat_ relate to the literature and how AI is used for them, see [Proofs in _CatDat_](https://github.com/ScriptRaccoon/CatDat/blob/main/PROOFS.md).

@@ -247,6 +247,8 @@ AI tools may be used for both code and data in this repository, as long as a hum
 
 In summary, treat AI as a productivity tool, not as a substitute for understanding or authorship.
 
+For how proofs in _CatDat_ relate to the literature and how AI is used for them, see [Proofs in _CatDat_](PROOFS.md).
+
 ### Authoring of YAML files
 
 If you are not familiar with YAML, a short beginner-friendly introduction can be found at https://www.youtube.com/watch?v=1uFVr15xDGg. You can also look at the existing files in the data folder to get a feel for how the data is structured.

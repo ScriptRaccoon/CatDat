@@ -28,6 +28,7 @@ This project is a **community effort**. Whether you're a mathematician spotting 
 ## Documentation
 
 - [The database of _CatDat_](DATABASE.md)
+- [Proofs in _CatDat_](PROOFS.md)
 - [Deployment](DEPLOYMENT.md)
 - [Status page](https://catdat.openstatus.dev/)
 
