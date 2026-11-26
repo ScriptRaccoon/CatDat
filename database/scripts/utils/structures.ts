@@ -105,13 +105,15 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
 }
 
 /**
- * Checks if a structure is a dual, but not the
- * original structure to prevent circular reasoning.
+ * Checks if a structure is the dual of another structure, the original.
+ * Its ID is the ID of the original followed by "_op" (checked in db:test).
+ * Properties are only dualized from the original to its dual,
+ * which prevents circular reasoning.
  */
 export function is_dual_structure(
 	structure: StructureMeta
 ): structure is StructureMeta & { dual: string } {
-	return Boolean(structure.dual) && structure.name.toLowerCase().startsWith('dual')
+	return Boolean(structure.dual) && structure.id === `${structure.dual}_op`
 }
 
 /**
