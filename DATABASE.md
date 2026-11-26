@@ -111,7 +111,7 @@ to list the satisfied, unsatisfied, unknown, and undecidable properties of a str
 
 ## Diagram
 
-This is the database schema as of 25.10.2026; changes may occur.
+This is the database schema as of 26.11.2026; changes may occur.
 
-<img alt="database diagram" src="https://github.com/user-attachments/assets/2f93c295-ae16-4086-84c2-6b3a60e50265" />
+<img alt="database diagram" src="https://github.com/user-attachments/assets/b9ffab59-a536-45dc-a605-d3f1c8ba3bd0" />
 <!-- Reminder: Keep URL in sync with the download page. -->

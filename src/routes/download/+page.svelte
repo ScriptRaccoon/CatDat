@@ -25,7 +25,7 @@
 	snapshot of it below and inspect the data in your terminal or with any database tool
 	of your choice. A
 	<a
-		href="https://github.com/user-attachments/assets/2f93c295-ae16-4086-84c2-6b3a60e50265"
+		href="https://github.com/user-attachments/assets/b9ffab59-a536-45dc-a605-d3f1c8ba3bd0"
 	>
 		database diagram
 	</a>
