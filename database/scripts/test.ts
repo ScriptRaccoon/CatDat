@@ -149,7 +149,8 @@ function test_undecidable_implications(type: StructureType) {
 
 /**
  * Tests for all structures of a given type C,D that if
- * C is dual to D, then D is dual to C.
+ * C is dual to D, then D is dual to C, and that one of them
+ * is the original structure, i.e. the ID of the other is `{id}_op`.
  */
 function test_mutual_structure_duals(type: StructureType) {
 	const dict: Record<string, string> = {}
@@ -173,6 +174,12 @@ function test_mutual_structure_duals(type: StructureType) {
 		if (dict[dual] !== id) {
 			throw new Error(
 				`❌ Found non-mutual ${remove_underscores(type)} duality: ${id}, ${dual}`
+			)
+		}
+
+		if (id !== `${dual}_op` && dual !== `${id}_op`) {
+			throw new Error(
+				`❌ Found ${remove_underscores(type)} duality without original: ${id}, ${dual}. The ID of the dual must be the ID of the original followed by "_op".`
 			)
 		}
 	}

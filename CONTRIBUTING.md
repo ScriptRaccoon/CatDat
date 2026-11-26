@@ -81,7 +81,7 @@ While `pnpm dev` is running, the browser reloads automatically after `pnpm db:up
 The `pnpm db:test` command runs several tests to ensure the data behaves as expected and maintains good quality:
 
 1. Every property has a dual property (except for a small whitelist), and properties and their duals are mutual.
-2. Structures and their duals are mutual.
+2. Structures and their duals are mutual, and the ID of the dual is the ID of the original followed by `_op`. Duals are literal opposites (such as `Set_op`), not categories that are only equivalent to an opposite (such as the category of affine schemes).
 3. A selection of trivial structures has no unsatisfied properties, i.e. all properties are positive (see the guidelines below).
 4. For a selection of structures of each type, all properties have been decided (see `decided_structures` in [config.json](/database/test-data/config.json)).
 5. For a selection of structures, every property matches precisely the expected properties defined in the [/database/test-data/expected](/database/test-data/expected/) folder.
