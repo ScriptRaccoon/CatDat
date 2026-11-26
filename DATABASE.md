@@ -1,8 +1,8 @@
-# The database of _CatDat_
+# The database of CatDat
 
 ## Overview
 
-_CatDat_ is based on a [SQLite database](https://sqlite.org/). During runtime of the application, it is read-only.
+CatDat is based on a [SQLite database](https://sqlite.org/). During runtime of the application, it is read-only.
 
 The local copy of the database is located at `/database/catdat.db`. It contains three main tables:
 

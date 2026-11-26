@@ -14,7 +14,7 @@
 </h1>
 
 <p>
-	<i>CatDat</i> provides a growing collection of categorical structures such as
+	CatDat provides a growing collection of categorical structures such as
 	<a class="accent" href="/category-list">categories</a> and
 	<a class="accent" href="/functor-list">functors</a>. Built by and for those who love
 	<a href="https://en.wikipedia.org/wiki/Category_theory" target="_blank">
@@ -74,7 +74,7 @@
 	<h2>Structures, properties, implications</h2>
 
 	<p>
-		<i>CatDat</i> currently supports four types of categorical structures:
+		CatDat currently supports four types of categorical structures:
 		<a class="accent" href="/category-list">categories</a>,
 		<a class="accent" href="/functor-list">functors</a>,
 		<a class="accent" href="/morphism-list">morphisms</a>, and
@@ -112,9 +112,9 @@
 	<h2>Search</h2>
 
 	<p>
-		<i>CatDat's</i> <a class="accent" href="/category-search">search feature</a> makes it
-		easy to find structures that satisfy specific properties while not satisfying others.
-		For example, you can find ...
+		CatDat's <a class="accent" href="/category-search">search feature</a> makes it easy
+		to find structures that satisfy specific properties while not satisfying others. For
+		example, you can find ...
 	</p>
 
 	<ul class="with-margins">
@@ -157,7 +157,7 @@
 	<h2>Compare structures</h2>
 
 	<p>
-		<i>CatDat's</i>
+		CatDat's
 		<a class="accent" href="/category-comparison">comparison feature</a> allows you to compare
 		multiple categories, functors, etc. to identify similarities and differences in their
 		properties. For example, you can compare ...
@@ -194,7 +194,7 @@
 	<h2>Contribute to CatDat</h2>
 
 	<p>
-		<i>CatDat</i> is a <strong>community effort</strong>, developed in an
+		CatDat is a <strong>community effort</strong>, developed in an
 		<a class="accent" href="https://github.com/ScriptRaccoon/CatDat" target="_blank">
 			open-source GitHub repository
 		</a>.

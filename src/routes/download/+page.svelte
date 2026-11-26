@@ -20,7 +20,7 @@
 <h1>Download</h1>
 
 <p>
-	<i>CatDat</i> is built on a
+	CatDat is built on a
 	<a href="https://sqlite.org/" target="_blank">SQLite database</a>. You can download a
 	snapshot of it below and inspect the data in your terminal or with any database tool
 	of your choice. A

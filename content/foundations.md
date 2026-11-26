@@ -5,7 +5,7 @@ description: How to make sense of categories in set theory
 
 # Foundations
 
-In _CatDat_, we work with the following convenient set-theoretic foundation for category theory.
+In CatDat, we work with the following convenient set-theoretic foundation for category theory.
 
 ## Sets, collections, and hypercollections
 
@@ -123,4 +123,4 @@ There are special types of limits, such as equalizers, products, and cofiltered 
 
 ## Conclusion
 
-There is much more to say about set-theoretic foundations for category theory (in fact, many papers have been written on the subject, and the approach developed above is just _one_ of [many](https://xkcd.com/927/) approaches), but this suffices for the purposes of _CatDat_.
+There is much more to say about set-theoretic foundations for category theory (in fact, many papers have been written on the subject, and the approach developed above is just _one_ of [many](https://xkcd.com/927/) approaches), but this suffices for the purposes of CatDat.

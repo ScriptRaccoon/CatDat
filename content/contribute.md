@@ -5,7 +5,7 @@ description: CatDat welcomes contributions from the community, including filling
 
 # How to contribute
 
-_CatDat_ is developed in an open-source [GitHub repository](https://github.com/ScriptRaccoon/CatDat) by [Martin Brandenburg](https://ncatlab.org/nlab/show/Martin+Brandenburg). It welcomes contributions from the community, including filling in missing information or discovering new combinations of properties.
+CatDat is developed in an open-source [GitHub repository](https://github.com/ScriptRaccoon/CatDat) by [Martin Brandenburg](https://ncatlab.org/nlab/show/Martin+Brandenburg). It welcomes contributions from the community, including filling in missing information or discovering new combinations of properties.
 
 [**Video tutorial**](https://www.youtube.com/watch?v=NoZWdMFfQfg)
 
@@ -25,4 +25,4 @@ Create an [issue](https://github.com/ScriptRaccoon/CatDat/issues/new) on GitHub.
 
 Create a [pull request](https://github.com/ScriptRaccoon/CatDat/pulls) on GitHub. You will need a GitHub account and some coding knowledge. Make sure to follow the [contribution guidelines](https://github.com/ScriptRaccoon/CatDat/blob/main/CONTRIBUTING.md).
 
-For how proofs in _CatDat_ relate to the literature and how AI is used for them, see [Proofs in _CatDat_](https://github.com/ScriptRaccoon/CatDat/blob/main/PROOFS.md).
+For how proofs in CatDat relate to the literature and how AI is used for them, see [Proofs in CatDat](https://github.com/ScriptRaccoon/CatDat/blob/main/PROOFS.md).

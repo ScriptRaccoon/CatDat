@@ -1,6 +1,6 @@
 # CatDat
 
-_CatDat_ ([catdat.app](https://catdat.app)) is a searchable database of categorical structures and their properties, built by and for people who love category theory. It is an open-source community project.
+CatDat ([catdat.app](https://catdat.app)) is a searchable database of categorical structures and their properties, built by and for people who love category theory. It is an open-source community project.
 
 Four types of categorical structures are supported: **categories**, **functors**, **morphisms**, and **symmetric monoidal categories** (`STRUCTURE_TYPES` in [shared/config.ts](shared/config.ts)). The data has three kinds of entries:
 

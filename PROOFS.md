@@ -1,4 +1,4 @@
-# Proofs in _CatDat_
+# Proofs in CatDat
 
 CatDat contains thousands of proofs. This note explains why we often write them down instead of only citing references, how AI is used to produce them, and why none of them claims to be original.
 
