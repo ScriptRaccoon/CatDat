@@ -7,6 +7,32 @@ CREATE TABLE special_morphisms (
         REFERENCES properties (id, type) ON DELETE RESTRICT
 );
 
+-- The IDs of category properties and the kinds of special morphisms
+-- are both used as "?proof=" keys on category pages, so they must be distinct.
+
+CREATE TRIGGER trg_special_morphism_kind_distinct
+BEFORE INSERT ON special_morphisms
+BEGIN
+    SELECT
+        CASE
+            WHEN EXISTS (
+                SELECT 1 FROM properties WHERE id = NEW.kind AND type = 'category'
+            )
+            THEN RAISE(ABORT, 'The special morphism kind "' || NEW.kind || '" is also the ID of a category property')
+        END;
+END;
+
+CREATE TRIGGER trg_category_property_id_distinct
+BEFORE INSERT ON properties
+WHEN NEW.type = 'category'
+BEGIN
+    SELECT
+        CASE
+            WHEN EXISTS (SELECT 1 FROM special_morphisms WHERE kind = NEW.id)
+            THEN RAISE(ABORT, 'The category property ID "' || NEW.id || '" is also the kind of a special morphism')
+        END;
+END;
+
 CREATE TABLE special_morphism_assignments (
     category_id TEXT NOT NULL,
     kind TEXT NOT NULL,

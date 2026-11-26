@@ -33,28 +33,6 @@ const get_entry = {
 }
 
 /**
- * Checks that the IDs of category properties and the kinds of special
- * morphisms are distinct, since both are used as "?proof=" keys on
- * category pages.
- */
-export function check_proof_keys_distinct() {
-	const collisions = db
-		.prepare<never[], string>(
-			`SELECT p.id FROM properties p
-			INNER JOIN special_morphisms s ON s.kind = p.id
-			WHERE p.type = 'category'`
-		)
-		.pluck()
-		.all()
-
-	if (collisions.length) {
-		throw new Error(
-			`❌ Category properties and special morphisms share the IDs: ${collisions.join(', ')}`
-		)
-	}
-}
-
-/**
  * Checks if all links in the database and in the content pages refer to existing entries.
  */
 export function check_link_targets_exist() {
