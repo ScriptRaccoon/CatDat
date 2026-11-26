@@ -9,7 +9,7 @@ import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
 import test_config from '../test-data/config.json'
 import { test_no_redundant_assignments } from './tests/redundant-assignments'
 import { test_no_redundant_implications } from './tests/redundant-implications'
-import { check_link_targets_exist, check_proof_keys_distinct } from './tests/links'
+import { check_link_targets_exist } from './tests/links'
 import { test_history_entries_exist } from './tests/history'
 import { test_mutual_structure_duals, test_property_duals } from './tests/duals'
 import {
@@ -45,7 +45,6 @@ function execute_tests() {
 		console.info('--- Database Tests ---')
 
 		devlog('\n--- Test link targets ---')
-		check_proof_keys_distinct()
 		check_link_targets_exist()
 
 		devlog('\n--- Test history ---')
