@@ -200,3 +200,31 @@
   proof: This is true by definition.
   is_equivalence: true
   check_redundancy: false
+
+- id: grothendieck_quasitopos_criterion
+  assumptions:
+    - Grothendieck quasitopos
+  conclusions:
+    - coproducts
+    - quasitopos
+    - extremal generating collection
+    - locally essentially small
+  proof: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part C, Theorem 2.2.13, $(ii)\iff(iii)$. Note that Johnstone uses the term "small generating set" in the statement, but that his definition of generating sets matches the definition of extremal generating collections here and on the nlab.
+  is_equivalence: true
+  check_redundancy: false
+
+- id: grothendieck_quasitopos_consequence
+  assumptions:
+    - Grothendieck quasitopos
+  conclusions:
+    - locally presentable
+    - filtered-colimit-stable monomorphisms
+    - cogenerator
+  proof: >-
+    Local presentability is part of <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part C, Theorem 2.2.13, $(ii)\iff(iv)$.
+
+    To show that a Grothendieck quasitopos has filtered-colimit-stable monomorphisms, suppose $(f_i : \F_i \to \G_i)_{i\in \I}$ is a filtered diagram of monomorphisms in $\BiSep(\C, J, K)$. In order to form the filtered colimit in $\BiSep(\C, J, K)$, we can take the filtered colimit in $\Sh(\C, J)$, and then apply the reflector to $\BiSep(\C, J, K)$. Since $\Sh(\C, J)$ has exact filtered colimits by <a href="/category-implication/grothendieck_topos_consequence">this result</a>, the first step results in a monomorphism, and since the reflector preserves monomorphisms by <a href="/content/separated_objects_quasitopos#lemma_1">Lemma 1 on quasitopoi of separated objects</a>, the filtered colimit in $\BiSep(\C, J, K)$ is also a monomorphism.
+
+    As for having a cogenerator, we first prove that the elementary topos $\Sh(\C, K)$ has a cogenerator. The representable presheaves form a generating collection of $[\C^{\op},\Set]$. By <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a>, their $K$-sheafifications form a generating collection of $\Sh(\C, K)$, which therefore has a cogenerating collection by <a href="/category-implication/topos_generating_collection_implies_cogenerating_collection">this result</a>. Since finite coproducts in $\Sh(\C, K)$ are disjoint by <a href="/category-implication/topos_consequences">this result</a>, all coproducts are disjoint, so $\Sh(\C, K)$ has a cogenerator by <a href="/category-implication/disjoint_coproduct_cogenerator">this result</a>.
+
+    Now, $\Sh(\C, K)$ is a reflective subcategory of $\BiSep(\C, J, K)$, with the reflector being the restriction of the $K$-sheafification functor to the subcategory $\BiSep(\C, J, K)$. For every $K$-separated presheaf $\F$, the unit $\eta_\F : \F \to \F^+_K$ is a monomorphism (<a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane–Moerdijk</a>, Lemma III.5.2, or <a href="https://stacks.math.columbia.edu/tag/00WB">SP/00WB</a>), so the reflector is faithful (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints">nLab</a>). By the dual of the mentioned <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a>, the cogenerator of $\Sh(\C, K)$ is also a cogenerator of $\BiSep(\C, J, K)$.
