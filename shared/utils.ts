@@ -7,16 +7,6 @@ export function is_object(obj: unknown): obj is Record<string, unknown> {
 }
 
 /**
- * Returns all strings contained in nested arrays and objects.
- */
-export function get_nested_strings(data: unknown): string[] {
-	if (typeof data === 'string') return [data]
-	if (Array.isArray(data)) return data.flatMap(get_nested_strings)
-	if (is_object(data)) return Object.values(data).flatMap(get_nested_strings)
-	return []
-}
-
-/**
  * Recursively sorts arrays of strings and the keys of objects alphabetically.
  */
 export function deep_sort(data: unknown): unknown {
@@ -84,6 +74,20 @@ export function normalize_text(txt: string) {
 
 export function remove_underscores(txt: string) {
 	return txt.replaceAll('_', ' ')
+}
+
+/**
+ * Formats a row except the given column as JSON, shortening long texts
+ */
+export function format_row(row: Record<string, unknown>, excluded_column: string) {
+	const entries = Object.entries(row)
+		.filter(([column]) => column !== excluded_column)
+		.map(([column, value]) =>
+			typeof value === 'string' && value.length > 40
+				? [column, value.slice(0, 40) + '…']
+				: [column, value]
+		)
+	return JSON.stringify(Object.fromEntries(entries), null, '\t')
 }
 
 export function parse_json_set<T>(json: string): Set<T> {
