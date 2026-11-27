@@ -6,6 +6,7 @@ dual: disjoint products
 invariant_under_equivalences: true
 
 related:
+  - monic coproduct inclusions
   - disjoint finite coproducts
   - infinitary extensive
   - pullback-stable coproducts

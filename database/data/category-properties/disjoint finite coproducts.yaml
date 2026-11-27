@@ -9,6 +9,7 @@ dual: disjoint finite products
 invariant_under_equivalences: true
 
 related:
+  - monic coproduct inclusions
   - disjoint coproducts
   - extensive
   - pullback-stable finite coproducts
