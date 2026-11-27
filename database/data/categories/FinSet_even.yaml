@@ -86,9 +86,9 @@ unsatisfied_properties:
   - property: Cauchy complete
     proof: 'The constant map $e : \{0,1\} \to \{0,1\}$, $x \mapsto 0$ is idempotent and does not split in $\FinSet_{\even}$, since a splitting $\{0,1\} \to X \to \{0,1\}$ would also be a splitting in $\FinSet$, making $X$ isomorphic to $\im(e) = \{0\}$.'
 
-  - property: extensive
+  - property: pullback-stable binary coproducts
     proof: >-
-      We will show that pullbacks along coproduct inclusions do not exist in general. First, we observe that the inclusion functor $\FinSet_{\even} \hookrightarrow \Set$ is continuous. This follows from the dual of <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a> since $\FinSet_{\even}$ contains the extremal generator $\{0,1\}$ of $\Set$. (For a similar reason the inclusion functor is cocontinuous since $\{0,1\}$ is also an extremal cogenerator of $\Set$.)
+      We will show that pullbacks along binary coproduct inclusions do not exist in general. First, we observe that the inclusion functor $\FinSet_{\even} \hookrightarrow \Set$ is continuous. This follows from the dual of <a href="/content/inclusion-functors#lemma_1">Lemma 1 on inclusion functors</a> since $\FinSet_{\even}$ contains the extremal generator $\{0,1\}$ of $\Set$. (For a similar reason the inclusion functor is cocontinuous since $\{0,1\}$ is also an extremal cogenerator of $\Set$.)
 
       Now consider the inclusion map $\{0,2\} \to \{0,1,2,3\} = \{0,1\} \sqcup \{2,3\}$. Assume that the pullback of this map along the coproduct inclusion from $\{0,1\}$ exists in $\FinSet_{\even}$. Since the inclusion functor to $\Set$ preserves pullbacks, we can compute it as the pullback in $\Set$, which is simply the intersection $\{0,2\} \cap \{0,1\} = \{0\}$. But this is not an object of $\FinSet_{\even}$.
 

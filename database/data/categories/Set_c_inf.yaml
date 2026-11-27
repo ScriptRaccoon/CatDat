@@ -69,6 +69,15 @@ unsatisfied_properties:
   - property: effective cocongruences
     proof: 'The coproduct inclusions $i_1,i_2 : \IN \rightrightarrows \IN \sqcup \IN$ form a cocongruence. It is not effective, since there is no map $h : Y \to \IN$ in this category with $i_1 \circ h = i_2 \circ h$.'
 
+  - property: pullback-stable binary coproducts
+    proof: The <a href="/category/Setne?proof=pullback-stable_binary_coproducts">proof for $\Setne$</a> works verbatim.
+
+  - property: pushout-stable binary products
+    proof: >-
+      Let $p_1,p_2 : \IN \times \IN \rightrightarrows \IN$ be the product projections. We apply the definition to the morphism $p_1 : \IN \times \IN \to \IN$. Assume that a pushout of $p_2$ along $p_1$ exists, given by a commutative square
+      $$\begin{CD} \IN \times \IN @>{p_2}>> \IN \\ @V{p_1}VV @VV{v}V \\ \IN @>>{u}> P \end{CD}$$
+      in $\Set_{\c,\infty}$. This means $u(a) = v(b)$ for all $a,b \in \IN$, so that $u$ and $v$ are constant with the same value $p \in P$. Since $P$ is infinite, we may choose some $p' \in P$ with $p' \neq p$. Let $e : P \to P$ be the map with $e(p') \coloneqq p$ that fixes all other elements. Then $e \circ u = u$ and $e \circ v = v$, so that the universal property gives $e = \id_P$, which contradicts $e(p') = p \neq p'$.
+
 special_objects:
   coproducts:
     description: '[non-empty, countable case] disjoint union'
