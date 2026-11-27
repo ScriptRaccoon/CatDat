@@ -1,0 +1,16 @@
+id: pushout-stable binary products
+relation: has
+description: A category $\C$ has <i>pushout-stable binary products</i> if it has binary products and, for all objects $A,B$ and every morphism $A \times B \to T$, the pushouts $T_A \coloneqq T \sqcup_{A \times B} A$ and $T_B \coloneqq T \sqcup_{A \times B} B$ exist and the canonical morphism $T \to T_A \times T_B$ is an isomorphism.
+nlab_link: null
+dual: pullback-stable binary coproducts
+invariant_under_equivalences: true
+keywords:
+  - couniversal binary products
+
+related:
+  - binary products
+  - pushout-stable finite products
+  - coextensive
+
+tags:
+  - limit–colimit interaction

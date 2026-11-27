@@ -1,0 +1,21 @@
+id: pullback-stable finite coproducts
+relation: has
+description: >-
+  A category $\C$ has <i>pullback-stable finite coproducts</i> if it has finite coproducts and, for every finite family of objects $(A_i)_{i \in I}$ and every morphism $T \to \coprod_{i \in I} A_i$, the pullbacks $T_i \coloneqq T \times_{\coprod_{i \in I} A_i} A_i$ exist and the canonical morphism $\coprod_{i \in I} T_i \to T$ is an isomorphism.
+nlab_link: https://ncatlab.org/nlab/show/pullback-stable+colimit
+dual: pushout-stable finite products
+invariant_under_equivalences: true
+keywords:
+  - universal finite coproducts
+
+related:
+  - finite coproducts
+  - pullback-stable binary coproducts
+  - pullback-stable countable coproducts
+  - pullback-stable coproducts
+  - extensive
+  - disjoint finite coproducts
+  - strict initial object
+
+tags:
+  - limit–colimit interaction

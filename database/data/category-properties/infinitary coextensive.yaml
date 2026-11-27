@@ -13,6 +13,7 @@ invariant_under_equivalences: true
 related:
   - coextensive
   - disjoint products
+  - pushout-stable products
   - infinitary codistributive
   - countably coextensive
 
