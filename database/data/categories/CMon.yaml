@@ -94,12 +94,6 @@ unsatisfied_properties:
       Both are homomorphisms: adding two non-zero elements of $E$ yields an element whose first coordinate is at least $2$, so its image is $\infty$, precisely the sum of their non-zero images. They agree on $U$, because the only case where $u$ and $v$ differ is $m=1$, $n \geq 2$, so that $m < n$. But $u \neq v$ since
       $$u(1,2) = a \neq b = v(1,2).$$
 
-  - property: regular subobject classifier
-    proof: We can use exactly the same <a href="/category/Mon?proof=regular_subobject_classifier">proof</a> as for $\Mon$.
-
-  - property: regular quotient object classifier
-    proof: 'If $P \in \CMon$ is a regular quotient object classifier, this means that every surjective homomorphism of commutative monoids $A \to B$ is the cokernel of a unique homomorphism $P \to A$. But there are many surjective homomorphisms which are not cokernels at all: Consider the Boolean monoid $(\{0,1\},\vee)$ with $1 \vee 1 = 1$ and the surjective homomorphism $f : (\IN,+) \to (\{0,1\},\vee)$ defined by $f(0)=0$ and $f(n)=1$ for $n \geq 1$. It has trivial kernel, but is not an isomorphism, so it cannot be a cokernel.'
-
   - property: product-stable epimorphisms
     proof: >-
       We will find an epimorphism $U \hookrightarrow S$ of commutative monoids such that the product of countably many copies of it, $U^{\IN} \hookrightarrow S^{\IN}$, is not an epimorphism. We write commutative monoids additively.
