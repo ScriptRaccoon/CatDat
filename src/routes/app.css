@@ -176,7 +176,7 @@ ol {
 	margin-block: 1rem;
 	list-style-type: decimal;
 
-	li::marker {
+	> li::marker {
 		content: '(' counter(list-item) ') ';
 	}
 }
