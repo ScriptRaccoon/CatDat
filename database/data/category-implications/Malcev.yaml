@@ -74,7 +74,7 @@
     & = h \circ (\id_T \times f) \circ (0,\id_X) \\
     & = h \circ (0,\id_Y) \circ f,
     \end{align*}$$
-    so $g \circ (0,\id_Y) = h \circ (0,\id_Y)$ because $f$ is an epimorphism. Since $(\id_T,0)$ and $(0,\id_Y)$ are jointly strongly epimorphic, they are jointly epimorphic, so $g = h$.
+    so $g \circ (0,\id_Y) = h \circ (0,\id_Y)$ because $f$ is an epimorphism. Since $(\id_T,0)$ and $(0,\id_Y)$ are jointly epimorphic, we conclude $g = h$.
 
 - id: malcev_regular_subobject_classifier_regular-subobject-trivial
   assumptions:
@@ -95,7 +95,7 @@
     $$\textstyle \Sub_{\reg}(Y) \to \prod_i \Sub_{\reg}(X_i), \quad M \mapsto (u_i^*(M))_i,$$
     where $u_i^*(M)$ denotes the pullback of $M$ along $u_i$.
 
-    Now let $X$ be an object. The morphisms $(\id_X,0), (0,\id_X) : X \rightrightarrows X \times X$ are jointly strongly epimorphic, hence jointly epimorphic. The diagonal $\Delta : X \to X \times X$ is a regular monomorphism, namely the equalizer of the two projections $X \times X \rightrightarrows X$, and $0 \to X \times X$ is a regular monomorphism, namely the equalizer of $\id_{X \times X}$ and $0$. We claim that both have the same pullback $0 \to X$ along $(\id_X,0)$. Indeed, for morphisms $s,t : T \rightrightarrows X$ we have $(\id_X,0) \circ t = \Delta \circ s$ if and only if $(t,0) = (s,s)$, which means $s = t = 0$. And $(\id_X,0) \circ t = (t,0)$ factors through $0$ if and only if $t = 0$. By symmetry, both also have the pullback $0 \to X$ along $(0,\id_X)$. Hence, they represent the same regular subobject of $X \times X$, and in particular $X \cong 0$.
+    Now let $X$ be an object. The morphisms $(\id_X,0), (0,\id_X) : X \rightrightarrows X \times X$ are jointly epimorphic. The diagonal $\Delta : X \to X \times X$ is a regular monomorphism, namely the equalizer of the two projections $X \times X \rightrightarrows X$, and $0 \to X \times X$ is a regular monomorphism, namely the equalizer of $\id_{X \times X}$ and $0$. We claim that both have the same pullback $0 \to X$ along $(\id_X,0)$. Indeed, for morphisms $s,t : T \rightrightarrows X$ we have $(\id_X,0) \circ t = \Delta \circ s$ if and only if $(t,0) = (s,s)$, which means $s = t = 0$. And $(\id_X,0) \circ t = (t,0)$ factors through $0$ if and only if $t = 0$. By symmetry, both also have the pullback $0 \to X$ along $(0,\id_X)$. Hence, they represent the same regular subobject of $X \times X$, and in particular $X \cong 0$.
 
 - id: unital_assumptions
   assumptions:
