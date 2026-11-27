@@ -21,6 +21,52 @@
     - finite coproducts
   proof: This holds by definition.
 
+- id: disjoint_coproducts_monic_inclusions
+  assumptions:
+    - disjoint finite coproducts
+  conclusions:
+    - monic coproduct inclusions
+  proof: This holds by definition.
+
+- id: monic_coproduct_inclusions_assumption
+  assumptions:
+    - monic coproduct inclusions
+  conclusions:
+    - binary coproducts
+  proof: This holds by definition.
+
+- id: strongly_connected_monic_coproduct_inclusions
+  assumptions:
+    - binary coproducts
+    - strongly connected
+  conclusions:
+    - monic coproduct inclusions
+  proof: 'Let $A,B$ be objects, and choose a morphism $g : B \to A$. The morphism $(\id_A;g) : A + B \to A$ is a retraction of the coproduct inclusion $A \to A + B$, which is therefore a monomorphism.'
+
+- id: zero_morphisms_monic_coproduct_inclusions
+  assumptions:
+    - binary coproducts
+    - zero morphisms
+  conclusions:
+    - monic coproduct inclusions
+  proof: 'Let $A,B$ be objects. The morphism $(\id_A;0) : A + B \to A$ is a retraction of the coproduct inclusion $A \to A + B$, which is therefore a monomorphism.'
+
+- id: left_cancellative_monic_coproduct_inclusions
+  assumptions:
+    - binary coproducts
+    - left cancellative
+  conclusions:
+    - monic coproduct inclusions
+  proof: This is trivial.
+
+- id: monic_coproduct_inclusions_strict_terminal
+  assumptions:
+    - monic coproduct inclusions
+    - strict terminal object
+  conclusions:
+    - thin
+  proof: Let $A$ be an object. Since $1$ is strict and there is a morphism $1 \to A + 1$, the coproduct inclusion, the object $A + 1$ is terminal. The other coproduct inclusion $A \to A + 1$ is a monomorphism, hence $A$ is <a href="https://ncatlab.org/nlab/show/subterminal+object">subterminal</a>. Since every object is subterminal, the category is thin.
+
 - id: disjoint_coproducts_quasi_pointed
   assumptions:
     - disjoint finite coproducts

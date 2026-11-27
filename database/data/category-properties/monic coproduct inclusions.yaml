@@ -1,0 +1,21 @@
+id: monic coproduct inclusions
+relation: has
+description: >-
+  A category has <i>monic coproduct inclusions</i> if it has binary coproducts and for all objects $A,B$ the coproduct inclusion $A \to A + B$ is a monomorphism.
+
+  It follows that for every family of objects $(A_k)_{k \in I}$ and every $i \in I$ such that the coproduct $\coprod_{k \neq i} A_k$ exists, the coproduct inclusion $A_i \to \coprod_{k \in I} A_k$ is a monomorphism, since $A_i + \coprod_{k \neq i} A_k$ is a coproduct of the family $(A_k)_{k \in I}$. In particular, this holds for every coproduct if the category has coproducts.
+nlab_link: null
+dual: epic product projections
+invariant_under_equivalences: true
+keywords:
+  - monic coproduct injections
+
+related:
+  - binary coproducts
+  - disjoint finite coproducts
+  - disjoint coproducts
+  - distributive
+
+tags:
+  - morphism behavior
+  - limit–colimit interaction

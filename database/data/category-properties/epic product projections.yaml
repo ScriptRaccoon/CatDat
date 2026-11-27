@@ -1,0 +1,19 @@
+id: epic product projections
+relation: has
+description: >-
+  A category has <i>epic product projections</i> if it has binary products and for all objects $A,B$ the product projection $A \times B \to A$ is an epimorphism.
+
+  It follows that for every family of objects $(A_k)_{k \in I}$ and every $i \in I$ such that the product $\prod_{k \neq i} A_k$ exists, the product projection $\prod_{k \in I} A_k \to A_i$ is an epimorphism, since $A_i \times \prod_{k \neq i} A_k$ is a product of the family $(A_k)_{k \in I}$. In particular, this holds for every product if the category has products.
+nlab_link: null
+dual: monic coproduct inclusions
+invariant_under_equivalences: true
+
+related:
+  - binary products
+  - disjoint finite products
+  - disjoint products
+  - codistributive
+
+tags:
+  - morphism behavior
+  - limit–colimit interaction

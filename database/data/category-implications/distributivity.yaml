@@ -25,6 +25,7 @@
     - finite coproducts
     - finite products
   proof: This holds by definition.
+  check_redundancy: false
 
 - id: infinitary_distributive_trivial
   assumptions:
@@ -87,3 +88,23 @@
   conclusions:
     - codistributive
   proof: This is equivalent to the classical result that the <a href="https://en.wikipedia.org/wiki/Distributive_lattice">distributivity law in a lattice</a> can be defined in two ways, see e.g. Birkhoff, <i>Lattice Theory</i>, Ch. IX, Thm. 1.
+
+- id: distributive_monic_coproduct_inclusions
+  assumptions:
+    - distributive
+  conclusions:
+    - monic coproduct inclusions
+  proof: >-
+    Let $\iota_A : A \to A + B$ and $\iota_B : B \to A + B$ be the coproduct inclusions, and let $x,y : T \rightrightarrows A$ be morphisms with $\iota_A \circ x = \iota_A \circ y$. Since $\C$ is distributive, $A \times (A + B)$ is a coproduct of $A \times A$ and $A \times B$ with inclusions $\id_A \times \iota_A$ and $\id_A \times \iota_B$. Hence, there is a morphism $s : A \times (A + B) \to A$ with $s \circ (\id_A \times \iota_A) = p_2$ and $s \circ (\id_A \times \iota_B) = p_1$, where $p_2 : A \times A \to A$ is the second projection and $p_1 : A \times B \to A$ is the first projection. We compute
+    $$\begin{align*}
+    x & = p_2 \circ \langle x,x \rangle \\
+    & = s \circ (\id_A \times \iota_A) \circ \langle x,x \rangle \\
+    & = s \circ \langle x, \iota_A \circ x \rangle \\
+    & = s \circ \langle x, \iota_A \circ y \rangle \\
+    & = s \circ (\id_A \times \iota_A) \circ \langle x,y \rangle \\
+    & = p_2 \circ \langle x,y \rangle \\
+    & = y.
+    \end{align*}$$
+    Therefore, $\iota_A$ is a monomorphism.
+
+    This result is taken from <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 3.3.

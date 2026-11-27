@@ -9,6 +9,7 @@ dual: disjoint finite coproducts
 invariant_under_equivalences: true
 
 related:
+  - epic product projections
   - disjoint products
   - coextensive
   - pushout-stable finite products

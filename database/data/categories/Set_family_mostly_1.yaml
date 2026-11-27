@@ -83,7 +83,7 @@ unsatisfied_properties:
   - property: Malcev
     proof: 'Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = \{\ast\}$ for indices $j \neq i$. It is fully faithful, and it preserves limits since it is right adjoint to $\ev_i$ (<a href="/category/Set_family_mostly_1?proof=binary_copowers">proof</a>). Since $\Set$ is not Malcev (<a href="/category/Set?proof=Malcev" data-allow-deduced>proof</a>), neither is $\Set^{(I)}_1$.'
 
-  - property: disjoint finite products
+  - property: epic product projections
     proof: Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = \{\ast\}$ for indices $j \neq i$. This embedding preserves products, since it is right adjoint to $\ev_i$ (<a href="/category/Set_family_mostly_1?proof=binary_copowers">proof</a>). Take a non-empty set $T$. The projection $T \times \varnothing \to T$ is not surjective. It follows that the projection $\widetilde{T} \times \widetilde{\varnothing} \to \widetilde{T}$ is not an epimorphism, since the epimorphisms are the families of surjective maps (<a href="/category/Set_family_mostly_1?proof=epimorphism">proof</a>).
 
   - property: well-powered

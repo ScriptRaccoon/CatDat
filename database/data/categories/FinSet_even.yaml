@@ -77,9 +77,6 @@ unsatisfied_properties:
   - property: countable
     proof: Even the collection of all two-element sets is not countable, since every non-empty set $X$ yields the two-element set $\{\varnothing, X\}$.
 
-  - property: strongly connected
-    proof: There is no map $\{0,1\} \to \varnothing$.
-
   - property: terminal object
     proof: Assume that $T$ is a terminal object, say with $n$ elements. Then $\Hom(\{0,1\},T)$ has $n^2$ elements, but also just one element. Thus, $n = 1$. But then $T$ is not a valid object.
 

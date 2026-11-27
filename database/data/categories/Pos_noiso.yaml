@@ -56,9 +56,6 @@ unsatisfied_properties:
   - property: terminal object
     proof: Assume that there is a terminal object $P$. In particular, there is exactly one order-preserving map $\{0 < 1\} \to P$. Since every constant map is order-preserving, it follows that $P$ has exactly one element. But then $P$ has an isolated point.
 
-  - property: strongly connected
-    proof: There is no map $\{0 < 1\} \to \varnothing$.
-
   - property: Cauchy complete
     proof: The constant map $\{0 < 1\} \to \{0 < 1\}$, $x \mapsto 0$ does not split, because a splitting would also be a splitting in $\Pos$, therefore isomorphic to $\{0 < 1\} \twoheadrightarrow \{0\} \hookrightarrow \{0 < 1\}$. But $\{0\}$ has an isolated point.
 

@@ -2206,7 +2206,6 @@
 			"type": "category",
 			"id": "pushout-stable binary products"
 		},
-
 		{
 			"type": "category",
 			"id": "pullback-stable countable coproducts"
@@ -2222,6 +2221,14 @@
 		{
 			"type": "category",
 			"id": "pushout-stable products"
+		},
+		{
+			"type": "category",
+			"id": "epic product projections"
+		},
+		{
+			"type": "category",
+			"id": "monic coproduct inclusions"
 		}
 	]
 }
