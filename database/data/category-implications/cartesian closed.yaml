@@ -115,3 +115,66 @@
   conclusions:
     - finite-product-stable epimorphisms
   proof: For every object $T$, the functor $T \times -$ is a left adjoint and hence preserves epimorphisms.
+
+- id: lcc_finite-coproduct-stable_monos
+  assumptions:
+    - locally cartesian closed
+    - finite coproducts
+  conclusions:
+    - finite-coproduct-stable monomorphisms
+  # TODO: once the property "coproducts are pullback-stable" is added, split this into "locally cartesian closed + finite coproducts ⟹ finite coproducts are pullback-stable" and "pullbacks + finite coproducts are pullback-stable ⟹ finite-coproduct-stable monomorphisms" (the proof only uses Fact 1 and derives Fact 2 from it)
+  # TODO: once the property "coproduct injections are monic" is added, add the implication "distributive ⟹ coproduct injections are monic" (Carboni–Lack–Walters, Prop. 3.3) and use it in Fact 2
+  proof: >-
+    Let $\C$ be a locally cartesian closed category with finite coproducts. Let $(f_i : X_i \to Y_i)_{i \in I}$ be a finite family of monomorphisms, and let $X \coloneqq \coprod_{i \in I} X_i$ and $Y \coloneqq \coprod_{i \in I} Y_i$ with injections $\iota_i : X_i \to X$ and $\kappa_i : Y_i \to Y$. We show that $g \coloneqq \coprod_{i \in I} f_i : X \to Y$ is a monomorphism. By definition, $g \circ \iota_i = \kappa_i \circ f_i$ for all $i \in I$.
+
+    First, we reduce to the case that $\C$ has a terminal object. The slice category $\C' \coloneqq \C / Y$ is locally cartesian closed, since $\C' / (A,a) \cong \C / A$ for every morphism $a : A \to Y$. It has the terminal object $(Y, \id_Y)$ and finite coproducts, which are computed in $\C$. The morphisms $f_i : (X_i, \kappa_i \circ f_i) \to (Y_i, \kappa_i)$ are monomorphisms in $\C'$, and their coproduct in $\C'$ is $g : (X, g) \to (Y, \id_Y)$. If $g$ is a monomorphism in $\C'$, it is one in $\C$: if $a,b : Z \rightrightarrows X$ are morphisms with $g \circ a = g \circ b$, then $a$ and $b$ are morphisms $(Z, g \circ a) \to (X, g)$ in $\C'$, hence $a = b$. Replacing $\C$ by $\C'$, we may therefore assume that $\C$ has a terminal object. We use two facts about $\C$.
+
+    <strong>Fact 1.</strong> Finite coproducts are stable under pullbacks: Let $(A_j)_{j \in J}$ be a finite family of objects with coproduct $A \coloneqq \coprod_{j \in J} A_j$ and injections $\iota_j : A_j \to A$, and let $c : Z \to A$ be a morphism. If $e_j : Z_j \to Z$ is a pullback of $\iota_j$ along $c$, then $[e_j]_{j \in J} : \coprod_{j \in J} Z_j \to Z$ is an isomorphism. In particular, the morphisms $e_j$ are jointly epimorphic. Indeed, since coproducts in slice categories are computed in $\C$, the object $(A,\id_A)$ of $\C / A$ is the coproduct of the objects $(A_j,\iota_j)$, with injections $\iota_j$. The base change functor $c^* : \C / A \to \C / Z$ maps $(A,\id_A)$ to $(Z,\id_Z)$, $(A_j,\iota_j)$ to $(Z_j,e_j)$, and $\iota_j$ to $e_j$. Since $c^*$ is a left adjoint, it preserves coproducts, so $(Z,\id_Z)$ is the coproduct of the objects $(Z_j,e_j)$ in $\C / Z$, with injections $e_j$. Since this coproduct is computed in $\C$ as well, $[e_j]_{j \in J}$ is an isomorphism.
+
+    <strong>Fact 2.</strong> $\C$ is cartesian closed (by <a href="/category-implication/locally_cartesian_closed_with_terminal_is_closed">this result</a>) and hence distributive (by <a href="/category-implication/distributive_criterion">this result</a>), that is, for every object $A$ the functor $A \times - : \C \to \C$ preserves finite coproducts. Since $\C$ is distributive, coproduct injections in $\C$ are monomorphisms, see <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 3.3.
+
+    <strong>Claim.</strong> Let $i,j \in I$ with $i \neq j$. If $x : W \to X_i$ and $y : W \to X_j$ are morphisms with $\kappa_i \circ f_i \circ x = \kappa_j \circ f_j \circ y$, then $\iota_i \circ x = \iota_j \circ y$. To prove this, let $q_i : X_i \times X_j \to X_i$ and $q_j : X_i \times X_j \to X_j$ be the projections, and $z \coloneqq \langle x,y \rangle : W \to X_i \times X_j$. By Fact 2, $(X_i \times X_j) \times Y$ is the coproduct of the objects $(X_i \times X_j) \times Y_\ell$ for $\ell \in I$, with injections $\id_{X_i \times X_j} \times \kappa_\ell$. Hence, there is a morphism $s : (X_i \times X_j) \times Y \to X$ with
+    $$\begin{align*}
+    s \circ (\id_{X_i \times X_j} \times \kappa_j) & = \iota_j \circ q_j \circ p_1, \\
+    s \circ (\id_{X_i \times X_j} \times \kappa_\ell) & = \iota_i \circ q_i \circ p_1 \quad \text{for } \ell \neq j,
+    \end{align*}$$
+    where $p_1$ denotes the projection $(X_i \times X_j) \times Y_\ell \to X_i \times X_j$. Since $i \neq j$, we get
+    $$\begin{align*}
+    \iota_i \circ x & = \iota_i \circ q_i \circ z \\
+    & = \iota_i \circ q_i \circ p_1 \circ \langle z, f_i \circ x \rangle \\
+    & = s \circ (\id_{X_i \times X_j} \times \kappa_i) \circ \langle z, f_i \circ x \rangle \\
+    & = s \circ \langle z, \kappa_i \circ f_i \circ x \rangle \\
+    & = s \circ \langle z, \kappa_j \circ f_j \circ y \rangle \\
+    & = s \circ (\id_{X_i \times X_j} \times \kappa_j) \circ \langle z, f_j \circ y \rangle \\
+    & = \iota_j \circ q_j \circ p_1 \circ \langle z, f_j \circ y \rangle \\
+    & = \iota_j \circ q_j \circ z \\
+    & = \iota_j \circ y.
+    \end{align*}$$
+    This proves the claim.
+
+    Now let $a,b : Z \rightrightarrows X$ be morphisms with $g \circ a = g \circ b$. We want to prove $a = b$. Applying Fact 2 twice, we see that $X \times X$ is the coproduct of the objects $X_i \times X_j$ for $i,j \in I$, with injections $\iota_i \times \iota_j$. By Fact 1, applied to $\langle a,b \rangle : Z \to X \times X$, there are jointly epimorphic morphisms $e_{ij} : Z_{ij} \to Z$ and morphisms $a_{ij} : Z_{ij} \to X_i$ and $b_{ij} : Z_{ij} \to X_j$ with $\langle a,b \rangle \circ e_{ij} = (\iota_i \times \iota_j) \circ \langle a_{ij}, b_{ij} \rangle$, that is,
+    $$\begin{align*}
+    a \circ e_{ij} & = \iota_i \circ a_{ij}, \\
+    b \circ e_{ij} & = \iota_j \circ b_{ij}.
+    \end{align*}$$
+    It suffices to show $a \circ e_{ij} = b \circ e_{ij}$, that is, $\iota_i \circ a_{ij} = \iota_j \circ b_{ij}$, for all $i,j \in I$. We have
+    $$\begin{align*}
+    \kappa_i \circ f_i \circ a_{ij} & = g \circ \iota_i \circ a_{ij} \\
+    & = g \circ a \circ e_{ij} \\
+    & = g \circ b \circ e_{ij} \\
+    & = g \circ \iota_j \circ b_{ij} \\
+    & = \kappa_j \circ f_j \circ b_{ij}.
+    \end{align*}$$
+    <ol>
+    <li>If $i = j$, then $a_{ii} = b_{ii}$, since $\kappa_i$ is a monomorphism by Fact 2 and $f_i$ is one as well. Hence, $\iota_i \circ a_{ii} = \iota_i \circ b_{ii}$.</li>
+    <li>If $i \neq j$, then the claim gives $\iota_i \circ a_{ij} = \iota_j \circ b_{ij}$.</li>
+    </ol>
+
+- id: lcc_coproduct-stable_monos
+  assumptions:
+    - locally cartesian closed
+    - coproducts
+  conclusions:
+    - coproduct-stable monomorphisms
+  # TODO: split this analogously to lcc_finite-coproduct-stable_monos
+  proof: The proof of <a href="/category-implication/lcc_finite-coproduct-stable_monos">this result</a> works verbatim for arbitrary families of monomorphisms. Fact 1 holds for arbitrary coproducts, since base change functors are left adjoints, and Fact 2 holds for arbitrary coproducts, since a cartesian closed category with coproducts is infinitary distributive (by <a href="/category-implication/infinitary_distributive_criterion">this result</a>).
