@@ -6,7 +6,12 @@
   conclusions:
     - coproducts
     - disjoint finite coproducts
-  proof: This is easy.
+  proof: >-
+    For the non-trivial direction, assume that $\C$ has coproducts and disjoint finite coproducts, and let $(A_k)_{k \in I}$ be a family of objects. We only use that binary coproducts are disjoint. Let $i \neq j$, let $R$ be the coproduct of the $A_k$ with $k \notin \{i,j\}$, and let $B \coloneqq A_j + R$, so that $X \coloneqq \coprod_{k \in I} A_k \cong A_i + B$. Then the inclusion $A_i \to X$ is a monomorphism, and $A_i \times_X B \cong 0$. Since the inclusion $A_j \to B$ is a monomorphism, we have $A_j \times_B A_j \cong A_j$. Therefore,
+    $$\begin{align*}
+    A_i \times_X A_j & \cong (A_i \times_X B) \times_B A_j \cong 0 \times_B A_j \\
+    & \cong 0 \times_{A_j} (A_j \times_B A_j) \cong 0 \times_{A_j} A_j \cong 0.
+    \end{align*}$$
   is_equivalence: true
 
 - id: disjoint_coproducts_consequence

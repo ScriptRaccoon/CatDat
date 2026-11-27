@@ -1,6 +1,9 @@
 id: disjoint finite coproducts
 relation: has
-description: A category has <i>disjoint finite coproducts</i> if it has finite coproducts, for every pair of objects $A,B$ the coproduct inclusions $A \rightarrow A+B \leftarrow B$ are monomorphisms, and the pullback $A \times_{A + B} B$ exists and is given by the initial object $0$.
+description: >-
+  A category has <i>disjoint finite coproducts</i> if it has finite coproducts and, for every finite family of objects $(A_i)_{i \in I}$, the coproduct inclusions $A_i \to \coprod_{k \in I} A_k$ are monomorphisms, and the pullback of the inclusions $A_i \to \coprod_{k \in I} A_k$ and $A_j \to \coprod_{k \in I} A_k$ for $i \neq j$ exists and is given by the initial object $0$.
+
+  It suffices to require this for binary coproducts, by the argument in the proof of <a href="/category-implication/disjoint_coproducts_equivalence">this result</a>, which works verbatim for finite families.
 nlab_link: https://ncatlab.org/nlab/show/disjoint+coproduct
 dual: disjoint finite products
 invariant_under_equivalences: true

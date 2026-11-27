@@ -1,7 +1,7 @@
 id: disjoint finite products
 relation: has
 description: >-
-  A category has <i>disjoint finite products</i> if it has finite products, for every pair of objects $A,B$ the product projections $A \leftarrow A \times B \rightarrow B$ are epimorphisms, and the pushout $A \sqcup_{A \times B} B$ exists and is given by the terminal object $1$.
+  A category has <i>disjoint finite products</i> if it has finite products and, for every finite family of objects $(A_i)_{i \in I}$, the product projections $\prod_{k \in I} A_k \to A_i$ are epimorphisms, and the pushout of the projections $\prod_{k \in I} A_k \to A_i$ and $\prod_{k \in I} A_k \to A_j$ for $i \neq j$ exists and is given by the terminal object $1$. It suffices to require this for binary products, by the argument in the proof of <a href="/category-implication/dual_disjoint_coproducts_equivalence">this result</a>, which works verbatim for finite families.
 
   This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of having disjoint finite coproducts.
 nlab_link: null
