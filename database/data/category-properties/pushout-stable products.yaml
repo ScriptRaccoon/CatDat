@@ -1,0 +1,19 @@
+id: pushout-stable products
+relation: has
+description: >-
+  A category $\C$ has <i>pushout-stable products</i> if it has products and, for every family of objects $(A_i)_{i \in I}$ and every morphism $\prod_{i \in I} A_i \to T$, the pushouts $T_i \coloneqq T \sqcup_{\prod_{i \in I} A_i} A_i$ exist and the canonical morphism $T \to \prod_{i \in I} T_i$ is an isomorphism.
+nlab_link: null
+dual: pullback-stable coproducts
+invariant_under_equivalences: true
+keywords:
+  - couniversal products
+
+related:
+  - products
+  - pushout-stable finite products
+  - pushout-stable countable products
+  - infinitary coextensive
+  - disjoint products
+
+tags:
+  - limit–colimit interaction

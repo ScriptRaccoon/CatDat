@@ -1,0 +1,16 @@
+id: pullback-stable binary coproducts
+relation: has
+description: A category $\C$ has <i>pullback-stable binary coproducts</i> if it has binary coproducts and, for all objects $A,B$ and every morphism $T \to A + B$, the pullbacks $T_A \coloneqq T \times_{A + B} A$ and $T_B \coloneqq T \times_{A + B} B$ exist and the canonical morphism $T_A + T_B \to T$ is an isomorphism.
+nlab_link: https://ncatlab.org/nlab/show/pullback-stable+colimit
+dual: pushout-stable binary products
+invariant_under_equivalences: true
+keywords:
+  - universal binary coproducts
+
+related:
+  - binary coproducts
+  - pullback-stable finite coproducts
+  - extensive
+
+tags:
+  - limit–colimit interaction

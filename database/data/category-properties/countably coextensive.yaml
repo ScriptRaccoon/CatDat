@@ -13,7 +13,8 @@ dual: countably extensive
 invariant_under_equivalences: true
 
 related:
-  - disjoint products
+  - disjoint finite products
+  - pushout-stable countable products
   - countable products
   - countably codistributive
   - coextensive

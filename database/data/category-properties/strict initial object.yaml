@@ -1,6 +1,6 @@
 id: strict initial object
 relation: has a
-description: A <i>strict initial object</i> is an initial object $0$ such that every morphism $A \to 0$ is an isomorphism. This property refers to the existence of a strict initial object.
+description: A <i>strict initial object</i> of a category $\C$ is an initial object $0$ such that every morphism $A \to 0$ is an isomorphism. Equivalently, the slice category $\C/0$ is <a href="/category-property/trivial">trivial</a>. This property refers to the existence of a strict initial object.
 nlab_link: https://ncatlab.org/nlab/show/strict+initial+object
 dual: strict terminal object
 invariant_under_equivalences: true
@@ -9,6 +9,7 @@ related:
   - initial object
   - quasi-pointed
   - distributive
+  - pullback-stable finite coproducts
 
 tags:
   - colimits

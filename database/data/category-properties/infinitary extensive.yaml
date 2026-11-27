@@ -18,6 +18,7 @@ invariant_under_equivalences: true
 
 related:
   - disjoint coproducts
+  - pullback-stable coproducts
   - infinitary distributive
   - extensive
   - countably extensive

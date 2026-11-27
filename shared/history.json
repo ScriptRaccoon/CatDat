@@ -2189,6 +2189,39 @@
 		{
 			"type": "category",
 			"id": "infinitary biproducts"
+		},
+		{
+			"type": "category",
+			"id": "pullback-stable finite coproducts"
+		},
+		{
+			"type": "category",
+			"id": "pushout-stable finite products"
+		},
+		{
+			"type": "category",
+			"id": "pullback-stable binary coproducts"
+		},
+		{
+			"type": "category",
+			"id": "pushout-stable binary products"
+		},
+
+		{
+			"type": "category",
+			"id": "pullback-stable countable coproducts"
+		},
+		{
+			"type": "category",
+			"id": "pushout-stable countable products"
+		},
+		{
+			"type": "category",
+			"id": "pullback-stable coproducts"
+		},
+		{
+			"type": "category",
+			"id": "pushout-stable products"
 		}
 	]
 }
