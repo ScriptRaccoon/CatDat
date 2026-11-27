@@ -45,8 +45,8 @@ satisfied_properties:
     proof: If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its colimit is $(\colim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(\iota_i(x),\iota_i(y))$ for $i \in \I$ and $(x,y) \in R_i$. The universal property is easy to check.
     check_redundancy: false
 
-  - property: infinitary extensive
-    proof: We can copy the <a href="/category/PreOrd?proof=infinitary_extensive">proof</a> for $\PreOrd$.
+  - property: disjoint coproducts
+    proof: We already know that coproducts (<a href="/category/Bin?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Bin?proof=complete">proof</a>) exist and are preserved by the faithful forgetful functor $\Bin \to \Set$, and the empty set carries a unique binary relation. Since $\Set$ has disjoint coproducts (<a href="/category/Set?proof=disjoint_coproducts" data-allow-deduced>proof</a>), so does $\Bin$.
 
   - property: finitely accessible
     proof: Using the description of colimits, it is easy to see that $(X,R)$ is finitely presentable when $X$ is a finite set. The collection of such objects, up to isomorphism, is essentially small. Moreover, every object $(X,R)$ can be written as the filtered colimit of $(F,R|_F)$, where $F$ runs through the finite subsets of $X$.
