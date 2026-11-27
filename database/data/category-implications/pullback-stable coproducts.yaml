@@ -121,6 +121,32 @@
     - distributive
   proof: The proof of <a href="/category-implication/pullback-stable_coproducts_distributive">this result</a> works verbatim for finite families.
 
+- id: thin_pullback-stable_coproducts
+  assumptions:
+    - infinitary distributive
+    - thin
+  conclusions:
+    - pullback-stable coproducts
+  proof: >-
+    Let $(A_i)_{i \in I}$ be a family of objects with coproduct $A$, and let $T \to A$ be a morphism. Since $\C$ is thin, it suffices to show that $T \times_A A_i$ exists and $\coprod_{i \in I} (T \times_A A_i) \cong T$. Since $\C$ is thin, the product $T \times A_i$ is a pullback $T \times_A A_i$, and we have $T \times A \cong T$. Using that $\C$ is infinitary distributive, we get
+    $$\textstyle \coprod_{i \in I} (T \times_A A_i) \cong \coprod_{i \in I} (T \times A_i) \cong T \times A \cong T.$$
+
+- id: thin_pullback-stable_countable_coproducts
+  assumptions:
+    - countably distributive
+    - thin
+  conclusions:
+    - pullback-stable countable coproducts
+  proof: The proof of <a href="/category-implication/thin_pullback-stable_coproducts">this result</a> works verbatim for countable families.
+
+- id: thin_pullback-stable_finite_coproducts
+  assumptions:
+    - distributive
+    - thin
+  conclusions:
+    - pullback-stable finite coproducts
+  proof: The proof of <a href="/category-implication/thin_pullback-stable_coproducts">this result</a> works verbatim for finite families.
+
 - id: pullback-stable_coproducts_monos
   assumptions:
     - pullbacks
