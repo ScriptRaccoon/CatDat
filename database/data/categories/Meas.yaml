@@ -48,11 +48,14 @@ satisfied_properties:
       $$M \coloneqq j_*(T) \cup u_*(S \setminus \im(i))$$
       of the pushout. It is straightforward to verify that $j^*(M) = T$ and $u^*(M) = S$. Since both $T$ and $S$ are measurable, it follows that $M$ is measurable. Finally, the equality $j^*(M) = T$ shows that every measurable subset of $Y$ is the preimage of a measurable subset of the pushout. Hence $j$ is an embedding, as claimed.
 
-  - property: countably extensive
-    proof: >-
-      This follows from the countable extensivity of $\Set$ (<a href="/category/Set?proof=countably_extensive" data-allow-deduced>proof</a>) as follows. We already know that coproducts (<a href="/category/Meas?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Meas?proof=complete">proof</a>) exist, and that they are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets, with measurable subsets given by unions of measurable subsets of the summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique $\sigma$-algebra, it follows immediately that coproducts are disjoint in $\Meas$ as well.
+  - property: disjoint coproducts
+    proof: We already know that coproducts (<a href="/category/Meas?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Meas?proof=complete">proof</a>) exist and are preserved by the faithful forgetful functor $\Meas \to \Set$, and the empty set carries a unique $\sigma$-algebra. Since $\Set$ has disjoint coproducts (<a href="/category/Set?proof=disjoint_coproducts" data-allow-deduced>proof</a>), so does $\Meas$.
 
-      It remains to show that <i>countable</i> coproducts are stable under pullbacks. Let $(X_i)_{i \in I}$ be a countable family of measurable spaces and let $f : T \to \coprod_{i \in I} X_i$ be a measurable map. Consider the pullbacks $T_i \coloneqq f^*(X_i)$. These are simply the preimages of $X_i$ under $f$, equipped with the $\sigma$-algebra induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical measurable map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it maps measurable sets to measurable sets.
+  - property: pullback-stable countable coproducts
+    proof: >-
+      We already know that coproducts (<a href="/category/Meas?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Meas?proof=complete">proof</a>) exist and are preserved by the forgetful functor $\Meas \to \Set$. More concretely, coproducts are disjoint unions of the underlying sets, with measurable subsets given by unions of measurable subsets of the summands.
+
+      Let $(X_i)_{i \in I}$ be a countable family of measurable spaces and let $f : T \to \coprod_{i \in I} X_i$ be a measurable map. Consider the pullbacks $T_i \coloneqq f^*(X_i)$. These are simply the preimages of $X_i$ under $f$, equipped with the $\sigma$-algebra induced from $T$. Since $\Set$ has pullback-stable coproducts (<a href="/category/Set?proof=pullback-stable_coproducts" data-allow-deduced>proof</a>), the canonical measurable map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it maps measurable sets to measurable sets.
 
       A measurable subset of $\coprod_{i \in I} T_i$ has the form $A = \coprod_{i \in I} (B_i \cap T_i)$, where each $B_i$ is a measurable subset of $T$. The image of $A$ in $T$ is $\bigcup_{i \in I} (B_i \cap T_i)$. Since this is a countable union, it suffices to show that each $B_i \cap T_i$ is measurable in $T$. This holds because $T_i$ is measurable in $T$ (since $X_i$ is measurable in the coproduct and $f$ is measurable) and $B_i$ is measurable in $T$ by assumption.
 

@@ -46,13 +46,16 @@ satisfied_properties:
   - property: regular subobject classifier
     proof: The indiscrete two-point space $\{0,1\}$ is a regular subobject classifier since uniform maps $X \to \{0,1\}$ correspond to subsets of $X$.
 
-  - property: extensive
+  - property: disjoint finite coproducts
+    proof: We already know that coproducts (<a href="/category/Unif?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Unif?proof=complete">proof</a>) exist and are preserved by the faithful forgetful functor $\Unif \to \Set$, and the empty set carries a unique uniform structure. Since $\Set$ has disjoint finite coproducts (<a href="/category/Set?proof=disjoint_finite_coproducts" data-allow-deduced>proof</a>), so does $\Unif$.
+
+  - property: pullback-stable binary coproducts
     proof: >-
-      This can be deduced from the extensivity of $\Set$ (<a href="/category/Set?proof=extensive" data-allow-deduced>proof</a>) as follows. We already know that coproducts (<a href="/category/Unif?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Unif?proof=complete">proof</a>) exist and are preserved by the forgetful functor $\Unif \to \Set$. Moreover, the empty set carries a unique uniform structure. Hence, it follows immediately that coproducts are disjoint in $\Unif$. It remains to show that finite coproducts are stable under pullbacks; countable coproducts are not, since $\Unif$ is not even countably distributive (<a href="/category/Unif?proof=countably_distributive" data-allow-deduced>proof</a>).
+      This can be deduced from the fact that $\Set$ has pullback-stable binary coproducts (<a href="/category/Set?proof=pullback-stable_binary_coproducts" data-allow-deduced>proof</a>) as follows. We already know that coproducts (<a href="/category/Unif?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Unif?proof=complete">proof</a>) exist and are preserved by the forgetful functor $\Unif \to \Set$.
 
       First, recall that if $A$ is a subset of a uniform space $X$ (we follow the common, albeit imprecise, abuse of notation of denoting a uniform space by the same symbol as its underlying set), then $A$ inherits a uniform structure by declaring the entourages of $A$ to be the sets of the form $U \cap (A \times A)$, where $U$ is an entourage of $X$. With this structure, $A$ is called a subspace of $X$. If $f : X \to Y$ is a uniform map and $A \subseteq Y$ is a subspace, then the subspace $f^*(A) \subseteq X$ is a pullback of the inclusion $A \hookrightarrow Y$ along $f$.
 
-      Now let $f : T \to X + Y$ be a uniform map. Notice that the inclusion maps $X \to X + Y \leftarrow Y$ are embeddings. Thus, we may regard $X$ and $Y$ as subspaces of $X + Y$. Consider the pullbacks $T_X$ and $T_Y$. These are subspaces of $T$, and there is a canonical uniform map $T_X + T_Y \to T$. Our task is to prove that it is an isomorphism of uniform spaces. It is certainly a bijection, since $\Set$ is extensive. It therefore remains to show that it maps entourages to entourages.
+      Now let $f : T \to X + Y$ be a uniform map. Notice that the inclusion maps $X \to X + Y \leftarrow Y$ are embeddings. Thus, we may regard $X$ and $Y$ as subspaces of $X + Y$. Consider the pullbacks $T_X$ and $T_Y$. These are subspaces of $T$, and there is a canonical uniform map $T_X + T_Y \to T$. Our task is to prove that it is an isomorphism of uniform spaces. It is certainly a bijection, since binary coproducts in $\Set$ are pullback-stable. It therefore remains to show that it maps entourages to entourages.
 
       A basic entourage of $T_X \sqcup T_Y$ has the form
       $$(U \cap (T_X \times T_X)) \sqcup (V \cap (T_Y \times T_Y))$$

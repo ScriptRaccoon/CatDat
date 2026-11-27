@@ -29,11 +29,14 @@ satisfied_properties:
   - property: Malcev
     proof: This follows in the same way as for $\Grp$ (<a href="/category/Grp?proof=Malcev">proof</a>); see also <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.5.
 
-  - property: coextensive
+  - property: disjoint finite products
     proof: >-
-      We already know that $\CAlg(R)$ has products and pushouts, since it is one-sorted finitary algebraic (<a href="/category/CAlg(R)?proof=one-sorted_finitary_algebraic" data-allow-deduced>proof</a>). Concretely, the pushout of a span $A \leftarrow S \rightarrow B$ can be constructed as the tensor product $A \otimes_S B$ with the obvious multiplication. Finite products are disjoint because the projection $p_1 : A \times B \to A$ is clearly surjective, hence an epimorphism, and the tensor product $A \otimes_{p_1,A \times B,p_2} B = 0$ is the zero ring (the terminal object), since
+      We already know that $\CAlg(R)$ has products and pushouts, since it is one-sorted finitary algebraic (<a href="/category/CAlg(R)?proof=one-sorted_finitary_algebraic" data-allow-deduced>proof</a>). Concretely, the pushout of a span $A \leftarrow S \rightarrow B$ can be constructed as the tensor product $A \otimes_S B$ with the obvious multiplication. It suffices to consider binary products. The projection $p_1 : A \times B \to A$ is surjective, hence an epimorphism, and likewise $p_2$. The tensor product $A \otimes_{p_1,A \times B,p_2} B = 0$ is the zero ring (the terminal object), since
       $$a \otimes b = a \cdot p_1(1,0) \otimes b = a \otimes p_2(1,0) \cdot b = a \otimes 0 = 0.$$
-      It remains to check that finite products are stable under pushouts. Let
+
+  - property: pushout-stable binary products
+    proof: >-
+      We already know that $\CAlg(R)$ has binary products and pushouts, since it is one-sorted finitary algebraic (<a href="/category/CAlg(R)?proof=one-sorted_finitary_algebraic" data-allow-deduced>proof</a>). The pushout of a span $A \leftarrow S \rightarrow B$ is the tensor product $A \otimes_S B$. Let
       $$f : A \times B \to T$$
       be an algebra homomorphism, and consider the pushouts
       $$\begin{align*}
@@ -46,7 +49,7 @@ satisfied_properties:
       $$A \to A/\langle e \rangle \times A/\langle 1-e \rangle$$
       is an isomorphism. One can also deduce this from the Chinese Remainder Theorem.
 
-      An alternative proof, which we only sketch, uses the category of locally ringed spaces $\LRS_R$ over $R$, which is infinitary extensive (<a href="/category/LRS_R?proof=infinitary_extensive" data-allow-deduced>proof</a>). Its full subcategory of affine $R$-schemes is closed under finite coproducts and pullbacks, hence extensive as well, and it is anti-equivalent to $\CAlg(R)$. This argument is not circular since our proof of extensivity of $\LRS_R$ does not use coextensivity of $\CAlg(R)$.
+      An alternative proof, which we only sketch, uses the category of locally ringed spaces $\LRS_R$ over $R$, which is infinitary extensive (<a href="/category/LRS_R?proof=infinitary_extensive" data-allow-deduced>proof</a>). Its full subcategory of affine $R$-schemes is closed under finite coproducts and pullbacks, hence extensive as well, and it is anti-equivalent to $\CAlg(R)$. Hence, $\CAlg(R)$ is coextensive, and in particular has pushout-stable binary products. This argument is not circular since our proof of extensivity of $\LRS_R$ does not use coextensivity of $\CAlg(R)$.
 
 unsatisfied_properties:
   - property: skeletal

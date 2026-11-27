@@ -26,9 +26,9 @@ satisfied_properties:
       Colimits are computed as in ringed spaces: for a diagram $(X_i)_{i \in I}$ in $\LRS_R$, let $X$ be the ringed space whose underlying space $|X| \coloneqq \colim_i |X_i|$ is the colimit of the underlying spaces, with colimit maps $u_i : |X_i| \to |X|$, and whose structure sheaf $\O_X \coloneqq \lim_i (u_i)_* \O_{X_i}$ is the limit of the push-forwards of the structure sheaves. Then $X$ is a locally ringed space, the morphisms $X_i \to X$ consisting of $u_i$ and the limit projections $\O_X \to (u_i)_* \O_{X_i}$ have local stalk maps, and they form a colimit in $\LRS_R$. See Demazure–Gabriel, <i>Groupes algébriques</i>, Tome I, Ch. I, §1, 1.6. See also <a href="https://math.stackexchange.com/questions/1646202">MSE/1646202</a>.
     check_redundancy: false
 
-  - property: infinitary extensive
+  - property: disjoint coproducts
     proof: >-
-      The proof works for both ringed and locally ringed spaces and relies on the fact that $\Top$ is infinitary extensive (<a href="/category/Top?proof=infinitary_extensive" data-allow-deduced>proof</a>).
+      The proof works for both ringed and locally ringed spaces.
 
       First, recall some basic facts about open embeddings (often called open immersions in the context of schemes). If $X$ is a locally ringed space and $U \subseteq |X|$ is an open subset, then the space $U$ with the sheaf $(\O_X)|_U$ is again a locally ringed space, which we denote by $X_U$. There is an inclusion morphism $i : X_U \to X$, where $|i| : U \hookrightarrow |X|$ is the inclusion map and $i^\sharp : \O_X \to |i|_* (\O_X)|_U$ is defined via restriction maps. This is a monomorphism, and a morphism $g : T \to X$ factors through it if and only if $|g|(|T|) \subseteq U$. We will refer to any monomorphism isomorphic to one of this form as an open embedding.
 
@@ -38,7 +38,11 @@ satisfied_properties:
 
       That coproducts are disjoint in $\LRS_R$ follows from the fact that coproducts are disjoint in $\Top$ (<a href="/category/Top?proof=disjoint_coproducts" data-allow-deduced>proof</a>) together with the following observations. By the descriptions above, the forgetful functor $\LRS_R \to \Top$ preserves coproducts and pullbacks along open embeddings (although it does not preserve pullbacks in general), and the empty topological space admits a unique structure sheaf, up to isomorphism, making it into a locally ringed space.
 
-      It remains to prove that coproducts are stable under pullbacks. To this end, let $f : T \to \coprod_i X_i$ be a morphism. Then $U_i \coloneqq |f|^*(|X_i|) \subseteq |T|$ is an open subset, and for $i \neq j$ we have $U_i \cap U_j = \varnothing$ because $|X_i| \cap |X_j| = \varnothing$ in $\coprod_i |X_i|$. Let $T_i \coloneqq T_{U_i}$. We must show that the canonical morphism $g : \coprod_i T_i \to T$ is an isomorphism. The underlying continuous map $|g|$ is a homeomorphism because coproducts in $\Top$ are stable under pullbacks. It therefore remains to show that $g^\sharp : \O_T \to |g|_* \O$, where $\O$ denotes the structure sheaf of $\coprod_i T_i$, is an isomorphism. Equivalently, for every open subset $U \subseteq |T|$, we must show that the canonical ring homomorphism
+  - property: pullback-stable coproducts
+    proof: >-
+      The proof works for both ringed and locally ringed spaces. We use the open embeddings and the concrete description of coproducts in $\LRS_R$ (<a href="/category/LRS_R?proof=disjoint_coproducts">proof</a>). In particular, pullbacks along coproduct inclusions exist.
+
+      Let $f : T \to \coprod_i X_i$ be a morphism. Then $U_i \coloneqq |f|^*(|X_i|) \subseteq |T|$ is an open subset, and for $i \neq j$ we have $U_i \cap U_j = \varnothing$ because $|X_i| \cap |X_j| = \varnothing$ in $\coprod_i |X_i|$. Let $T_i \coloneqq T_{U_i}$. We must show that the canonical morphism $g : \coprod_i T_i \to T$ is an isomorphism. The underlying continuous map $|g|$ is a homeomorphism because $\Top$ has pullback-stable coproducts (<a href="/category/Top?proof=pullback-stable_coproducts" data-allow-deduced>proof</a>). It therefore remains to show that $g^\sharp : \O_T \to |g|_* \O$, where $\O$ denotes the structure sheaf of $\coprod_i T_i$, is an isomorphism. Equivalently, for every open subset $U \subseteq |T|$, we must show that the canonical ring homomorphism
       $$\textstyle \O_T(U) \to \prod_{i \in I} \O_{T_i}(U \cap U_i) = \prod_{i \in I} \O_T(U \cap U_i)$$
       is an isomorphism. This is precisely the sheaf axiom applied to the open cover of $U$ by the pairwise disjoint open subsets $U \cap U_i$.
 
