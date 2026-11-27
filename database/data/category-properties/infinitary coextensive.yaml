@@ -1,7 +1,9 @@
 id: infinitary coextensive
 relation: is
 description: >-
-  A category $\C$ is <i>infinitary coextensive</i> when it has products and for all families of objects $(A_i)_{i \in I}$ the product functor $\prod_{i \in I} (A_i / \C) \to (\prod_{i \in I} A_i) / \C$ is an equivalence of categories. Equivalently (by using the characterization of infinitary extensive categories), pushouts along product projections exist, products are disjoint, and products are stable under pushouts.
+  A category $\C$ is <i>infinitary coextensive</i> when it has products and, for every family of objects $(A_i)_{i \in I}$, the product functor
+  $$\textstyle \prod_{i \in I} (A_i/\C) \to (\prod_{i \in I} A_i) / \C,$$
+  which maps a family of morphisms $(A_i \to X_i)_{i \in I}$ to their product $\prod_{i \in I} A_i \to \prod_{i \in I} X_i$, is an equivalence of categories. By <a href="/category-implication/dual_infinitary_extensive_characterization">this result</a>, this is equivalent to $\C$ having <a href="/category-property/pushout-stable_products">pushout-stable products</a> and <a href="/category-property/disjoint_products">disjoint products</a>.
 
   This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of being infinitary extensive.
 

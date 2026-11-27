@@ -1,15 +1,11 @@
 id: extensive
 relation: is
 description: >-
-  A category $\C$ is <i>extensive</i> when it has finite coproducts (denoted $+$) and for all objects $A,B \in \C$ the coproduct functor
-  $$\C/A \times \C/B \to \C/(A+B),$$
-  which maps $(X \to A, Y \to B)$ to $(X+Y \to A+B)$, is an equivalence of categories. This is equivalent to the following three conditions:
-  <ol>
-  <li>Pullbacks along binary coproduct inclusions exist, i.e. for every morphism $T \to A + B$, the pullback $T \times_{A + B} A$ exists.</li>
-  <li>Binary coproducts are <a href="/category-property/disjoint_finite_coproducts">disjoint</a>: The coproduct inclusions $A \rightarrow A + B \leftarrow B$ are monomorphisms, and their pullback $A \times_{A + B} B$ is the initial object $0$.</li>
-  <li>Binary coproducts are <a href="/category-property/pullback-stable_binary_coproducts">stable under pullbacks</a>: For every morphism $T \to A + B$, if we define the pullbacks $T_A \coloneqq T \times_{A + B} A$ and $T_B \coloneqq T \times_{A + B} B$, then the canonical morphism $T_A + T_B \to T$ is an isomorphism.</li>
-  </ol>
-  For a proof of this equivalent characterization, see <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Section 2.
+  A category $\C$ is <i>extensive</i> when it has finite coproducts and, for every finite family of objects $(A_i)_{i \in I}$, the coproduct functor
+  $$\textstyle \prod_{i \in I} (\C/A_i) \to \C/(\coprod_{i \in I} A_i),$$
+  which maps a family of morphisms $(X_i \to A_i)_{i \in I}$ to their coproduct $\coprod_{i \in I} X_i \to \coprod_{i \in I} A_i$, is an equivalence of categories. By <a href="/category-implication/extensive_characterization">this result</a>, this is equivalent to $\C$ having <a href="/category-property/pullback-stable_finite_coproducts">pullback-stable finite coproducts</a> and <a href="/category-property/disjoint_finite_coproducts">disjoint finite coproducts</a>.
+
+  In the literature, the definition usually only requires this for binary coproducts, which is equivalent by <a href="/content/extensive-characterization#corollary">this corollary</a>. We use finite families to match the definitions of <a href="/category-property/countably_extensive">countably extensive</a> and <a href="/category-property/infinitary_extensive">infinitary extensive</a> categories.
 
   Remark: If $\D$ has this property, $\C$ has finite coproducts and pullbacks along coproduct inclusions, and $U : \C \to \D$ is a conservative (e.g. fully faithful) functor that preserves both, then $\C$ has this property as well.
 nlab_link: https://ncatlab.org/nlab/show/extensive+category

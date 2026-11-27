@@ -1,0 +1,179 @@
+# results on pullback-stable coproducts
+
+- id: pullback-stable_binary_coproducts_assumption
+  assumptions:
+    - pullback-stable binary coproducts
+  conclusions:
+    - binary coproducts
+  proof: This holds by definition.
+
+- id: pullback-stable_coproducts_assumption
+  assumptions:
+    - pullback-stable coproducts
+  conclusions:
+    - coproducts
+  proof: This holds by definition.
+
+- id: pullback-stable_coproducts_countable
+  assumptions:
+    - pullback-stable coproducts
+  conclusions:
+    - pullback-stable countable coproducts
+  proof: Countable families are special cases of arbitrary families.
+
+- id: pullback-stable_countable_coproducts_assumption
+  assumptions:
+    - pullback-stable countable coproducts
+  conclusions:
+    - countable coproducts
+  proof: This holds by definition.
+
+- id: pullback-stable_countable_coproducts_finite
+  assumptions:
+    - pullback-stable countable coproducts
+  conclusions:
+    - pullback-stable finite coproducts
+  proof: Finite families are special cases of countable families.
+
+- id: pullback-stable_binary_coproducts_strict
+  assumptions:
+    - pullback-stable binary coproducts
+    - initial object
+  conclusions:
+    - strict initial object
+  proof: >-
+    Let $f : T \to 0$ be a morphism. The object $0$, together with the inclusions $\id_0, \id_0$, is a coproduct $0 + 0$. We apply the definition of pullback-stable binary coproducts to the morphism $f : T \to 0 + 0$. The pullback of each inclusion $\id_0$ along $f$ is $T$ with the projection $\id_T$. So the canonical morphism from the coproduct of these pullbacks to $T$ is the codiagonal $\nabla : T + T \to T$, which is therefore an isomorphism. Both coproduct inclusions $i_1, i_2 : T \rightrightarrows T + T$ are sections of $\nabla$, hence equal to $\nabla^{-1}$. For morphisms $g,h : T \rightrightarrows Y$, the induced morphism $(g;h) : T + T \to Y$ satisfies
+    $$g = (g;h) \circ i_1 = (g;h) \circ i_2 = h.$$
+    Since there is a morphism $T \to 0 \to Y$, it follows that $T$ is initial.
+
+    This is <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Lemma 2.12, whose proof refers to the proof of their Prop. 2.8.
+
+- id: pullback-stable_finite_coproducts_binary
+  assumptions:
+    - pullback-stable finite coproducts
+  conclusions:
+    - pullback-stable binary coproducts
+    - strict initial object
+  proof: >-
+    If $\C$ has pullback-stable finite coproducts, then the condition for families of two objects states that binary coproducts are pullback-stable, and the condition for the empty family states that for every morphism $T \to 0$ the unique morphism $0 \to T$ is an isomorphism, i.e. that the initial object is strict.
+
+    Conversely, assume that $\C$ has pullback-stable binary coproducts and a strict initial object. Then $\C$ has finite coproducts. We show the condition for a family of objects $(A_i)_{i \in I}$ by induction on $n \coloneqq \card(I)$. For $n = 0$, it is strictness, as we have just seen. For $n = 1$, it is trivial. For $n \geq 2$, choose $j \in I$, let $B \coloneqq \coprod_{i \neq j} A_i$, and let $A \coloneqq A_j + B$, which is a coproduct of the $A_i$. Let $T \to A$ be a morphism. Since binary coproducts are pullback-stable, the pullbacks $T_j \coloneqq T \times_A A_j$ and $T_B \coloneqq T \times_A B$ exist and the canonical morphism $T_j + T_B \to T$ is an isomorphism. By the induction hypothesis, applied to the family $(A_i)_{i \neq j}$ and the morphism $T_B \to B$, the pullbacks $T_B \times_B A_i$ for $i \neq j$ exist and the canonical morphism $\coprod_{i \neq j} T_B \times_B A_i \to T_B$ is an isomorphism. By the pasting law, $T_B \times_B A_i$ is the pullback $T_i \coloneqq T \times_A A_i$. The canonical morphism $\coprod_{i \in I} T_i \to T$ is the composite
+    $$\textstyle \coprod_{i \in I} T_i \cong T_j + \coprod_{i \neq j} T_i \to T_j + T_B \to T$$
+    of canonical morphisms. By the above, each of them is an isomorphism, hence so is their composite.
+  is_equivalence: true
+
+- id: lcc_pullback-stable_coproducts
+  assumptions:
+    - coproducts
+    - locally cartesian closed
+  conclusions:
+    - pullback-stable coproducts
+  proof: >-
+    Let $(A_i)_{i \in I}$ be a family of objects with coproduct $A$, and let $f : T \to A$ be a morphism. Since coproducts in $\C/A$ are computed as in $\C$, the object $(A,\id_A)$ is the coproduct of the objects $A_i \to A$ given by the coproduct inclusions. The pullback functor $f^* : \C/A \to \C/T$ has a right adjoint, hence preserves coproducts. It maps $(A,\id_A)$ to $(T,\id_T)$, and the objects $A_i \to A$ to the pullbacks $T_i \coloneqq T \times_A A_i$. Therefore, the canonical morphism $\coprod_{i \in I} T_i \to T$ is an isomorphism.
+
+- id: lcc_pullback-stable_countable_coproducts
+  assumptions:
+    - countable coproducts
+    - locally cartesian closed
+  conclusions:
+    - pullback-stable countable coproducts
+  proof: The proof of <a href="/category-implication/lcc_pullback-stable_coproducts">this result</a> works verbatim for countable families.
+
+- id: lcc_pullback-stable_binary_coproducts
+  assumptions:
+    - binary coproducts
+    - locally cartesian closed
+  conclusions:
+    - pullback-stable binary coproducts
+  proof: The proof of <a href="/category-implication/lcc_pullback-stable_coproducts">this result</a> works verbatim for families of two objects.
+
+- id: lcc_pullback-stable_finite_coproducts
+  assumptions:
+    - finite coproducts
+    - locally cartesian closed
+  conclusions:
+    - pullback-stable finite coproducts
+  proof: The proof of <a href="/category-implication/lcc_pullback-stable_coproducts">this result</a> works verbatim for finite families.
+  check_redundancy: false
+
+- id: pullback-stable_coproducts_distributive
+  assumptions:
+    - pullback-stable coproducts
+    - finite products
+  conclusions:
+    - infinitary distributive
+  proof: >-
+    Let $A$ be an object, let $(B_i)_{i \in I}$ be a family of objects with coproduct $B$ and inclusions $\iota_i : B_i \to B$, and let $p : A \times B \to B$ be the projection. The pullback of $p$ along $\iota_i$ is $A \times B_i$ with the morphism $\id_A \times \iota_i : A \times B_i \to A \times B$. Since coproducts are pullback-stable, the canonical morphism $\coprod_{i \in I} (A \times B_i) \to A \times B$ is an isomorphism.
+
+- id: pullback-stable_countable_coproducts_distributive
+  assumptions:
+    - pullback-stable countable coproducts
+    - finite products
+  conclusions:
+    - countably distributive
+  proof: The proof of <a href="/category-implication/pullback-stable_coproducts_distributive">this result</a> works verbatim for countable families.
+
+- id: pullback-stable_finite_coproducts_distributive
+  assumptions:
+    - pullback-stable finite coproducts
+    - finite products
+  conclusions:
+    - distributive
+  proof: The proof of <a href="/category-implication/pullback-stable_coproducts_distributive">this result</a> works verbatim for finite families.
+
+- id: pullback-stable_coproducts_monos
+  assumptions:
+    - pullbacks
+    - pullback-stable coproducts
+  conclusions:
+    - coproduct-stable monomorphisms
+  # TODO: once the property "coproduct injections are monic" is added, add the implication "distributive ⟹ coproduct injections are monic" (Carboni–Lack–Walters, Prop. 3.3) and use it here
+  proof: >-
+    Let $\C$ be a category with pullbacks and pullback-stable coproducts. Let $(f_i : X_i \to Y_i)_{i \in I}$ be a family of monomorphisms, and let $X \coloneqq \coprod_{i \in I} X_i$ and $Y \coloneqq \coprod_{i \in I} Y_i$ with injections $\iota_i : X_i \to X$ and $\kappa_i : Y_i \to Y$. We show that $g \coloneqq \coprod_{i \in I} f_i : X \to Y$ is a monomorphism. By definition, $g \circ \iota_i = \kappa_i \circ f_i$ for all $i \in I$.
+
+    First, we reduce to the case that $\C$ has a terminal object. The slice category $\C' \coloneqq \C / Y$ has the terminal object $(Y, \id_Y)$. It has coproducts and pullbacks, and the forgetful functor $U : \C' \to \C$ preserves them (in fact, it creates all connected limits). Hence, coproducts are pullback-stable in $\C'$ as well. Since $U$ preserves pullbacks, it preserves monomorphisms, and since it is faithful, it reflects them. Therefore, the morphisms $f_i : (X_i, \kappa_i \circ f_i) \to (Y_i, \kappa_i)$ are monomorphisms in $\C'$, and it suffices to show that their coproduct $g : (X, g) \to (Y, \id_Y)$ in $\C'$ is a monomorphism. Replacing $\C$ by $\C'$, we may therefore assume that $\C$ has a terminal object, and hence finite products. Then $\C$ is infinitary distributive (by <a href="/category-implication/pullback-stable_coproducts_distributive">this result</a>), that is, for every object $A$ the functor $A \times - : \C \to \C$ preserves coproducts. In particular, $\C$ is distributive, so that coproduct injections in $\C$ are monomorphisms according to <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 3.3.
+
+    <strong>Claim.</strong> Let $i,j \in I$ with $i \neq j$. If $x : W \to X_i$ and $y : W \to X_j$ are morphisms with $\kappa_i \circ f_i \circ x = \kappa_j \circ f_j \circ y$, then $\iota_i \circ x = \iota_j \circ y$. To prove this, let $q_i : X_i \times X_j \to X_i$ and $q_j : X_i \times X_j \to X_j$ be the projections, and $z \coloneqq \langle x,y \rangle : W \to X_i \times X_j$. By infinitary distributivity, $(X_i \times X_j) \times Y$ is the coproduct of the objects $(X_i \times X_j) \times Y_\ell$ for $\ell \in I$, with injections $\id_{X_i \times X_j} \times \kappa_\ell$. Hence, there is a morphism $s : (X_i \times X_j) \times Y \to X$ with
+    $$\begin{align*}
+    s \circ (\id_{X_i \times X_j} \times \kappa_j) & = \iota_j \circ q_j \circ p_1, \\
+    s \circ (\id_{X_i \times X_j} \times \kappa_\ell) & = \iota_i \circ q_i \circ p_1 \quad \text{for } \ell \neq j,
+    \end{align*}$$
+    where $p_1$ denotes the projection $(X_i \times X_j) \times Y_\ell \to X_i \times X_j$. Since $i \neq j$, we get
+    $$\begin{align*}
+    \iota_i \circ x & = \iota_i \circ q_i \circ z \\
+    & = \iota_i \circ q_i \circ p_1 \circ \langle z, f_i \circ x \rangle \\
+    & = s \circ (\id_{X_i \times X_j} \times \kappa_i) \circ \langle z, f_i \circ x \rangle \\
+    & = s \circ \langle z, \kappa_i \circ f_i \circ x \rangle \\
+    & = s \circ \langle z, \kappa_j \circ f_j \circ y \rangle \\
+    & = s \circ (\id_{X_i \times X_j} \times \kappa_j) \circ \langle z, f_j \circ y \rangle \\
+    & = \iota_j \circ q_j \circ p_1 \circ \langle z, f_j \circ y \rangle \\
+    & = \iota_j \circ q_j \circ z \\
+    & = \iota_j \circ y.
+    \end{align*}$$
+    This proves the claim.
+
+    Now let $a,b : Z \rightrightarrows X$ be morphisms with $g \circ a = g \circ b$. We want to prove $a = b$. Applying infinitary distributivity twice, we see that $X \times X$ is the coproduct of the objects $X_i \times X_j$ for $i,j \in I$, with injections $\iota_i \times \iota_j$. Let $e_{ij} : Z_{ij} \to Z$ be a pullback of $\iota_i \times \iota_j$ along $\langle a,b \rangle : Z \to X \times X$. Since coproducts are pullback-stable, the morphism $\coprod_{i,j \in I} Z_{ij} \to Z$ induced by the $e_{ij}$ is an isomorphism, so that the morphisms $e_{ij}$ are jointly epimorphic. By construction, there are morphisms $a_{ij} : Z_{ij} \to X_i$ and $b_{ij} : Z_{ij} \to X_j$ with $\langle a,b \rangle \circ e_{ij} = (\iota_i \times \iota_j) \circ \langle a_{ij}, b_{ij} \rangle$, that is,
+    $$\begin{align*}
+    a \circ e_{ij} & = \iota_i \circ a_{ij}, \\
+    b \circ e_{ij} & = \iota_j \circ b_{ij}.
+    \end{align*}$$
+    It suffices to show $a \circ e_{ij} = b \circ e_{ij}$, that is, $\iota_i \circ a_{ij} = \iota_j \circ b_{ij}$, for all $i,j \in I$. We have
+    $$\begin{align*}
+    \kappa_i \circ f_i \circ a_{ij} & = g \circ \iota_i \circ a_{ij} \\
+    & = g \circ a \circ e_{ij} \\
+    & = g \circ b \circ e_{ij} \\
+    & = g \circ \iota_j \circ b_{ij} \\
+    & = \kappa_j \circ f_j \circ b_{ij}.
+    \end{align*}$$
+    <ol>
+    <li>If $i = j$, then $a_{ii} = b_{ii}$, since $\kappa_i$ and $f_i$ are monomorphisms. Hence, $\iota_i \circ a_{ii} = \iota_i \circ b_{ii}$.</li>
+    <li>If $i \neq j$, then the claim gives $\iota_i \circ a_{ij} = \iota_j \circ b_{ij}$.</li>
+    </ol>
+
+- id: pullback-stable_finite_coproducts_monos
+  assumptions:
+    - pullbacks
+    - pullback-stable finite coproducts
+  conclusions:
+    - finite-coproduct-stable monomorphisms
+  proof: The proof of <a href="/category-implication/pullback-stable_coproducts_monos">this result</a> works verbatim for finite families of monomorphisms, using that $\C$ is distributive (by <a href="/category-implication/pullback-stable_finite_coproducts_distributive">this result</a>).

@@ -11,6 +11,7 @@ invariant_under_equivalences: true
 related:
   - disjoint products
   - coextensive
+  - pushout-stable finite products
   - finite products
 
 tags:
