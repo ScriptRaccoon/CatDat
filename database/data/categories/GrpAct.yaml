@@ -105,6 +105,9 @@ unsatisfied_properties:
   - property: co-Malcev
     proof: 'The functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ is fully faithful and preserves finite colimits as a left adjoint. Since $\Grp$ is not co-Malcev (<a href="/category/Grp?proof=co-Malcev" data-allow-deduced>proof</a>), neither is $\GrpAct$.'
 
+  - property: epic product projections
+    proof: 'The terminal object is $(1,\{\ast\})$, and $(1,\{\ast\}) \times (1,\varnothing) \cong (1,\varnothing)$. Hence, the product projection $(1,\{\ast\}) \times (1,\varnothing) \to (1,\{\ast\})$ is the unique morphism $(1,\varnothing) \to (1,\{\ast\})$ up to isomorphism. Its map $\varnothing \to \{\ast\}$ is not surjective, so it is not an epimorphism (<a href="/category/GrpAct?proof=epimorphism">proof</a>).'
+
   - property: regular subobject classifier
     proof: >-
       Apply the contrapositive of <a href="/content/subcategories#lemma_1">Lemma 1 on subcategories</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$, which is left adjoint to the forgetful functor $U : \GrpAct \to \Grp$. Since monomorphisms are injective in both components (<a href="/category/GrpAct?proof=monomorphism">proof</a>), every monomorphism into $(G,\varnothing)$ is, up to isomorphism, the image under $L$ of a subgroup inclusion $H \hookrightarrow G$, which is a regular monomorphism since $\Grp$ is mono-regular (<a href="/category/Grp?proof=mono-regular" data-allow-deduced>proof</a>). Here, we use that $\Grp$ does not have a regular subobject classifier (<a href="/category/Grp?proof=regular_subobject_classifier" data-allow-deduced>proof</a>).
