@@ -1,7 +1,9 @@
 id: coextensive
 relation: is
 description: >-
-  A category $\C$ is <i>coextensive</i> when it has finite products and for all objects $A,B \in \C$ the product functor $A/\C \times B/\C \to (A \times B)/\C$ is an equivalence of categories. Equivalently (by using the characterization of extensive categories), pushouts along binary product projections exist, binary products are <a href="/category-property/disjoint_finite_products">disjoint</a>, and binary products are <a href="/category-property/pushout-stable_binary_products">stable under pushouts</a>. The prototypical example is the category of commutative rings.
+  A category $\C$ is <i>coextensive</i> when it has finite products and, for every finite family of objects $(A_i)_{i \in I}$, the product functor
+  $$\textstyle \prod_{i \in I} (A_i/\C) \to (\prod_{i \in I} A_i) / \C,$$
+  which maps a family of morphisms $(A_i \to X_i)_{i \in I}$ to their product $\prod_{i \in I} A_i \to \prod_{i \in I} X_i$, is an equivalence of categories. By <a href="/category-implication/dual_extensive_characterization">this result</a>, this is equivalent to $\C$ having <a href="/category-property/pushout-stable_finite_products">pushout-stable finite products</a> and <a href="/category-property/disjoint_finite_products">disjoint finite products</a>. The prototypical example is the category of commutative rings.
 
   Remark: If $\D$ has this property, $\C$ has finite products and pushouts along product projections, and $U : \C \to \D$ is a conservative (e.g. fully faithful) functor that preserves both, then $\C$ has this property as well.
 nlab_link: null

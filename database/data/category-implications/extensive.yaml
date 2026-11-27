@@ -1,99 +1,31 @@
 # results on extensive categories
 
-- id: extensive_assumption
+- id: extensive_characterization
   assumptions:
     - extensive
   conclusions:
-    - finite coproducts
-  proof: This holds by definition.
-  check_redundancy: false
-
-- id: countably_extensive_assumption
-  assumptions:
-    - countably extensive
-  conclusions:
-    - countable coproducts
-  proof: This holds by definition.
-
-- id: infinitary_extensive_assumption
-  assumptions:
-    - infinitary extensive
-  conclusions:
-    - coproducts
-  proof: This holds by definition.
-  check_redundancy: false
-
-- id: infinitary_extensive_countable
-  assumptions:
-    - infinitary extensive
-  conclusions:
-    - countably extensive
-  proof: This is obvious.
-
-- id: countably_extensive_finitary
-  assumptions:
-    - countably extensive
-  conclusions:
-    - extensive
-  proof: This is obvious.
-
-- id: extensive_consequences
-  assumptions:
-    - extensive
-  conclusions:
+    - pullback-stable finite coproducts
     - disjoint finite coproducts
-    - strict initial object
-  proof: See <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 2.6 and 2.8.
+  proof: This follows from <a href="/content/extensive-characterization">this proposition</a>, applied to $\kappa = \aleph_0$.
+  is_equivalence: true
 
-- id: extensive_distributivity
-  assumptions:
-    - extensive
-    - finite products
-  conclusions:
-    - distributive
-  proof: See <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 4.5.
-
-- id: infinitary_extensive_distributivity
-  assumptions:
-    - infinitary extensive
-    - finite products
-  conclusions:
-    - infinitary distributive
-  proof: One can adjust the proof of <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 4.5 (which deals with the finite case).
-
-- id: countably_extensive_distributivity
+- id: countably_extensive_characterization
   assumptions:
     - countably extensive
-    - finite products
   conclusions:
-    - countably distributive
-  proof: One can adjust the proof of <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 4.5 (which deals with the finite case).
-
-- id: lcc_implies_extensive
-  assumptions:
+    - pullback-stable countable coproducts
     - disjoint finite coproducts
-    - locally cartesian closed
-  conclusions:
-    - extensive
-  proof: 'The pullback functor preserves finite coproducts because it has a right adjoint. Remark: In combination with other implications, this result implies that every elementary topos is extensive.'
+  proof: This follows from <a href="/content/extensive-characterization">this proposition</a>, applied to $\kappa = \aleph_1$. Here, we use that disjointness of binary coproducts implies disjointness of countable coproducts, by the argument in the proof of <a href="/category-implication/disjoint_coproducts_equivalence">this result</a>, which works verbatim for countable families.
+  is_equivalence: true
 
-- id: lcc_extensive_yields_infinitary
+- id: infinitary_extensive_characterization
   assumptions:
-    - coproducts
-    - extensive
-    - locally cartesian closed
-  conclusions:
     - infinitary extensive
-  proof: The pullback functor preserves coproducts because it has a right adjoint. See also Remark 2.6 at the <a href="https://ncatlab.org/nlab/show/extensive+category">nLab</a>.
-
-- id: lcc_extensive_yields_countable
-  assumptions:
-    - countable coproducts
-    - extensive
-    - locally cartesian closed
   conclusions:
-    - countably extensive
-  proof: The pullback functor preserves countable coproducts because it has a right adjoint.
+    - pullback-stable coproducts
+    - disjoint coproducts
+  proof: This follows from <a href="/content/extensive-characterization">this proposition</a>, applied to all infinite cardinals $\kappa$, or by removing the cardinality restriction in its proof.
+  is_equivalence: true
 
 - id: infinitary_extensive_not_coaccessible
   assumptions:

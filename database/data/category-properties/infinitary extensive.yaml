@@ -1,15 +1,9 @@
 id: infinitary extensive
 relation: is
 description: >-
-  A category $\C$ is <i>infinitary extensive</i> when it has coproducts and for all families of objects $(A_i)_{i \in I}$ the coproduct functor
+  A category $\C$ is <i>infinitary extensive</i> when it has coproducts and, for every family of objects $(A_i)_{i \in I}$, the coproduct functor
   $$\textstyle \prod_{i \in I} (\C/A_i) \to \C/(\coprod_{i \in I} A_i),$$
-  that maps a family of morphisms $(X_i \to A_i)_{i \in I}$ to their coproduct $\coprod_{i \in I} X_i \to \coprod_{i \in I} A_i$, is an equivalence of categories. This is equivalent to the following three conditions:
-  <ol>
-  <li>Pullbacks along coproduct inclusions exist, i.e. for every morphism $T \to \coprod_{i \in I} A_i$ and every $i \in I$ the pullback $T \times_{\coprod_{i \in I} A_i} A_i$ exists.</li>
-  <li>Coproducts are <a href="/category-property/disjoint_coproducts">disjoint</a>: Each coproduct inclusion $A_i \to \coprod_{i \in I} A_i$ is a monomorphism, and for $i \neq j$ the pullback $A_i \times_{\coprod_{i \in I} A_i} A_j$ is the initial object $0$.</li>
-  <li>Coproducts are <a href="https://ncatlab.org/nlab/show/pullback-stable+colimit">stable under pullbacks</a>: For every morphism $T \to \coprod_{i \in I} A_i$, if we define the pullbacks $T_i \coloneqq T \times_{\coprod_{i \in I} A_i} A_i$ for $i \in I$, then the canonical morphism $\coprod_{i \in I} T_i \to T$ is an isomorphism.</li>
-  </ol>
-  For a proof of this equivalent characterization, see <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Section 2; this covers the finite case, but the infinite case is similar.
+  which maps a family of morphisms $(X_i \to A_i)_{i \in I}$ to their coproduct $\coprod_{i \in I} X_i \to \coprod_{i \in I} A_i$, is an equivalence of categories. By <a href="/category-implication/infinitary_extensive_characterization">this result</a>, this is equivalent to $\C$ having <a href="/category-property/pullback-stable_coproducts">pullback-stable coproducts</a> and <a href="/category-property/disjoint_coproducts">disjoint coproducts</a>.
 
   Remark: If $\D$ has this property, $\C$ has coproducts and pullbacks along coproduct inclusions, and $U : \C \to \D$ is a conservative (e.g. fully faithful) functor that preserves both, then $\C$ has this property as well.
 nlab_link: https://ncatlab.org/nlab/show/extensive+category
