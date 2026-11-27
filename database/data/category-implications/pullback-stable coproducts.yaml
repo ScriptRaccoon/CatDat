@@ -48,6 +48,20 @@
 
     This is <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Lemma 2.12, whose proof refers to the proof of their Prop. 2.8.
 
+- id: pullback-stable_binary_coproducts_strict_terminal
+  assumptions:
+    - pullback-stable binary coproducts
+    - strict terminal object
+  conclusions:
+    - binary products
+    - thin
+  proof: >-
+    Let $1$ be a strict terminal object, and let $A$ be an object. Since $1$ is strict, the coproduct inclusion $1 \to 1 + A$ is an isomorphism. Hence, $1$, together with the morphisms $\id_1$ and $A \to 1$, is a coproduct $1 + A$.
+
+    Let $T$ be an object. Applying the definition of pullback-stable binary coproducts to the unique morphism $T \to 1 = 1 + A$, we see that the pullback of the coproduct inclusion $A \to 1$ along it exists. Since $1$ is terminal, this pullback is a product $T \times A$.
+
+    For $A = 1$, the object $1$, together with the inclusions $\id_1, \id_1$, is a coproduct $1 + 1$. The pullback of each inclusion $\id_1$ along $T \to 1$ is $T$ with the projection $\id_T$. So the canonical morphism from the coproduct of these pullbacks to $T$ is the codiagonal $\nabla : T + T \to T$, which is therefore an isomorphism. As in the proof of <a href="/category-implication/codiagonal-iso">this result</a>, it follows that $\C$ is thin.
+
 - id: pullback-stable_finite_coproducts_binary
   assumptions:
     - pullback-stable finite coproducts
