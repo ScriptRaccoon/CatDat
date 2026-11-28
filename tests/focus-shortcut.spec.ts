@@ -11,6 +11,7 @@ const search_pages = [
 	{ path: '/category-list', label: 'search filter' },
 	{ path: '/category-properties', label: 'search filter' },
 	{ path: '/category-implications', label: 'search filter' },
+	{ path: '/content', label: 'search filter' },
 	{ path: '/category/Set', label: 'look up a property' },
 	{ path: '/category-property/complete', label: 'look up a category' },
 	{ path: '/functor/abelianization', label: 'look up a property' }
