@@ -161,58 +161,47 @@
     - pullback-stable finite coproducts
   proof: The proof of <a href="/category-implication/thin_pullback-stable_coproducts">this result</a> works verbatim for finite families.
 
-- id: pullback-stable_coproducts_monos
+- id: pullback-stable_finite_coproducts_monic_inclusions
   assumptions:
     - pullbacks
+    - pullback-stable finite coproducts
+  conclusions:
+    - monic coproduct inclusions
+  proof: >-
+    Let $A,B$ be objects with coproduct inclusions $\iota_A : A \to A + B$ and $\iota_B : B \to A + B$. The slice category $\C' \coloneqq \C / (A + B)$ has the terminal object $(A + B, \id_{A + B})$. It has finite coproducts and pullbacks, and the forgetful functor $U : \C' \to \C$ preserves them (in fact, it creates all colimits and connected limits). Hence, finite coproducts are pullback-stable in $\C'$ as well, and $\C'$ has finite products. Then $\C'$ is distributive (by <a href="/category-implication/pullback-stable_finite_coproducts_distributive">this result</a>), hence has monic coproduct inclusions (by <a href="/category-implication/distributive_monic_coproduct_inclusions">this result</a>). Since $(A + B, \id_{A + B})$ is a coproduct of $(A, \iota_A)$ and $(B, \iota_B)$ in $\C'$, it follows that $\iota_A : (A, \iota_A) \to (A + B, \id_{A + B})$ is a monomorphism in $\C'$. Since $U$ preserves pullbacks, it preserves monomorphisms, so that $\iota_A$ is a monomorphism in $\C$.
+
+- id: monic_inclusions_coproduct-stable_monos
+  assumptions:
+    - monic coproduct inclusions
     - pullback-stable coproducts
   conclusions:
     - coproduct-stable monomorphisms
   proof: >-
-    Let $\C$ be a category with pullbacks and pullback-stable coproducts. Let $(f_i : X_i \to Y_i)_{i \in I}$ be a family of monomorphisms, and let $X \coloneqq \coprod_{i \in I} X_i$ and $Y \coloneqq \coprod_{i \in I} Y_i$ with injections $\iota_i : X_i \to X$ and $\kappa_i : Y_i \to Y$. We show that $g \coloneqq \coprod_{i \in I} f_i : X \to Y$ is a monomorphism. By definition, $g \circ \iota_i = \kappa_i \circ f_i$ for all $i \in I$.
+    Let $(f_i : X_i \to Y_i)_{i \in I}$ be a family of monomorphisms, and let $X \coloneqq \coprod_{i \in I} X_i$ and $Y \coloneqq \coprod_{i \in I} Y_i$ with inclusions $\iota_i : X_i \to X$ and $\kappa_i : Y_i \to Y$. We show that $f \coloneqq \coprod_{i \in I} f_i : X \to Y$ is a monomorphism. By definition, $f \circ \iota_i = \kappa_i \circ f_i$ for all $i \in I$. Since $\C$ has monic coproduct inclusions and coproducts, the inclusions $\kappa_i$ are monomorphisms.
 
-    First, we reduce to the case that $\C$ has a terminal object. The slice category $\C' \coloneqq \C / Y$ has the terminal object $(Y, \id_Y)$. It has coproducts and pullbacks, and the forgetful functor $U : \C' \to \C$ preserves them (in fact, it creates all connected limits). Hence, coproducts are pullback-stable in $\C'$ as well. Since $U$ preserves pullbacks, it preserves monomorphisms, and since it is faithful, it reflects them. Therefore, the morphisms $f_i : (X_i, \kappa_i \circ f_i) \to (Y_i, \kappa_i)$ are monomorphisms in $\C'$, and it suffices to show that their coproduct $g : (X, g) \to (Y, \id_Y)$ in $\C'$ is a monomorphism. Replacing $\C$ by $\C'$, we may therefore assume that $\C$ has a terminal object, and hence finite products. Then $\C$ is infinitary distributive (by <a href="/category-implication/pullback-stable_coproducts_distributive">this result</a>), that is, for every object $A$ the functor $A \times - : \C \to \C$ preserves coproducts. In particular, $\C$ is distributive, so that $\C$ has monic coproduct inclusions (by <a href="/category-implication/distributive_monic_coproduct_inclusions">this result</a>). Since $\C$ has coproducts, it follows that the coproduct inclusions $\kappa_i$ are monomorphisms.
-
-    <strong>Claim.</strong> Let $i,j \in I$ with $i \neq j$. If $x : W \to X_i$ and $y : W \to X_j$ are morphisms with $\kappa_i \circ f_i \circ x = \kappa_j \circ f_j \circ y$, then $\iota_i \circ x = \iota_j \circ y$. To prove this, let $q_i : X_i \times X_j \to X_i$ and $q_j : X_i \times X_j \to X_j$ be the projections, and $z \coloneqq \langle x,y \rangle : W \to X_i \times X_j$. By infinitary distributivity, $(X_i \times X_j) \times Y$ is the coproduct of the objects $(X_i \times X_j) \times Y_\ell$ for $\ell \in I$, with injections $\id_{X_i \times X_j} \times \kappa_\ell$. Hence, there is a morphism $s : (X_i \times X_j) \times Y \to X$ with
-    $$\begin{align*}
-    s \circ (\id_{X_i \times X_j} \times \kappa_j) & = \iota_j \circ q_j \circ p_1, \\
-    s \circ (\id_{X_i \times X_j} \times \kappa_\ell) & = \iota_i \circ q_i \circ p_1 \quad \text{for } \ell \neq j,
-    \end{align*}$$
-    where $p_1$ denotes the projection $(X_i \times X_j) \times Y_\ell \to X_i \times X_j$. Since $i \neq j$, we get
-    $$\begin{align*}
-    \iota_i \circ x & = \iota_i \circ q_i \circ z \\
-    & = \iota_i \circ q_i \circ p_1 \circ \langle z, f_i \circ x \rangle \\
-    & = s \circ (\id_{X_i \times X_j} \times \kappa_i) \circ \langle z, f_i \circ x \rangle \\
-    & = s \circ \langle z, \kappa_i \circ f_i \circ x \rangle \\
-    & = s \circ \langle z, \kappa_j \circ f_j \circ y \rangle \\
-    & = s \circ (\id_{X_i \times X_j} \times \kappa_j) \circ \langle z, f_j \circ y \rangle \\
-    & = \iota_j \circ q_j \circ p_1 \circ \langle z, f_j \circ y \rangle \\
-    & = \iota_j \circ q_j \circ z \\
-    & = \iota_j \circ y.
-    \end{align*}$$
-    This proves the claim.
-
-    Now let $a,b : Z \rightrightarrows X$ be morphisms with $g \circ a = g \circ b$. We want to prove $a = b$. Applying infinitary distributivity twice, we see that $X \times X$ is the coproduct of the objects $X_i \times X_j$ for $i,j \in I$, with injections $\iota_i \times \iota_j$. Let $e_{ij} : Z_{ij} \to Z$ be a pullback of $\iota_i \times \iota_j$ along $\langle a,b \rangle : Z \to X \times X$. Since coproducts are pullback-stable, the morphism $\coprod_{i,j \in I} Z_{ij} \to Z$ induced by the $e_{ij}$ is an isomorphism, so that the morphisms $e_{ij}$ are jointly epimorphic. By construction, there are morphisms $a_{ij} : Z_{ij} \to X_i$ and $b_{ij} : Z_{ij} \to X_j$ with $\langle a,b \rangle \circ e_{ij} = (\iota_i \times \iota_j) \circ \langle a_{ij}, b_{ij} \rangle$, that is,
+    Let $a,b : T \rightrightarrows X$ be morphisms with $f \circ a = f \circ b$. We want to prove $a = b$. Since coproducts are pullback-stable, pulling back $a$ along the inclusions $\iota_i$ shows that $T$ is a coproduct of objects $T_i$ such that $a$ maps $T_i$ to $X_i$. Pulling back $b|_{T_i}$ along the inclusions $\iota_j$ shows that $T_i$ is a coproduct of objects $T_{ij}$ such that $b$ maps $T_{ij}$ to $X_j$. Hence, $T$ is a coproduct of the objects $T_{ij}$ for $i,j \in I$, with inclusions $e_{ij} : T_{ij} \to T$, and there are morphisms $a_{ij} : T_{ij} \to X_i$ and $b_{ij} : T_{ij} \to X_j$ with
     $$\begin{align*}
     a \circ e_{ij} & = \iota_i \circ a_{ij}, \\
     b \circ e_{ij} & = \iota_j \circ b_{ij}.
     \end{align*}$$
     It suffices to show $a \circ e_{ij} = b \circ e_{ij}$, that is, $\iota_i \circ a_{ij} = \iota_j \circ b_{ij}$, for all $i,j \in I$. We have
     $$\begin{align*}
-    \kappa_i \circ f_i \circ a_{ij} & = g \circ \iota_i \circ a_{ij} \\
-    & = g \circ a \circ e_{ij} \\
-    & = g \circ b \circ e_{ij} \\
-    & = g \circ \iota_j \circ b_{ij} \\
+    \kappa_i \circ f_i \circ a_{ij} & = f \circ \iota_i \circ a_{ij} \\
+    & = f \circ a \circ e_{ij} \\
+    & = f \circ b \circ e_{ij} \\
+    & = f \circ \iota_j \circ b_{ij} \\
     & = \kappa_j \circ f_j \circ b_{ij}.
     \end{align*}$$
-    <ol>
-    <li>If $i = j$, then $a_{ii} = b_{ii}$, since $\kappa_i$ and $f_i$ are monomorphisms. Hence, $\iota_i \circ a_{ii} = \iota_i \circ b_{ii}$.</li>
-    <li>If $i \neq j$, then the claim gives $\iota_i \circ a_{ij} = \iota_j \circ b_{ij}$.</li>
-    </ol>
 
-- id: pullback-stable_finite_coproducts_monos
+    If $i = j$, then $a_{ii} = b_{ii}$, since $\kappa_i$ and $f_i$ are monomorphisms. Hence, $\iota_i \circ a_{ii} = \iota_i \circ b_{ii}$.
+
+    If $i \neq j$, let $w : T_{ij} \to Y$ be the morphism $\kappa_i \circ f_i \circ a_{ij} = \kappa_j \circ f_j \circ b_{ij}$. For $m \in I$, let $\pi_m : P_m \to T_{ij}$ be a pullback of $\kappa_m$ along $w$. Since $\kappa_i$ is a monomorphism and $w$ factors through $\kappa_i$, we may choose $P_i \coloneqq T_{ij}$ and $\pi_i \coloneqq \id_{T_{ij}}$, and likewise $P_j \coloneqq T_{ij}$ and $\pi_j \coloneqq \id_{T_{ij}}$. Let $P \coloneqq \coprod_{m \in I} P_m$ with inclusions $\sigma_m : P_m \to P$. Since coproducts are pullback-stable, the morphism $\varphi : P \to T_{ij}$ with $\varphi \circ \sigma_m = \pi_m$ for all $m \in I$ is an isomorphism. From $\varphi \circ \sigma_i = \id_{T_{ij}} = \varphi \circ \sigma_j$ we get $\sigma_i = \varphi^{-1} = \sigma_j$. Let $h : P \to X$ be the morphism with $h \circ \sigma_j = \iota_j \circ b_{ij}$ and $h \circ \sigma_m = \iota_i \circ a_{ij} \circ \pi_m$ for $m \neq j$. Then
+    $$\iota_i \circ a_{ij} = h \circ \sigma_i = h \circ \sigma_j = \iota_j \circ b_{ij}.$$
+
+- id: monic_inclusions_finite-coproduct-stable_monos
   assumptions:
-    - pullbacks
     - pullback-stable finite coproducts
+    - monic coproduct inclusions
   conclusions:
     - finite-coproduct-stable monomorphisms
-  proof: The proof of <a href="/category-implication/pullback-stable_coproducts_monos">this result</a> works verbatim for finite families of monomorphisms, using that $\C$ is distributive (by <a href="/category-implication/pullback-stable_finite_coproducts_distributive">this result</a>).
+  proof: The proof of <a href="/category-implication/monic_inclusions_coproduct-stable_monos">this result</a> works verbatim for finite families of monomorphisms.
