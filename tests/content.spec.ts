@@ -78,6 +78,24 @@ test('user can access a content page from the list page', async ({ page }) => {
 	await expect(body).toContainText('Choose a system of representatives')
 })
 
+test('user can search for content pages by their title', async ({ page }) => {
+	await page.goto('/content', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('searchbox', { name: 'search filter' })
+		.fill('extensive categories')
+
+	await expect(page.getByText('Found 3 pages', { exact: true })).toBeVisible()
+
+	const links = page.getByRole('main').getByRole('listitem').getByRole('link')
+
+	await expect(links).toHaveText([
+		'Characterization of extensive categories',
+		'Cocongruences in extensive categories',
+		'Tail coproducts in extensive categories'
+	])
+})
+
 test('user can view referencing categories on a content page', async ({ page }) => {
 	await page.goto('/content/cocongruences_of_groups')
 
